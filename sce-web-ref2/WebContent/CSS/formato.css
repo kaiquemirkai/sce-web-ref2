@@ -1,0 +1,125 @@
+@CHARSET "ISO-8859-1";
+
+*{
+	margin:0px;
+	padding:0px;
+}
+
+body{
+	text-align:center;
+}
+
+
+#principal{
+	position:relative;
+	top:15px;
+	width:900px;
+	min-height:415px;
+	background-color:#ffffff;
+	border: solid #c0c0c0 1px;
+	margin:0 auto;
+}
+#relatorio{
+	position:relative;
+	top:15px;
+	width:1400px;
+	min-height:415px;
+	background-color:#ffffff;
+	border: solid #c0c0c0 1px;
+	margin:0 auto;
+}
+#titulo{
+	width:100%;
+	padding-top:7px;
+	padding-bottom:10px;
+	background-color:#ffffff;
+}
+
+#titulo h3{
+	text-align:center;
+	color:navy;
+	font-size:20px;
+	font-family:tahoma;
+}
+
+#menuSuperior{	
+	width:100%;
+	padding-top:7px;
+	padding-bottom:6px;
+	background-color:#ededed;
+	text-align:center;
+}
+
+form{
+	text-align:left;
+	padding-left:15px;
+}
+
+#campo{
+	backgroud-color:#endeded;
+	color:navy;
+	font-family:tahoma;
+}
+
+#explica{
+	font-family:arial;
+	font-size:9px;
+}
+
+#botao{
+	width:130px;
+	height:30px;
+	color:navy;
+}
+
+#tabcampos tr td{
+	
+	border:solid #000000 1px;
+	padding:4px;
+	min-width:100px;
+}
+
+tabmensagens tr td{
+	padding-top:20px;
+	text-align:center;
+}
+
+#pgmensagens{
+	margin-top:20px;
+}
+
+#tabmenu{
+	margin:0 auto;
+	text-align:center;
+}
+
+#rodape{
+	position:relative;
+	left:50%;
+	margin-left:-150px;
+	padding-top:23px;
+	font-size:12px;
+	font-family:tahoma;
+	color:navy;
+}
+
+#formulario3{
+	position:relative;
+	left:50%;
+	margin-left:-150px;
+	top:30px;
+	margin-bottom:55px;
+}
+
+#formulario2{
+	
+	position:relative;
+	left:50%;
+	margin-left:-400px;
+	top:30px;
+	margin-bottom:55px;
+}
+
+#txt{
+	font-size:20px;
+}
