@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Rodapé</title>
+<title>RodapÃ©</title>
 <link rel="stylesheet" type="text/css" href="/sce-web-ref2/CSS/formato.css">
 </head>
 <body>
@@ -20,7 +20,7 @@
 				<td><label>Mooca - Sao Paulo - SP</label></td>
 			</tr>
 			<tr>
-				<td><label>03694-000 - Fone (011) 2045-4000</label></td>
+				<td><label>03694-000 - Fone (011696969) 2045-4000</label></td>
 			</tr>
 			<tr>
 				<td><label>2013</label></td>
