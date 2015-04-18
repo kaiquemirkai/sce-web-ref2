@@ -20,7 +20,7 @@
 				<td><label>Mooca - Sao Paulo - SP</label></td>
 			</tr>
 			<tr>
-				<td><label>03694-000 - Fone (0116968676665) 2045-4000</label></td>
+				<td><label>03694-000 - Fone (011) 2045-4000</label></td>
 			</tr>
 			<tr>
 				<td><label>2013</label></td>
