@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<<<<<<< HEAD
 <title>Rodapé</title>
 <link rel="stylesheet" type="text/css" href="/sce-web-ref2/CSS/formato.css">
 </head>
@@ -29,3 +30,30 @@
 	</div>
 </body>
 </html>
+=======
+<title>RodapÃ©</title>
+<link rel="stylesheet" type="text/css" href="/sce-web-ref2/CSS/formato.css">
+</head>
+<body>
+	<div id="rodape">
+		<table>
+			<tr>
+				<td><label>Faculdade de Tecnologia e Ciencias Exatas</label></td>
+			</tr>
+			<tr>
+				<td><label>Av. Taquari, 2983</label></td>
+			</tr>
+			<tr>
+				<td><label>Mooca - Sao Paulo - SP</label></td>
+			</tr>
+			<tr>
+				<td><label>03694-000 - Fone (011) 2045-4000</label></td>
+			</tr>
+			<tr>
+				<td><label>2013</label></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
+>>>>>>> branch 'master' of ssh://git@github.com/kaiquemirkai/sce-web-ref2.git

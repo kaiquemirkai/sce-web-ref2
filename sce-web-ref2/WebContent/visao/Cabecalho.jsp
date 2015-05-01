@@ -9,7 +9,11 @@
 </head>
 <body>
 	<div id= "titulo">
+<<<<<<< HEAD
 		<a href="Index.jsp"><img alt="Universidade São Judas" src="/sce-web-ref2/Imagens/saojudas.png"></a>
+=======
+		<a href="index.jsp"><img alt="Universidade São Judas" src="/sce-web-ref2/Imagens/saojudas.png"></a>
+>>>>>>> branch 'master' of ssh://git@github.com/kaiquemirkai/sce-web-ref2.git
 		<h3>Faculdade de Tecnologia e Ciências Exatas</h3>
 	</div>
 </body>
