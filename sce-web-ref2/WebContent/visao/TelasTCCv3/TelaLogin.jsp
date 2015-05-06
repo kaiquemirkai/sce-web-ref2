@@ -5,16 +5,16 @@
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Login</title>
+<title>UATComp - Login</title>
     
-	
- 
-    <link href="..\CSS\boilerplate.css" rel="stylesheet" type="text/css">
-    <link href="..\TelasTCCv3\CSS\bootstrap.css" rel="stylesheet" type="text/css">
-
-
 
 <style type="text/css">
+
+body, input, select, textarea, button, label {
+    font-family: tahoma;
+   
+   }
+
 
 .background {
 	background-color: #003;
@@ -24,7 +24,6 @@
 
 .label {
 	text-align:center;
-	font-family:tahoma;
 	font-size:medium;  
 	text-decoration:none;
 	color:white; 
@@ -35,19 +34,19 @@
 .botao {
     margin-top:20px;
 	text-align:center;
-	font-family:tahoma;
 	font-size:medium;  
-	text-decoration:none;
 	font-weight:normal; 
+	text-decoration:none;
 	border-radius:5px;
 	box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+    
+    
     }
     
 .input {
     margin-top:25px;
     margin-bottom:5px:
 	text-align:center;
-	font-family:tahoma;
 	font-size:medium;  
 	text-decoration:none;
 	color:black; 
@@ -95,8 +94,10 @@ a:active {
     	
     	<div id="campo" class="background">
    			 
-                <div class="col-md-3 label "  >   
-                	<label class="col-md-3" >Login</label>&nbsp;  
+                <!--Login-->
+                
+                <div class="col-md-3 label ">   
+                	<label class="col-md-3">Login</label>&nbsp;  
                 	<input type="text" id="txtLogin" name="txtLogin" class="input" width="150">
                 </div>
            

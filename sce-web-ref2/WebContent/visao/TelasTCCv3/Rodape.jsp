@@ -8,31 +8,53 @@
 <link rel="stylesheet" type="text/css" href="/sce-web-ref2/CSS/formato.css">
 </head>
 <style type="text/css">
-.tablerow {
-	text-align:center;  
+
+<!--  Deixar texto do rodapé no final da página -->
+
+html {
+    position: relative;
+    min-height: 100%;
 }
+
+body {
+    margin: 0 0px;
+}
+
+
+footer {
+	    position: absolute;
+        bottom: 0px;
+        width: 100%;
+        height: 100px;
+        text-align:center;
+        
+}
+
+rodape {
+	text-align:center;
+	  
+}
+
+
 </style>
+
 <body>
-	<center>
-	<div id="rodape">
-		<table class=tablerow>
-			<tr>
-				<td><label>Sistema Gerenciador de Atividades Complementares</label></td>
-			</tr>
-			<tr>
-				<td><label>UatComp</label></td>
-			</tr>
-			<tr>
-				<td><label>Just Crud IT</label></td>
-			</tr>
-			<tr>
-				<td><label>2015</label></td>
-			</tr>
-			<tr>
-				<td><label>Todos os direitos reservados.</label></td>
-			</tr>
-		</table>
-	</div>
-	</center>
+	<footer>
+		<div id="rodape">
+			
+			<div>
+				<label>Sistema Gerenciador de Atividades Complementares - UATComp</label>
+			</div>
+			
+			<div>
+				<label>Just Crud IT - 2015</label>
+			</div>
+			
+			<div>
+				<label>®Todos os Direitos Reservados.</label>
+			</div>
+		</div>
+	</div>	
+	</footer>
 </body>
 </html>
