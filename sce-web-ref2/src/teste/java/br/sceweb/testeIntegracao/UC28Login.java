@@ -5,19 +5,19 @@ import static org.junit.Assert.*;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import br.sceweb.dominio.UsuarioRepositorio;
+import br.sceweb.dominio.LoginRepositorio;
 import br.sceweb.servico.DAOFactory;
-import br.sceweb.servico.IUsuarioDAO;
+import br.sceweb.servico.ILoginDAO;
 
 public class UC28Login {
 	
-	static UsuarioRepositorio usuarioRepositorio;
-	static IUsuarioDAO usuarioDAO;
+	static LoginRepositorio loginRepositorio;
+	static ILoginDAO loginDAO;
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		usuarioDAO = DAOFactory.getDAOFactory(1).getUsuarioDAO();
-		usuarioRepositorio = new UsuarioRepositorio(1);
+		loginDAO = DAOFactory.getDAOFactory(1).getLoginDAO();
+		loginRepositorio = new LoginRepositorio(1);
 	}
 	/***************************************************************************************************************
 	 *                  camada de servico                                                                          *
@@ -27,14 +27,14 @@ public class UC28Login {
 	 */
 	@Test
 	public void UC28FBCT01Login_com_sucesso() {
-		assertTrue(usuarioDAO.login("usuario1","2222"));
+		assertTrue(loginDAO.ValidarLogin("usuario1","2222"));
 	}
 	/*
 	 * CT02 - verifica o comportamento da camada de servico no acesso com usuario invalido
 	 */
 	@Test
 	public void UC28A1CT02Login_usuario_invalido() {
-		assertFalse(usuarioDAO.login("1111","2222"));
+		assertFalse(loginDAO.ValidarLogin("1111","2222"));
 	/***************************************************************************************************************
 	 *                  camada de dominio                                                                          *
 	 ***************************************************************************************************************/
@@ -44,7 +44,7 @@ public class UC28Login {
 	 */
 	@Test
 	public void UC28FBCT02Login_com_sucesso() {
-		assertTrue(usuarioRepositorio.login("usuario1","2222"));
+		assertTrue(loginRepositorio.ValidarLogin("usuario1","2222"));
 	}
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {

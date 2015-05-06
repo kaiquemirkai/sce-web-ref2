@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
 
-import br.sceweb.dominio.Empresa;
+import br.sceweb.dominio.Login;
 import br.sceweb.dominio.Fachada;
 
 
@@ -53,6 +53,7 @@ public class ServletControle extends HttpServlet {
 	
 	protected void executaComando(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String parametro = request.getParameter("acao");
+		
 		logger.info(">>>>>>>>>>>>>>>>>>>>>>>>>acao do servletcontrole = " + parametro);
 		String nomeDaClasse = "br.sceweb.controle." + parametro;
 		String url ="";

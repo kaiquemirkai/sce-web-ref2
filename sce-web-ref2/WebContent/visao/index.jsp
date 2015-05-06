@@ -25,7 +25,7 @@ label {
 				<table id="tabcampos">
 					<tr>
 						<td><label id="txt">Usuario: </label></td>
-						<td><input type="text" id="campo" name="txtRA" /></td>
+						<td><input type="text" id="campo" name="txtLogin" /></td>
 					</tr>
 					<tr>
 						<td><label id="txt">Senha: </label></td>
@@ -34,7 +34,7 @@ label {
 					<tr>
 						<td colspan="2" id="botoes"><input type="submit" id="botao"
 							name="botao" value="Login" /> <a href="#">Esqueci minha
-								Senha!</a> <input type="hidden" name="acao" value="Login"></td>
+								Senha!</a> <input type="hidden" name="acao" value="AcessarLogin"></td>
 					</tr>
 				</table>
 				<%

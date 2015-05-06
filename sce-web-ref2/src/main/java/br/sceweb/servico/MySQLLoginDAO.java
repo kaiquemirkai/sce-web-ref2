@@ -5,19 +5,19 @@ package br.sceweb.servico;
 	import java.sql.ResultSet;
 	import java.sql.SQLException;
 
-	public class MySQLUsuarioDAO implements IUsuarioDAO {
-		private static final String login = "SELECT * FROM usuario WHERE userID = ? AND senha= ?";
-		private static final String cadastraUsuario = "INSERT INTO usuario (userID, senha, nome) VALUES ( ?, ?,?) ";
+	public class MySQLLoginDAO implements ILoginDAO {
+		private static final String login = "SELECT * FROM login WHERE usuario = ? AND senha= ?";
+		private static final String cadastraUsuario = "INSERT INTO usuario (usuario, senha, perfil) VALUES ( ?, ?,?) ";
 		String msg = "";
 		@Override
-		public boolean login(String userName, String password) {
+		public boolean ValidarLogin(String usuario, String senha) {
 			ResultSet rs = null;
 			PreparedStatement stmt;
 			try {
 				
 				stmt = MySQLDAOFactory.criaConexao().prepareStatement(login);
-				stmt.setString(1, userName);
-				stmt.setString(2, password);
+				stmt.setString(1, usuario);
+				stmt.setString(2, senha);
 				rs = stmt.executeQuery();
 
 				if (rs.next()) {

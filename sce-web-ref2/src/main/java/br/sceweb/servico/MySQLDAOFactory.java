@@ -51,8 +51,8 @@ public class MySQLDAOFactory extends DAOFactory{
 	}
 
 	@Override
-	public IUsuarioDAO getUsuarioDAO() {
-		return new MySQLUsuarioDAO();
+	public ILoginDAO getLoginDAO() {
+		return new MySQLLoginDAO();
 		
 	}
 

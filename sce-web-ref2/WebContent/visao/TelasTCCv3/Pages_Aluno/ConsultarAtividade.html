@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+
+
+<html>
+
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+
+ <!-- Styles -->
+ <link href="../CSS/bootstrap.css" rel="stylesheet" type="text/css" />
+ <link href="../CSS/Site.css" rel="stylesheet" type="text/css" />
+ <link href="../CSS/boilerplate.css" rel="stylesheet" type="text/css">
+ <link href="../CSS/CadastrarAtividades.css" rel="stylesheet" type="text/css">
+ <link href="../CSS/padrao.css" rel="stylesheet" type="text/css" >
+ <style type="text/css">
+ .background {
+   background-color: #003; /*COR AZUL MARINHO das LINHAS*/
+ }
+ .background2 {
+   background-color: #066; /*COR VERDE de fundo*/
+ }
+ </style>
+
+ <!--JAVA SCRIPT-->
+ <script src="../JavaScript/padrao.js" type="text/javascript"></script>
+ <script src="../JavaScript/respond.min.js"></script> 
+
+
+</head>
+
+
+<body >
+
+
+  <table width="102%" height="666" border="0">
+
+
+    <header>
+      <!--Titulo da ABA da página-->
+      <title>Cadastrar Atividade</title>
+
+      <!--CABEÇALHO com BANNER, MENU-->
+      <tr>
+        <td height="103"><img src="../Imagens/banner.png"> </td>
+      </tr>
+      <tr>
+        <td height="41" class="background"><font color="#FFFFFF">
+
+          <div class="entire-menu">
+            <input type="checkbox" id="change-hamburguer" />
+            <a class="hamburguer" href="#">
+              <span></span>
+              <label for="change-hamburguer"></label>
+            </a>
+            <div class="menu">
+              <a href="#">Início</a>
+              <a href="#">Consultar</a>
+              <a href="#">Sair</a>
+            </div>
+          </div>
+
+          <center>Bem Vindo, estudante X </font></td></center>
+        </tr>
+
+      </header>
+
+
+      <!--CORPO onde fica a parte VERDE -->
+      <td height="450" class="background2"> 
+
+
+        <section>
+
+          <h2><font color="#FFFFFF" ><center>Quantidade de Horas </center> </h2>
+          <div class="container body-content">
+            <div class="form-horizontal">
+
+             <!--Progress BAR - TECNOLOGICA-->
+             <div class="form-group">
+               <label class="control-label col-md-2" ><font color = white> Tecnológica</label></font>
+             </div>
+             <div class="progress" class="form-group"> 
+
+               <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                60%
+              </div>
+            </div> 
+
+            <!--Progress BAR - CIDADÃ-->
+            <div class="form-group">
+             <label class="control-label col-md-2" ><font color = "white"> Cidadania</label></font>
+           </div>
+           <div class="progress" class="form-group"> 
+
+             <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
+              40%
+            </div>
+          </div> 
+          <!--Progress BAR - SOCIO CULTURAL-->
+          <div class="form-group">
+           <label class="control-label col-md-2" ><font color = "white"> Sócio-cultural</label></font>
+         </div>
+         <div class="progress" class="form-group"> 
+
+           <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+            80%
+          </div>
+        </div> 
+        <BR>
+          <BR>
+           <!--Progress BAR - TOTAL-->
+           <div class="form-group">
+             <label class="control-label col-md-2" ><font color="white">Progresso Total</label></font>
+           </div>
+           <div class="progress" class="form-group"> 
+             <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
+              70%
+            </div>
+          </div> 
+           <!---->
+          <div class="form-group">
+           <p class="control-label" align="right" ><font color = "white">Faltam X horas para você completar</p></font>
+         </div>
+         <input type="button" value="Voltar" class="btn btn-primary" onclick="javascript: return onCadastrarClick();">
+         <br>
+     </div> <!-- <div class="form-horizontal">-->
+
+   </div> <!--<div class="container body-content">-->
+
+ </section>
+
+
+</td> <!-- FIM ->CORPO onde fica a parte VERDE -->
+
+
+<footer>
+  <!--Parte AZUL do rodape-->
+  <tr>
+    <td height="40" class="background"> </td>
+  </tr>
+
+</footer>
+
+</table>
+
+</body>
+</html>

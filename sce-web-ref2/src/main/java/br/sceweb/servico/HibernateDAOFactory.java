@@ -7,7 +7,7 @@ public class HibernateDAOFactory extends DAOFactory{
 	}
 
 	@Override
-	public IUsuarioDAO getUsuarioDAO() {
-		return new HibernateUsuarioDAO();
+	public ILoginDAO getLoginDAO() {
+		return new HibernateLoginDAO();
 	}
 }

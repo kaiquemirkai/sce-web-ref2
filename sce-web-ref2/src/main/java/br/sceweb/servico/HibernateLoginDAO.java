@@ -14,20 +14,20 @@ import org.hibernate.HibernateException;
 
 
 
-public class HibernateUsuarioDAO implements IUsuarioDAO {
-	Logger logger = Logger.getLogger(HibernateUsuarioDAO.class);
+public class HibernateLoginDAO implements ILoginDAO {
+	Logger logger = Logger.getLogger(HibernateLoginDAO.class);
 	@Override
-	public boolean login(String userName, String password) {
+	public boolean ValidarLogin(String usuario, String senha) {
 		ArrayList<?> results = null;
 		try {
 			//stmt = MySQLDAOFactory.criaConexao().prepareStatement(login);
 			EntityManagerFactory factory = Persistence.createEntityManagerFactory("sceweb");
 			EntityManager em = factory.createEntityManager();
-			String hql = " SELECT u FROM Usuario u WHERE u.userID = :userName and u.senha = :password";
+			String hql = " SELECT l FROM Login l WHERE l.usuario = :usuario and l.senha = :senha";
 			em.getTransaction().begin();
 			Query query = em.createQuery(hql);
-			query.setParameter("userName", userName);
-			query.setParameter("password", password);
+			query.setParameter("usuario", usuario);
+			query.setParameter("senha", senha);
 			results = (ArrayList<?>) query.getResultList();
 			em.getTransaction().commit();
 			

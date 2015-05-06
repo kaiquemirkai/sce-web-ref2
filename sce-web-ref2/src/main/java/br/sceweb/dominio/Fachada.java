@@ -15,7 +15,7 @@ import br.sceweb.servico.IEmpresaDAO;
 public class Fachada {
 	Empresa empresa;
 	EmpresaRepositorio empresaRepositorio;
-	UsuarioRepositorio usuarioRepositorio;
+	LoginRepositorio loginRepositorio;
    
     Logger logger = Logger.getLogger(Fachada.class);
     /**
@@ -25,12 +25,12 @@ public class Fachada {
      */
     public Fachada(){
     	empresaRepositorio = new EmpresaRepositorio(1);
-    	usuarioRepositorio = new UsuarioRepositorio(1);
+    	loginRepositorio = new LoginRepositorio(1);
     	
     }
-	public boolean login(String userName, String password){
+	public boolean login(String usuario, String senha){
 		String url = "";
-		return usuarioRepositorio.login(userName, password);
+		return loginRepositorio.ValidarLogin(usuario, senha);
 		
 	}
 	

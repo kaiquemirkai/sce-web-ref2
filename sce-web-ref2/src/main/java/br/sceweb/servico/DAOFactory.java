@@ -8,7 +8,7 @@ public abstract class DAOFactory {
 	
 	// existe um metodo para cada DAO que pode ser criado
 	public abstract IEmpresaDAO getEmpresaDAO();
-	public abstract IUsuarioDAO getUsuarioDAO();
+	public abstract ILoginDAO getLoginDAO();
 	public static DAOFactory getDAOFactory(int fabrica){
 		switch (fabrica){
 			case HIBERNATE: return new HibernateDAOFactory();

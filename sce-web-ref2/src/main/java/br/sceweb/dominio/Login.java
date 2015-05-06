@@ -4,8 +4,11 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Usuario {
+public class Login {
 	@Id
-	String userID;
+	long codigo;
+	String usuario;
 	String senha;
+	String perfil;
+
 }

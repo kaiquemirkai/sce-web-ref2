@@ -94,10 +94,7 @@ tabmensagens tr td{
 }
 
 #rodape{
-	position:relative;
-	left:50%;
-	margin-left:-150px;
-	padding-top:23px;
+	margin-top:50px;
 	font-size:12px;
 	font-family:tahoma;
 	color:navy;
