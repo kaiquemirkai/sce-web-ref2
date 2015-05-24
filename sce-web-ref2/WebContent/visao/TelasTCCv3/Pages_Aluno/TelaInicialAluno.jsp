@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>UATComp - Login</title>
+<title>UATComp - Menu Principal</title>
 <link rel="stylesheet" type="text/css" href="/sce-web-ref2/visao/TelasTCCv3/CSS/simple-sidebar.css">    
 <link rel="stylesheet" type="text/css" href="/sce-web-ref2/visao/TelasTCCv3/CSS/Template.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
