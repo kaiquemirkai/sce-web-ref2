@@ -4,6 +4,9 @@
 #cssmenu ul li,
 #cssmenu ul li a,
 #cssmenu #menu-button {
+ 
+ margin-bottom: 0px;
+    border:0px;
   margin: 0;
   padding: 0;
   border: 0;
@@ -11,9 +14,13 @@
   line-height: 1;
   display: block;
   position: relative;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+  -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+  
+  
+  
+   
 }
 #cssmenu:after,
 #cssmenu > ul:after {

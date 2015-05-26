@@ -4,23 +4,23 @@
 
 body, input, select, textarea, button, label {
     font-family: tahoma;
-   
+    
    }
 
 .linhaBranca {
 	background-color: #;
 	height:3px;
-	margin-left:-15px;
+	width: 100%;
 }
 .linhaAzulEscura {
 	background-color: #1F3566;
 	height:25px;
-	margin-left:-15px;
+	width: 100%;
 }
 .background {
 	background-color: #4CB1C5;
 	height:100%;
-	margin-left:-15px; 
+	 
 }
 
 .label {
