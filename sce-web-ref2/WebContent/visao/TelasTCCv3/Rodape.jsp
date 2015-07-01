@@ -18,6 +18,7 @@ html {
 
 body {
     margin: 0 0px;
+    background-color: #ABCFD6;
 }
 
 

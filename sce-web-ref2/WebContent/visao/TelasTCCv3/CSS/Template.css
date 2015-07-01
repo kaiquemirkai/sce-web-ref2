@@ -10,16 +10,19 @@ body, input, select, textarea, button, label {
 .linhaBranca {
 	background-color: #;
 	height:3px;
-	width: 100%;
+	margin-left:98%;
 }
 .linhaAzulEscura {
-	background-color: #1F3566;
-	height:25px;
-	width: 100%;
+	margin-top:-10px;
+	background-color: #5DA9E9;
+	height:16px;	
+	
 }
 .background {
-	background-color: #4CB1C5;
+	background-color: #ABCFD6;
 	height:100%;
+	margin-right:0%;
+	margin-left: 0%;
 	 
 }
 

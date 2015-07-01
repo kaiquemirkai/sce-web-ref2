@@ -13,22 +13,20 @@
 </head>
 
 <body>
-	<div id="cabecalho">
+	<div id="cabecalho" style="background-color:#0058a5">
 		<jsp:include page="Cabecalho.jsp" />
 	</div>
-
-	<div id="formulario">
- 		<form name="frmLogin" action="/sce-web-ref2/ServletControle" method="post">   
-    	<input type="hidden" name="acao" value="AcessarLogin">
-    	
     	
     	<div class="linhaAzulEscura">
     	
     	</div>
-    	<div class="linhaBranca">
     	
-    	</div>
+    	
     	<div id="campo" class="background">
+     
+      <div id="formulario">
+ 		<form name="frmLogin" action="/sce-web-ref2/ServletControle" method="post">   
+    	<input type="hidden" name="acao" value="AcessarLogin">
    			 
                 <!--Login-->
      <div class="input-group col-sm-offset-4 col-sm-4" style="padding:10px; padding-top:50px; ">
@@ -58,20 +56,10 @@
      <span class="glyphicon glyphicon-ok-sign"></span>
     </button>
       </div>
- 
-
-
-        
-       
-</div> <!--  Final do Div campos -->
-		<div class="linhaBranca">
     	
-    	</div>
-    	<div class="linhaAzulEscura">
-    	
-    	</div>
  </form>  
  </div> <!-- Final do Div formulario -->
+ </div>
  <div id="rodape">
 		<jsp:include page="Rodape.jsp" />
 	</div>

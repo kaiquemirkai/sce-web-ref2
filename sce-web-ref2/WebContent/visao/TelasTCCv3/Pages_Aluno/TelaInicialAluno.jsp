@@ -19,7 +19,7 @@
 		<jsp:include page="CabecalhoImagem.jsp" />
 	</div>
 <div id="Menu">
-		<jsp:include page="Menu.html" />
+		<jsp:include page="Menu.jsp" />
 	</div>
 
 	<div id="formulario" class="">

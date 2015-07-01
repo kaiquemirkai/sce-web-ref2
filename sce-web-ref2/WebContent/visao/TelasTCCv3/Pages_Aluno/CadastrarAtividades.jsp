@@ -33,8 +33,8 @@ $('#btnArquivo').change(function(){
 		<jsp:include page="CabecalhoImagem.jsp" />
 	</div>
 
-        <div class="linhaAzulEscura"> </div>
-    	<div class="linhaBranca"> 	</div>
+        <div class="linhaAzulEscura" style =" margin-left:0%; margin-right:0%; width:100%;"> </div>
+    	<div class="linhaBranca" style =" margin-left:0%; margin-right:0%; width:100%;"> 	</div>
 
 	<div id="formulario"  >
 	
@@ -42,19 +42,16 @@ $('#btnArquivo').change(function(){
     	
     		<input type="hidden" name="acao" value="AcessarLogin">
     	
-    		 <div class = "row" style =" width: 100%; margin-left: 0%;">
+    		 <div class = "row clearfix" style =" margin-left:0%; margin-right:0%; width:100%;">
     			
-    			<div style= " width: 30%; float:left;">
+    			<div style= " width: 20%; float:left; margin-left:0%; margin-right:0%;">
     					<jsp:include page="Menu.jsp"/>
     			</div>
     			
-    			<div style=" width: 70%; float:right;" > 
+    			<div style=" width: 80%;float:right; margin-left:0%; margin-right:0%;" > 
     			
-    			<div id="campo" class="background">
-   				
-   									
-   					
-   	  			 
+    			<div id="campo" class="background" >
+   				  	  			 
    			 		<div class="row" Style="color:#FFFFFF; padding-bottom:5px; padding-top:20px;  ">
    			 		
    			 			<div class="col-md-3 col-md-offset-1">
@@ -194,8 +191,8 @@ $('#btnArquivo').change(function(){
  
  </div> <!-- Final do Div formulario -->
  
- <div class="linhaBranca"> 	</div>
- <div class="linhaAzulEscura"> </div>
+ <div class="linhaBranca" style =" margin-left:0%; margin-right:0%; width:100%;"> 	</div>
+ <div class="linhaAzulEscura" style =" margin-left:0%; margin-right:0%; width:100%;"> </div>
  
  
 
