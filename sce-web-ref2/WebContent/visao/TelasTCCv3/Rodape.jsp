@@ -22,10 +22,10 @@ body {
 
 
 footer {
-	    position: absolute;
+	    position: static;
         bottom: 15px;
         width: 100%;
-        height: 100px;
+        height: 80px;
         text-align:center;
         
 }
