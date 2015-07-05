@@ -18,14 +18,15 @@ html {
 
 body {
     margin: 0 0px;
+    background-color: #ABCFD6;
 }
 
 
 footer {
-	    position: static;
+	    position: absolute;
         bottom: 15px;
         width: 100%;
-        height: 80px;
+        height: 100px;
         text-align:center;
         
 }

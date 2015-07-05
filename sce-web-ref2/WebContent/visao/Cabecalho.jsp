@@ -7,11 +7,12 @@
 <title>Cabeçalho</title>
 <link rel="stylesheet" type="text/css" href="/sce-web-ref2/CSS/formato.css">
 </head>
-<body>
+<body bgcolor="#0058a5">
 	<div id= "titulo">
-		<img src="/sce-web-ref2/visao/TelasTCCv3/Imagens/banner5.png"/>
+	    <center>
+		<img src="/sce-web-ref2/visao/TelasTCCv3/Imagens/logo1.png"/>
 		<h3 style="margin-top:15px;">Sistema Gerenciador de Atividades Complementares</h3>
-		
+		</center>
 	</div>
 </body>
 </html>
