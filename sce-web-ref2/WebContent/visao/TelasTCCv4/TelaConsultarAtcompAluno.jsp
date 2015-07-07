@@ -15,7 +15,7 @@ $('#btnArquivo').change(function(){
 </script>
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>UATComp - Cadastrar Atcomp</title>
+<title>UATComp - Consultar Atcomp</title>
 </head>
 
 <body style= "background: #ABCFD6">
@@ -32,17 +32,34 @@ $('#btnArquivo').change(function(){
 <!-- Div do Conteudo  -->
 <div class="container">
 
-<form class= "form-horizontal" role = "form" name="frmCadastrarAtcompAluno" action="/sce-web-ref2/ServletControle" method="post">   
+<form class= "form-horizontal" role = "form" name="frmConsultarAtcompAluno" action="/sce-web-ref2/ServletControle" method="post">   
     	
-		<input type="hidden" name="acao" value="cadastrarAtCompAluno">
+		<input type="hidden" name="acao" value="consultarAtCompAluno">
     	
           <!-- Alteração deve ser feita A partir daqui -->
 	 
 	 			
-    						<h3 align="center">Cadastro de Atividade Complementar</h3>
+    						<h3 align="center">Consulta de Atividade Complementar - Detalhes</h3>
   						
 	 <br> <br>
+	 <fieldset disabled>
 	 
+	 <div class="form-group">
+        <label name="lblCodigo" for="lblCodigo" class="col-sm-2 control-label">Código</label>
+        
+        <div class="col-sm-10">
+             <input type="text" name="txtCodigo" id="txtCodigo" class="form-control" style="width: 25em" value="1" />
+        </div>
+        </div>
+        
+         <div class="form-group has-success has-feedback">
+         <label name="lblStatus" for="lblStatus" class="col-sm-2 control-label">Status</label>
+        
+          <div class="col-sm-10">
+             <input type="text" name="txtStatus" id="txtStatus" class="form-control"  style="width: 25em" value="Aprovado" />
+  	     </div>
+        </div>
+        
 	 	<div class="form-group">	
 	 	
       	<label name="lblAreaAtividade" for="lblAreaAtividade" class="col-sm-2 control-label">Área da Atividade</label>
@@ -75,7 +92,7 @@ $('#btnArquivo').change(function(){
         <label name="lbldataInicioAtividade" for="lblDataInicioAtividade" class="col-sm-2 control-label">Data de Início da Atividade</label>
         
         <div class="col-sm-10">
-             <input type="text" name="txtDataInicioAtividade" id="txtDataInicioAtividade" class="form-control" style="width: 25em" placeholder="Data de início" value="" />
+             <input type="text" name="txtDataInicioAtividade" id="txtDataInicioAtividade" class="form-control" style="width: 25em" value="" />
         </div>
         </div>
         
@@ -83,7 +100,7 @@ $('#btnArquivo').change(function(){
         <label name="lblHoraInicioAtividade" for="lblHoraInicioAtividade" class="col-sm-2 control-label">Hora de Início da Atividade</label>
         
         <div class="col-sm-10">
-             <input type="text" name="txtHoraInicioAtividade" id="txtHoraInicioAtividade" class="form-control" style="width: 25em" placeholder="Hora de início" value="" />
+             <input type="text" name="txtHoraInicioAtividade" id="txtHoraInicioAtividade" class="form-control" style="width: 25em" value="" />
         </div>
         </div>
         
@@ -91,7 +108,7 @@ $('#btnArquivo').change(function(){
         <div class="form-group">
         <label name="lblDataTerminoAtividade" for="lblDataTerminoAtividade" class="col-sm-2 control-label">Data de Término da Atividade</label>
         <div class="col-sm-10">
-             <input type="text" name="txtDataTerminoAtividade" id="txtDataTerminoAtividade" class="form-control" style="width: 25em" placeholder="Data de término" value="" />
+             <input type="text" name="txtDataTerminoAtividade" id="txtDataTerminoAtividade" class="form-control" style="width: 25em" value="" />
         </div>
         </div>
         
@@ -99,7 +116,7 @@ $('#btnArquivo').change(function(){
        <div class="form-group">
         <label name = "lblHoraTerminoAtividade" for="lblHoraTerminoAtividade" class="col-sm-2 control-label">Hora de Término da Atividade</label>
         <div class="col-sm-10">
-             <input type="text" name="txtHoraTerminoAtividade" id="txtHoraTerminoAtividade" class="form-control" style="width: 25em" placeholder="Data de término" value="" />
+             <input type="text" name="txtHoraTerminoAtividade" id="txtHoraTerminoAtividade" class="form-control" style="width: 25em" value="" />
         </div>
         </div>
         
@@ -107,7 +124,7 @@ $('#btnArquivo').change(function(){
         <div class="form-group">
         <label name="lblDescricaoAtividade" for="lblDescricaoAtividade" class="col-sm-2 control-label">Descricao da Atividade</label>
         <div class="col-sm-10">
-             <textarea name="txtDescricaoAtividade" rows="4" cols="4" class="form-control" style="width: 25em" placeholder="Descreva sua atividade aqui"></textarea>
+             <textarea name="txtDescricaoAtividade" rows="4" cols="4" class="form-control" style="width: 25em"></textarea>
         </div>
         </div>
         
@@ -115,19 +132,15 @@ $('#btnArquivo').change(function(){
         <label name="lblAbrirArquivo" class="sr-only" for="inputfile">Abrir Arquivo</label>
         <input type="file" id="inputfile">
       </div>
+</fieldset>
+
         
      <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
-       <button name="btnCadastrar" type="submit" class="btn btn-primary">Cadastrar</button>
+       <button name="btnCadastrar" type="submit" class="btn btn-primary">Voltar</button>
       </div>
      </div>
-            
-    
-
-
-
-<!--  Termino Das Alterações -->
-
+     
 </form><!-- Fim do Form -->
 
 </div><!-- Fim da Div Conteudo -->

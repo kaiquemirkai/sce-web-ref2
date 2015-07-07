@@ -17,7 +17,7 @@ html {
 }
 
 body {
-    margin: 0 0px;
+    margin: 0px;
     background-color: #ABCFD6;
 }
 
@@ -50,12 +50,7 @@ rodape {
 			<div>
 				<label>Just Crud IT - 2015</label>
 			</div>
-			
-			<div>
-				<label>®Todos os Direitos Reservados.</label>
-			</div>
-		</div>
-	</div>	
+		</div>	
 	</footer>
 </body>
 </html>

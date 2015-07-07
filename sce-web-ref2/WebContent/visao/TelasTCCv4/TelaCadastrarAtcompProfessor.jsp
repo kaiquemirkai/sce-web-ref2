@@ -24,7 +24,7 @@ $('#btnArquivo').change(function(){
 <div id="cabecalho" style="background-color:#0058a5"> <jsp:include page="Cabecalho.jsp" /> </div>
 
 <!-- Div do Menu -->
-<div id="menu" style="background-color:#0058a5; margin-top:-10px"> <jsp:include page="MenuAluno.jsp" /> </div>
+<div id="menu" style="background-color:#0058a5; margin-top:-10px"> <jsp:include page="MenuProfessor.jsp" /> </div>
 
 <!-- Div da Linha colorida -->
 <div id="linhaColorida" style="background-color:#5DA9E9; height:16px;"> </div>
@@ -32,9 +32,9 @@ $('#btnArquivo').change(function(){
 <!-- Div do Conteudo  -->
 <div class="container">
 
-<form class= "form-horizontal" role = "form" name="frmCadastrarAtcompAluno" action="/sce-web-ref2/ServletControle" method="post">   
+<form class= "form-horizontal" role = "form" name="frmCadastrarAtcompProfessor" action="/sce-web-ref2/ServletControle" method="post">   
     	
-		<input type="hidden" name="acao" value="cadastrarAtCompAluno">
+		<input type="hidden" name="acao" value="cadastrarAtCompProfessor">
     	
           <!-- Alteração deve ser feita A partir daqui -->
 	 
@@ -42,6 +42,56 @@ $('#btnArquivo').change(function(){
     						<h3 align="center">Cadastro de Atividade Complementar</h3>
   						
 	 <br> <br>
+	 
+	 <div class="form-group">
+         <label name="lblAreaCurso" for="lblAreaCurso" class="col-sm-2 control-label">Área do Curso</label>
+      
+         <div class="col-sm-10">
+             <select id="sltAreaCurso" name="sltAreaCurso" style="width: 25em" class="form-control" >
+                  		<option value="biologicas">Biológicas</option>
+                  		<option value="exatas">Exatas</option>
+                  		<option value="humanas">Humanas</option>
+              </select>
+        </div>
+        </div>
+        
+        
+        <div class="form-group">
+        <label name="lblCurso" for="lblCurso" class="col-sm-2 control-label">Curso</label>
+        
+        <div class="col-sm-10">
+             <select id="sltCurso" name="sltCurso" style="width: 25em" class="form-control" >
+                  		<option value="SI">Sistemas de Informação</option>
+                  		<option value="CC">Ciências da Computação</option>
+                  		<option value="EC">Engenharia da Computação</option>
+              </select>
+        </div>
+        </div>
+        
+        <div class="form-group">
+        <label name="lblTurma" for="lblTurma" class="col-sm-2 control-label">Turma</label>
+        
+        <div class="col-sm-10">
+             <select id="sltTurma" name="sltCurso" style="width: 25em" class="form-control" >
+                  		<option value="1ASIN">1ASIN</option>
+                  		<option value="2ASIN">2ASIN</option>
+                  		<option value="3ASIN">3ASIN</option>
+              </select>
+        </div>
+        </div>
+        
+        <div class="form-group">
+        <label name="lblAluno" for="lblTurma" class="col-sm-2 control-label">Aluno</label>
+        
+        <div class="col-sm-10">
+             <select id="sltAluno" name="sltCurso" style="width: 25em" class="form-control" >
+                  		<option value="aluno1">Aluno1</option>
+                  		<option value="aluno1">Aluno2</option>
+                  		<option value="aluno1">Aluno3</option>
+              </select>
+        </div>
+        </div>
+        
 	 
 	 	<div class="form-group">	
 	 	

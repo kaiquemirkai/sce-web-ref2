@@ -26,6 +26,19 @@
     <li><a href="#">Excluir	</a></li>
     </ul>
  </div>
+ 
+ <div class="btn-group">
+   <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    CATEGORIAS <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a href="#">Consultar</a></li>
+    <li><a href="#">Cadastrar</a></li>
+    <li><a href="#">Alterar</a></li>
+    <li><a href="#">Excluir</a></li>
+  </ul>
+</div>
+ 
  <div class="btn-group">
    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     SUGESTÕES <span class="caret"></span>
@@ -37,6 +50,7 @@
     <li><a href="#">Excluir</a></li>
   </ul>
 </div>
+
  <div class="btn-group">
    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     CONSULTAS <span class="caret"></span>
@@ -44,6 +58,8 @@
   <ul class="dropdown-menu">
     <li><a href="#">Status Atividade Complementar</a></li>
     <li><a href="#">Atividades Complementares por Áreas</a></li>
+    <li><a href="#">Atividades Complementares por Turma</a></li>
+    <li><a href="#">Atividades Complementares Pendentes de Aprovação</a></li>
    </ul>
 </div>
 
