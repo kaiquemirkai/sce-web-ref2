@@ -10,4 +10,7 @@ public class HibernateDAOFactory extends DAOFactory{
 	public ILoginDAO getLoginDAO() {
 		return new HibernateLoginDAO();
 	}
+	public IAtcompDAO getAtcompDAO() {
+		return new HibernateAtcompDAO();
+	}
 }

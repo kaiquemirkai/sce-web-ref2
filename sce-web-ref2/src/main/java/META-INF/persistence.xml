@@ -5,6 +5,8 @@
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<class>br.sceweb.dominio.Empresa</class>
 		<class>br.sceweb.dominio.Usuario</class>
+		<class>br.sceweb.dominio.Atcomp</class>
+		<class>br.sceweb.dominio.Login</class>
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
 			<property name="hibernate.hbm2ddl.auto" value="update" />

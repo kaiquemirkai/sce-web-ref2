@@ -34,7 +34,7 @@ $('#btnArquivo').change(function(){
 
 <form class= "form-horizontal" role = "form" name="frmCadastrarAtcompAluno" action="/sce-web-ref2/ServletControle" method="post">   
     	
-		<input type="hidden" name="acao" value="cadastrarAtCompAluno">
+		<input type="hidden" name="acao" value="CadastrarAtCompAluno">
     	
           <!-- Alteração deve ser feita A partir daqui -->
 	 
@@ -113,7 +113,7 @@ $('#btnArquivo').change(function(){
         
        <div class="form-group">
         <label name="lblAbrirArquivo" class="sr-only" for="inputfile">Abrir Arquivo</label>
-        <input type="file" id="inputfile">
+        <input type="file" name = "inputFile" id="inputFile">
       </div>
         
      <div class="form-group">
