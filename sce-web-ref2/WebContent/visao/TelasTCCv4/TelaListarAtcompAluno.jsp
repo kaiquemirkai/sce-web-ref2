@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
+    <%@page import="br.sceweb.dominio.*"%>
+    <%@page import="java.util.*"%>
+    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -22,7 +26,7 @@
 <form class= "form-horizontal" role = "form" name="frmListarAtcompAluno" action="/sce-web-ref2/ServletControle" method="post">   
     	
    
-    <input type="hidden" name="acao" value="listarAtCompAluno">
+    <input type="hidden" name="acao" value="ListarAtCompAluno">
     
         						<h3 align="center">Consulta de Atividade Complementar</h3>
   						
@@ -67,7 +71,8 @@
 <table name="tdListaAtcomp" class="table table-striped">
   
 <tr> 
-    
+<td> <label>Código</label> </td>   
+
 <td> <label>Área da Atividade</label> </td>
 
 <td> <label>Código da Atividade</label> </td>
@@ -81,6 +86,38 @@
 <td> <label>Status</label> </td>
 
 </tr>
+
+<%
+
+ArrayList<Atcomp> lista = (ArrayList<Atcomp>) request.getAttribute("atcomps");
+if ((lista!=null)&& (lista.size()>0)){
+    Atcomp a = null;
+	for (int i = 0; i < lista.size(); i++) {
+		    
+		    a = (Atcomp) lista.get(i);
+			
+		    %><tr> 
+		    <td><input type="radio" name="codigoradio" value="<%=a.getCodigo()%>"> </td>
+		    
+		    <td> <label><%=a.getAreaAtividade()%><label></td>
+
+		    <td><label> <%=a.getCodigoAtividade()%><label> </td>
+		        
+		    <td> <label><%=a.getDataInicio()%></label> </td>
+		        
+		    <td> <label><%=a.getDescricao()%></label> </td>
+
+		    <td> <label><%=a.getHorasLancadas()%></label> </td>
+
+		    <td> <label><%=a.getStatus()%></label> </td>
+
+		    </tr>
+<%    
+		    
+		}
+	
+	}
+%>
 
 </table>
 

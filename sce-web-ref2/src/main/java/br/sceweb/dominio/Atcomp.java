@@ -2,12 +2,14 @@ package br.sceweb.dominio;
 
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Atcomp {
 
-	@Id
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	long codigo;
 	String aluno;
 	String quemCadastrou;
@@ -20,7 +22,19 @@ public class Atcomp {
 	String codigoAtividade;
 	String areaAtividade;
 	String descricao;
+	String status;
+	
 	byte anexo;
+	
+	
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	
+	
 	
 	public String getAreaAtividade() {
 		return areaAtividade;
@@ -49,6 +63,9 @@ public class Atcomp {
 		return aluno;
 	}
 
+	public String getCodigoAtividade() {
+		return codigoAtividade;
+	} 
 	public String getQuemCadastrou() {
 		return quemCadastrou;
 	}

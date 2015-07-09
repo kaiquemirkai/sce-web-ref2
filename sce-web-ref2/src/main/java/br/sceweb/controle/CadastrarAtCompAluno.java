@@ -24,7 +24,8 @@ public class CadastrarAtCompAluno implements IComando{
 		atcomp.setDataFim(request.getParameter("txtDataTerminoAtividade"));
 		atcomp.setHoraFim(request.getParameter("txtHoraTerminoAtividade"));
 		atcomp.setDescricao(request.getParameter("txtDescricaoAtividade"));
-	    atcomp.setCodigo(2);	
+		atcomp.setStatus("Pendente");
+	    atcomp.setCodigo(0);	
 		// atcomp.setAnexo(request.getParameter("inputFile"));
 				
 		

@@ -23,10 +23,11 @@ private IAtcompDAO daoAtcomp;
 		
 	}
 	
-	/*
-	public List<Atcomp> findAll(){
-		return daoAtcomp.findAll();
+	
+	public List<Atcomp> Listar(){
+		return daoAtcomp.Listar();
 	}
+	/*
 	public ArrayList<Atcomp> consulta(String cnpj){
 		return (ArrayList<Atcomp>) daoAtcomp.consulta(cnpj);
 	}
