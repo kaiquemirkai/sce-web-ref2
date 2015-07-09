@@ -26,7 +26,7 @@
 <form class= "form-horizontal" role = "form" name="frmListarAtcompAluno" action="/sce-web-ref2/ServletControle" method="post">   
     	
    
-    <input type="hidden" name="acao" value="ListarAtCompAluno">
+    <input type="hidden" id="acao" name="acao" value="ListarAtCompAluno">
     
         						<h3 align="center">Consulta de Atividade Complementar</h3>
   						
@@ -65,6 +65,9 @@
   </div>
 </div> <!--  Termino BUSCA -->
 	
+<div>
+     <button type="submit" id="btnAlterar" class="btn btn-primary" onclick="Alterar()">Consultar</button>
+</div>
 	       
     <br> <br>
      
@@ -97,7 +100,7 @@ if ((lista!=null)&& (lista.size()>0)){
 		    a = (Atcomp) lista.get(i);
 			
 		    %><tr> 
-		    <td><input type="radio" name="codigoradio" value="<%=a.getCodigo()%>"> </td>
+		    <td><input type="radio" name="codigoRadio" value="<%=a.getCodigo()%>"> </td>
 		    
 		    <td> <label><%=a.getAreaAtividade()%><label></td>
 
@@ -126,7 +129,18 @@ if ((lista!=null)&& (lista.size()>0)){
 </form><!-- Fim do Form -->
 
 </div><!-- Fim da Div Conteudo -->
-
+<script type="text/javascript">
+     function Alterar()
+     {
+    	 document.getElementById('acao').value = "ConsultarAtcomp";
+     }
+     function Listar()
+     {
+    	 document.getElementById('acao').value = "ListarAtCompAluno";
+     }
+    
+    
+ </script>
 
 </body>
 </html>

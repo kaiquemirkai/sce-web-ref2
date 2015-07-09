@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-
+ <%@page import="br.sceweb.dominio.*"%>
 <script type="text/javascript">
 $(document).ready(function(){
 $('#btnArquivo').change(function(){
@@ -43,12 +43,16 @@ $('#btnArquivo').change(function(){
   						
 	 <br> <br>
 	 <fieldset disabled>
+	 <%
+	 
+	 Atcomp a = (Atcomp)request.getAttribute("atcomp");
+	 %>
 	 
 	 <div class="form-group">
         <label name="lblCodigo" for="lblCodigo" class="col-sm-2 control-label">Código</label>
         
         <div class="col-sm-10">
-             <input type="text" name="txtCodigo" id="txtCodigo" class="form-control" style="width: 25em" value="1" />
+             <input type="text" name="txtCodigo" id="txtCodigo" class="form-control" style="width: 25em" value="<%=a.getCodigo() %>" />
         </div>
         </div>
         
@@ -56,7 +60,7 @@ $('#btnArquivo').change(function(){
          <label name="lblStatus" for="lblStatus" class="col-sm-2 control-label">Status</label>
         
           <div class="col-sm-10">
-             <input type="text" name="txtStatus" id="txtStatus" class="form-control"  style="width: 25em" value="Aprovado" />
+             <input type="text" name="txtStatus" id="txtStatus" class="form-control"  style="width: 25em" value="<%=a.getStatus()%>" />
   	     </div>
         </div>
         
@@ -92,7 +96,7 @@ $('#btnArquivo').change(function(){
         <label name="lbldataInicioAtividade" for="lblDataInicioAtividade" class="col-sm-2 control-label">Data de Início da Atividade</label>
         
         <div class="col-sm-10">
-             <input type="text" name="txtDataInicioAtividade" id="txtDataInicioAtividade" class="form-control" style="width: 25em" value="" />
+             <input type="text" name="txtDataInicioAtividade" id="txtDataInicioAtividade" class="form-control" style="width: 25em" value="<%=a.getDataInicio()%>" />
         </div>
         </div>
         
@@ -100,7 +104,7 @@ $('#btnArquivo').change(function(){
         <label name="lblHoraInicioAtividade" for="lblHoraInicioAtividade" class="col-sm-2 control-label">Hora de Início da Atividade</label>
         
         <div class="col-sm-10">
-             <input type="text" name="txtHoraInicioAtividade" id="txtHoraInicioAtividade" class="form-control" style="width: 25em" value="" />
+             <input type="text" name="txtHoraInicioAtividade" id="txtHoraInicioAtividade" class="form-control" style="width: 25em" value="<%=a.getHoraInicio()%>" />
         </div>
         </div>
         
@@ -108,7 +112,7 @@ $('#btnArquivo').change(function(){
         <div class="form-group">
         <label name="lblDataTerminoAtividade" for="lblDataTerminoAtividade" class="col-sm-2 control-label">Data de Término da Atividade</label>
         <div class="col-sm-10">
-             <input type="text" name="txtDataTerminoAtividade" id="txtDataTerminoAtividade" class="form-control" style="width: 25em" value="" />
+             <input type="text" name="txtDataTerminoAtividade" id="txtDataTerminoAtividade" class="form-control" style="width: 25em" value="<%=a.getDataFim()%>" />
         </div>
         </div>
         
@@ -116,7 +120,7 @@ $('#btnArquivo').change(function(){
        <div class="form-group">
         <label name = "lblHoraTerminoAtividade" for="lblHoraTerminoAtividade" class="col-sm-2 control-label">Hora de Término da Atividade</label>
         <div class="col-sm-10">
-             <input type="text" name="txtHoraTerminoAtividade" id="txtHoraTerminoAtividade" class="form-control" style="width: 25em" value="" />
+             <input type="text" name="txtHoraTerminoAtividade" id="txtHoraTerminoAtividade" class="form-control" style="width: 25em" value="<%=a.getHoraFim() %>" />
         </div>
         </div>
         
@@ -124,7 +128,7 @@ $('#btnArquivo').change(function(){
         <div class="form-group">
         <label name="lblDescricaoAtividade" for="lblDescricaoAtividade" class="col-sm-2 control-label">Descricao da Atividade</label>
         <div class="col-sm-10">
-             <textarea name="txtDescricaoAtividade" rows="4" cols="4" class="form-control" style="width: 25em"></textarea>
+             <textarea name="txtDescricaoAtividade" rows="4" cols="4" class="form-control" style="width: 25em" ><%=a.getDescricao() %></textarea>
         </div>
         </div>
         

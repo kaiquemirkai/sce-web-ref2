@@ -11,6 +11,7 @@ import javax.persistence.PersistenceException;
 import javax.persistence.Query;
 
 import org.apache.log4j.Logger;
+import org.hibernate.HibernateException;
 
 import br.sceweb.dominio.Atcomp;
 import br.sceweb.dominio.Empresa;
@@ -54,6 +55,25 @@ public class HibernateAtcompDAO implements IAtcompDAO {
 		} catch (Throwable e) {
 		}
 		return lista;
+	}
+	
+	public Atcomp Consultar(Atcomp a) {
+		Logger logger = Logger.getLogger("br.sceweb.dominio.empresa");
+		logger.info("Inicio de Procedimento: Consultar Atcomp");
+		Atcomp consulta = null;
+
+		try {
+			EntityManagerFactory factory = Persistence.createEntityManagerFactory("sceweb");
+			EntityManager em = factory.createEntityManager();
+			em.getTransaction().begin();
+			consulta = em.find(Atcomp.class, a.getCodigo());
+			em.getTransaction().commit();
+			logger.info("Termino de Procedimento: Consultar Atcomp");	
+		} catch (HibernateException exception) {
+			logger.info("Erro de Procedimento: Consultar Atcomp. Erro: " + exception.getStackTrace());
+			exception.printStackTrace();
+		}
+		return consulta;
 	}
 	
 }

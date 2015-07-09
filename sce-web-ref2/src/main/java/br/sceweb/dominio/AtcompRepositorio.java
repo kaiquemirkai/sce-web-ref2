@@ -27,7 +27,12 @@ private IAtcompDAO daoAtcomp;
 	public List<Atcomp> Listar(){
 		return daoAtcomp.Listar();
 	}
+	
+	public Atcomp Consultar(Atcomp a){		
+		return daoAtcomp.Consultar(a);
+	}
 	/*
+	 
 	public ArrayList<Atcomp> consulta(String cnpj){
 		return (ArrayList<Atcomp>) daoAtcomp.consulta(cnpj);
 	}

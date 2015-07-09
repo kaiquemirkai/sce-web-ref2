@@ -9,5 +9,6 @@ public interface IAtcompDAO {
 
 	public boolean Cadastrar(Atcomp a);
 	public List<Atcomp> Listar();
+	public Atcomp Consultar(Atcomp a);
 	
 }
