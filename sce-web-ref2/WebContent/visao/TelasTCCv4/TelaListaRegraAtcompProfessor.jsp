@@ -3,6 +3,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+  <%@page import="br.sceweb.dominio.*"%>
+    <%@page import="java.util.*"%>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>UATComp - Consultar Sugestão</title>
 </head>
@@ -22,7 +24,7 @@
 <form class= "form-horizontal" role = "form" name="frmListarRegraAtcompProfessor" action="/sce-web-ref2/ServletControle" method="post">   
     	
    
-    <input type="hidden" name="acao" value="listarRegraAtcompProfessor">
+    <input type="hidden" name="acao" value="ListarRegraAtcompProfessor">
     
         						<h3 align="center">Consulta de Sugestões de Atividade Complementar</h3>
   						
@@ -81,6 +83,44 @@
 
 </tr>
 
+<%
+
+
+ArrayList<RegraAtcomp> lista = (ArrayList<RegraAtcomp>) request.getAttribute("regraAtcomps");
+if ((lista!=null)&& (lista.size()>0)){
+    RegraAtcomp ra = null;
+	for (int i = 0; i < lista.size(); i++) {
+		    
+		    ra = (RegraAtcomp) lista.get(i);
+			
+		    
+
+
+%>
+<td> <label><input type="radio" name="codigoRadio" value="<%=ra.getCodigo()%>"> </label> </td>
+
+<td> <label><%=ra.getArea()%> </label> </td>
+     
+<td> <label><%=ra.getCodigoAtividade()%></label> </td>
+
+<td> <label><%=ra.getQuantidadeDeAtividadePermitida()%></label> </td>
+
+<td> <label><%=ra.getCargaHoraria()%></label> </td>
+
+<td> <label>0000000</label> </td>
+
+<td> <label><%=ra.getDataInicioAtividade()%></label> </td>
+
+<td> <label><%=ra.getDataTerminoAtividade()%></label> </td>
+
+<td> <label><%=ra.getDescricaoRegra()%></label> </td>
+
+<%    
+		    
+		}
+	
+	}
+%>
 </table>
 
 <!--  Termino Das Alterações -->

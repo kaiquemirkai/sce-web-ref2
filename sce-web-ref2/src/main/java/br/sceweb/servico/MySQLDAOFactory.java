@@ -60,6 +60,12 @@ public class MySQLDAOFactory extends DAOFactory{
 		return new MySQLAtcompDAO();
 		
 	}
+	@Override
+	public IRegraAtcompDAO getRegraAtcompDAO() {
+		return new MySQLRegraAtcompDAO();
+		
+	}
+
 
     
   }

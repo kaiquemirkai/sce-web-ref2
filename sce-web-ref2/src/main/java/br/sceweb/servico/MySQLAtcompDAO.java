@@ -5,6 +5,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.PersistenceException;
+
 import br.sceweb.dominio.Atcomp;
 
 public class MySQLAtcompDAO implements IAtcompDAO{
@@ -14,5 +19,10 @@ public class MySQLAtcompDAO implements IAtcompDAO{
 	}
 	public List<Atcomp> Listar(){
 		return null;
+	}
+	
+public Atcomp Consultar(Atcomp a) {
+		return null;
+
 	}
 }

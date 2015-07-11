@@ -34,7 +34,7 @@ $('#btnArquivo').change(function(){
 
 <form class= "form-horizontal" role = "form" name="frmCadastrarRegraAtcompProfessor" action="/sce-web-ref2/ServletControle" method="post">   
     	
-		<input type="hidden" name="acao" value="cadastrarRegraAtcompProfessor">
+		<input type="hidden" name="acao" value="CadastrarRegraAtcompProfessor">
     	
           <!-- Alteração deve ser feita A partir daqui -->
 	 
