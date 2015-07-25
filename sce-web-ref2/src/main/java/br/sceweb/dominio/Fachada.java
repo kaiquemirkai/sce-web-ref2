@@ -28,7 +28,7 @@ public class Fachada {
     	loginRepositorio = new LoginRepositorio(1);
     	
     }
-	public boolean login(String usuario, String senha){
+	public Login login(String usuario, String senha){
 		String url = "";
 		return loginRepositorio.ValidarLogin(usuario, senha);
 		

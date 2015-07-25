@@ -2,15 +2,17 @@ package br.sceweb.servico;
 
 
 	import java.sql.PreparedStatement;
-	import java.sql.ResultSet;
-	import java.sql.SQLException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import br.sceweb.dominio.Login;
 
 	public class MySQLLoginDAO implements ILoginDAO {
 		private static final String login = "SELECT * FROM login WHERE usuario = ? AND senha= ?";
 		private static final String cadastraUsuario = "INSERT INTO usuario (usuario, senha, perfil) VALUES ( ?, ?,?) ";
 		String msg = "";
 		@Override
-		public boolean ValidarLogin(String usuario, String senha) {
+		public Login ValidarLogin(String usuario, String senha) {
 			ResultSet rs = null;
 			PreparedStatement stmt;
 			try {
@@ -22,7 +24,7 @@ package br.sceweb.servico;
 
 				if (rs.next()) {
 
-					return true;
+					return null;
 				}
 				// stmt.close();
 			} catch (SQLException e) {
@@ -33,7 +35,7 @@ package br.sceweb.servico;
 				System.out.println("erro =>" + e.getMessage());
 				//e.printStackTrace();
 			}
-			return false;
+			return null;
 		}
 		
 		public int cadastra(String id, String senha,String nome) {
