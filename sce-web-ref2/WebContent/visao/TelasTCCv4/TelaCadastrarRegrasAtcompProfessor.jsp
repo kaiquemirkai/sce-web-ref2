@@ -44,19 +44,18 @@ $('#btnArquivo').change(function(){
 	 <br> <br>
 	 
 	 	               
-        <div class="form-group">
-        <label name="lblCodigo" for="lblCodigo" class="col-sm-2 control-label">Código</label>
-        
-        <div class="col-sm-10">
-             <input type="text" name="txtCodigo" id="txtCodigo" class="form-control" style="width: 25em" placeholder="Código" value="" />
-        </div>
-        </div>
+      
         
         <div class="form-group">
         <label name="lblArea" for="lblArea" class="col-sm-2 control-label">Área</label>
         
         <div class="col-sm-10">
-             <input type="text" name="txtArea" id="txtArea" class="form-control" style="width: 25em" placeholder="Área" value="" />
+             <select id="sltArea" name="sltArea" style="width: 25em" class="form-control" >
+                  		<option value="00">-- Selecione a área -- </option>
+                  		<option value="01">Formação Tecnológica </option>
+                  		<option value="02">Formação Sócio-Cultural</option>
+                  		<option value="03">Formação Sócio-Cidadã</option>
+              </select>
         </div>
         </div>
         
@@ -64,7 +63,12 @@ $('#btnArquivo').change(function(){
         <label name="lblCodigoAtividade" for="lblCodigoAtividade" class="col-sm-2 control-label">Código da Atividade</label>
         
         <div class="col-sm-10">
-             <input type="text" name="txtCodigoAtividade" id="txtCodigoAtividade" class="form-control" style="width: 25em" placeholder="Código atividade" value="" />
+             <select id="sltCodigoAtividade" name="sltCodigoAtividade" style="width: 25em" class="form-control" >
+                  		<option value="100">-- Selecione o código -- </option>
+                  		<option value="101">101 - Cinema</option>
+                  		<option value="102">102 - Teatro</option>
+                  		<option value="103">103 - Museu</option>
+              </select>
         </div>
         </div>
         
@@ -99,10 +103,10 @@ $('#btnArquivo').change(function(){
         </div>
         </div>
         
-        <div class="form-group">
-        <label name="lblDescricaoRegra" for="lblDescricaoRegra" class="col-sm-2 control-label">Descricao da Regra</label>
+      <div class="form-group">
+        <label name="lblDescricaoRegra" for="lblDescricaoRegra" class="col-sm-2 control-label">Descricao da Atividade</label>
         <div class="col-sm-10">
-             <textarea name="txtDescricaoRegra" rows="4" cols="4" class="form-control" style="width: 25em" placeholder=""></textarea>
+             <textarea name="txtDescricaoRegra" rows="4" cols="4" class="form-control" style="width: 25em" placeholder="Descreva sua regra aqui"></textarea>
         </div>
         </div>
         

@@ -25,4 +25,7 @@ public class MySQLRegraAtcompDAO implements IRegraAtcompDAO{
 		return false;
 
 	}
+	public boolean Excluir(RegraAtcomp regraAtcomp) {
+		return false;
+	}
 }

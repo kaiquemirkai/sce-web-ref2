@@ -64,5 +64,6 @@ public class RegraAtcomp {
 		this.descricaoRegra = descricaoRegra;
 	}
 	
+	
 
 }

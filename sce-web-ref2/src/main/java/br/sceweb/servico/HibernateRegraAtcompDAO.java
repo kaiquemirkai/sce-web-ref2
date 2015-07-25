@@ -11,8 +11,8 @@ import javax.persistence.Query;
 
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
-
-import br.sceweb.dominio.Atcomp;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import br.sceweb.dominio.Empresa;
 import br.sceweb.dominio.RegraAtcomp;
 
@@ -20,7 +20,7 @@ public class HibernateRegraAtcompDAO implements IRegraAtcompDAO {
 
 	Logger logger = Logger.getLogger(HibernateEmpresaDAO.class);
 
-	public boolean Cadastrar(RegraAtcomp ra) {
+	public boolean Cadastrar(RegraAtcomp a) {
       
 		logger.info("Inicio do Processo de Cadastramento da Regra da Atividade Complementar: ");
 		boolean retorno;
@@ -28,7 +28,7 @@ public class HibernateRegraAtcompDAO implements IRegraAtcompDAO {
 			EntityManagerFactory factory = Persistence.createEntityManagerFactory("sceweb");
 			EntityManager em = factory.createEntityManager();
 			em.getTransaction().begin();
-			em.persist(ra);
+			em.persist(a);
 			em.getTransaction().commit();
 			em.close();
 			retorno = true ;
@@ -57,7 +57,7 @@ public class HibernateRegraAtcompDAO implements IRegraAtcompDAO {
 		return lista;
 	}
 	
-	public RegraAtcomp Consultar(RegraAtcomp ra) {
+	public RegraAtcomp Consultar(RegraAtcomp a) {
 		Logger logger = Logger.getLogger("br.sceweb.dominio.empresa");
 		logger.info("Inicio de Procedimento: Consultar Regra da Atcomp");
 		RegraAtcomp consulta = null;
@@ -66,7 +66,7 @@ public class HibernateRegraAtcompDAO implements IRegraAtcompDAO {
 			EntityManagerFactory factory = Persistence.createEntityManagerFactory("sceweb");
 			EntityManager em = factory.createEntityManager();
 			em.getTransaction().begin();
-			consulta = em.find(RegraAtcomp.class, ra.getCodigo());
+			consulta = em.find(RegraAtcomp.class, a.getCodigo());
 			em.getTransaction().commit();
 			logger.info("Termino de Procedimento: Consultar Regra da Atcomp");	
 		} catch (HibernateException exception) {
@@ -75,28 +75,52 @@ public class HibernateRegraAtcompDAO implements IRegraAtcompDAO {
 		}
 		return consulta;
 	}
-	
-	
-	
-	public boolean Alterar(RegraAtcomp ra) {
 
-		logger.info(">>>>>>>>>>>>>>>>>>>>>>>>>inicializando o procedimento cadastra");
-		boolean codigoRetorno = false;
+	@Override
+	public boolean Excluir(RegraAtcomp a) {
+		logger.info("Inicio do Processo de Exclusão da Regra da Atividade Complementar: ");
+		boolean retorno;
 		try {
 			EntityManagerFactory factory = Persistence.createEntityManagerFactory("sceweb");
 			EntityManager em = factory.createEntityManager();
 			em.getTransaction().begin();
-			em.merge(ra);
+			a = em.find(RegraAtcomp.class, a.getCodigo());
+			em.remove(a);
 			em.getTransaction().commit();
 			em.close();
-			codigoRetorno = true;
+			retorno = true ;
 		} catch (PersistenceException exception) { // HibernateException
-			
-			logger.info("disparou um erro na transacao de persistencia do tipo PersistenceException = "
+			retorno = false;
+			logger.info("Erro no Cadastro da Regra da Atividade Complementar. Erro:  "
 					+ exception.toString());
 		}
 
-		return codigoRetorno;
-
+		return retorno;
 	}
+	
+	public boolean Alterar(RegraAtcomp a) {
+	      
+		logger.info("Inicio do Processo de Cadastramento da Regra da Atividade Complementar: ");
+		boolean retorno;
+		try {
+			
+			EntityManagerFactory factory = Persistence.createEntityManagerFactory("sceweb");
+			EntityManager em = factory.createEntityManager();
+			em.getTransaction().begin();
+			
+			em.merge(a);
+			em.getTransaction().commit();
+			em.close();
+			retorno = true ;
+		} catch (PersistenceException exception) { // HibernateException
+			retorno = false;
+			logger.info("Erro no Cadastro da Regra da Atividade Complementar. Erro:  "
+					+ exception.toString());
+		}
+
+		return retorno;
+	}
+	
+	
+	
 }

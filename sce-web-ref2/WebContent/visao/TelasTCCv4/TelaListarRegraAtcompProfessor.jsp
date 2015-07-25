@@ -6,7 +6,7 @@
   <%@page import="br.sceweb.dominio.*"%>
     <%@page import="java.util.*"%>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>UATComp - Consultar Sugestão</title>
+<title>UATComp - Consultar Regra</title>
 </head>
 <body style= "background: #ABCFD6">
 
@@ -24,9 +24,9 @@
 <form class= "form-horizontal" role = "form" name="frmListarRegraAtcompProfessor" action="/sce-web-ref2/ServletControle" method="post">   
     	
    
-    <input type="hidden" name="acao" value="ListarRegraAtcompProfessor">
+    <input type="hidden" id="acao" name="acao" value="ListarRegraAtcompProfessor">
     
-        						<h3 align="center">Consulta de Sugestões de Atividade Complementar</h3>
+        						<h3 align="center">Consulta de Regras de Atividade Complementar</h3>
   						
 	 <br> <br>
 	<!--  BUSCA -->
@@ -36,10 +36,7 @@
       <input type="text" class="form-control" id="txtBusca" name="txtBusca" placeholder="buscar">
      </div>
     
-    <div class="col-sm-10">
-      <label class="radio-inline">
-  		<input type="radio" name="rdBusca" id="rdCodigoCategoria" value="codigoCategoria"> Código da categoria
-	</label>
+    
 	
 	
 	<label class="radio-inline">
@@ -49,10 +46,22 @@
 	<label class="radio-inline">
   		<input type="radio" name="rdBusca" id="rdDescricao" value="descricao"> Descrição
 	</label>
-    
+    <br><br>
  <button type="submit" class="btn btn-primary">Buscar</button>
+ <button type="submit" id="btnConsultar" class="btn btn-primary" onclick="Consultar()">Consultar</button>
+
+
+     <button type="submit" id="btnExcluir" class="btn btn-primary" onclick="Excluir()">Excluir</button>
+
+
+
+     <button type="submit" id="btnAlterar" class="btn btn-primary" onclick="Alterar()">Alterar</button>
   </div>
 </div> <!--  Termino BUSCA -->
+
+     
+
+   
 	
 	       
     <br> <br>
@@ -71,7 +80,7 @@
 
 <td> <label>Carga horária por Atividade</label> </td>
 
-<td> <label>Ano da Atividade</label> </td>
+
 
 <td> <label>Data Início</label> </td>
 
@@ -79,7 +88,6 @@
 
 <td> <label>Descrição</label> </td>
 
-<td> <label>Status (Ativa/inativa)</label> </td>
 
 </tr>
 
@@ -89,14 +97,16 @@
 ArrayList<RegraAtcomp> lista = (ArrayList<RegraAtcomp>) request.getAttribute("regraAtcomps");
 if ((lista!=null)&& (lista.size()>0)){
     RegraAtcomp ra = null;
+    
 	for (int i = 0; i < lista.size(); i++) {
 		    
 		    ra = (RegraAtcomp) lista.get(i);
-			
 		    
+    
 
 
 %>
+<tr>
 <td> <label><input type="radio" name="codigoRadio" value="<%=ra.getCodigo()%>"> </label> </td>
 
 <td> <label><%=ra.getArea()%> </label> </td>
@@ -107,16 +117,16 @@ if ((lista!=null)&& (lista.size()>0)){
 
 <td> <label><%=ra.getCargaHoraria()%></label> </td>
 
-<td> <label>0000000</label> </td>
 
 <td> <label><%=ra.getDataInicioAtividade()%></label> </td>
 
 <td> <label><%=ra.getDataTerminoAtividade()%></label> </td>
 
 <td> <label><%=ra.getDescricaoRegra()%></label> </td>
+<tr>
 
 <%    
-		    
+	
 		}
 	
 	}
@@ -128,6 +138,28 @@ if ((lista!=null)&& (lista.size()>0)){
 </form><!-- Fim do Form -->
 
 </div><!-- Fim da Div Conteudo -->
+<script type="text/javascript">
+     function Consultar()
+     {
+    	 document.getElementById('acao').value = "ConsultarRegraAtcompProfessor";
+     }
+     function Listar()
+     {
+    	 document.getElementById('acao').value = "ListarRegraAtcompProfessor";
+     }
+     
+     function Excluir()
+     {
+    	 document.getElementById('acao').value = "ExcluirRegraAtcompProfessor";
+     }
+     
+     function Alterar()
+     {
+    	 document.getElementById('acao').value = "Consultar2RegraAtcompProfessor";
+     }
+    
+    
+ </script>
 
 
 </body>

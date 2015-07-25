@@ -2,16 +2,17 @@ package br.sceweb.controle;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.*;
 
 import br.sceweb.dominio.Atcomp;
 import br.sceweb.dominio.AtcompFachada;
 import br.sceweb.dominio.RegraAtcomp;
 import br.sceweb.dominio.RegraAtcompRepositorio;
 
-public class CadastrarRegraAtcompProfessor implements IComando{
+public class AlterarRegraAtcompProfessor implements IComando{
 	RegraAtcompRepositorio rarepositorio;
 	RegraAtcomp regraAtcomp;
-	public CadastrarRegraAtcompProfessor(){
+	public AlterarRegraAtcompProfessor(){
 		
 		regraAtcomp = new RegraAtcomp();
 		rarepositorio = new RegraAtcompRepositorio(1);
@@ -19,7 +20,7 @@ public class CadastrarRegraAtcompProfessor implements IComando{
 	
 	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse res) throws Exception {
-		String url = "";
+String url = "";
 		
 		regraAtcomp.setArea(request.getParameter("sltArea"));	
 		regraAtcomp.setCodigoAtividade(request.getParameter("sltCodigoAtividade"));	
@@ -28,9 +29,9 @@ public class CadastrarRegraAtcompProfessor implements IComando{
 		regraAtcomp.setDataInicioAtividade(request.getParameter("txtDataInicioAtividade"));		
 		regraAtcomp.setDataTerminoAtividade(request.getParameter("txtDataTerminoAtividade"));		
 		regraAtcomp.setDescricaoRegra(request.getParameter("txtDescricaoRegra"));		
-		regraAtcomp.setCodigo(0);	
+		regraAtcomp.setCodigo(Integer.parseInt(request.getParameter("codigoRadio")));	
 		
-		if (rarepositorio.Cadastrar(regraAtcomp) ){
+		if (rarepositorio.Alterar(regraAtcomp) ){
 		
 			url = "/visao/TelasTCCv4/TelaListarRegraAtcompProfessor.jsp";		
 			request.setAttribute("erro", null);
@@ -40,6 +41,8 @@ public class CadastrarRegraAtcompProfessor implements IComando{
 		}
 		
 		return url;
-	}
 }
+}
+
+
 

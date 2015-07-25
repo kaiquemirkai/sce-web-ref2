@@ -22,7 +22,7 @@ public class ListarRegraAtcompProfessor implements IComando {
 		regraAtcompRepositorio = new RegraAtcompRepositorio(1);
 		List<RegraAtcomp> regraAtcomps = regraAtcompRepositorio.Listar();
 		request.setAttribute("regraAtcomps", regraAtcomps);
-		return "/visao/TelasTCCv4/TelaListaRegraAtcompProfessor.jsp";
+		return "/visao/TelasTCCv4/TelaListarRegraAtcompProfessor.jsp";
 	}
 
 }
