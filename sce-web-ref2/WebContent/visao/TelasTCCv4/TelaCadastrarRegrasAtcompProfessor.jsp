@@ -62,13 +62,8 @@ $('#btnArquivo').change(function(){
         <div class="form-group">
         <label name="lblCodigoAtividade" for="lblCodigoAtividade" class="col-sm-2 control-label">Código da Atividade</label>
         
-        <div class="col-sm-10">
-             <select id="sltCodigoAtividade" name="sltCodigoAtividade" style="width: 25em" class="form-control" >
-                  		<option value="100">-- Selecione o código -- </option>
-                  		<option value="101">101 - Cinema</option>
-                  		<option value="102">102 - Teatro</option>
-                  		<option value="103">103 - Museu</option>
-              </select>
+         <div class="col-sm-10">
+             <input type="text" name="txtCodigoAtividade" id="txtCodigoAtividade" class="form-control" style="width: 25em" placeholder="Categoria da atividade" value="" />
         </div>
         </div>
         

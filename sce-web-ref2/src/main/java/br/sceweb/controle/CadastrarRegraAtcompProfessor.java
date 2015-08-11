@@ -22,7 +22,7 @@ public class CadastrarRegraAtcompProfessor implements IComando{
 		String url = "";
 		
 		regraAtcomp.setArea(request.getParameter("sltArea"));	
-		regraAtcomp.setCodigoAtividade(request.getParameter("sltCodigoAtividade"));	
+		regraAtcomp.setCodigoAtividade(request.getParameter("txtCodigoAtividade"));	
 		regraAtcomp.setQuantidadeDeAtividadePermitida(Integer.parseInt(request.getParameter("txtQuantidadeAtividadePermitida")));		
 		regraAtcomp.setCargaHoraria(Integer.parseInt(request.getParameter("txtCargaHorariaAtividade")));		
 		regraAtcomp.setDataInicioAtividade(request.getParameter("txtDataInicioAtividade"));		
