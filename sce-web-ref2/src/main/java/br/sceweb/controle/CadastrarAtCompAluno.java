@@ -77,6 +77,7 @@ public class CadastrarAtCompAluno implements IComando{
             fos.write(buffer);
           }
           fos.close();
+          
         }
         conn.close();
         }
