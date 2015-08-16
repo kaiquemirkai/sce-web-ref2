@@ -14,7 +14,10 @@ import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 
 import br.sceweb.dominio.Atcomp;
+import br.sceweb.dominio.RegraAtcomp;
 import br.sceweb.dominio.Empresa;
+import br.sceweb.dominio.Login;
+import br.sceweb.dominio.LoginRepositorio;
 
 public class HibernateAtcompDAO implements IAtcompDAO {
 
@@ -46,16 +49,42 @@ public class HibernateAtcompDAO implements IAtcompDAO {
 	public List<Atcomp> Listar() {
 		List<Atcomp> lista = new ArrayList<Atcomp>();
 		try {
+			Login login =LoginRepositorio.RetornaUsuarioLogado();
+			System.out.println("Codigo do usuario Logado:  "+ login.getCodigo());
 			EntityManagerFactory factory = Persistence.createEntityManagerFactory("sceweb");
 			EntityManager em = factory.createEntityManager();
+			String hql = " SELECT a FROM Atcomp a WHERE a.codigoAluno = :codigoAluno";
 			em.getTransaction().begin();
-			Query query = em.createQuery("SELECT a from Atcomp a");
+			Query query = em.createQuery(hql);
+			query.setParameter("codigoAluno", login.getCodigo());
 			lista = query.getResultList();
+			em.getTransaction().commit();
 
 		} catch (Throwable e) {
 		}
 		return lista;
 	}
+	
+	public List<RegraAtcomp> ListarRegraAtcomp() {
+		List<RegraAtcomp> lista = new ArrayList<RegraAtcomp>();
+		try {
+			Login login =LoginRepositorio.RetornaUsuarioLogado();
+			System.out.println("Codigo do usuario Logado:  "+ login.getCodigo());
+			EntityManagerFactory factory = Persistence.createEntityManagerFactory("sceweb");
+			EntityManager em = factory.createEntityManager();
+			String hql = " SELECT a FROM RegraAtcomp a";
+			em.getTransaction().begin();
+			Query query = em.createQuery(hql);
+			query.setParameter("codigoAluno", login.getCodigo());
+			lista = query.getResultList();
+			em.getTransaction().commit();
+
+		} catch (Throwable e) {
+		}
+		return lista;
+	}
+	
+
 	
 	public Atcomp Consultar(Atcomp a) {
 		Logger logger = Logger.getLogger("br.sceweb.dominio.empresa");
@@ -75,5 +104,7 @@ public class HibernateAtcompDAO implements IAtcompDAO {
 		}
 		return consulta;
 	}
+	
+	
 	
 }

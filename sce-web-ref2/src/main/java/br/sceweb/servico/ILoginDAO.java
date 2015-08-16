@@ -1,7 +1,9 @@
 package br.sceweb.servico;
 
+import br.sceweb.dominio.Login;
+
 public interface ILoginDAO {
 
-	public boolean ValidarLogin(String usuario, String senha);
+	public Login ValidarLogin(String usuario, String senha);
 	
 }
