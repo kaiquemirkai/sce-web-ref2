@@ -16,4 +16,7 @@ public class HibernateDAOFactory extends DAOFactory{
 	public IRegraAtcompDAO getRegraAtcompDAO() {
 		return new HibernateRegraAtcompDAO();
 	}
+	public ISugestaoAtividadeDAO getSugestaoAtividadeDAO(){//Cria um objeto para ser instanciado para o usuario
+		return new HibernateSugestaoAtividadeDAO();
+	}
 }
