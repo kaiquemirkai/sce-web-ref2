@@ -8,7 +8,6 @@
  <%@page import="br.sceweb.dominio.*"%>
  <%@page import="java.util.*"%>
 
-
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>UATComp - Consultar Sugestão</title>
 </head>
@@ -22,7 +21,7 @@
 
 	<!-- Div do Menu -->
 	<div id="menu" style="background-color: #0058a5; margin-top: -10px">
-		<jsp:include page="MenuAluno.jsp" />
+		<jsp:include page="MenuProfessor.jsp" />
 	</div>
 
 	<!-- Div da Linha colorida -->
@@ -35,20 +34,21 @@
 
 		<!-- INICIO DO FORMULÁRIO -->
 
-		<form class="form-horizontal" role="form"
-			name="frmConsultarSugestaoAluno"
-			action="/sce-web-ref2/ServletControle" method="post">
-
-			<input type="hidden" name="acao" value="AlterarSugestaoAtividadeAluno">
+		<form class="form-horizontal"  role="form"  name="frmListar" 
+		action="/sce-web-ref2/ServletControle" method="post">
+		
+	
+			<input type="hidden" name="acao" value="ListarSugestaoAtividadeProfessor">
 
 			<!-- Alteração deve ser feita A partir daqui -->
 
 
-			<h3 align="center">Alterar Sugestão - Detalhes - ALUNO</h3>
+			<h3 align="center">Consulta de Sugestão - Detalhes - PROFESSOR</h3>
 
 			<br> <br>
 			
-
+<!-- disabled USADO PARA BLOQUEAR A ALTERAÇÃO DOS CAMPOS -->			
+			<fieldset disabled>
 
 <% 
 				//LOCAL ONDE ATRAVÉS DO request.getAttribute SERÁ PEGO TODOS OS ELEMENTOS DO ARRAYLIST >>sugestaoAtividade
@@ -62,15 +62,15 @@
 				
 				%>
 
-<!--CÓDIGO -->
-<input type="hidden" name="txtCodigo"  value="<%=sa.getCodigo()%>">
 
+		
+      <!--CÓDIGO -->
 				<div class="form-group">
 					<label name="lblCodigo" for="lblCodigo"
 						class="col-sm-2 control-label">Código</label>
 					<div class="col-sm-10">
-						<input type="text" name="#" id="txtCodigo"
-							class="form-control" style="width: 25em" value="<%=sa.getCodigo()%>" disabled/>
+						<input type="text" name="txtCodigo" id="txtCodigo"
+							class="form-control" style="width: 25em" value="<%=sa.getCodigo()%>" />
 					</div>
 				</div>
 				
@@ -89,7 +89,7 @@
 					<div class="col-sm-10">
 						<select id="sltAreaAtividade" name="sltAreaAtividade"
 							style="width: 25em" class="form-control">
-							<option><%=sa.getArea()%></option>
+							<option ><%=sa.getArea()%></option>
 						</select>
 					</div>
 				</div>
@@ -115,14 +115,12 @@
 					</div>
 				</div>
 
-     <!--DATA EM QUE FOI CADASTRADO A ATIVIDADE SUGESTÃO -->
-     <input type="hidden" name="txtDataCadastro"  value="<%=sa.getDataCadastro()%>">
-     
+   <!--DATA EM QUE FOI CADASTRADO A ATIVIDADE SUGESTÃO -->
 			<div class="form-group">
 				<label name="lblDataCadastro" for="lblDataCadastro"
 					class="col-sm-2 control-label">Data do Cadastro</label>
 				<div class="col-sm-10">
-					<input type="date" name="#"
+					<input type="date" name="txtDataCadastro"
 						id="txtDataCadastro" class="form-control"
 						style="width: 25em"  value="<%=sa.getDataCadastro()%>" />
 				</div>
@@ -159,21 +157,22 @@
 						class="form-control" style="width: 25em"><%=sa.getDescricao()%></textarea>
 				</div>
 			</div>
-				
+
 
 
 <%
 				} //fim do IF 
 %>
 
+			</fieldset>
 			
-			
-	<!-- BOTÃO PARA ALTERAR -->
+	<!-- BOTÃO PARA IR NA TELA LISTAR -->
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
-					<button name="btnConsultar" type="submit" class="btn btn-primary">ALTERAR</button>
+					<button name="btnListar" type="submit" class="btn btn-primary">Voltar</button>
 				</div>
-			</div>
+			</div>			
+			
 
 		</form>
 		<!-- Fim do Form -->

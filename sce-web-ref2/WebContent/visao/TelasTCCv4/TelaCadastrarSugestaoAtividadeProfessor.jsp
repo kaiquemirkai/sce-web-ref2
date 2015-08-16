@@ -1,49 +1,44 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+
 
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>UATComp - Cadastrar Sugestão</title>
 </head>
 
-<body style="background: #ABCFD6">
+<body style= "background: #ABCFD6">
 
-	<!-- Import do Cabecalho -->
-	<div id="cabecalho" style="background-color: #0058a5">
-		<jsp:include page="Cabecalho.jsp" />
-	</div>
+<!-- Import do Cabecalho -->
+<div id="cabecalho" style="background-color:#0058a5"> <jsp:include page="Cabecalho.jsp" /> </div>
 
-	<!-- Div do Menu -->
-	<div id="menu" style="background-color: #0058a5; margin-top: -10px">
-		<jsp:include page="MenuAluno.jsp" />
-	</div>
+<!-- Div do Menu -->
+<div id="menu" style="background-color:#0058a5; margin-top:-10px"> <jsp:include page="MenuProfessor.jsp" /> </div>
 
-	<!-- Div da Linha colorida -->
-	<div id="linhaColorida"
-		style="background-color: #5DA9E9; height: 16px;"></div>
+<!-- Div da Linha colorida -->
+<div id="linhaColorida" style="background-color:#5DA9E9; height:16px;"> </div>
 
-	<!-- Div do Conteudo  -->
-	<div class="container">
-
+<!-- Div do Conteudo  -->
+<div class="container">
 
 
 <!-- INICIO DO FORMULARIO -->
 
-		<form class="form-horizontal" role="form"
-			name="frmCadastrarSugestaoAluno"
-			action="/sce-web-ref2/ServletControle" method="post">
+<form class= "form-horizontal" role = "form" name="frmCadastrarSugestaoProfessor" action="/sce-web-ref2/ServletControle" method="post">   
+    	
+		<input type="hidden" name="acao" value="CadastrarSugestaoAtividadeProfessor">
+    	
+          <!-- Alteração deve ser feita A partir daqui -->
+	 
+	 			
+    						<h3 align="center">Cadastro de Sugestões - PROFESSOR</h3>
+  						
+	 <br> <br>
+	 
 
-			<input type="hidden" name="acao" value="CadastrarSugestaoAtividadeAluno">
-
-			<!-- Alteração deve ser feita A partir daqui -->
-
-			<h3 align="center">Cadastro de Sugestões - ALUNO</h3>
-
-			<br> <br>
-			
   <!-- CAMPO PARA CARREGAR AS CATEGORIAS (EX: tecnólogica) -->
 			<div class="form-group">
 				<label name="lblAreaAtividade" for="lblAreaAtividade"
@@ -122,15 +117,11 @@
 
 
 
+<!--  Termino Das Alterações -->
 
+</form><!-- Fim do Form -->
 
-			<!--  Termino Das Alterações -->
-
-		</form>
-		<!-- Fim do Form -->
-
-	</div>
-	<!-- Fim da Div Conteudo -->
+</div><!-- Fim da Div Conteudo -->
 
 
 
