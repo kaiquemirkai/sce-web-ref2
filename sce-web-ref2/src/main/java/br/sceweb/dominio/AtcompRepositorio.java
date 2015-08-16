@@ -28,6 +28,10 @@ private IAtcompDAO daoAtcomp;
 		return daoAtcomp.Listar();
 	}
 	
+	public List<RegraAtcomp> Listar2(){
+		return daoAtcomp.Listar2();
+	}
+	
 	public Atcomp Consultar(Atcomp a){		
 		return daoAtcomp.Consultar(a);
 	}
