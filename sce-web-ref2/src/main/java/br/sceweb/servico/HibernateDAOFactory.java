@@ -13,4 +13,7 @@ public class HibernateDAOFactory extends DAOFactory{
 	public IAtcompDAO getAtcompDAO() {
 		return new HibernateAtcompDAO();
 	}
+	public IRegraAtcompDAO getRegraAtcompDAO() {
+		return new HibernateRegraAtcompDAO();
+	}
 }

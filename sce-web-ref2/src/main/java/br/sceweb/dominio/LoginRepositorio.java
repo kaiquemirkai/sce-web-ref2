@@ -10,12 +10,20 @@ public class LoginRepositorio {
 /**
  * O metodo construtor recebe como parametro o SGBD selecionado
  * @param fabrica - MYSQL = 2 HIBERNATE = 1
- */
+ */ static Login login = new Login();
+ 
 	public LoginRepositorio(int fabrica) {
 		this.daoLogin = DAOFactory.getDAOFactory(fabrica).getLoginDAO();
 	}
-	public boolean ValidarLogin(String usuario, String senha) {
+	public Login ValidarLogin(String usuario, String senha) {
+		    login = daoLogin.ValidarLogin(usuario, senha);
 			return daoLogin.ValidarLogin(usuario, senha);
 	}
+	
+	public static Login RetornaUsuarioLogado(){
+	 return login;
+	}
+	
+	
 
 }

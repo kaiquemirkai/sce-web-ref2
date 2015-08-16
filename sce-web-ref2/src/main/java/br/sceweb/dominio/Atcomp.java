@@ -11,7 +11,7 @@ public class Atcomp {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	long codigo;
-	String aluno;
+	long codigoAluno;
 	String quemCadastrou;
 	String dataFim;
 	String dataInicio;
@@ -52,15 +52,15 @@ public class Atcomp {
 		this.descricao = descricao;
 	}
 
-	public void setAluno(String aluno) {
-		this.aluno = aluno;
+	public void setCodigoAluno(long codigoAluno) {
+		this.codigoAluno = codigoAluno;
 	}
 	public long getCodigo() {
 		return codigo;
 	}
 
-	public String getAluno() {
-		return aluno;
+	public long getCodigoAluno() {
+		return codigoAluno;
 	}
 
 	public String getCodigoAtividade() {
