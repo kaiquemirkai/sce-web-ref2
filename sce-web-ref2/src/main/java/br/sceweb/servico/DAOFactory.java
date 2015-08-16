@@ -11,6 +11,7 @@ public abstract class DAOFactory {
 	public abstract ILoginDAO getLoginDAO();
 	public abstract IAtcompDAO getAtcompDAO();
 	public abstract IRegraAtcompDAO getRegraAtcompDAO();
+	public abstract ISugestaoAtividadeDAO getSugestaoAtividadeDAO();
 	public static DAOFactory getDAOFactory(int fabrica){
 		switch (fabrica){
 			case HIBERNATE: return new HibernateDAOFactory();
