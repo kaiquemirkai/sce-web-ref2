@@ -67,5 +67,11 @@ public class MySQLDAOFactory extends DAOFactory{
 	}
 
 
+	@Override
+	public ISugestaoAtividadeDAO getSugestaoAtividadeDAO() {
+		return new MySQLSugestaoAtividadeDAO();
+		
+	}
+
     
   }

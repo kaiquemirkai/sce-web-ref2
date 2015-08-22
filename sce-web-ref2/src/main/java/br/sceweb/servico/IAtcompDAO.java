@@ -10,7 +10,9 @@ public interface IAtcompDAO {
 
 	public boolean Cadastrar(Atcomp a);
 	public List<Atcomp> Listar();
-	public List<RegraAtcomp> Listar2();
+	
+	///Verificar que porra eh essa!!!!!!!
+	//public List<RegraAtcomp> Listar2();
 	public Atcomp Consultar(Atcomp a);
 	
 }

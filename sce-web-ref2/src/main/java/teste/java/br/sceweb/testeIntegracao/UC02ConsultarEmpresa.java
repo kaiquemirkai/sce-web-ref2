@@ -1,4 +1,4 @@
-package br.sceweb.testeIntegracao;
+package teste.java.br.sceweb.testeIntegracao;
 
 import static org.junit.Assert.*;
 

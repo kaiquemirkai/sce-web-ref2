@@ -134,7 +134,8 @@ public class CadastrarAtCompAluno implements IComando{
         dis.readFully(pdfData);  // read from file into byte[] array
         dis.close();
         
-        atcomp.setAnexo(pdfData);
+        // Verificar  a parte do anexo!!!!!!
+       // atcomp.setAnexo(pdfData);
         
         
        

@@ -1,4 +1,4 @@
-package br.sceweb.testeIntegracao;
+package teste.java.br.sceweb.testeIntegracao;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
