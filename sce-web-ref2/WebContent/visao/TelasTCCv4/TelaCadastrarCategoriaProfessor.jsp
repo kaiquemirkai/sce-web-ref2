@@ -31,8 +31,9 @@ $('#btnArquivo').change(function(){
 
 <!-- Div do Conteudo  -->
 <div class="container">
+<jsp:include page="ValidarTelas.jsp" />
 
-<form class= "form-horizontal" role = "form" name="frmCadastrarCategoriaProfessor" action="/sce-web-ref2/ServletControle" method="post">   
+<form class= "form-horizontal" role = "form" name="frmCadastrarCategoriaProfessor" id ="frmCadastrarCategoriaProfessor"action="/sce-web-ref2/ServletControle" method="post">   
     	
 		<input type="hidden" name="acao" value="cadastrarCategoriaProfessor">
     	
@@ -77,7 +78,7 @@ $('#btnArquivo').change(function(){
         <div class="form-group">
         <label name="lblDescricao" for="lblDescricao" class="col-sm-2 control-label">Descrição</label>
         <div class="col-sm-10">
-             <textarea name="txtDescricaoAtividade" rows="4" cols="4" class="form-control" style="width: 25em" placeholder=""></textarea>
+             <textarea name="txtDescricaoAtividade" id="txtDescricaoAtividade" rows="4" cols="4" class="form-control" style="width: 25em" placeholder=""></textarea>
         </div>
         </div>
         
