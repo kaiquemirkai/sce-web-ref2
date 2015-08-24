@@ -31,8 +31,9 @@ $('#btnArquivo').change(function(){
 
 <!-- Div do Conteudo  -->
 <div class="container">
+<jsp:include page="ValidarTelas.jsp" />
 
-<form class= "form-horizontal" role = "form" name="frmAlterarCategoriaProfessor" action="/sce-web-ref2/ServletControle" method="post">   
+<form class= "form-horizontal" role = "form" name="frmAlterarCategoriaProfessor" id = "frmAlterarCategoriaProfessor" action="/sce-web-ref2/ServletControle" method="post">   
     	
 		<input type="hidden" name="acao" value="alterarCategoriaProfessor">
     	

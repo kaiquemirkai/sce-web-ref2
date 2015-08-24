@@ -26,8 +26,8 @@
 
 <!-- Div do Conteudo  -->
 <div class="container">
-
-<form class= "form-horizontal" role = "form" name="frmAlterarSugestaoProfessor" action="/sce-web-ref2/ServletControle" method="post">   
+<jsp:include page="ValidarTelas.jsp" />
+<form class= "form-horizontal" role = "form" name="frmAlterarSugestaoProfessor" id ="frmAlterarSugestaoProfessor"action="/sce-web-ref2/ServletControle" method="post">   
     	
 		<input type="hidden" name="acao" value="AlterarSugestaoAtividadeProfessor">
     	
