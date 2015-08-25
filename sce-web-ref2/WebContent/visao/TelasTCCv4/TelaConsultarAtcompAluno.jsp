@@ -132,6 +132,8 @@ $('#btnArquivo').change(function(){
         </div>
         </div>
         
+  
+        
        <div class="form-group">
         <label name="lblAbrirArquivo" class="sr-only" for="inputfile">Abrir Arquivo</label>
         <input type="file" id="inputfile">
@@ -146,6 +148,13 @@ $('#btnArquivo').change(function(){
      </div>
      
 </form><!-- Fim do Form -->
+
+<script type="text/javascript">
+     function AbrirAnexo()
+     {
+    	 window.open("http://localhost:8080/sce-web-ref2/Oi.jpg");
+     }
+     </script>
 
 </div><!-- Fim da Div Conteudo -->
 

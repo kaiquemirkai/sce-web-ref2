@@ -9,6 +9,7 @@
 <link rel="stylesheet" type="text/css" href="/sce-web-ref2/visao/TelasTCCv3/CSS/Template.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 <link rel="stylesheet" href="/sce-web-ref2/visao/TelasTCCv3/CSS/styles.css">
+
    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
    <script src="script.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>

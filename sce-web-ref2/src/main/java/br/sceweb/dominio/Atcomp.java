@@ -24,7 +24,7 @@ public class Atcomp {
 	String descricao;
 	String status;
 	
-	byte anexo;
+	byte[] anexo;
 	
 	
 	public String getStatus() {
@@ -122,11 +122,11 @@ public class Atcomp {
 		this.horasLancadas = horasLancadas;
 	}
 
-	public byte getAnexo() {
+	public byte [] getAnexo() {
 		return anexo;
 	}
 
-	public void setAnexo(byte anexo) {
+	public void setAnexo(byte[] anexo) {
 		this.anexo = anexo;
 	}
 
