@@ -7,6 +7,8 @@
 <html>
 <head>
 
+<link rel='stylesheet' type='text/css' href='Background.css' />
+
 <script type="text/javascript">
 $(document).ready(function(){
 $('#btnArquivo').change(function(){
@@ -21,7 +23,7 @@ $('#btnArquivo').change(function(){
 <title>UATComp - Cadastrar Atcomp</title>
 </head>
 
-<body style= "background: #ABCFD6" onload="verificar2()">
+<<body id="fundo" onload="verificar2()">
 
 <!-- Import do Cabecalho -->
 <div id="cabecalho" style="background-color:#0058a5"> <jsp:include page="Cabecalho.jsp" /> </div>
@@ -30,7 +32,7 @@ $('#btnArquivo').change(function(){
 <div id="menu" style="background-color:#0058a5; margin-top:-10px"> <jsp:include page="MenuAluno.jsp" /> </div>
 
 <!-- Div da Linha colorida -->
-<div id="linhaColorida" style="background-color:#5DA9E9; height:16px;"> </div>
+<div id="linhaColorida" style="height:16px;"> </div>
 
 <!-- Div do Conteudo  -->
 <div class="container">

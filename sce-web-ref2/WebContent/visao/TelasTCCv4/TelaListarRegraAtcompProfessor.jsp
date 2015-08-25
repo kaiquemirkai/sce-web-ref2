@@ -3,12 +3,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+
+<link rel='stylesheet' type='text/css' href='Background.css' />
+
   <%@page import="br.sceweb.dominio.*"%>
     <%@page import="java.util.*"%>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>UATComp - Consultar Regra</title>
 </head>
-<body style= "background: #ABCFD6">
+<body id="fundo">
 
 <!-- Import do Cabecalho -->
 <div id="cabecalho" style="background-color:#0058a5"> <jsp:include page="Cabecalho.jsp" /> </div>
@@ -17,7 +20,7 @@
 <div id="menu" style="background-color:#0058a5; margin-top:-10px"> <jsp:include page="MenuProfessor.jsp" /> </div>
 
 <!-- Div da Linha colorida -->
-<div id="linhaColorida" style="background-color:#5DA9E9; height:16px;"> </div>
+<div id="linhaColorida" style="height:16px;"> </div>
 
 <div class="container">
 

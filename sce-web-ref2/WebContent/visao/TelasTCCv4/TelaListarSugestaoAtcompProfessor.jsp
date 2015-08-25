@@ -24,7 +24,7 @@
    
     <input type="hidden" name="acao" value="listarSugestaoProfessor">
     
-        						<h3 align="center">Consulta de Sugestões de Atividade Complementar</h3>
+   <h3 align="center">Consulta de Sugestões de Atividade Complementar</h3>
   						
 	 <br> <br>
 	<!--  BUSCA -->

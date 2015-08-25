@@ -38,7 +38,7 @@
   <!--Bem vindo-->
   <div class="media">
   	<div class="media-left media-middle">
- 		<img class="media-object" src="/sce-web-ref2/visao/TelasTCCv4/aluno.jpg" width="60" height="60">
+ 		<img class="media-object" src="/sce-web-ref2/visao/TelasTCCv4/Imagens/aluno.jpg" width="60" height="60">
   	</div>
   	<div class="media-body">
     	<h4 class="media-heading">Boa Tarde,</h4>
@@ -60,7 +60,7 @@
   
   <!-- Painel Info -->
   <div class="panel-heading"> 
-  <img src="/sce-web-ref2/visao/TelasTCCv4/informacao.png"> 
+  <img src="/sce-web-ref2/visao/TelasTCCv4/Imagens/informacao.png"> 
   <b> Informações</b> 
   </div> 
   

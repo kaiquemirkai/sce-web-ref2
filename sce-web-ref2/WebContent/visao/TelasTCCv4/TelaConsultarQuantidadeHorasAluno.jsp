@@ -44,7 +44,7 @@
 	   <!-- Area técnica-->
  <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
-      <img src="/sce-web-ref2/visao/TelasTCCv4/tecnica2.png" width="130" height="130">
+      <img src="/sce-web-ref2/visao/TelasTCCv4/Imagens/tecnica2.png" width="130" height="130">
        <br>	
       <!-- barra progresso-->
       <div class="progress">
@@ -64,7 +64,7 @@
 	<!-- Area social -->
   <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
-      <img src="/sce-web-ref2/visao/TelasTCCv4/social1.jpg" width="130" height="130">
+      <img src="/sce-web-ref2/visao/TelasTCCv4/Imagens/social1.jpg" width="130" height="130">
       <br>	
       <!-- barra progresso-->
       <div class="progress">
@@ -84,7 +84,7 @@
   <!-- Area cidadã-->
   <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
-      <img src="/sce-web-ref2/visao/TelasTCCv4/cidada1.jpg" width="130" height="130">
+      <img src="/sce-web-ref2/visao/TelasTCCv4/Imagens/cidada1.jpg" width="130" height="130">
       <br>	
       <!-- barra progresso-->
       <div class="progress">
