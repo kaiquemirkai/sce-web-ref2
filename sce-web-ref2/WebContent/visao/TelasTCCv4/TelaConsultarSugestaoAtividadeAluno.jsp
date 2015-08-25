@@ -4,6 +4,8 @@
 <html>
 <head>
 
+<link rel='stylesheet' type='text/css' href='Background.css' />
+
 <!-- %@ PARA PUXAR O IMPORT DE .JAVA -->
  <%@page import="br.sceweb.dominio.*"%>
  <%@page import="java.util.*"%>
@@ -14,7 +16,7 @@
 <title>UATComp - Consultar Sugestão</title>
 </head>
 
-<body style="background: #ABCFD6">
+<body id="fundo">
 
 	<!-- Import do Cabecalho -->
 	<div id="cabecalho" style="background-color: #0058a5">
@@ -27,8 +29,7 @@
 	</div>
 
 	<!-- Div da Linha colorida -->
-	<div id="linhaColorida"
-		style="background-color: #5DA9E9; height: 16px;"></div>
+<div id="linhaColorida" style="height:16px;"> </div>
 
 	<!-- Div do Conteudo  -->
 	<div class="container">
@@ -36,8 +37,7 @@
 
 <!-- INICIO DO FORMULÁRIO -->
 
-		<form class="form-horizontal"  role="form"  name="frmListar" 
-		action="/sce-web-ref2/ServletControle" method="post">
+		<form class="form-horizontal"  role="form"  name="frmListar" action="/sce-web-ref2/ServletControle" method="post">
 		
 	
 			<input type="hidden" name="acao" value="ListarSugestaoAtividadeAluno">

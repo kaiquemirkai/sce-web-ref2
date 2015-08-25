@@ -78,7 +78,7 @@
   	<!--Bem vindo-->
   <div class="media">
   	<div class="media-left media-middle">
- 		<img class="media-object" src="/sce-web-ref2/visao/TelasTCCv4/aluno.jpg" width="60" height="60">
+ 		<img class="media-object" src="/sce-web-ref2/visao/TelasTCCv4/Imagens/aluno.jpg" width="60" height="60">
   	</div>
   	<div class="media-body">
     	<h4 class="media-heading">Bem vindo!</h4>
@@ -97,11 +97,7 @@
   
   <!-- Gráfico -->
   <div id="chart_div"></div>
-  
-  
-  
-   <!-- <img style="margin-top: 40px;" src="http://chart.apis.google.com/chart?cht=p3&chd=t:30,30,40&chs=500x200&chco=45F400|FCFC2A|B53EF9&chdl=30+Tecnologica|30+Cidada|40+Socio+Cultural&chtt=Relacao+de+Horas&chl=Tecnologica|Cidada|Socio+Cultural&chf=bg,s,65432100">  -->
- 
+
   </div> <!-- Final Divisão tela: Parte Principal -->
   
   
@@ -114,7 +110,7 @@
   
   <!-- Painel Info -->
   <div class="panel-heading"> 
-  <img src="/sce-web-ref2/visao/TelasTCCv4/informacao.png"> 
+  <img src="/sce-web-ref2/visao/TelasTCCv4/Imagens/informacao.png"> 
   <b> Informações</b> 
   </div>
   
@@ -142,7 +138,7 @@
   	<div class="col-md-12">
   		<div class="panel panel-warning">
   		  <div class="panel-heading">
-  		  <img src="/sce-web-ref2/visao/TelasTCCv4/sugestao.jpg"> 
+  		  <img src="/sce-web-ref2/visao/TelasTCCv4/Imagens/sugestao.jpg"> 
   		  <b>Sugestões</b>
   		  </div>
 
@@ -182,11 +178,6 @@
 </div> <!-- Final Row Container -->
 				
     
-
-
-
-
-
 </form><!-- Fim do Form -->
 
 </div><!-- Fim da Div Conteudo -->

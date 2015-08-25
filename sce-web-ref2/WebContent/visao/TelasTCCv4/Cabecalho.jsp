@@ -10,7 +10,7 @@
 <body id="cabecalho">
 	<div id= "titulo">
 	<center>
-	    <img src="/sce-web-ref2/visao/TelasTCCv3/Imagens/logo1.png"/>
+	    <img src="/sce-web-ref2/visao/TelasTCCv4/Imagens/logo1.png"/>
 		<h3 style="margin-top:15px;"><font color="white">Sistema Gerenciador de Atividades Complementares</font></h3>
 	</center>	
 	</div>

@@ -4,6 +4,8 @@
 <html>
 <head>
 
+<link rel='stylesheet' type='text/css' href='Background.css' />
+
 <!-- %@ PARA PUXAR O IMPORT DE .JAVA -->
  <%@page import="br.sceweb.dominio.*"%>
  <%@page import="java.util.*"%>
@@ -12,11 +14,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>UATComp - Consultar Sugestão</title>
 
-
-
-
 </head>
-<body style="background: #ABCFD6">
+<body id="fundo">
 
 	<!-- Import do Cabecalho -->
 	<div id="cabecalho" style="background-color: #0058a5">
@@ -29,8 +28,7 @@
 	</div>
 
 	<!-- Div da Linha colorida -->
-	<div id="linhaColorida"
-		style="background-color: #5DA9E9; height: 16px;"></div>
+	<div id="linhaColorida" style="height:16px;"> </div>
 
 	<div class="container">
 
@@ -44,8 +42,7 @@
 			<input type="hidden"  id="acao" name="acao" >
 	
 			
-
-			<h3 align="center">Lista de Sugestões de Atividade - ALUNO	</h3>
+<h3 align="center">Consulta de Sugestões de Atividade Complementar</h3>
 
 			<br> <br>
 			<!--  BUSCA -->
