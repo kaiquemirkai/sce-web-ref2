@@ -7,7 +7,7 @@
 <title>Cabeçalho</title>
 <link rel="stylesheet" type="text/css" href="/sce-web-ref2/CSS/formato.css">
 </head>
-<body bgcolor="#0058a5">
+<body id="cabecalho">
 	<div id= "titulo">
 	<center>
 	    <img src="/sce-web-ref2/visao/TelasTCCv3/Imagens/logo1.png"/>

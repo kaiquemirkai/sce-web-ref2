@@ -1,0 +1,28 @@
+@CHARSET "ISO-8859-1";
+
+#fundo
+{
+	
+background: -moz-radial-gradient(center, ellipse cover,  rgba(171,207,214,0.65) 0%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(171,207,214,0.65)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+background: -webkit-radial-gradient(center, ellipse cover,  rgba(171,207,214,0.65) 0%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-radial-gradient(center, ellipse cover,  rgba(171,207,214,0.65) 0%,rgba(0,0,0,0) 100%); /* Opera 12+ */
+background: -ms-radial-gradient(center, ellipse cover,  rgba(171,207,214,0.65) 0%,rgba(0,0,0,0) 100%); /* IE10+ */
+background: radial-gradient(ellipse at center,  rgba(171,207,214,0.65) 0%,rgba(0,0,0,0) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6abcfd6', endColorstr='#00000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	
+}
+
+#linhaColorida
+{
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#5da9e9+0,92c1e8+50,94c2e8+51,5da9e9+100 */
+background: rgb(93,169,233); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(93,169,233,1) 0%, rgba(146,193,232,1) 50%, rgba(148,194,232,1) 51%, rgba(93,169,233,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(93,169,233,1)), color-stop(50%,rgba(146,193,232,1)), color-stop(51%,rgba(148,194,232,1)), color-stop(100%,rgba(93,169,233,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(93,169,233,1) 0%,rgba(146,193,232,1) 50%,rgba(148,194,232,1) 51%,rgba(93,169,233,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(93,169,233,1) 0%,rgba(146,193,232,1) 50%,rgba(148,194,232,1) 51%,rgba(93,169,233,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(93,169,233,1) 0%,rgba(146,193,232,1) 50%,rgba(148,194,232,1) 51%,rgba(93,169,233,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(93,169,233,1) 0%,rgba(146,193,232,1) 50%,rgba(148,194,232,1) 51%,rgba(93,169,233,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5da9e9', endColorstr='#5da9e9',GradientType=0 ); /* IE6-9 */
+	
+}

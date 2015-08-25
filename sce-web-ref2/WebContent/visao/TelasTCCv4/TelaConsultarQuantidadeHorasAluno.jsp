@@ -4,21 +4,13 @@
 <html>
 <head>
 
-<script type="text/javascript">
-$(document).ready(function(){
-$('#btnArquivo').change(function(){
-    $('#txtArquivo').val($(this).val());
-});
-
-});
-
-</script>
+<link rel='stylesheet' type='text/css' href='Background.css' />
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>UATComp - Consulta de Horas</title>
 </head>
 
-<body style= "background: #ABCFD6">
+<body id="fundo">
 
 <!-- Import do Cabecalho -->
 <div id="cabecalho" style="background-color:#0058a5"> <jsp:include page="Cabecalho.jsp" /> </div>
@@ -27,7 +19,7 @@ $('#btnArquivo').change(function(){
 <div id="menu" style="background-color:#0058a5; margin-top:-10px"> <jsp:include page="MenuAluno.jsp" /> </div>
 
 <!-- Div da Linha colorida -->
-<div id="linhaColorida" style="background-color:#5DA9E9; height:16px;"> </div>
+<div id="linhaColorida" style="height:16px;"> </div>
 
 <!-- Div do Conteudo  -->
 <div class="container">

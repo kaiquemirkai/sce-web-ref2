@@ -55,12 +55,7 @@
    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     CONSULTAS <span class="caret"></span>
   </button>
-  <ul class="dropdown-menu">
-    <li><a href="#">Status Atividade Complementar</a></li>
-    <li><a href="#">Atividades Complementares por Áreas</a></li>
-    <li><a href="#">Atividades Complementares por Turma</a></li>
-    <li><a href="#">Atividades Complementares Pendentes de Aprovação</a></li>
-   </ul>
+
 </div>
 
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
