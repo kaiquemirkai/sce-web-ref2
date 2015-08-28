@@ -7,11 +7,14 @@
 <html>
 <head>
 
-<link rel='stylesheet' type='text/css' href='Background.css' />
+<style type="text/css">  
+  @import url("/sce-web-ref2/visao/TelasTCCv4/CSS/Background.css");  
+</style>
 
 <script src="js/jquery-1.11.1.js" type="text/javascript"></script>
 
 <script type="text/javascript" src="ajax.js"></script>
+
 <script type="text/javascript">
 
 $(document).ready(function(){
@@ -31,7 +34,7 @@ $('#btnArquivo').change(function(){
 <title>UATComp - Cadastrar Atcomp</title>
 </head>
 
-<<body id="fundo" onload="verificar2()">
+<body id="fundo" onload="verificar2()">
 
 <!-- Import do Cabecalho -->
 <div id="cabecalho" style="background-color:#0058a5"> <jsp:include page="Cabecalho.jsp" /> </div>

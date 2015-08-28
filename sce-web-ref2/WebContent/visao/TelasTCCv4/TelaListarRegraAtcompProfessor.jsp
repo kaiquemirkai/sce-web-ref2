@@ -4,10 +4,15 @@
 <html>
 <head>
 
-<link rel='stylesheet' type='text/css' href='Background.css' />
+<style type="text/css">  
+  @import url("/sce-web-ref2/visao/TelasTCCv4/Background.css");  
+</style>
 
   <%@page import="br.sceweb.dominio.*"%>
-    <%@page import="java.util.*"%>
+   <%@page import="java.util.*"%>
+   
+   
+   
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>UATComp - Consultar Regra</title>
 </head>

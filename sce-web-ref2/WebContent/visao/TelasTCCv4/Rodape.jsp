@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Rodapé</title>
-<link rel="stylesheet" type="text/css" href="/sce-web-ref2/CSS/formato.css">
+
 </head>
 <style type="text/css">
 

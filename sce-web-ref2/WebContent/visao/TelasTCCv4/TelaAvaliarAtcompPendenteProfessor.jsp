@@ -4,7 +4,9 @@
 <html>
 <head>
 
-<link rel='stylesheet' type='text/css' href='Background.css' />
+<style type="text/css">  
+  @import url("/sce-web-ref2/visao/TelasTCCv4/CSS/Background.css");  
+</style>
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>UATComp - Avaliar Atcomp</title>

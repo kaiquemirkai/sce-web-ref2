@@ -4,7 +4,9 @@
 <html>
 <head>
 
-<link rel='stylesheet' type='text/css' href='Background.css' />
+<style type="text/css">  
+  @import url("/sce-web-ref2/visao/TelasTCCv4/CSS/Background.css");  
+</style>
 
  <%@page import="br.sceweb.dominio.*"%>
 <script type="text/javascript">
