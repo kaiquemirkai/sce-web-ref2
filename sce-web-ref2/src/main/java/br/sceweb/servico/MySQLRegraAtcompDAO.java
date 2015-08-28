@@ -15,6 +15,9 @@ public class MySQLRegraAtcompDAO implements IRegraAtcompDAO{
 	public List<RegraAtcomp> Listar(){
 		return null;
 	}
+	public List<RegraAtcomp> ListarCategoriaPorArea(String area){
+		return null;
+	}
 
 	public RegraAtcomp Consultar(RegraAtcomp ra) {
 		return null;

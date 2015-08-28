@@ -2,7 +2,7 @@
 <persistence version="1.0"
 	xmlns="http://java.sun.com/xml/ns/persistence">
 	<persistence-unit name="sceweb">
-		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<class>br.sceweb.dominio.Empresa</class>
 		<class>br.sceweb.dominio.Usuario</class>
 		<class>br.sceweb.dominio.Atcomp</class>
@@ -15,7 +15,7 @@
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/sceweb" />
 			<property name="javax.persistence.jdbc.user" value="root" />
-			<property name="javax.persistence.jdbc.password" value="root" />
+			<property name="javax.persistence.jdbc.password" value="usjt" />
 		</properties>
 		</persistence-unit>
 </persistence>

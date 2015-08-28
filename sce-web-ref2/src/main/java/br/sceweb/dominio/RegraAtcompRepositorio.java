@@ -35,6 +35,10 @@ public boolean Excluir (RegraAtcomp regraAtcomp){
 		return daoRegraAtcomp.Listar();
 	}
 	
+	public List<RegraAtcomp> ListarCategoriaPorArea(String area){
+		return daoRegraAtcomp.ListarCategoriaPorArea(area);
+	}
+	
 	public RegraAtcomp Consultar(RegraAtcomp regraAtcomp){	
 		System.out.println("Passei pelo Consultar Repositorio");
 		return daoRegraAtcomp.Consultar(regraAtcomp);

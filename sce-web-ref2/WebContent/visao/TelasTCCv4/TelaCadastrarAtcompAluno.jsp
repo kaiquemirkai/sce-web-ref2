@@ -9,12 +9,20 @@
 
 <link rel='stylesheet' type='text/css' href='Background.css' />
 
+<script src="js/jquery-1.11.1.js" type="text/javascript"></script>
+
+<script type="text/javascript" src="ajax.js"></script>
 <script type="text/javascript">
+
 $(document).ready(function(){
+
+
+	
+	/*
 $('#btnArquivo').change(function(){
     $('#txtArquivo').val($(this).val());
-});
-
+});*/
+	
 });
 
 </script>
@@ -56,7 +64,7 @@ $('#btnArquivo').change(function(){
       	<label name="lblAreaAtividade" for="lblAreaAtividade" class="col-sm-2 control-label">Área da Atividade</label>
       
         <div class="col-sm-10">
-        	 <select id="sltAreaAtividade" name="sltAreaAtividade" style="width: 25em" class="form-control" onchange="verificar()">
+        	 <select id="sltAreaAtividade" name="sltAreaAtividade" style="width: 25em" class="form-control">
                   		<option value="00">-- Selecione a área -- </option>
                   		<option value="01">Formação Tecnológica </option>
                   		<option value="02">Formação Sócio-Cultural</option>

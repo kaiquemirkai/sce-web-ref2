@@ -13,6 +13,7 @@ import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+
 import br.sceweb.dominio.Empresa;
 import br.sceweb.dominio.RegraAtcomp;
 
@@ -51,6 +52,24 @@ public class HibernateRegraAtcompDAO implements IRegraAtcompDAO {
 			em.getTransaction().begin();
 			Query query = em.createQuery("SELECT a from RegraAtcomp a");
 			lista = query.getResultList();
+
+		} catch (Throwable e) {
+		}
+		return lista;
+	}
+	
+	@Override
+	public List<RegraAtcomp> ListarCategoriaPorArea(String area) {
+		List<RegraAtcomp> lista = new ArrayList<RegraAtcomp>();
+		try {
+			EntityManagerFactory factory = Persistence.createEntityManagerFactory("sceweb");
+			EntityManager em = factory.createEntityManager();
+			String hql = " SELECT ra FROM RegraAtcomp ra WHERE ra.area = :area";
+			em.getTransaction().begin();
+			Query query = em.createQuery(hql);
+			query.setParameter("area", area);
+			lista = query.getResultList();
+			em.getTransaction().commit();
 
 		} catch (Throwable e) {
 		}
