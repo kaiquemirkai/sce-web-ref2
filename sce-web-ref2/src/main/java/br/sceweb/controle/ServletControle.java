@@ -62,7 +62,10 @@ public class ServletControle extends HttpServlet {
 			Class classe = Class.forName(nomeDaClasse);
 			IComando comando = (IComando) classe.newInstance();
 			url = comando.executa(request, response);
-			request.getRequestDispatcher(url).forward(request, response);
+			if(url!="Ajax"){
+				request.getRequestDispatcher(url).forward(request, response);	
+			}
+			
 		} catch (Exception e) {
 			request.getRequestDispatcher(url).forward(request, response);
 			//throw new ServletException("A lógica de aplicação causou uma exceção", e);

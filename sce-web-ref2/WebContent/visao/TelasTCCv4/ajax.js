@@ -2,29 +2,50 @@ $(document).ready(function() {
 		$('#sltAreaAtividade').change(function(event) {
 		selectValue = $('#sltAreaAtividade').val();
 		var path = '/sce-web-ref2/ServletControle';
-		alert(selectValue);
-		
+				
 		$.get(path, {
 			selectValue : selectValue,
 			acao: "ListarCategoriaPorArea"
-		}, function(responseText) {
-			alert(responseText);
-			/*
+		}, function(responseText) {			
+			// Retorno do Servlet
 			var jsonData = responseText;
-			var jasao = '{ "batata" : [' +
-			'{ "batatinha":"John" , "lastName":"Doe" },' +
-			'{ "batatinha":"Anna" , "lastName":"Smith" },' +
-			'{ "batatinha":"Peter" , "lastName":"Jones" } ]}';
-			
+			//Objeto Json montado
 			var myJSONObject = jQuery.parseJSON( JSON.stringify( jsonData));
-			alert(myJSONObject.batata[0].index1);
-			//alert(jsonData);
-			//myJSONObject = eval('( '+ jsonData+' )' );
-			//alert(myJSONObject);
-          
+			//Div da tela que ira receber o Select			
+			var myDiv = document.getElementById("newSelect"); 
+			//Metodo para testar se existe um select e excluir para formar outro		
+			var testaSeExiste;
+			testaSeExiste = document.getElementById("sltCategoriaAtividade");
+			if(testaSeExiste !== null)
+				{				
+			    $('#sltCategoriaAtividade').remove();
+				}
+			// Insere os atributos do select
+			var selectList = document.createElement("select");
+			selectList.id = "sltCategoriaAtividade";
+			selectList.className = "form-control";
+			selectList.style = "width: 25em";
+			myDiv.appendChild(selectList);
+			// contador
+            var count = Object.keys(myJSONObject).length
+			// insere a primeira linha do select
+			var opt = document.createElement("option");
+		    opt.value = "0";
+		    opt.text = "--------- Selecione ---------";
+		    selectList.appendChild(opt);
+		    // insere as demais linhas
+			for (var i=0; i<= count ; i++) {
+			    var option = document.createElement("option");
+			    option.value = myJSONObject.regras[i].id;
+			    option.text = myJSONObject.regras[i].codigoAtividade;
+			    
+			    selectList.appendChild(option);
+			    
+			}
 			
-			$('#ajaxResponse').text(myJSONObject.batata[0].batatinha);
-			*/
+			
+			
+			
 			});
 		});
 });

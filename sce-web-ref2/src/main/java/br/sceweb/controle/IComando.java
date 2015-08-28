@@ -7,5 +7,4 @@ public interface IComando {
 	
 		public String executa(HttpServletRequest req, HttpServletResponse res) throws Exception;
 		
-
 }

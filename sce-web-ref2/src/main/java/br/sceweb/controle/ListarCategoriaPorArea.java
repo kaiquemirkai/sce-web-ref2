@@ -47,10 +47,11 @@ public class ListarCategoriaPorArea implements IComando {
 			
 			
 		}
-		res.setContentType("json");
+		
+		res.setContentType("json");		
 		res.getWriter().write(objFinal.toString());
 		
 		
-		return null;
+		return "Ajax";
 	}
 }

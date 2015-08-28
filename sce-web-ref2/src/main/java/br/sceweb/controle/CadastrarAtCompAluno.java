@@ -88,31 +88,8 @@ public class CadastrarAtCompAluno implements IComando{
 	public String executa(HttpServletRequest request, HttpServletResponse res) throws Exception {
 		String url = "";
 		Login login = new Login();
-		login = LoginRepositorio.RetornaUsuarioLogado();
-		String a1=request.getParameter("sltCodigoAtividade");
-		String a2=request.getParameter("sltCodigoAtividade2");
-		String a3=request.getParameter("sltCodigoAtividade3");
-
-		RegraAtcompRepositorio regraAtcompRepositorio;
-		regraAtcompRepositorio = new RegraAtcompRepositorio(1);
-		List<RegraAtcomp> regraAtcomps = regraAtcompRepositorio.Listar();
-		request.setAttribute("regraAtcomps", regraAtcomps);
-
-
-		if(a1 != "100" ){
-			atcomp.setCodigoAtividade(request.getParameter("sltCodigoAtividade"));
-		}
-
-		if(a3 != "100" )
-		{
-			atcomp.setCodigoAtividade(request.getParameter("sltCodigoAtividade3"));
-		}
-		
-		if(a2 != "100" ){
-			atcomp.setCodigoAtividade(request.getParameter("sltCodigoAtividade2"));
-
-		}
-		
+		login = LoginRepositorio.RetornaUsuarioLogado();		
+		atcomp.setCodigoAtividade(request.getParameter("sltCategoriaAtividade"));		
 		atcomp.setDataInicio(request.getParameter("txtDataInicioAtividade"));
 		atcomp.setHoraInicio(request.getParameter("txtHoraInicioAtividade"));
 		atcomp.setDataFim(request.getParameter("txtDataTerminoAtividade"));
