@@ -5,7 +5,7 @@
 <head>
 
 <style type="text/css">  
-  @import url("/sce-web-ref2/visao/TelasTCCv4/Background.css");  
+  @import url("/sce-web-ref2/visao/TelasTCCv4/CSS/Background.css");  
 </style>
 
 <!-- %@ PARA PUXAR O IMPORT DE .JAVA -->
