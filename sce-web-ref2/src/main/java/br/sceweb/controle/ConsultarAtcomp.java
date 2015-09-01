@@ -35,11 +35,11 @@ public class ConsultarAtcomp implements IComando {
 		//ImageIO.write(img.ImagemGrafico(), "jpg", response.getOutputStream());
 		
 		//below is the different part
-        File someFile = new File("java2.pdf");
+        /*File someFile = new File("java2.pdf");
         FileOutputStream fos = new FileOutputStream(someFile);
         fos.write(atcomp.getAnexo());
         fos.flush();
-        fos.close();
+        fos.close();*/
 		
 		request.setAttribute("atcomp", atcomp);	
 		return "/visao/TelasTCCv4/TelaConsultarAtcompAluno.jsp";

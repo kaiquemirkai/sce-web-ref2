@@ -100,6 +100,7 @@
 <%
 
 ArrayList<Atcomp> lista = (ArrayList<Atcomp>) request.getAttribute("atcomps");
+
 if ((lista!=null)&& (lista.size()>0)){
     Atcomp a = null;
 	for (int i = 0; i < lista.size(); i++) {

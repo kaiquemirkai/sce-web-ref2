@@ -98,13 +98,14 @@ public class CadastrarAtCompAluno implements IComando{
 		atcomp.setStatus("Pendente");
 		atcomp.setCodigo(0);	
 		atcomp.setCodigoAluno(login.getCodigo());
-
-		// atcomp.setAnexo(request.getParameter("inputFile"));
-
+	    byte[] teste = new byte[5];
+	    teste[0] = 0;
+        atcomp.setAnexo(teste);
+        /*
 		FileInputStream fis = null;
         PreparedStatement ps = null;
 		
-		File file = new File("C:\\LuizAugusto-Arquivo\\Oi.jpg");
+		File file = new File("C:\\uploadDIR\\Mori-parte-1.pdf");
         fis = new FileInputStream(file);
         byte[] pdfData = new byte[(int) file.length()];
         DataInputStream dis = new DataInputStream(fis);
@@ -112,8 +113,8 @@ public class CadastrarAtCompAluno implements IComando{
         dis.close();
         
         // Verificar  a parte do anexo!!!!!!
-       // atcomp.setAnexo(pdfData);
-        
+         atcomp.setAnexo(pdfData);
+        */
         
        
         

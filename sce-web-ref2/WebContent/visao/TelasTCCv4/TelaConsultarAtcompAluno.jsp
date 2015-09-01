@@ -9,7 +9,9 @@
 </style>
 
  <%@page import="br.sceweb.dominio.*"%>
-
+ <%@page import="java.util.*"%>
+ <%@page import="java.io.*"%>
+ 
 <script type="text/javascript">
 $(document).ready(function(){
 $('#btnArquivo').change(function(){
@@ -143,6 +145,14 @@ $('#btnArquivo').change(function(){
        <div class="form-group">
         <label name="lblAbrirArquivo" class="sr-only" for="inputfile">Abrir Arquivo</label>
         <input type="file" id="inputfile">
+        <%
+        File someFile = new File("java2.pdf");
+        FileOutputStream fos = new FileOutputStream(someFile);
+        fos.write(a.getAnexo());
+        fos.flush();
+        fos.close();
+        %>
+        <input type="button" onclick="AbrirAnexo()" >
       </div>
 </fieldset>
 
@@ -158,7 +168,7 @@ $('#btnArquivo').change(function(){
 <script type="text/javascript">
      function AbrirAnexo()
      {
-    	 window.open("http://localhost:8080/sce-web-ref2/Oi.jpg");
+    	 window.open("http://localhost:8080/sce-web-ref2/java2.pdf");
      }
      </script>
 

@@ -50,6 +50,7 @@ public class HibernateAtcompDAO implements IAtcompDAO {
 		List<Atcomp> lista = new ArrayList<Atcomp>();
 		try {
 			Login login =LoginRepositorio.RetornaUsuarioLogado();
+			System.out.println("chegou no DAO");
 			System.out.println("Codigo do usuario Logado:  "+ login.getCodigo());
 			EntityManagerFactory factory = Persistence.createEntityManagerFactory("sceweb");
 			EntityManager em = factory.createEntityManager();
