@@ -42,20 +42,22 @@ $('#btnArquivo').change(function(){
 
 <form class= "form-horizontal" role = "form" name="frmConsultarAtcompAluno" action="/sce-web-ref2/ServletControle" method="post">   
     	
-		<input type="hidden" name="acao" value="consultarAtCompAluno">
+		<input type="hidden" name="acao" value="AbrirAnexo">
     	
           <!-- Alteração deve ser feita A partir daqui -->
 	 
 	 			
     						<h3 align="center">Consulta de Atividade Complementar - Detalhes</h3>
-  						
-	 <br> <br>
-	 <fieldset disabled>
-	 <%
+  			 <%
 	 
 	 Atcomp a = (Atcomp)request.getAttribute("atcomp");
 	 %>
-	 
+	 			
+ 	 <input type="hidden" name="txtCodigoHidden" id="txtCodigo" class="form-control" style="width: 25em" value="<%=a.getCodigo() %>" />
+  						
+	 <br> <br>
+	 <fieldset disabled>
+	
 	 <div class="form-group">
         <label name="lblCodigo" for="lblCodigo" class="col-sm-2 control-label">Código</label>
         
@@ -142,24 +144,14 @@ $('#btnArquivo').change(function(){
         
   
         
-       <div class="form-group">
-        <label name="lblAbrirArquivo" class="sr-only" for="inputfile">Abrir Arquivo</label>
-        <input type="file" id="inputfile">
-        <%
-        File someFile = new File("java2.pdf");
-        FileOutputStream fos = new FileOutputStream(someFile);
-        fos.write(a.getAnexo());
-        fos.flush();
-        fos.close();
-        %>
-        <input type="button" onclick="AbrirAnexo()" >
+     
       </div>
 </fieldset>
 
         
      <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
-       <button name="btnCadastrar" type="submit" class="btn btn-primary">Voltar</button>
+       <button name="btnCadastrar" type="submit" class="btn btn-primary">Visualizar Documento</button>
       </div>
      </div>
      
@@ -168,7 +160,7 @@ $('#btnArquivo').change(function(){
 <script type="text/javascript">
      function AbrirAnexo()
      {
-    	 window.open("http://localhost:8080/sce-web-ref2/java2.pdf");
+    	 window.open("http://localhost:8080/sce-web-ref2/TelaExibirAnexo.jsp");
      }
      </script>
 
