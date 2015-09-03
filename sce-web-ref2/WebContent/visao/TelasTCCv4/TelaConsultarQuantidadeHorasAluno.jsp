@@ -3,7 +3,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-
+ <%@page import="br.sceweb.dominio.*"%>
+    <%@page import="java.util.*"%>
 <style type="text/css">  
   @import url("/sce-web-ref2/visao/TelasTCCv4/CSS/Background.css");  
 </style>
@@ -28,7 +29,7 @@
 
 <form class= "form-horizontal" role = "form" name="frmConsultarQuantidadeHorasAluno" action="/sce-web-ref2/ServletControle" method="post">   
     	
-		<input type="hidden" name="acao" value="consultarQuantidadeHorasAluno">
+		<input type="hidden" name="acao" value="RelatorioQuantidadeHorasAlunos">
     	
        			
     						<h3 align="center">Consulta de Horas</h3>
@@ -50,15 +51,21 @@
        <br>	
       <!-- barra progresso-->
       <div class="progress">
-  		<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
-  		40%
+     <% String resultadoTecnologica = "" + request.getAttribute("tecnologica");
+     String resultadoCidada = "" + request.getAttribute("cidada");
+     String resultadoCultural = "" + request.getAttribute("cultural");
+     
+     
+     %>
+  		<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<%=resultadoTecnologica %>" aria-valuemin="0" aria-valuemax="100" style="width: <%=resultadoTecnologica %>%">
+  		<%=resultadoTecnologica %>%
   		</div>
 	  </div>
 	  
       <div class="caption">
         <h4 align="center">Área Técnica </h4>
         <p> Aqui você encontra maiores informações sobre o andamento de suas atividades complemtentares da área técnica, clique e obtenha mais detalhes!</p>
-        <p align="center"><a href="#" class="btn btn-success" role="button">Mais detalhes</a> </p>
+        <p align="center"><input type="submit" class="btn btn-success" value="Mais detalhes" role="button"> </p>
       </div>
     </div>
   </div>
@@ -70,8 +77,8 @@
       <br>	
       <!-- barra progresso-->
       <div class="progress">
-  		<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-  	    40%
+  		<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="<%=resultadoCultural %>" aria-valuemin="0" aria-valuemax="100" style="width: <%=resultadoCultural %>%">
+  	    <%=resultadoCultural %>%
   	    </div>
 	  </div>
       
@@ -90,8 +97,8 @@
       <br>	
       <!-- barra progresso-->
       <div class="progress">
-  		<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"> 		
-  	    40%
+  		<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<%=resultadoCidada %>" aria-valuemin="0" aria-valuemax="100" style="width: <%=resultadoCidada %>%"> 		
+  	    <%=resultadoCidada %>%
   	    </div>
 	   </div>
       

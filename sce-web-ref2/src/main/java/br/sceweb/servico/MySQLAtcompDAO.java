@@ -25,4 +25,10 @@ public Atcomp Consultar(Atcomp a) {
 		return null;
 
 	}
+
+public Double RelatorioHorasPorArea(String areaAtividade) 
+{
+	return null;
+}
+
 }

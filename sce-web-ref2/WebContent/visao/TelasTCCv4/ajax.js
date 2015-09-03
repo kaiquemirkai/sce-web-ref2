@@ -1,5 +1,6 @@
 $(document).ready(function() {
 		$('#sltAreaAtividade').change(function(event) {
+	
 		selectValue = $('#sltAreaAtividade').val();
 		var path = '/sce-web-ref2/ServletControle';
 				
@@ -47,5 +48,6 @@ $(document).ready(function() {
 			
 			
 			});
+	
 		});
 });

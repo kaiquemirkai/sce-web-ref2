@@ -20,12 +20,12 @@
 
 
 function Mudar()
-{
+{/*
 	 var select = $('#sltCategoriaAtividade').val();
 	 var hidden = $('#CategoriaAtividade');
 	 hidden.value = select.val();
 	 alert(select);
-	 
+	 */
 }
 $(document).ready(function(){
 

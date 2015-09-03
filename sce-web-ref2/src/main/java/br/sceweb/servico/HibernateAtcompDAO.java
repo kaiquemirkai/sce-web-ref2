@@ -66,6 +66,30 @@ public class HibernateAtcompDAO implements IAtcompDAO {
 		return lista;
 	}
 	
+	
+	@Override
+	public Double RelatorioHorasPorArea(String areaAtividade) {
+		Double resultado = 0.0;
+		try {
+			
+			Login login =LoginRepositorio.RetornaUsuarioLogado();
+			EntityManagerFactory factory = Persistence.createEntityManagerFactory("sceweb");
+			EntityManager em = factory.createEntityManager();
+			String hql = " SELECT SUM(a.horasLancadas) FROM Atcomp a WHERE  a.areaAtividade = :areaAtividade";
+			em.getTransaction().begin();
+			Query query = em.createQuery(hql);
+			
+			query.setParameter("areaAtividade", areaAtividade);
+			resultado = Double.parseDouble(query.getSingleResult() + "");
+			
+			em.getTransaction().commit();
+
+		} catch (Throwable e) {
+		}
+		return resultado;
+	}
+	
+	
 	public List<RegraAtcomp> ListarRegraAtcomp() {
 		List<RegraAtcomp> lista = new ArrayList<RegraAtcomp>();
 		try {

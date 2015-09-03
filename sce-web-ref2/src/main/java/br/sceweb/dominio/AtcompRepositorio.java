@@ -28,6 +28,10 @@ private IAtcompDAO daoAtcomp;
 		return daoAtcomp.Listar();
 	}
 	
+	
+	public Double RelatorioHorasPorArea(String areaAtividade){
+		return daoAtcomp.RelatorioHorasPorArea(areaAtividade);
+	}
 	/*
 	 * Verificar que porra eh essa!
 	public List<RegraAtcomp> Listar2(){

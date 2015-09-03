@@ -3,7 +3,22 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-
+ <%@page import="br.sceweb.dominio.*"%>
+    <%@page import="java.util.*"%>
+    
+    <% 
+    String tecnologica = "" + request.getAttribute("tecnologica");
+    String tecnologicadif = "" + request.getAttribute("tecnologicadif");
+    
+    String cidada = "" + request.getAttribute("cidada");
+    String cidadadif = "" + request.getAttribute("cidadadif");
+    
+    String cultural = "" + request.getAttribute("cultural");
+    String culturaldif = "" + request.getAttribute("culturaldif");
+     
+   
+     %>
+     
 <style type="text/css">  
   @import url("/sce-web-ref2/visao/TelasTCCv4/CSS/Background.css");  
 </style>
@@ -26,9 +41,9 @@
         // Create the data table.
           var data = google.visualization.arrayToDataTable([
         ['Horas', 'Horas realizadas', 'Horas a cumprir', { role: 'annotation' } ],
-        ['Tecnológica', 10, 24,''],
-        ['Cidadã', 16, 22,''],
-        ['Sócio-Cultural', 28, 19, '']
+        ['Tecnológica', <%=tecnologica %>, <%=tecnologicadif %>,''],
+        ['Cidadã', <%=cidada %>, <%=cidadadif %>,''],
+        ['Sócio-Cultural', <%=cultural %>, <%=culturaldif %>, '']
       ]);
 
       var options = {

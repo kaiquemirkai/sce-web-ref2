@@ -10,6 +10,7 @@ public interface IAtcompDAO {
 
 	public boolean Cadastrar(Atcomp a);
 	public List<Atcomp> Listar();
+	public Double RelatorioHorasPorArea(String areaAtividade) ;
 	
 	///Verificar que porra eh essa!!!!!!!
 	//public List<RegraAtcomp> Listar2();
