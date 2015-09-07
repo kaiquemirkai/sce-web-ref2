@@ -3,7 +3,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-
+ <%@page import="br.sceweb.dominio.*"%>
+    <%@page import="java.util.*"%>
 <style type="text/css">  
   @import url("/sce-web-ref2/visao/TelasTCCv4/CSS/Background.css");  
 </style>
@@ -28,9 +29,20 @@
 
 <form class= "form-horizontal" role = "form" name="frmAvaliarAtcompPendenteProfessor" action="/sce-web-ref2/ServletControle" method="post">   
     	
-		<input type="hidden" name="acao" value="AvaliarAtcompPendenteProfessor">
+		<input type="hidden" id="acao" name="acao" >
     	           			
     	<h3 align="center">Atividade Complementar Pendente de Avaliação</h3>
+  			
+						  			 <%
+	 
+	 Atcomp a = (Atcomp)request.getAttribute("atcomp");
+	 //Manter sessão Ativa
+	 session.setAttribute("atcomp2", a);
+	 %>
+	 			
+ 	 <input type="hidden" name="txtCodigoHidden" id="txtCodigo" class="form-control" style="width: 25em" value="<%=a.getCodigo() %>" />
+  				
+  			  			
   						
 	 <br> <br>	 
 	 
@@ -41,16 +53,18 @@
    <!-- Divisão da tela: Parte Principal -->
   <div class="col-md-8">
   
-	 <div class="form-group">
-        <label name="lblVisualizar" class="col-sm-2 control-label" for="lblVisualizar">Visualizar Comprovante</label>
-        <label> <a href="#">Arquivo.pdf </a></label>
-      </div> 
+ <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+           <!-- Comando para abrir em outra ABA -->
+            <a href="javascript:void(0);" onclick="javascript:window.open('/sce-web-ref2/visao/TelasTCCv4/TelaExibirAnexo.jsp');" class="popup">Visualizar Documento</a>
+      </div>
+     </div>
 	 
 	 <div class="form-group">
         <label name="lblCodigo" for="lblCodigo" class="col-sm-2 control-label">Código</label>
         
         <div class="col-sm-10">
-             <input type="text" name="txtCodigo" id="txtCodigo" class="form-control" style="width: 25em" value="1" />
+             <input type="text" name="txtCodigo" id="txtCodigo" class="form-control" style="width: 25em" value="<%=a.getCodigo() %>" />
         </div>
         </div>
         
@@ -136,7 +150,7 @@
         <label name="lbldataInicioAtividade" for="lblDataInicioAtividade" class="col-sm-2 control-label">Data de Início da Atividade</label>
         
         <div class="col-sm-10">
-             <input type="text" name="txtDataInicioAtividade" id="txtDataInicioAtividade" class="form-control" style="width: 25em" placeholder="Data de início" value="" />
+             <input type="text" name="txtDataInicioAtividade" id="txtDataInicioAtividade" class="form-control" style="width: 25em" value="<%=a.getDataInicio()%>" />
         </div>
         </div>
         
@@ -144,7 +158,7 @@
         <label name="lblHoraInicioAtividade" for="lblHoraInicioAtividade" class="col-sm-2 control-label">Hora de Início da Atividade</label>
         
         <div class="col-sm-10">
-             <input type="text" name="txtHoraInicioAtividade" id="txtHoraInicioAtividade" class="form-control" style="width: 25em" placeholder="Hora de início" value="" />
+             <input type="text" name="txtHoraInicioAtividade" id="txtHoraInicioAtividade" class="form-control" style="width: 25em"  value="<%=a.getHoraInicio()%>" />
         </div>
         </div>
         
@@ -152,7 +166,7 @@
         <div class="form-group">
         <label name="lblDataTerminoAtividade" for="lblDataTerminoAtividade" class="col-sm-2 control-label">Data de Término da Atividade</label>
         <div class="col-sm-10">
-             <input type="text" name="txtDataTerminoAtividade" id="txtDataTerminoAtividade" class="form-control" style="width: 25em" placeholder="Data de término" value="" />
+             <input type="text" name="txtDataTerminoAtividade" id="txtDataTerminoAtividade" class="form-control" style="width: 25em" value="<%=a.getDataFim()%>" />
         </div>
         </div>
         
@@ -160,7 +174,7 @@
        <div class="form-group">
         <label name = "lblHoraTerminoAtividade" for="lblHoraTerminoAtividade" class="col-sm-2 control-label">Hora de Término da Atividade</label>
         <div class="col-sm-10">
-             <input type="text" name="txtHoraTerminoAtividade" id="txtHoraTerminoAtividade" class="form-control" style="width: 25em" placeholder="Data de término" value="" />
+             <input type="text" name="txtHoraTerminoAtividade" id="txtHoraTerminoAtividade" class="form-control" style="width: 25em" value="<%=a.getHoraFim()%>" />
         </div>
         </div>
         
@@ -168,7 +182,7 @@
         <div class="form-group">
         <label name="lblDescricaoAtividade" for="lblDescricaoAtividade" class="col-sm-2 control-label">Descricao da Atividade</label>
         <div class="col-sm-10">
-             <textarea name="txtDescricaoAtividade" rows="4" cols="4" class="form-control" style="width: 25em" placeholder="Descreva sua atividade aqui"></textarea>
+             <textarea name="txtDescricaoAtividade" rows="4" cols="4" class="form-control" style="width: 25em" ><%=a.getDescricao()%></textarea>
         </div>
         </div>
         
@@ -206,6 +220,23 @@
 </form><!-- Fim do Form -->
 
 </div><!-- Fim da Div Conteudo -->
+
+<script type="text/javascript">
+     function VerAnexo()
+     {
+    	 document.getElementById('acao').value = "AbrirAnexo";
+     }
+     function Aprovar()
+     {
+    	 document.getElementById('acao').value = "listarAtCompPendenteProfessor";
+     }
+     function Reprovar()
+     {
+    	 document.getElementById('acao').value = "listarAtCompPendenteProfessor";
+     }
+    
+    
+ </script>
 
 
 

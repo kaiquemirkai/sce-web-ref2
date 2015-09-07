@@ -4,6 +4,10 @@
 <html>
 <head>
 
+ 
+    <%@page import="br.sceweb.dominio.*"%>
+    <%@page import="java.util.*"%>
+
 <style type="text/css">  
   @import url("/sce-web-ref2/visao/TelasTCCv4/CSS/Background.css");  
 </style>
@@ -11,6 +15,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>UATComp - Consultar Atcomp</title>
 </head>
+
 
 <body id="fundo">
 
@@ -28,7 +33,7 @@
 <form class= "form-horizontal" role = "form" name="frmListarAtcompProfessor" action="/sce-web-ref2/ServletControle" method="post">   
     	
    
-    <input type="hidden" name="acao" value="listarAtCompProfessor">
+    <input type="hidden" id="acao" name="acao" >
     
         						<h3 align="center">Consulta de Atividade Complementar</h3>
   						
@@ -77,14 +82,10 @@
 	<label class="radio-inline">
   		<input type="radio" name="rdBusca" id="rdAno" value="ano"> Ano
 	</label>
-  </div>
-</div> 
-	
-	<div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-       <button name="btnBuscar" type="submit" class="btn btn-primary">Buscar</button>
-      </div>
-     </div>  <!--  Termino BUSCA -->
+
+ 	<button type="#" class="btn btn-primary" onclick="listar()">Listar</button>
+    <button type="#" class="btn btn-primary" onclick="consultar()">Consultar</button>
+					
           
     <br> <br>
      
@@ -114,6 +115,40 @@
 
 </tr>
 
+
+<%
+
+ArrayList<Atcomp> lista = (ArrayList<Atcomp>) request.getAttribute("atcomps");
+
+if ((lista!=null)&& (lista.size()>0)){
+    Atcomp a = null;
+	for (int i = 0; i < lista.size(); i++) {
+		    
+		    a = (Atcomp) lista.get(i);
+			
+		    %><tr> 
+		    <td><input type="radio" name="codigoRadio" value="<%=a.getCodigo()%>"> </td>
+		    
+		    <td> <label><%=a.getAreaAtividade()%><label></td>
+
+		    <td><label> <%=a.getCodigoAtividade()%><label> </td>
+		        
+		    <td> <label><%=a.getDescricao()%></label> </td>
+
+		    <td> <label><%=a.getHorasLancadas()%></label> </td>
+
+		    <td> <label><%=a.getStatus()%></label> </td>
+
+		    </tr>
+<%    
+		    
+		}
+	
+	}
+%>
+
+
+
 </table>
 
 <!--  Termino Das Alterações -->
@@ -122,6 +157,16 @@
 
 </div><!-- Fim da Div Conteudo -->
 
+
+<script>
+function listar(){
+	   document.getElementById('acao').value = "ListarAtCompProfessor";
+}
+function consultar(){
+	   document.getElementById('acao').value = "ConsultarAtcompProfessor";
+}
+    
+ </script>
 
 </body>
 </html>

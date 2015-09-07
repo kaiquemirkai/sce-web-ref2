@@ -40,9 +40,9 @@ $('#btnArquivo').change(function(){
 <!-- Div do Conteudo  -->
 <div class="container">
 
-<form class= "form-horizontal" role = "form" name="frmConsultarAtcompAluno" action="/sce-web-ref2/ServletControle" method="post">   
+<form class= "form-horizontal" id=form1 role = "form" name="frmConsultarAtcompAluno"  method="post">   
     	
-		<input type="hidden" name="acao" value="AbrirAnexo">
+		<input type="hidden" name="acao" >
     	
           <!-- Alteração deve ser feita A partir daqui -->
 	 
@@ -51,6 +51,7 @@ $('#btnArquivo').change(function(){
   			 <%
 	 
 	 Atcomp a = (Atcomp)request.getAttribute("atcomp");
+  	 session.setAttribute("atcomp2", a);
 	 %>
 	 			
  	 <input type="hidden" name="txtCodigoHidden" id="txtCodigo" class="form-control" style="width: 25em" value="<%=a.getCodigo() %>" />
@@ -151,7 +152,8 @@ $('#btnArquivo').change(function(){
         
      <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
-       <button name="btnCadastrar" type="submit" class="btn btn-primary">Visualizar Documento</button>
+      <!-- Comando para abrir em outra ABA -->
+      <a href="javascript:void(0);" onclick="javascript:window.open('/sce-web-ref2/visao/TelasTCCv4/TelaExibirAnexo.jsp');" class="popup">Visualizar Documento</a>
       </div>
      </div>
      
@@ -160,7 +162,10 @@ $('#btnArquivo').change(function(){
 <script type="text/javascript">
      function AbrirAnexo()
      {
-    	 window.open("http://localhost:8080/sce-web-ref2/TelaExibirAnexo.jsp");
+    	 //window.open("http://localhost:8080/sce-web-ref2/TelaExibirAnexo.jsp");
+    	alert("Olá");
+    	 window.open('TelaExibirAnexo.jsp?method="post"'); 
+    	 //document.form1.submit(); 
      }
      </script>
 

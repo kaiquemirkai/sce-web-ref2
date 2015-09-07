@@ -1,17 +1,25 @@
 
 package br.sceweb.controle;
 
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
 import java.util.List;
 
-import javax.servlet.ServletOutputStream;
+import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.sceweb.dominio.Atcomp;
 import br.sceweb.dominio.AtcompRepositorio;
 
-public class AbrirAnexo implements IComando {
+public class ConsultarAtcompProfessor implements IComando {
 	AtcompRepositorio atcompRepositorio;
+	
+	
 /**
  * O comando mostratodasempresas seleciona o sgbd desejado
  * HIBERNATE = 1
@@ -21,14 +29,13 @@ public class AbrirAnexo implements IComando {
 	public String executa(HttpServletRequest request, HttpServletResponse res) 	throws Exception {
 		atcompRepositorio = new AtcompRepositorio(1);
 		Atcomp a = new Atcomp();
-		a.setCodigo(Integer.parseInt(request.getParameter("txtCodigoHidden")));
-		Atcomp atcomp = atcompRepositorio.Consultar(a);
+		a.setCodigo(Integer.parseInt(request.getParameter("codigoRadio")));
+		Atcomp atcomp = atcompRepositorio.Consultar(a);	
 		
-		
-		request.setAttribute("atcomp", atcomp);		
-
-		return "/visao/TelasTCCv4/TelaExibirAnexo.jsp";
+	
+		request.setAttribute("atcomp", atcomp);	
+		return "/visao/TelasTCCv4/TelaConsultarAtcompProfessor.jsp";
 	}
-
-
+	
+	
 }

@@ -12,18 +12,26 @@
 </head>
 <body>
 
+
+
 <%
 
 
-Atcomp a = (Atcomp)request.getAttribute("atcomp");
+Atcomp ac = (Atcomp)session.getAttribute("atcomp2");
 
 
-response.setContentType("application/pdf");  
-response.setContentLength(a.getAnexo().length);  
-ServletOutputStream ouputStream = response.getOutputStream();  
-ouputStream.write(a.getAnexo(), 0, a.getAnexo().length);  
-ouputStream.flush();  
+response.setContentType("application/pdf");
+response.setContentLength(ac.getAnexo().length);
+/*Fornece um fluxo de saída para o envio de dados binários para o cliente. 
+Um objeto ServletOutputStream normalmente é recuperado através do método ServletResponse.getOutputStream()
+Esta é uma classe abstrata que implementa o contêiner servlet. 
+Subclasses desta classe deve implementar o método java.io.OutputStream.write (int). */
+ServletOutputStream ouputStream = response.getOutputStream();
+ouputStream.write(ac.getAnexo(), 0, ac.getAnexo().length);
+ouputStream.flush();
 ouputStream.close();
+
 %>
+
 </body>
 </html>

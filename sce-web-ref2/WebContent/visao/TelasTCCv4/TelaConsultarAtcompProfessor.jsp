@@ -4,6 +4,11 @@
 <html>
 <head>
 
+
+ <%@page import="br.sceweb.dominio.*"%>
+ <%@page import="java.util.*"%>
+ <%@page import="java.io.*"%>
+
 <style type="text/css">  
   @import url("/sce-web-ref2/visao/TelasTCCv4/CSS/Background.css");  
 </style>
@@ -38,12 +43,23 @@ $('#btnArquivo').change(function(){
 
 <form class= "form-horizontal" role = "form" name="frmConsultarAtcompProfessor" action="/sce-web-ref2/ServletControle" method="post">   
     	
-		<input type="hidden" name="acao" value="consultarAtCompProfessor">
+		<input type="hidden" name="acao" value="AbrirAnexo">
     	
           <!-- Alteração deve ser feita A partir daqui -->
 	 
 	 			
     						<h3 align="center">Consulta de Atividade Complementar - Detalhes</h3>
+  						
+  						  			 <%
+	 
+	 Atcomp a = (Atcomp)request.getAttribute("atcomp");
+     //Manter a Sessão Ativa
+     session.setAttribute("atcomp2", a);
+	 %>
+	 			
+ 	 <input type="hidden" name="txtCodigoHidden" id="txtCodigo" class="form-control" style="width: 25em" value="<%=a.getCodigo() %>" />
+  				
+  						
   						
 	 <br> <br>
 	 <fieldset disabled>
@@ -52,7 +68,7 @@ $('#btnArquivo').change(function(){
         <label name="lblCodigo" for="lblCodigo" class="col-sm-2 control-label">Código</label>
         
         <div class="col-sm-10">
-             <input type="text" name="txtCodigo" id="txtCodigo" class="form-control" style="width: 25em" value="1" />
+             <input type="text" name="txtCodigo" id="txtCodigo" class="form-control" style="width: 25em" value="<%=a.getCodigo() %>" />
         </div>
         </div>
         
@@ -146,7 +162,7 @@ $('#btnArquivo').change(function(){
         <label name="lbldataInicioAtividade" for="lblDataInicioAtividade" class="col-sm-2 control-label">Data de Início da Atividade</label>
         
         <div class="col-sm-10">
-             <input type="text" name="txtDataInicioAtividade" id="txtDataInicioAtividade" class="form-control" style="width: 25em" placeholder="Data de início" value="" />
+             <input type="text" name="txtDataInicioAtividade" id="txtDataInicioAtividade" class="form-control" style="width: 25em" value="<%=a.getDataInicio()%>" />
         </div>
         </div>
         
@@ -154,7 +170,7 @@ $('#btnArquivo').change(function(){
         <label name="lblHoraInicioAtividade" for="lblHoraInicioAtividade" class="col-sm-2 control-label">Hora de Início da Atividade</label>
         
         <div class="col-sm-10">
-             <input type="text" name="txtHoraInicioAtividade" id="txtHoraInicioAtividade" class="form-control" style="width: 25em" placeholder="Hora de início" value="" />
+             <input type="text" name="txtHoraInicioAtividade" id="txtHoraInicioAtividade" class="form-control" style="width: 25em" value="<%=a.getHoraInicio()%>" />
         </div>
         </div>
         
@@ -162,7 +178,7 @@ $('#btnArquivo').change(function(){
         <div class="form-group">
         <label name="lblDataTerminoAtividade" for="lblDataTerminoAtividade" class="col-sm-2 control-label">Data de Término da Atividade</label>
         <div class="col-sm-10">
-             <input type="text" name="txtDataTerminoAtividade" id="txtDataTerminoAtividade" class="form-control" style="width: 25em" placeholder="Data de término" value="" />
+             <input type="text" name="txtDataTerminoAtividade" id="txtDataTerminoAtividade" class="form-control" style="width: 25em" value="<%=a.getDataFim()%>" />
         </div>
         </div>
         
@@ -170,7 +186,7 @@ $('#btnArquivo').change(function(){
        <div class="form-group">
         <label name = "lblHoraTerminoAtividade" for="lblHoraTerminoAtividade" class="col-sm-2 control-label">Hora de Término da Atividade</label>
         <div class="col-sm-10">
-             <input type="text" name="txtHoraTerminoAtividade" id="txtHoraTerminoAtividade" class="form-control" style="width: 25em" placeholder="Data de término" value="" />
+             <input type="text" name="txtHoraTerminoAtividade" id="txtHoraTerminoAtividade" class="form-control" style="width: 25em"  value="<%=a.getHoraFim()%>" />
         </div>
         </div>
         
@@ -178,20 +194,17 @@ $('#btnArquivo').change(function(){
         <div class="form-group">
         <label name="lblDescricaoAtividade" for="lblDescricaoAtividade" class="col-sm-2 control-label">Descricao da Atividade</label>
         <div class="col-sm-10">
-             <textarea name="txtDescricaoAtividade" rows="4" cols="4" class="form-control" style="width: 25em" placeholder="Descreva sua atividade aqui"></textarea>
+             <textarea name="txtDescricaoAtividade" rows="4" cols="4" class="form-control" style="width: 25em" ><%=a.getDescricao()%></textarea>
         </div>
         </div>
         
-       <div class="form-group">
-        <label name="lblAbrirArquivo" class="sr-only" for="inputfile">Abrir Arquivo</label>
-        <input type="file" id="inputfile">
-      </div>
     
     </fieldset>
     
-     <div class="form-group">
+    <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
-       <button name="btnCadastrar" type="submit" class="btn btn-primary">Voltar</button>
+      <!-- Comando para abrir em outra ABA -->
+      <a href="javascript:void(0);" onclick="javascript:window.open('/sce-web-ref2/visao/TelasTCCv4/TelaExibirAnexo.jsp');" class="popup">Visualizar Documento</a>
       </div>
      </div>
 

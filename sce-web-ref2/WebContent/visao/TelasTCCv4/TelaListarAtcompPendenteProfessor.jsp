@@ -3,7 +3,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-
+ 
+    <%@page import="br.sceweb.dominio.*"%>
+    <%@page import="java.util.*"%>
 <style type="text/css">  
   @import url("/sce-web-ref2/visao/TelasTCCv4/CSS/Background.css");  
 </style>
@@ -27,7 +29,7 @@
 <form class= "form-horizontal" role = "form" name="frmListarAtcompPendenteProfessor" action="/sce-web-ref2/ServletControle" method="post">   
     	
    
-    <input type="hidden" name="acao" value="listarAtCompPendenteProfessor">
+    <input type="hidden" id="acao" name="acao" >
     
         			<h3 align="center">Atividades Complementares Pendentes de Avaliação</h3>
   						
@@ -55,8 +57,8 @@
   		<input type="radio" name="rdBusca" id="rdCurso" value="curso"> Curso
 	</label>
 	
-       <button name="btnBuscar" type="submit" class="btn btn-primary">Buscar</button>
-    
+
+ 	<button type="#" class="btn btn-primary" onclick="listar()">Listar</button>
      </div>
           
     <br> <br>
@@ -75,27 +77,47 @@
 
 <td> <label>Curso</label> </td>
 
-<td> <label>Data Cadastro</label> </td>
+<td> <label>Descrição</label> </td>
 
 </tr>
 
+<%
+
+ArrayList<Atcomp> lista = (ArrayList<Atcomp>) request.getAttribute("atcomps");
+
+if ((lista!=null)&& (lista.size()>0)){
+    Atcomp a = null;
+	for (int i = 0; i < lista.size(); i++) {
+		    
+		    a = (Atcomp) lista.get(i);
+			
+		    if(a.getStatus().equals("Pendente")){
+		    %>
+
 <tr> 
 
-<td> <label>1</label> </td> <!-- Campo que receberá codigo radio -->
+<td> <input type="radio" name="codigoRadio" value="<%=a.getCodigo()%>"> </td> <!-- Campo que receberá codigo radio -->
 
-<td> <label>Zé Mané</label> </td>
+<td> <label></label> </td>
 
-<td> <label>2012120111</label> </td>
+<td> <label></label> </td>
 
 <td> <label>2ASIN</label> </td>
 
 <td> <label>Sistemas de Informação</label> </td>
 
-<td> <label>20/12/2015</label> </td>
+<td> <label><%=a.getDescricao()%></label> </td>
 
 
 </tr>
 
+<%
+		    }//Fim do IF EQUALS
+
+	               } //FIM DO FOR PARA CARREGAR TODOS OS OBJETOS
+             
+				}//FIM DO IF
+	               %>
 
 </table>
 
@@ -103,7 +125,7 @@
 
 
  <center>
- <button type="button" class="btn btn-success">
+ <button type="#" class="btn btn-success" onclick="consultar()">
   	<span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Avaliar
  </button>
 </center>
@@ -111,6 +133,17 @@
 </form><!-- Fim do Form -->
 
 </div><!-- Fim da Div Conteudo -->
+
+
+<script>
+function listar(){
+	   document.getElementById('acao').value = "ListarAtCompPendenteProfessor";
+}
+function consultar(){
+	   document.getElementById('acao').value = "ConsultarAtcompPendenteProfessor";
+}
+    
+ </script>
 
 
 </body>
