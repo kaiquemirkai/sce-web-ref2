@@ -90,6 +90,31 @@ public class HibernateAtcompDAO implements IAtcompDAO {
 	}
 	
 	
+	
+	
+	public int QuantidadeAtcompsPorStatus(String status) {
+		int resultado = 0;
+		try {
+			
+			Login login =LoginRepositorio.RetornaUsuarioLogado();
+			EntityManagerFactory factory = Persistence.createEntityManagerFactory("sceweb");
+			EntityManager em = factory.createEntityManager();
+			String hql = " SELECT COUNT(a.codigo) FROM Atcomp a WHERE  a.status = :status";
+			em.getTransaction().begin();
+			Query query = em.createQuery(hql);
+			
+			query.setParameter("status", status);
+			resultado = Integer.parseInt(query.getSingleResult() + "");
+			
+			em.getTransaction().commit();
+
+		} catch (Throwable e) {
+		}
+		return resultado;
+	}
+	
+	
+	
 	public List<RegraAtcomp> ListarRegraAtcomp() {
 		List<RegraAtcomp> lista = new ArrayList<RegraAtcomp>();
 		try {
