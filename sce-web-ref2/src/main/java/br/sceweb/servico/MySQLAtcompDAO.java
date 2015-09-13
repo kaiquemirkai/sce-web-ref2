@@ -31,4 +31,10 @@ public Double RelatorioHorasPorArea(String areaAtividade)
 	return null;
 }
 
+
+public int QuantidadeAtcompsPorStatus(String status){
+	
+	return 0;
+}
+
 }

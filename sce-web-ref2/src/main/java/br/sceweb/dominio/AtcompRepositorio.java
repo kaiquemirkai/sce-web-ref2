@@ -50,5 +50,14 @@ private IAtcompDAO daoAtcomp;
 		return daoAtcomp.exclui(cnpj);
 		
 		*/
+	
+	
+	public int QuantidadeAtcompsPorStatus(String status){
+		
+		return daoAtcomp.QuantidadeAtcompsPorStatus(status);
+		
+		
+	}
+	
 	}
 

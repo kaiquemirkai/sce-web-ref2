@@ -11,7 +11,13 @@ import br.sceweb.dominio.SugestaoAtividade;
 public interface ISugestaoAtividadeDAO {
 
 	public boolean Cadastrar(SugestaoAtividade sa);
+	
 	public List<SugestaoAtividade> Listar();
+	
+	public List<SugestaoAtividade> ListarSugestoesRecentes();
+	
+	
+
 	
 	//Utilizado por causa do JUnit
 	public List<SugestaoAtividade> consultaCodigo(String codigo);
@@ -22,4 +28,5 @@ public interface ISugestaoAtividadeDAO {
 	
 	public SugestaoAtividade Consultar(SugestaoAtividade sa);
 	
+		
 }

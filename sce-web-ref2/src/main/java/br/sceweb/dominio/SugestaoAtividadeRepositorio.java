@@ -32,6 +32,12 @@ public class SugestaoAtividadeRepositorio {
 	public List<SugestaoAtividade> Listar(){
 		return IdaoSugestaoAtividade.Listar();
 	}
+	
+	
+	public List<SugestaoAtividade> ListarSugestoesRecentes(){
+		return IdaoSugestaoAtividade.ListarSugestoesRecentes();
+	}
+	
 
 	public SugestaoAtividade Consultar(SugestaoAtividade sa){		
 		return IdaoSugestaoAtividade.Consultar(sa);

@@ -16,6 +16,10 @@
     String cultural = "" + request.getAttribute("cultural");
     String culturaldif = "" + request.getAttribute("culturaldif");
      
+    
+    String aprovado = "" + request.getAttribute("aprovado");
+    String pendente = "" + request.getAttribute("pendente");
+    
    
      %>
      
@@ -139,10 +143,10 @@
   
   		<ul class="list-group">
   			<li class="list-group-item">
-    			<span class="badge">5</span> Atividades Complementares Aprovadas:
+    			<span class="badge"><%=aprovado %></span> Atividades Complementares Aprovadas:
   			</li>
   			<li class="list-group-item">
-    			<span class="badge">5</span> Atividades Complementares em Análise:
+    			<span class="badge"><%=pendente %></span> Atividades Complementares em Análise:
   			</li>
 		</ul>
   
@@ -163,25 +167,51 @@
   			<table class="table table-hover">
   				 <tr>
     				<td> Sugestao:</td>
-    				<td> Quem Cadastrou:</td>
+    				<td> Categoria:</td>
     				<td> Data:</td>
-    				<td> Hora:</td>
+    				<td> Descrição:</td>
     			</tr>
 				
+				<% 
+				ArrayList<SugestaoAtividade> lista = (ArrayList<SugestaoAtividade>) request.getAttribute("sugestaoAtividadesRecentes");
+    
+				if ((lista!=null)&&(lista.size()>0)){
+                SugestaoAtividade sa = null;
+                
+	               for (int i = 0; i < lista.size(); i++) {
+		    
+		        sa = (SugestaoAtividade) lista.get(i);
+				
+				
+				%>
+				
+				
+				
 				<tr>
-    				<td>1</td>
-    				<td>2</td>
-    				<td>3</td>
-    				<td>4</td>
+    				
+
+				<td> <label><%=sa.getNomeSugestaoAtividade()%> </label> </td>
+     
+				<td> <label><%=sa.getCategoria()%></label> </td>
+
+				<td> <label><%=sa.getDataVigenciaInicio()%></label> </td>
+
+				<td> <label><%=sa.getDescricao()%></label> </td>
+    			
     			</tr>
     			
-    			<tr>
-    				<td>1</td>
-    				<td>2</td>
-    				<td>3</td>
-    				<td>4</td>
-    			</tr>
     			
+    			<%
+
+	               } //FIM DO FOR PARA CARREGAR TODOS OS OBJETOS
+             
+				}//FIM DO IF
+	               %>
+
+
+       
+    			
+    			    			
   			</table>
 		</div> <!-- Final Painel Sugestao-->
   

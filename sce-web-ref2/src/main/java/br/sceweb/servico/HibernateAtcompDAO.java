@@ -91,7 +91,7 @@ public class HibernateAtcompDAO implements IAtcompDAO {
 	
 	
 	
-	
+	@Override
 	public int QuantidadeAtcompsPorStatus(String status) {
 		int resultado = 0;
 		try {

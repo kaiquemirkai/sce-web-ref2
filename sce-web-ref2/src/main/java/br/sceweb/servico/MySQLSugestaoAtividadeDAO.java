@@ -26,6 +26,11 @@ public class MySQLSugestaoAtividadeDAO implements ISugestaoAtividadeDAO{
 	public List<SugestaoAtividade> Listar(){
 		return null;
 	}
+	
+	
+	public List<SugestaoAtividade> ListarSugestoesRecentes(){
+		return null;
+	}
 
 	public SugestaoAtividade Consultar(SugestaoAtividade sa) {
 		return null;
