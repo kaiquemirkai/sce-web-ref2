@@ -25,11 +25,13 @@
 
 <!-- Div do Conteudo  -->
 <div class="container">
-
+<%
+ String quantidadePendente = "" + request.getAttribute("quantidadePendente");
+%>
 
 <form class= "form-horizontal" role = "form" name="frmHomeProfessor" action="/sce-web-ref2/ServletControle" method="post">   
     	
-		<input type="hidden" name="acao" value="HomeProfessor">
+		<input id="acao" type="hidden" name="acao" value="HomeProfessor">
 
  <!-- Divisão da tela -->
         
@@ -69,7 +71,7 @@
   
   		<ul class="list-group">
   			<li class="list-group-item">
-    			<span class="badge">20</span> <a href="#">Atividades Complementares para Análise:</a>
+    			<span class="badge"><%=quantidadePendente %></span> <a href="#">Atividades Complementares para Análise:</a>
   			</li>
   			
 		</ul>

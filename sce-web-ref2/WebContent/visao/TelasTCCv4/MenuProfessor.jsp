@@ -80,7 +80,7 @@ function HomeProfessor(){
 
 <form id="frmMenuProfessor" class= "form-horizontal" role = "form" name="frmMenuProfessor" action="/sce-web-ref2/ServletControle" method="post">   
     	
-		<input type="hidden" name="acao" value="HomeProfessor">
+		<input id="acao" type="hidden" name="acao" value="HomeProfessor">
 </form>
 
 

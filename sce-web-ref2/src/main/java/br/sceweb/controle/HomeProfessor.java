@@ -19,10 +19,11 @@ public class HomeProfessor implements IComando {
 	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse res) throws Exception {
 		String url = "";
-				
+			AtcompRepositorio atcompRepositorio = new AtcompRepositorio(1);
 			
+			int quantidadeAtcompPendente = atcompRepositorio.QuantidadeAtcompsPorStatus("Pendente"); 
+			request.setAttribute("quantidadePendente", quantidadeAtcompPendente);
 			url = "/visao/TelasTCCv4/HomeProfessor.jsp";			
-			System.out.println("Chegou na home teacher");
 			request.setAttribute("erro", null);
 		
 		return url;
