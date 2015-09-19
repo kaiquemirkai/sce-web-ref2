@@ -7,6 +7,11 @@
     <%@page import="java.util.*"%>
     
     <% 
+    //Dados usuário
+    String nomeAluno = ""+ request.getAttribute("nomeAluno");
+    
+    
+    //Relatório    
     String tecnologica = "" + request.getAttribute("tecnologica");
     String tecnologicadif = "" + request.getAttribute("tecnologicadif");
     
@@ -103,7 +108,7 @@
   	</div>
   	<div class="media-body">
     	<h4 class="media-heading">Bem vindo!</h4>
-    		<small>Samuel M.N. Muniz Lima </small>
+    		<small><%=nomeAluno %></small>
     		<br>
     		<small> <a href="#"> Encerrar sessão </a> </small>
   	</div>

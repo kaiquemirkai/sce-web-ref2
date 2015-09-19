@@ -5,6 +5,8 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.sceweb.dominio.Aluno;
+import br.sceweb.dominio.AlunoRepositorio;
 import br.sceweb.dominio.AtcompRepositorio;
 import br.sceweb.dominio.Fachada;
 import br.sceweb.dominio.Login;
@@ -25,6 +27,16 @@ public class AcessarLogin implements IComando{
 		login = fachada.login(request.getParameter("txtLogin"), request.getParameter("txtSenha"));
 		
 		if (login != null ){
+			
+			//Carregar dados usuário logado
+			AlunoRepositorio alunoRepositorio = new AlunoRepositorio(1);
+			Aluno aluno = new Aluno();
+			aluno.setCodigo(login.getCodigo());
+			aluno = alunoRepositorio.Consultar(aluno);
+			
+			request.setAttribute("nomeAluno", aluno.getNome());
+			
+			//Início preenchimento relatório
 			
 			AtcompRepositorio atcompRepositorio = new AtcompRepositorio(1);
 			String tecnologica = atcompRepositorio.RelatorioHorasPorArea("01") + "";

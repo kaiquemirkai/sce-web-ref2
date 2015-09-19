@@ -9,6 +9,7 @@ public abstract class DAOFactory {
 	// existe um metodo para cada DAO que pode ser criado
 	public abstract IEmpresaDAO getEmpresaDAO();
 	public abstract ILoginDAO getLoginDAO();
+	public abstract IAlunoDAO getAlunoDAO();
 	public abstract IAtcompDAO getAtcompDAO();
 	public abstract IRegraAtcompDAO getRegraAtcompDAO();
 	public abstract ISugestaoAtividadeDAO getSugestaoAtividadeDAO();

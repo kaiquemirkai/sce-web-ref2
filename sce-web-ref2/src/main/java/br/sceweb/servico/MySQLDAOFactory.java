@@ -55,6 +55,14 @@ public class MySQLDAOFactory extends DAOFactory{
 		return new MySQLLoginDAO();
 		
 	}
+	
+	@Override
+	public IAlunoDAO getAlunoDAO() {
+		return new MySQLAlunoDAO();
+		
+	}
+	
+	
 	@Override
 	public IAtcompDAO getAtcompDAO() {
 		return new MySQLAtcompDAO();
