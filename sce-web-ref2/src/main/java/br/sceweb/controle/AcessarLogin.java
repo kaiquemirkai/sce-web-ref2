@@ -10,6 +10,8 @@ import br.sceweb.dominio.AlunoRepositorio;
 import br.sceweb.dominio.AtcompRepositorio;
 import br.sceweb.dominio.Fachada;
 import br.sceweb.dominio.Login;
+import br.sceweb.dominio.Professor;
+import br.sceweb.dominio.ProfessorRepositorio;
 import br.sceweb.dominio.SugestaoAtividade;
 import br.sceweb.dominio.SugestaoAtividadeRepositorio;
 
@@ -25,9 +27,11 @@ public class AcessarLogin implements IComando{
 		
 		
 		login = fachada.login(request.getParameter("txtLogin"), request.getParameter("txtSenha"));
-		
+		// Se existe um login verifica o perfil e chama a tela ideal
 		if (login != null ){
-			
+			// Carrega os dados do perfil aluno
+			if (login.getPerfil().equals("aluno"))
+			{
 			//Carregar dados usuário logado
 			AlunoRepositorio alunoRepositorio = new AlunoRepositorio(1);
 			Aluno aluno = new Aluno();
@@ -81,6 +85,29 @@ public class AcessarLogin implements IComando{
 			
 			url = "/visao/TelasTCCv4/HomeAluno.jsp";			
 			request.setAttribute("erro", null);
+			}
+			
+			// Carregar o perfil do professor
+			else 
+			{
+				//carrega as atividades pendentes
+				AtcompRepositorio atcompRepositorio = new AtcompRepositorio(1);				
+				int quantidadeAtcompPendente = atcompRepositorio.QuantidadeAtcompsPorStatus("Pendente"); 
+				request.setAttribute("quantidadePendente", quantidadeAtcompPendente);
+				
+				// carrega o nome do professor
+				Professor professor = new Professor();
+				professor.setCodigoLogin(login.getCodigo());
+				ProfessorRepositorio professorRepositorio = new ProfessorRepositorio(1);
+				professor = professorRepositorio.Consultar(professor);
+				request.setAttribute("nomeProfessor", professor.getNome());
+				
+				
+				url = "/visao/TelasTCCv4/HomeProfessor.jsp";			
+				request.setAttribute("erro", null);
+			}
+			
+			// Login inexistente ou invalido
 		} else {
 			url = "/visao/TelasTCCv4/HomeAluno.jsp";
 			request.setAttribute("erro", "Erro: Dados inválidos!");

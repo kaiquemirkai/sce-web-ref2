@@ -9,6 +9,9 @@ import br.sceweb.dominio.Aluno;
 import br.sceweb.dominio.AlunoRepositorio;
 import br.sceweb.dominio.AtcompRepositorio;
 import br.sceweb.dominio.Login;
+import br.sceweb.dominio.LoginRepositorio;
+import br.sceweb.dominio.Professor;
+import br.sceweb.dominio.ProfessorRepositorio;
 import br.sceweb.dominio.SugestaoAtividade;
 import br.sceweb.dominio.SugestaoAtividadeRepositorio;
 
@@ -23,8 +26,16 @@ public class HomeProfessor implements IComando {
 			
 			int quantidadeAtcompPendente = atcompRepositorio.QuantidadeAtcompsPorStatus("Pendente"); 
 			request.setAttribute("quantidadePendente", quantidadeAtcompPendente);
+			Login login = LoginRepositorio.RetornaUsuarioLogado();
+			Professor professor = new Professor();
+			professor.setCodigoLogin(login.getCodigo());
+			ProfessorRepositorio professorRepositorio = new ProfessorRepositorio(1);
+			professor = professorRepositorio.Consultar(professor);
+			request.setAttribute("nomeProfessor", professor.getNome());
+			
 			url = "/visao/TelasTCCv4/HomeProfessor.jsp";			
 			request.setAttribute("erro", null);
+			
 		
 		return url;
 	}

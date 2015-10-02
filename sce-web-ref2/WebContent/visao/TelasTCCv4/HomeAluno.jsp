@@ -107,7 +107,7 @@
  		<img class="media-object" src="/sce-web-ref2/visao/TelasTCCv4/Imagens/aluno.jpg" width="60" height="60">
   	</div>
   	<div class="media-body">
-    	<h4 class="media-heading">Bem vindo!</h4>
+    	<h4 class="media-heading">Bem-vindo!</h4>
     		<small><%=nomeAluno %></small>
     		<br>
     		<small> <a href="#"> Encerrar sessão </a> </small>

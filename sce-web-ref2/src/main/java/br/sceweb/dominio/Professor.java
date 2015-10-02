@@ -11,6 +11,7 @@ public class Professor {
 	String registroProfessor;
 	String area;
 	String perfil;
+	long codigoLogin;
 	
 	public long getCodigo() {
 		return codigo;
@@ -41,5 +42,12 @@ public class Professor {
 	}
 	public void setPerfil(String perfil) {
 		this.perfil = perfil;
+	}
+	
+	public long getCodigoLogin() {
+		return codigoLogin;
+	}
+	public void setCodigoLogin(long codigoLogin) {
+		this.codigoLogin = codigoLogin;
 	}
 }

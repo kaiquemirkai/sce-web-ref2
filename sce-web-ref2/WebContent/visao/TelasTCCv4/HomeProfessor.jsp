@@ -27,6 +27,7 @@
 <div class="container">
 <%
  String quantidadePendente = "" + request.getAttribute("quantidadePendente");
+ String nomeProfessor = "" + request.getAttribute("nomeProfessor");
 %>
 
 <form class= "form-horizontal" role = "form" name="frmHomeProfessor" action="/sce-web-ref2/ServletControle" method="post">   
@@ -46,8 +47,8 @@
  		<img class="media-object" src="/sce-web-ref2/visao/TelasTCCv4/Imagens/aluno.jpg" width="60" height="60">
   	</div>
   	<div class="media-body">
-    	<h4 class="media-heading">Boa Tarde,</h4>
-    		Samuel M.N. Muniz Lima
+    	<h4 class="media-heading">Bem-vindo!</h4>
+    		<%=nomeProfessor %>
     		<br>
     		<small> <a href="#"> Encerrar sessão </a> </small>
   	</div>

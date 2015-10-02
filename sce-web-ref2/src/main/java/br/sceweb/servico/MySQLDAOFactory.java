@@ -61,6 +61,11 @@ public class MySQLDAOFactory extends DAOFactory{
 		return new MySQLAlunoDAO();
 		
 	}
+	@Override
+	public IProfessorDAO getProfessorDAO() {
+		return new MySQLProfessorDAO();
+		
+	}
 	
 	
 	@Override
