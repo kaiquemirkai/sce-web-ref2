@@ -20,12 +20,15 @@
 
 
 function Mudar()
-{/*
-	 var select = $('#sltCategoriaAtividade').val();
-	 var hidden = $('#CategoriaAtividade');
-	 hidden.value = select.val();
-	 alert(select);
-	 */
+{
+	
+	
+	 var select = document.getElementById('sltCategoriaAtividade');
+	 var hidden = document.getElementById('CategoriaAtividade');
+	 hidden.value = select.options[select.selectedIndex].text;
+	 alert(hidden.value);
+	 document.getElementById('form1').submit();
+	 
 }
 $(document).ready(function(){
 
@@ -61,7 +64,7 @@ $('#btnArquivo').change(function(){
 
 <jsp:include page="ValidarTelas.jsp" />
 
-<form  ENCTYPE="multipart/form-data" class= "form-horizontal" role = "form" id="form1" name="frmCadastrarAtcompAluno" action="/sce-web-ref2/ServletControle" method="post" >   
+<form  ENCTYPE="multipart/form-data" class= "form-horizontal" role = "form" id="form1"  name="frmCadastrarAtcompAluno" action="/sce-web-ref2/ServletControle" method="post" >   
     	
 		<input type="hidden" id="acao"  name="acao" value="CadastrarAtCompAluno">
     	<input type="hidden" id="CategoriaAtividade"  name="CategoriaAtividade" value="">
@@ -148,7 +151,7 @@ $('#btnArquivo').change(function(){
         
      <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
-       <button name="btnCadastrar" type="submit"  class="btn btn-primary">Cadastrar</button>
+       <button name="btnCadastrar" type="button" onclick="Mudar()"  class="btn btn-primary">Cadastrar</button>
       </div>
      </div>
             

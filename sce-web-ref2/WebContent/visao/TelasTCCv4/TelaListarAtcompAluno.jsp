@@ -7,7 +7,18 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-
+<script type="text/javascript">
+     function Alterar()
+     {
+    	 document.getElementById('frmListarAtcompAluno').acao.value = "ConsultarAtcomp";
+     }
+     function Listar()
+     {
+    	 document.getElementById('frmListarAtcompAluno').acao.value = "ListarAtCompAluno";
+     }
+    
+    
+ </script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
 <style type="text/css">  
@@ -30,7 +41,7 @@
 
 <div class="container">
 
-<form class= "form-horizontal" role = "form" name="frmListarAtcompAluno" action="/sce-web-ref2/ServletControle" method="post">   
+<form class= "form-horizontal" role = "form" id="frmListarAtcompAluno" name="frmListarAtcompAluno" action="/sce-web-ref2/ServletControle" method="post">   
     	
    
     <input type="hidden" id="acao" name="acao" value="ListarAtCompAluno">
@@ -68,7 +79,7 @@
   		<input type="radio" name="rdBusca" id="rdArea" value="area"> Área
 	</label>
 
-    <button type="submit" class="btn btn-primary">Buscar</button>
+    <button type="submit" class="btn btn-primary" onclick="Listar()">Buscar</button>
   </div>
 </div> <!--  Termino BUSCA -->
 	
@@ -137,18 +148,7 @@ if ((lista!=null)&& (lista.size()>0)){
 </form><!-- Fim do Form -->
 
 </div><!-- Fim da Div Conteudo -->
-<script type="text/javascript">
-     function Alterar()
-     {
-    	 document.getElementById('acao').value = "ConsultarAtcomp";
-     }
-     function Listar()
-     {
-    	 document.getElementById('acao').value = "ListarAtCompAluno";
-     }
-    
-    
- </script>
+
 
 </body>
 </html>
