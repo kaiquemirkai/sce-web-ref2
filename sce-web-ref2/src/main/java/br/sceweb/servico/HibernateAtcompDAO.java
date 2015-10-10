@@ -155,6 +155,29 @@ public class HibernateAtcompDAO implements IAtcompDAO {
 		return consulta;
 	}
 	
+	public boolean Alterar(Atcomp a) {
+	      
+		logger.info("Inicio do Processo de Alteração de Status da Atividade Complementar: ");
+		boolean retorno;
+		try {
+			
+			EntityManagerFactory factory = Persistence.createEntityManagerFactory("sceweb");
+			EntityManager em = factory.createEntityManager();
+			em.getTransaction().begin();
+			
+			em.merge(a);
+			em.getTransaction().commit();
+			em.close();
+			retorno = true ;
+		} catch (PersistenceException exception) { // HibernateException
+			retorno = false;
+			logger.info("Erro no Cadastro da Regra da Atividade Complementar. Erro:  "
+					+ exception.toString());
+		}
+
+		return retorno;
+	}
+	
 	
 	
 }

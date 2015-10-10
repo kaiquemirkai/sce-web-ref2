@@ -51,6 +51,12 @@ private IAtcompDAO daoAtcomp;
 		
 		*/
 	
+public boolean Alterar (Atcomp a){
+		
+		return daoAtcomp.Alterar(a);
+		
+	}
+	
 	
 	public int QuantidadeAtcompsPorStatus(String status){
 		

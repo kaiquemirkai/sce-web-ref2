@@ -9,6 +9,7 @@ import br.sceweb.dominio.Empresa;
 public interface IAtcompDAO {
 
 	public boolean Cadastrar(Atcomp a);
+	public boolean Alterar(Atcomp a);
 	public List<Atcomp> Listar();
 	public Double RelatorioHorasPorArea(String areaAtividade) ;
 	public int QuantidadeAtcompsPorStatus(String status);

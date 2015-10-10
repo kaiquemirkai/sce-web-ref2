@@ -9,6 +9,25 @@
   @import url("/sce-web-ref2/visao/TelasTCCv4/CSS/Background.css");  
 </style>
 
+<script type="text/javascript">
+     function VerAnexo()
+     {
+    	 document.getElementById('acao').value = "AbrirAnexo";
+     }
+     function Aprovar()
+     {
+  	   document.getElementById('frmAvaliarAtcompPendenteProfessor').acao.value = "AlterarStatusAtcomp";
+
+     }
+     function Reprovar()
+     {
+    	   document.getElementById('frmAvaliarAtcompPendenteProfessor').acao.value = "AlterarStatusAtcompReprovado";
+     }
+    
+    
+ </script>
+
+
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>UATComp - Avaliar Atcomp</title>
 </head>
@@ -27,7 +46,7 @@
 <!-- Div do Conteudo  -->
 <div class="container">
 
-<form class= "form-horizontal" role = "form" name="frmAvaliarAtcompPendenteProfessor" action="/sce-web-ref2/ServletControle" method="post">   
+<form class= "form-horizontal" role = "form" id="frmAvaliarAtcompPendenteProfessor" name="frmAvaliarAtcompPendenteProfessor" action="/sce-web-ref2/ServletControle" method="post">   
     	
 		<input type="hidden" id="acao" name="acao" >
     	           			
@@ -193,11 +212,11 @@
  <div class="col-md-4"> 
  
  <div class="form-group" align="center">
- <button type="button" class="btn btn-success">
+ <button type="submit" class="btn btn-success" onclick="Aprovar()">
   	<span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Aprovar
  </button>
  
-<button type="button" class="btn btn-danger">
+<button type="submit" class="btn btn-danger" onclick="Reprovar()">
   	<span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Reprovar
  </button>
  
@@ -221,22 +240,6 @@
 
 </div><!-- Fim da Div Conteudo -->
 
-<script type="text/javascript">
-     function VerAnexo()
-     {
-    	 document.getElementById('acao').value = "AbrirAnexo";
-     }
-     function Aprovar()
-     {
-    	 document.getElementById('acao').value = "listarAtCompPendenteProfessor";
-     }
-     function Reprovar()
-     {
-    	 document.getElementById('acao').value = "listarAtCompPendenteProfessor";
-     }
-    
-    
- </script>
 
 
 

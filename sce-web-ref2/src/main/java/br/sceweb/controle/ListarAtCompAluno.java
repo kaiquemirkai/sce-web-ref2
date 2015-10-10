@@ -19,7 +19,6 @@ public class ListarAtCompAluno implements IComando {
 	public String executa(HttpServletRequest request, HttpServletResponse res) 	throws Exception {
 		atcompRepositorio = new AtcompRepositorio(1);
 		List<Atcomp> atcomps = atcompRepositorio.Listar();
-			
 		request.setAttribute("atcomps", atcomps);
 		return "/visao/TelasTCCv4/TelaListarAtcompAluno.jsp";
 	}
