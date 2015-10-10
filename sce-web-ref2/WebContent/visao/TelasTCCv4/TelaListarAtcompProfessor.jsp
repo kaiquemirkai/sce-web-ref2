@@ -30,7 +30,7 @@
 
 <div class="container">
 
-<form class= "form-horizontal" role = "form" name="frmListarAtcompProfessor" action="/sce-web-ref2/ServletControle" method="post">   
+<form class= "form-horizontal" role = "form" id="frmListarAtcompProfessor" name="frmListarAtcompProfessor" action="/sce-web-ref2/ServletControle" method="post">   
     	
    
     <input type="hidden" id="acao" name="acao" >
@@ -160,10 +160,11 @@ if ((lista!=null)&& (lista.size()>0)){
 
 <script>
 function listar(){
-	   document.getElementById('acao').value = "ListarAtCompProfessor";
+	   document.getElementById('frmListarAtcompProfessor').acao.value = "ListarAtCompProfessor";
 }
+
 function consultar(){
-	   document.getElementById('acao').value = "ConsultarAtcompProfessor";
+	   document.getElementById('frmListarAtcompProfessor').acao.value = "ConsultarAtcompProfessor";
 }
     
  </script>

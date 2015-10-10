@@ -18,19 +18,18 @@
 
 <script>
    function buscar(){
-	   document.getElementById('acao').value = "ListarSugestaoAtividadeProfessor";
-   }
+	   document.getElementById('frmListarSugestaoProfessor').acao.value = "ListarSugestaoAtividadeProfessor";
+	      }
+   
    function consultar(){
-	   document.getElementById('acao').value = "ConsultarSugestaoAtividadeProfessor";
+	   document.getElementById('frmListarSugestaoProfessor').acao.value = "ConsultarSugestaoAtividadeProfessor";
    }
-   /*function cadatrar(){
-	   document.getElementById('acao').value = "CadastrarSugestaoAtividadeProfessor";
-   } */
+ 
    function alterar(){
-	   document.getElementById('acao').value = "ConsultarAlterarSugestaoAtividadeProfessor";
+	   document.getElementById('frmListarSugestaoProfessor').acao.value = "ConsultarAlterarSugestaoAtividadeProfessor";
    }
    function excluir(){
-	   document.getElementById('acao').value = "ExcluirSugestaoAtividadeProfessor";
+	   document.getElementById('frmListarSugestaoProfessor').acao.value = "ExcluirSugestaoAtividadeProfessor";
    }
 </script>
 
@@ -44,9 +43,7 @@
 	</div>
 
 	<!-- Div do Menu -->
-	<div id="menu" style="background-color: #0058a5; margin-top: -10px">
-		<jsp:include page="MenuAluno.jsp" />
-	</div>
+	<div id="menu" style="background-color: #0058a5; margin-top: -10px"> <jsp:include page="MenuProfessor.jsp" /> </div>
 
 	<!-- Div da Linha colorida -->
 	<div id="linhaColorida" style="height:16px;"> </div>
@@ -56,8 +53,7 @@
 
 
 		<!-- INICIO DO FORM -->
-<form class="form-horizontal" role="form" name="frmListarSugestaoProfessor" 
-action="/sce-web-ref2/ServletControle" method="post">
+<form class="form-horizontal" role="form" id="frmListarSugestaoProfessor" name="frmListarSugestaoProfessor" action="/sce-web-ref2/ServletControle" method="post">
 
 
 			<input type="hidden"  id="acao" name="acao">

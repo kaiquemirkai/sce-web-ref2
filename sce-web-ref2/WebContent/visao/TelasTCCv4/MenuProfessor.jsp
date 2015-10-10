@@ -13,6 +13,53 @@ function HomeProfessor(){
 	   document.getElementById('frmMenuProfessor').submit();
 }
 
+
+function ListarAtComp(){
+	   document.getElementById('frmMenuProfessor').acao.value = "ListarAtCompProfessor";
+	   document.getElementById('frmMenuProfessor').submit();
+}
+
+
+function CadastrarAtComp(){
+	   document.getElementById('frmMenuProfessor').acao.value = "RedirecionaCadastroAtcompProfessor";
+	   document.getElementById('frmMenuProfessor').submit();
+}
+
+
+function ListarRegraAtComp(){
+	   document.getElementById('frmMenuProfessor').acao.value = "ListarRegraAtcompProfessor";
+	   document.getElementById('frmMenuProfessor').submit();
+}
+
+
+function CadastrarRegraAtComp(){
+	   document.getElementById('frmMenuProfessor').acao.value = "RedirecionaCadastroRegraAtcompProfessor";
+	   document.getElementById('frmMenuProfessor').submit();
+}
+
+
+
+function ListarSugestao(){
+	   document.getElementById('frmMenuProfessor').acao.value = "ListarSugestaoAtividadeProfessor";
+	   document.getElementById('frmMenuProfessor').submit();
+}
+
+
+function CadastrarSugestao(){
+	   document.getElementById('frmMenuProfessor').acao.value = "RedirecionaCadastroSugestaoProfessor";
+	   document.getElementById('frmMenuProfessor').submit();
+}
+
+
+function ConsultaPrincipal(){
+	   
+	   document.getElementById('frmMenuProfessor').acao.value = "ConsultarPrincipalProfessor";
+	   document.getElementById('frmMenuProfessor').submit();
+}
+
+
+
+
 </script>
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -22,7 +69,6 @@ function HomeProfessor(){
 
 </head>
 <body>
-<!-- Single button -->
 <!-- Single button -->
 <div class="btn-group">
   <button type="submit" onclick="HomeProfessor()" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -37,38 +83,41 @@ function HomeProfessor(){
     ATCOMP <span class="caret"></span>
   </button>
   <ul class="dropdown-menu">
-    <li><a href="#">Consultar</a></li>
-    <li><a href="#">Cadastrar</a></li>
-    <li><a href="#">Excluir	</a></li>
+    <li><a onclick="ListarAtComp()">Consultar</a></li>
+    <li><a onclick="CadastrarAtComp()">Cadastrar</a></li>
+    <li><a onclick="ListarAtComp()">Excluir</a></li>
     </ul>
  </div>
  
  <div class="btn-group">
    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    CATEGORIAS <span class="caret"></span>
+    REGRAS <span class="caret"></span>
   </button>
   <ul class="dropdown-menu">
-    <li><a href="#">Consultar</a></li>
-    <li><a href="#">Cadastrar</a></li>
-    <li><a href="#">Alterar</a></li>
-    <li><a href="#">Excluir</a></li>
+    <li><a onclick="ListarRegraAtComp()">Consultar</a></li>
+    <li><a onclick="CadastrarRegraAtComp()">Cadastrar</a></li>
+    <li><a onclick="ListarRegraAtComp()">Alterar</a></li>
+    <li><a onclick="ListarRegraAtComp()">Excluir</a></li>
   </ul>
 </div>
+
+
  
  <div class="btn-group">
    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     SUGESTÕES <span class="caret"></span>
   </button>
   <ul class="dropdown-menu">
-    <li><a href="#">Consultar</a></li>
-    <li><a href="#">Cadastrar</a></li>
-    <li><a href="#">Alterar</a></li>
-    <li><a href="#">Excluir</a></li>
+    <li><a onclick="ListarSugestao()">Consultar </a></li>
+    <li><a onclick="CadastrarSugestao()">Cadastrar</a></li>
+    <li><a onclick="ListarSugestao()">Alterar</a></li>
+    <li><a onclick="ListarSugestao()">Excluir</a></li>
+    
   </ul>
 </div>
 
  <div class="btn-group">
-   <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   <button type="button" onclick="ConsultaPrincipal()" class="btn btn-primary dropdown-toggle data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     CONSULTAS <span class="caret"></span>
   </button>
 

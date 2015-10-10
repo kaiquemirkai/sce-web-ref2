@@ -36,6 +36,11 @@ $('#btnArquivo').change(function(){
 <!-- Div do Conteudo  -->
 <div class="container">
 
+<%
+ String quantidadePendente = "" + request.getAttribute("quantidadePendente");
+ 
+%>
+
 <form class= "form-horizontal" role = "form" name="frmConsultarPrincipalProfessor" action="/sce-web-ref2/ServletControle" method="post">   
     	
 		<input type="hidden" name="acao" value="consultarPrincipalProfessor">
@@ -68,7 +73,7 @@ $('#btnArquivo').change(function(){
     <h4 class="media-heading">Atividade Complementar Pendente de Aprovação</h4>
      <p>Aqui você encontra todas as atividades que estão pendentes de sua avaliação.</p>
      <p> 
-     <span class="label label-primary"> Atenção! Você tem: 42 atividades para avaliar! </span>  </p>
+     <span class="label label-primary"> Atenção! Você tem: <%=quantidadePendente %> atividades para avaliar! </span>  </p>
   </div>
 </div>
 

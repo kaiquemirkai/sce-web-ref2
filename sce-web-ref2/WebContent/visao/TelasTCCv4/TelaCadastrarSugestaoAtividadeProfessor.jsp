@@ -36,7 +36,7 @@
           <!-- Alteração deve ser feita A partir daqui -->
 	 
 	 			
-    						<h3 align="center">Cadastro de Sugestões - PROFESSOR</h3>
+    						<h3 align="center">Cadastro de Sugestão</h3>
   						
 	 <br> <br>
 	 

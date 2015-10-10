@@ -29,7 +29,7 @@
 
 <div class="container">
 
-<form class= "form-horizontal" role = "form" name="frmListarRegraAtcompProfessor" action="/sce-web-ref2/ServletControle" method="post">   
+<form class= "form-horizontal" role = "form" id="frmListarRegraAtcompProfessor" name="frmListarRegraAtcompProfessor" action="/sce-web-ref2/ServletControle" method="post">   
     	
    
     <input type="hidden" id="acao" name="acao" value="ListarRegraAtcompProfessor">
@@ -149,21 +149,22 @@ if ((lista!=null)&& (lista.size()>0)){
 <script type="text/javascript">
      function Consultar()
      {
-    	 document.getElementById('acao').value = "ConsultarRegraAtcompProfessor";
+    	 document.getElementById('frmListarRegraAtcompProfessor').acao.value = "ConsultarRegraAtcompProfessor";
      }
+     
      function Listar()
      {
-    	 document.getElementById('acao').value = "ListarRegraAtcompProfessor";
+    	 document.getElementById('frmListarRegraAtcompProfessor').acao.value = "ListarRegraAtcompProfessor";
      }
      
      function Excluir()
      {
-    	 document.getElementById('acao').value = "ExcluirRegraAtcompProfessor";
+    	 document.getElementById('frmListarRegraAtcompProfessor').acao.value = "ExcluirRegraAtcompProfessor";
      }
      
      function Alterar()
      {
-    	 document.getElementById('acao').value = "Consultar2RegraAtcompProfessor";
+    	 document.getElementById('frmListarRegraAtcompProfessor').acao.value = "Consultar2RegraAtcompProfessor";
      }
     
     
