@@ -9,7 +9,7 @@
 <script> 
 
 function HomeProfessor(){
-	   document.getElementById('acao').value = "HomeProfessor";
+	   document.getElementById('frmMenuProfessor').acao.value = "HomeProfessor";
 	   document.getElementById('frmMenuProfessor').submit();
 }
 
