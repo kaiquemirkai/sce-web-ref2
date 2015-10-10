@@ -9,7 +9,17 @@
 <style type="text/css">  
   @import url("/sce-web-ref2/visao/TelasTCCv4/CSS/Background.css");  
 </style>
+<script type="text/javascript">
 
+   function Consultar(){
+	   document.getElementById('frmListarAtcompPendenteProfessor').acao.value = "ConsultarAtcompPendenteProfessor";
+}
+function Listar(){
+	   document.getElementById('frmListarAtcompPendenteProfessor').acao.value = "ListarAtCompPendenteProfessor";
+}
+
+    
+ </script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>UATComp - Consultar Atcomp Pendente</title>
 </head>
@@ -26,10 +36,10 @@
 
 <div class="container">
 
-<form class= "form-horizontal" role = "form" name="frmListarAtcompPendenteProfessor" action="/sce-web-ref2/ServletControle" method="post">   
+<form class= "form-horizontal" role = "form"  id="frmListarAtcompPendenteProfessor" name="frmListarAtcompPendenteProfessor" action="/sce-web-ref2/ServletControle" method="post">   
     	
    
-    <input type="hidden" id="acao" name="acao" >
+    <input type="hidden" id="acao" name="acao" value="ListarAtCompPendenteProfessor" >
     
         			<h3 align="center">Atividades Complementares Pendentes de Avaliação</h3>
   						
@@ -58,7 +68,7 @@
 	</label>
 	
 
- 	<button type="#" class="btn btn-primary" onclick="listar()">Listar</button>
+ 	<button type="submit" class="btn btn-primary" onclick="Listar()">Listar</button>
      </div>
           
     <br> <br>
@@ -125,7 +135,7 @@ if ((lista!=null)&& (lista.size()>0)){
 
 
  <center>
- <button type="#" class="btn btn-success" onclick="consultar()">
+ <button type="submit" class="btn btn-success" onclick="Consultar()">
   	<span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Avaliar
  </button>
 </center>
@@ -135,15 +145,7 @@ if ((lista!=null)&& (lista.size()>0)){
 </div><!-- Fim da Div Conteudo -->
 
 
-<script>
-function listar(){
-	   document.getElementById('acao').value = "ListarAtCompPendenteProfessor";
-}
-function consultar(){
-	   document.getElementById('acao').value = "ConsultarAtcompPendenteProfessor";
-}
-    
- </script>
+
 
 
 </body>
