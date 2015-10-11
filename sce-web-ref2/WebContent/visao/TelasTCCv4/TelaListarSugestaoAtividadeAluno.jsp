@@ -38,8 +38,7 @@
 
 		<!-- INICIO DO FORM -->
 		
-<form class="form-horizontal" role="form" name="frmListarSugestaoAluno" action="/sce-web-ref2/ServletControle" method="post">
-
+<form class="form-horizontal" role="form" id="frmListarSugestaoAluno" name="frmListarSugestaoAluno" action="/sce-web-ref2/ServletControle" method="post">
 
 			<input type="hidden"  id="acao" name="acao" >
 	
@@ -148,19 +147,21 @@ ArrayList<SugestaoAtividade> lista = (ArrayList<SugestaoAtividade>) request.getA
 
 <script>
    function buscar(){
-	   document.getElementById('acao').value = "ListarSugestaoAtividadeAluno";
+	   document.getElementById('frmListarSugestaoAluno').acao.value = "ListarSugestaoAtividadeAluno";
+	      
+	   
    }
+   
    function consultar(){
-	   document.getElementById('acao').value = "ConsultarSugestaoAtividadeAluno";
+	   document.getElementById('frmListarSugestaoAluno').acao.value = "ConsultarSugestaoAtividadeAluno";
    }
-   /*function cadatrar(){
-	   document.getElementById('acao').value = "ListarSugestaoAtividadeAluno";
-   }*/
+
    function alterar(){
-	   document.getElementById('acao').value = "ConsultarAlterarSugestaoAtividadeAluno";
+	   document.getElementById('frmListarSugestaoAluno').acao.value = "ConsultarAlterarSugestaoAtividadeAluno";
    }
+   
    function excluir(){
-	   document.getElementById('acao').value = "ExcluirSugestaoAtividadeAluno";
+	   document.getElementById('frmListarSugestaoAluno').acao.value = "ExcluirSugestaoAtividadeAluno";
    }
 </script>
 

@@ -32,15 +32,13 @@
 
 <!-- INICIO DO FORMULARIO -->
 
-		<form class="form-horizontal" role="form"
-			name="frmCadastrarSugestaoAluno"
-			action="/sce-web-ref2/ServletControle" method="post">
+		<form class="form-horizontal" role="form" id = "frmCadastrarSugestaoAluno" name="frmCadastrarSugestaoAluno"	action="/sce-web-ref2/ServletControle" method="post">
 
 			<input type="hidden" name="acao" value="CadastrarSugestaoAtividadeAluno">
 
 			<!-- Alteração deve ser feita A partir daqui -->
 
-			<h3 align="center">Cadastro de Sugestões - ALUNO</h3>
+			<h3 align="center">Cadastro de Sugestões</h3>
 
 			<br> <br>
 			
@@ -115,8 +113,7 @@
        <!-- BOTÃO CADASTRAR-->
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
-					<button name="btnCadastrar" type="submit" class="btn btn-primary">Cadastrar
-						Nova Sugestão</button>
+					<button name="btnCadastrar" type="submit" class="btn btn-primary">Cadastrar Nova Sugestão</button>
 				</div>
 			</div>
 

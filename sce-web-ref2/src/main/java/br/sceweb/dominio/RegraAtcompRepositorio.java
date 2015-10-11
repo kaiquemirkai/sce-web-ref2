@@ -40,7 +40,6 @@ public boolean Excluir (RegraAtcomp regraAtcomp){
 	}
 	
 	public RegraAtcomp Consultar(RegraAtcomp regraAtcomp){	
-		System.out.println("Passei pelo Consultar Repositorio");
 		return daoRegraAtcomp.Consultar(regraAtcomp);
 	}
 	

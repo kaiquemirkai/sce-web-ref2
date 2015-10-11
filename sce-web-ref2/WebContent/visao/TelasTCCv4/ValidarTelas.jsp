@@ -398,7 +398,7 @@
 
 	});
 
-	//Tela Cadastrar Categoria Professor
+	//Tela Cadastrar Sugestao Professor
 
 
 
@@ -456,7 +456,7 @@
 
 	});
 
-	//Tela Cadastrar Categoria Aluno
+	//Tela Cadastrar Sugestao Aluno
 
 
 
@@ -514,7 +514,7 @@
 
 	});
 
-	//Tela Alterar Categoria Professor
+	//Tela Alterar Sugestao Professor
 
 
 	$(document).ready(function() {
@@ -571,7 +571,7 @@
 
 	});
 
-	//Tela Alterar Categoria Aluno
+	//Tela Alterar Sugestao Aluno
 
 
 	$(document).ready(function() {

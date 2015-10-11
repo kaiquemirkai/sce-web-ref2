@@ -32,6 +32,7 @@ public class CadastrarRegraAtcompProfessor implements IComando{
 		
 		if (rarepositorio.Cadastrar(regraAtcomp) ){
 		
+					
 			url = "/visao/TelasTCCv4/TelaListarRegraAtcompProfessor.jsp";		
 			request.setAttribute("erro", null);
 		} else {

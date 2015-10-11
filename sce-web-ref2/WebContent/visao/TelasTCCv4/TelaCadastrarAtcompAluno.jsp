@@ -11,7 +11,7 @@
   @import url("/sce-web-ref2/visao/TelasTCCv4/CSS/Background.css");  
 </style>
 
-<script src="js/jquery-1.11.1.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
 
 <script type="text/javascript" src="ajax.js"></script>
 
@@ -30,17 +30,6 @@ function Mudar()
 	 document.getElementById('form1').submit();
 	 
 }
-$(document).ready(function(){
-
-	
-
-	
-	/*
-$('#btnArquivo').change(function(){
-    $('#txtArquivo').val($(this).val());
-});*/
-	
-});
 
 </script>
 
