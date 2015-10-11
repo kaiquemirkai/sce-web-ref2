@@ -8,13 +8,13 @@
   @import url("/sce-web-ref2/visao/TelasTCCv4/CSS/Background.css");  
 </style>
 
-<script type="text/javascript">
-$(document).ready(function(){
-$('#btnArquivo').change(function(){
-    $('#txtArquivo').val($(this).val());
-});
 
-});
+<script> 
+
+function ConsultaAtcompPendente(){
+	   document.getElementById('frmConsultarPrincipalProfessor').acao.value = "ListarAtCompPendenteProfessor";
+	   document.getElementById('frmConsultarPrincipalProfessor').submit();
+}
 
 </script>
 
@@ -41,7 +41,7 @@ $('#btnArquivo').change(function(){
  
 %>
 
-<form class= "form-horizontal" role = "form" name="frmConsultarPrincipalProfessor" action="/sce-web-ref2/ServletControle" method="post">   
+<form class= "form-horizontal" role = "form" id="frmConsultarPrincipalProfessor" name="frmConsultarPrincipalProfessor" action="/sce-web-ref2/ServletControle" method="post">   
     	
 		<input type="hidden" name="acao" value="consultarPrincipalProfessor">
 	
@@ -65,7 +65,7 @@ $('#btnArquivo').change(function(){
  
   <div class="media">
   <div class="media-left media-middle">
-    <a href="#">
+    <a href="#" onClick="ConsultaAtcompPendente()">
       <img class="media-object" src="/sce-web-ref2/visao/TelasTCCv4/Imagens/pendente_avaliacao.png" width="80" height="70">
     </a>
   </div>
