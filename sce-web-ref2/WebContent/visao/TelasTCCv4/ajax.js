@@ -1,14 +1,13 @@
 $(document).ready(function() {
 		$('#sltAreaAtividade').change(function(event) {
-	    document.getElementById('form1').acao.value = 'ListarCategoriaPorArea';
-	    document.getElementById('frmHomeAluno').acao.value = 'ListarCategoriaPorArea';	    
+	       
 	    
 		selectValue = $('#sltAreaAtividade').val();
 		var path = '/sce-web-ref2/ServletControle';
 				
 		$.get(path, {
 			selectValue : selectValue,
-			acao: "ListarCategoriaPorArea"
+			action: "ListarCategoriaPorArea"
 		}, function(responseText) {			
 			// Retorno do Servlet
 			var jsonData = responseText;

@@ -54,6 +54,16 @@ public class ServletControle extends HttpServlet {
 	
 	protected void executaComando(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String parametro = request.getParameter("acao");
+		
+		
+		if(request.getParameter("action")!= null)
+		{
+			if(request.getParameter("action").equals("ListarCategoriaPorArea"))
+			{
+				parametro = request.getParameter("action");	
+			}
+		}
+		
 	    System.out.println("chegou no servlet");
 		logger.info(">>>>>>>>>>>>>>>>>>>>>>>>>acao do servletcontrole = " + parametro);
 		String nomeDaClasse = "br.sceweb.controle." + parametro;

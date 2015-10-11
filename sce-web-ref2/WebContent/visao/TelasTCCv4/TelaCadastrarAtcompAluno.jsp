@@ -13,10 +13,9 @@
 
 <script type="text/javascript" src="js/jquery-1.11.1.js"></script>
 
-<script type="text/javascript" src="ajax.js"></script>
+
 
 <script type="text/javascript">
-
 
 
 function Mudar()
@@ -32,7 +31,7 @@ function Mudar()
 }
 
 </script>
-
+<script type="text/javascript" src="ajax.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>UATComp - Cadastrar Atcomp</title>
 </head>
@@ -55,7 +54,7 @@ function Mudar()
 
 <form  ENCTYPE="multipart/form-data" class= "form-horizontal" role = "form" id="form1"  name="frmCadastrarAtcompAluno" action="/sce-web-ref2/ServletControle" method="post" >   
     	
-		<input type="hidden" id="acao"  name="acao" value="CadastrarAtCompAluno">
+		<input type="hidden" id="acao"  name="acao" value="ListarCategoriaPorArea">
     	<input type="hidden" id="CategoriaAtividade"  name="CategoriaAtividade" value="">
           <!-- Alteração deve ser feita A partir daqui -->
 	 
