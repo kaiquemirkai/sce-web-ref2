@@ -7,7 +7,8 @@
 <style type="text/css">  
   @import url("/sce-web-ref2/visao/TelasTCCv4/CSS/Background.css");  
 </style>
-
+<%@page import="br.sceweb.dominio.*"%>
+    <%@page import="java.util.*"%>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>UATComp - Consulta Área Cidadã</title>
 </head>
@@ -36,11 +37,15 @@
 		</div>
   						
 	 <br> <br>
+<%
 
+String cidada = "" + request.getAttribute("cidada");
+String cidadaDiferenca = "" + request.getAttribute("cidadaDiferenca");
 
+%>
 <div class="controls controls-row">
-  <h3 align> <span class="span4 label label-primary">Total de horas realizadas: 30 </span></h3>
-  <h3 align> <span class="span1 label label-info">Total de horas à cumprir:  70 </span></h3>
+  <h3 align> <span class="span4 label label-primary">Total de horas realizadas: <%=cidada%> </span></h3>
+  <h3 align> <span class="span1 label label-info">Total de horas à cumprir:  <%=cidadaDiferenca%> </span></h3>
   </div>
 
     
@@ -91,23 +96,39 @@
 
 <td> <label>Carga Horária</label> </td>
 
-<td> <label>Status</label> </td>
 
 </tr>
 
-<tr> 
+<%
 
-<td> <label>1</label> </td>
-    
-<td> <label>2</label> </td>
-    
-<td> <label>3</label> </td>
+ArrayList<Atcomp> lista = (ArrayList<Atcomp>) request.getAttribute("atcomps");
 
-<td> <label>4</label> </td>
+if ((lista!=null)&& (lista.size()>0)){
+    Atcomp a = null;
+	for (int i = 0; i < lista.size(); i++) {
+		    
+		    a = (Atcomp) lista.get(i);
+			
+		    %><tr>  
+		    <td><label><%=a.getCodigoAtividade()%></label></td>
 
-<td> <label>5</label> </td>
+		    <td><label> <%=a.getDataInicio()%><label> </td>
+		        
+		    <td> <label><%=a.getDescricao()%></label> </td>
+		        
+		    <td> <label><%=a.getHorasLancadas()%></label> </td>
 
-</tr>
+
+
+		  
+		    </tr>
+<%    
+		    
+		}
+	
+	}
+%>
+
 
 
 </table>

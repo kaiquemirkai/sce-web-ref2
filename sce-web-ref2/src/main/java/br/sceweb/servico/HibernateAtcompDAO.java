@@ -50,7 +50,6 @@ public class HibernateAtcompDAO implements IAtcompDAO {
 		List<Atcomp> lista = new ArrayList<Atcomp>();
 		try {
 			Login login =LoginRepositorio.RetornaUsuarioLogado();
-			System.out.println("chegou no DAO");
 			System.out.println("Codigo do usuario Logado:  "+ login.getCodigo());
 			EntityManagerFactory factory = Persistence.createEntityManagerFactory("sceweb");
 			EntityManager em = factory.createEntityManager();
@@ -58,6 +57,98 @@ public class HibernateAtcompDAO implements IAtcompDAO {
 			em.getTransaction().begin();
 			Query query = em.createQuery(hql);
 			query.setParameter("codigoAluno", login.getCodigo());
+			lista = query.getResultList();
+			em.getTransaction().commit();
+
+		} catch (Throwable e) {
+		}
+		return lista;
+	}
+	
+	@Override
+	public List<Atcomp> ListarPendenteProfessor() {
+		List<Atcomp> lista = new ArrayList<Atcomp>();
+		try {
+			Login login =LoginRepositorio.RetornaUsuarioLogado();			
+			System.out.println("Codigo do usuario Logado:  "+ login.getCodigo());
+			EntityManagerFactory factory = Persistence.createEntityManagerFactory("sceweb");
+			EntityManager em = factory.createEntityManager();
+			String hql = " SELECT a FROM Atcomp a WHERE a.status = :status";
+			em.getTransaction().begin();
+			Query query = em.createQuery(hql);
+			query.setParameter("status", "Pendente");
+			lista = query.getResultList();
+			em.getTransaction().commit();
+
+		} catch (Throwable e) {
+		}
+		return lista;
+	}
+	
+	
+	
+	public List<Atcomp> ListarAreaStatus(String area, String status) {
+		List<Atcomp> lista = new ArrayList<Atcomp>();
+		try {
+			//variaveis de apoio
+			boolean areaPreenchida = false;
+			boolean statusPreenchido = false;
+			
+			if(area!= null)
+			{
+				areaPreenchida = true;
+			}
+			if(status != null)
+			{
+				statusPreenchido = true;
+			}
+			
+			
+			Login login =LoginRepositorio.RetornaUsuarioLogado();
+			System.out.println("chegou no DAO");
+			System.out.println("Codigo do usuario Logado:  "+ login.getCodigo());
+			EntityManagerFactory factory = Persistence.createEntityManagerFactory("sceweb");
+			EntityManager em = factory.createEntityManager();
+			
+			
+			
+			// criação da query
+			String hql="";
+			//listagem so com o codigo do aluno
+			if(!areaPreenchida && !statusPreenchido)
+			{
+				hql = " SELECT a FROM Atcomp a WHERE a.codigoAluno = :codigoAluno ORDER BY a.codigo desc";
+			}
+			//listagem por codigo de aluno e area
+			if(areaPreenchida && !statusPreenchido)
+			{
+				hql = " SELECT a FROM Atcomp a WHERE a.codigoAluno = :codigoAluno AND a.areaAtividade = :areaAtividade ORDER BY a.codigo desc";
+			}
+			//listagem por codigo de aluno e status
+			if(!areaPreenchida && statusPreenchido)
+			{
+				hql = " SELECT a FROM Atcomp a WHERE a.codigoAluno = :codigoAluno AND a.status = :status ORDER BY a.codigo desc";
+			}
+			//listagem por codigo de aluno , status e area
+			if(areaPreenchida && statusPreenchido)
+			{
+				hql = " SELECT a FROM Atcomp a WHERE a.codigoAluno = :codigoAluno AND a.status = :status AND a.areaAtividade = :areaAtividade ORDER BY a.codigo desc";
+			}
+			
+			
+			em.getTransaction().begin();
+			Query query = em.createQuery(hql);
+			//validacao dos parametros
+			query.setParameter("codigoAluno", login.getCodigo());
+			if(areaPreenchida)
+			{
+				query.setParameter("areaAtividade", area);
+			}
+			if(statusPreenchido)
+			{
+				query.setParameter("status", status);
+			}
+			
 			lista = query.getResultList();
 			em.getTransaction().commit();
 
@@ -75,11 +166,13 @@ public class HibernateAtcompDAO implements IAtcompDAO {
 			Login login =LoginRepositorio.RetornaUsuarioLogado();
 			EntityManagerFactory factory = Persistence.createEntityManagerFactory("sceweb");
 			EntityManager em = factory.createEntityManager();
-			String hql = " SELECT SUM(a.horasLancadas) FROM Atcomp a WHERE  a.areaAtividade = :areaAtividade";
+			String hql = " SELECT SUM(a.horasLancadas) FROM Atcomp a WHERE  a.areaAtividade = :areaAtividade AND a.codigoAluno = :codigoAluno AND a.status = :status" ;
 			em.getTransaction().begin();
 			Query query = em.createQuery(hql);
 			
+			query.setParameter("status","Aprovado");
 			query.setParameter("areaAtividade", areaAtividade);
+			query.setParameter("codigoAluno", login.getCodigo());
 			resultado = Double.parseDouble(query.getSingleResult() + "");
 			
 			em.getTransaction().commit();

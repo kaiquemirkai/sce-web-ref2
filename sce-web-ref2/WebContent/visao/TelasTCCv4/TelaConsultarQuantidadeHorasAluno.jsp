@@ -9,6 +9,23 @@
   @import url("/sce-web-ref2/visao/TelasTCCv4/CSS/Background.css");  
 </style>
 
+<script> 
+
+function AreaTecnica(){
+	   document.getElementById('frmConsultarQuantidadeHorasAluno').acao.value = "ListarAreaTecnica";
+	   document.getElementById('frmConsultarQuantidadeHorasAluno').submit();
+}
+
+function AreaSocioCultural(){
+	   document.getElementById('frmConsultarQuantidadeHorasAluno').acao.value = "ListarAreaSocioCultural";
+	   document.getElementById('frmConsultarQuantidadeHorasAluno').submit();
+}
+function AreaCidada(){
+	   document.getElementById('frmConsultarQuantidadeHorasAluno').acao.value = "ListarAreaCidada";
+	   document.getElementById('frmConsultarQuantidadeHorasAluno').submit();
+}
+</script>
+
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>UATComp - Consulta de Horas</title>
 </head>
@@ -27,9 +44,9 @@
 <!-- Div do Conteudo  -->
 <div class="container">
 
-<form class= "form-horizontal" role = "form" name="frmConsultarQuantidadeHorasAluno" action="/sce-web-ref2/ServletControle" method="post">   
+<form class= "form-horizontal" role = "form" id="frmConsultarQuantidadeHorasAluno" name="frmConsultarQuantidadeHorasAluno" action="/sce-web-ref2/ServletControle" method="post">   
     	
-		<input type="hidden" name="acao" value="RelatorioQuantidadeHorasAlunos">
+		<input type="hidden" id="acao" name="acao" value="RelatorioQuantidadeHorasAlunos">
     	
        			
     						<h3 align="center">Consulta de Horas</h3>
@@ -65,7 +82,7 @@
       <div class="caption">
         <h4 align="center">Área Técnica </h4>
         <p> Aqui você encontra maiores informações sobre o andamento de suas atividades complemtentares da área técnica, clique e obtenha mais detalhes!</p>
-        <p align="center"><input type="submit" class="btn btn-success" value="Mais detalhes" role="button"> </p>
+        <p align="center"><input type="submit" class="btn btn-success" value="Mais detalhes" role="button" onclick="AreaTecnica()"> </p>
       </div>
     </div>
   </div>
@@ -85,7 +102,7 @@
       <div class="caption">
         <h4 align="center">Área Sócio-Cultural</h4>
         <p> Aqui você encontra maiores informações sobre o andamento de suas atividades complemtentares da área sócio-cultural, clique e obtenha mais detalhes!</p>
-        <p align="center"><a href="#" class="btn btn-info" role="button">Mais detalhes</a> </p>
+        <p align="center"><a href="#" class="btn btn-info" role="button" onclick="AreaSocioCultural()()">Mais detalhes</a> </p>
       </div>
     </div>
   </div>
@@ -105,7 +122,7 @@
       <div class="caption">
         <h4 align="center">Área Cidadã</h4>
         <p> Aqui você encontra maiores informações sobre o andamento de suas atividades complemtentares da área Cidadã, clique e obtenha mais detalhes!</p>
-        <p align="center"><a href="#" class="btn btn-warning" role="button">Mais detalhes</a> </p>
+        <p align="center"><a href="#" class="btn btn-warning" role="button" onclick="AreaCidada()">Mais detalhes</a> </p>
       </div>
     </div>
   </div>

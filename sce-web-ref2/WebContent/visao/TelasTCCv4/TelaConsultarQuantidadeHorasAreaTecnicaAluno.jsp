@@ -4,6 +4,9 @@
 <html>
 <head>
 
+<%@page import="br.sceweb.dominio.*"%>
+    <%@page import="java.util.*"%>
+    
 <style type="text/css">  
   @import url("/sce-web-ref2/visao/TelasTCCv4/CSS/Background.css");  
 </style>
@@ -38,9 +41,15 @@
 	 <br> <br>
 
 
+<%
+
+String tecnologica = "" + request.getAttribute("tecnologica");
+String tecnologicaDiferenca = "" + request.getAttribute("tecnologicaDiferenca");
+
+%>
 <div class="controls controls-row">
-  <h3 align> <span class="span4 label label-primary">Total de horas realizadas: 30 </span></h3>
-  <h3 align> <span class="span1 label label-info">Total de horas à cumprir:  70 </span></h3>
+  <h3 align> <span class="span4 label label-primary">Total de horas realizadas: <%=tecnologica%> </span></h3>
+  <h3 align> <span class="span1 label label-info">Total de horas à cumprir:  <%=tecnologicaDiferenca%> </span></h3>
   </div>
 
     
@@ -91,9 +100,42 @@
 
 <td> <label>Carga Horária</label> </td>
 
-<td> <label>Status</label> </td>
+
 
 </tr>
+
+
+
+<%
+
+ArrayList<Atcomp> lista = (ArrayList<Atcomp>) request.getAttribute("atcomps");
+
+if ((lista!=null)&& (lista.size()>0)){
+    Atcomp a = null;
+	for (int i = 0; i < lista.size(); i++) {
+		    
+		    a = (Atcomp) lista.get(i);
+			
+		    %><tr>  
+		    <td><label><%=a.getCodigoAtividade()%></label></td>
+
+		    <td><label> <%=a.getDataInicio()%><label> </td>
+		        
+		    <td> <label><%=a.getDescricao()%></label> </td>
+		        
+		    <td> <label><%=a.getHorasLancadas()%></label> </td>
+
+
+
+		  
+		    </tr>
+<%    
+		    
+		}
+	
+	}
+%>
+
 
 </table>
   

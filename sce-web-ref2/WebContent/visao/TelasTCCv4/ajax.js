@@ -7,7 +7,7 @@ $(document).ready(function() {
 				
 		$.get(path, {
 			selectValue : selectValue,
-			action: "ListarCategoriaPorArea"
+			acao: "ListarCategoriaPorArea"
 		}, function(responseText) {			
 			// Retorno do Servlet
 			var jsonData = responseText;

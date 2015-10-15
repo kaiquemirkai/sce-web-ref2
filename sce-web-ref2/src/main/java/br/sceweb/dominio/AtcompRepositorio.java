@@ -28,6 +28,12 @@ private IAtcompDAO daoAtcomp;
 		return daoAtcomp.Listar();
 	}
 	
+	public List<Atcomp> ListarPendenteProfessor(){
+		return daoAtcomp.ListarPendenteProfessor();
+	}
+	public List<Atcomp> ListarAreaStatus(String area, String status){
+		return daoAtcomp.ListarAreaStatus(area, status);
+	}
 	
 	public Double RelatorioHorasPorArea(String areaAtividade){
 		return daoAtcomp.RelatorioHorasPorArea(areaAtividade);

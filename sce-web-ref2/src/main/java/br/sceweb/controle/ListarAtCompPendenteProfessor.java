@@ -18,7 +18,7 @@ public class ListarAtCompPendenteProfessor implements IComando {
 	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse res) 	throws Exception {
 		atcompRepositorio = new AtcompRepositorio(1);
-		List<Atcomp> atcomps = atcompRepositorio.Listar();
+		List<Atcomp> atcomps = atcompRepositorio.ListarPendenteProfessor();
 			
 		request.setAttribute("atcomps", atcomps);
 		return "/visao/TelasTCCv4/TelaListarAtcompPendenteProfessor.jsp";
