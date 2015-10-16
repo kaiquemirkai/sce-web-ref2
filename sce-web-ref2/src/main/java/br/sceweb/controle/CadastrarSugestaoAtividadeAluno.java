@@ -7,6 +7,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
+
+
+
+
+import br.sceweb.dominio.Aluno;
+import br.sceweb.dominio.AlunoRepositorio;
+import br.sceweb.dominio.Login;
+import br.sceweb.dominio.LoginRepositorio;
 import br.sceweb.dominio.SugestaoAtividade;
 import br.sceweb.dominio.SugestaoAtividadeFachada;
 
@@ -25,8 +33,18 @@ public class CadastrarSugestaoAtividadeAluno implements IComando{
 	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse res) throws Exception {
 		String url = "";
-		sugestaoAtividade.setCodigo(0);//PRECISA DISSO ?, COMO O HIBERNATE FUNCIONA ?
-		sugestaoAtividade.setQuemCadastrou("Pedro");
+		
+		LoginRepositorio loginRepositorio = new LoginRepositorio(1);
+		Login login = new Login();
+		login = loginRepositorio.RetornaUsuarioLogado();
+		AlunoRepositorio alunoRepositorio = new AlunoRepositorio(1);
+		Aluno aluno = new Aluno();
+		aluno.setCodigo(login.getCodigo());
+		aluno = alunoRepositorio.Consultar(aluno);
+		
+		
+		sugestaoAtividade.setCodigo(0);
+		sugestaoAtividade.setQuemCadastrou(aluno.getNome());
 		sugestaoAtividade.setNomeSugestaoAtividade(request.getParameter("txtTema"));
 		sugestaoAtividade.setArea(request.getParameter("sltAreaAtividade"));
 		sugestaoAtividade.setDataCadastro(request.getParameter("txtDataCadastroInicio"));//será usado o DATE TIME NOW

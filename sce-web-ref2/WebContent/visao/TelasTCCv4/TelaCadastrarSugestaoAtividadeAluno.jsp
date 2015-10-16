@@ -3,13 +3,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<style type="text/css">  
+  @import url("/sce-web-ref2/visao/TelasTCCv4/CSS/Background.css");  
+</style>
 
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>UATComp - Cadastrar Sugestão</title>
 </head>
 
-<body style="background: #ABCFD6">
+<body id="fundo">
 
 	<!-- Import do Cabecalho -->
 	<div id="cabecalho" style="background-color: #0058a5">
@@ -23,7 +26,7 @@
 
 	<!-- Div da Linha colorida -->
 	<div id="linhaColorida"
-		style="background-color: #5DA9E9; height: 16px;"></div>
+		style=" height: 16px;"></div>
 
 	<!-- Div do Conteudo  -->
 	<div class="container">

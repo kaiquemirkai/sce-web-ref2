@@ -6,6 +6,12 @@ package br.sceweb.controle;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.sceweb.dominio.Aluno;
+import br.sceweb.dominio.AlunoRepositorio;
+import br.sceweb.dominio.Login;
+import br.sceweb.dominio.LoginRepositorio;
+import br.sceweb.dominio.Professor;
+import br.sceweb.dominio.ProfessorRepositorio;
 import br.sceweb.dominio.SugestaoAtividade;
 import br.sceweb.dominio.SugestaoAtividadeFachada;
 
@@ -24,8 +30,19 @@ public class CadastrarSugestaoAtividadeProfessor implements IComando{
 	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse res) throws Exception {
 		String url = "";
+		
+
+		LoginRepositorio loginRepositorio = new LoginRepositorio(1);
+		Login login = new Login();
+		login = loginRepositorio.RetornaUsuarioLogado();
+		ProfessorRepositorio professorRepositorio = new ProfessorRepositorio(1);
+		Professor professor = new Professor();
+		professor.setCodigoLogin(login.getCodigo());
+		professor = professorRepositorio.Consultar(professor);
+		
+		
 		sugestaoAtividade.setCodigo(0);
-		sugestaoAtividade.setQuemCadastrou("Pedro");
+		sugestaoAtividade.setQuemCadastrou(professor.getNome());
 		sugestaoAtividade.setNomeSugestaoAtividade(request.getParameter("txtTema"));
 		sugestaoAtividade.setArea(request.getParameter("sltAreaAtividade"));
 		sugestaoAtividade.setDataCadastro("26/07/2015");//será usado o DATE TIME NOW
