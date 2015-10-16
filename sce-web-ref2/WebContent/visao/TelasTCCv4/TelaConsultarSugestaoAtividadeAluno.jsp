@@ -80,9 +80,11 @@
 				
    <!-- QUEM CADASTROU -->
 				<div class="form-group">
-					<label name="lblCadastrou" for="lblQuemCadstrou" class="col-sm-2 control-label">Quem cadastrou foi:</label>
+					<label name="lblCadastrou" for="lblQuemCadstrou" class="col-sm-2 control-label">Cadastrado por</label>
 					<div class="col-sm-10">
-						<br><%=sa.getQuemCadastrou()%>
+						<input type="text" name="txtQuemCadastrou" id="txtQuemCadastrou"
+							class="form-control" style="width: 25em" value="<%=sa.getQuemCadastrou()%>" />
+						
 					</div>
 				</div>				
 
@@ -91,10 +93,9 @@
 					<label name="lblAreaAtividade" for="lblAreaAtividade"
 						class="col-sm-2 control-label">Área da Atividade</label>
 					<div class="col-sm-10">
-						<select id="sltAreaAtividade" name="sltAreaAtividade"
-							style="width: 25em" class="form-control">
-							<option ><%=sa.getArea()%></option>
-						</select>
+						<input type="text" name="txtAreaAtividade" id="txtAreaAtividade"
+							class="form-control" style="width: 25em" value="<%=sa.getArea()%>" />
+						
 					</div>
 				</div>
 

@@ -70,7 +70,7 @@
 				
    <!-- QUEM CADASTROU -->
 				<div class="form-group">
-					<label name="lblQuemCadastrou" for="lblQuemCadastrou" class="col-sm-2 control-label">Cadastrado por:</label>
+					<label name="lblQuemCadastrou" for="lblQuemCadastrou" class="col-sm-2 control-label">Cadastrado por</label>
 					<div class="col-sm-10">
 						<input type="text" name="txtQuemCadastrou" id="txtQuemCadastrou" class="form-control" style="width: 25em" value="<%=sa.getQuemCadastrou()%>" disabled/>
 					</div>
@@ -81,7 +81,7 @@
 					<label name="lblAreaAtividade" for="lblAreaAtividade" class="col-sm-2 control-label">Área da Atividade</label>
 					
 					<div class="col-sm-10">
-					<input type="text" name="txtQuemCadastrou" id="txtQuemCadastrou" class="form-control" style="width: 25em" value="<%=sa.getArea()%>"/>
+					<input type="text" name="txtAreaAtividade" id="txtAreaAtividade" class="form-control" style="width: 25em" value="<%=sa.getArea()%>"/>
 					</div>
 					
 				</div>
@@ -163,7 +163,7 @@
 	<!-- BOTÃO PARA ALTERAR -->
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
-					<button name="btnConsultar" type="submit" class="btn btn-primary">Alterar</button>
+					<button name="btnConsultar" onclick="Alterar()" type="submit" class="btn btn-primary">Alterar</button>
 				</div>
 			</div>
 
@@ -174,7 +174,11 @@
 </form><!-- Fim do Form -->
 
 </div><!-- Fim da Div Conteudo -->
-
+<script>
+function Alterar(){
+	   document.getElementById('frmAlterarSugestaoAluno').acao.value = "AlterarSugestaoAtividadeAluno";
+}
+</script>
 
 
 </body>

@@ -28,7 +28,7 @@ public class AlterarSugestaoAtividadeProfessor implements IComando{
 		sugestaoAtividade.setQuemCadastrou("Pedro");
 		sugestaoAtividade.setNomeSugestaoAtividade(request.getParameter("txtTema"));
 		sugestaoAtividade.setCategoria(request.getParameter("txtCategoria"));
-		sugestaoAtividade.setArea(request.getParameter("sltAreaAtividade"));
+		sugestaoAtividade.setArea(request.getParameter("txtAreaAtividade"));
 		sugestaoAtividade.setDataCadastro(request.getParameter("txtDataCadastro")); 
 		sugestaoAtividade.setDataVigenciaInicio(request.getParameter("txtDataCadastroInicio"));
 		sugestaoAtividade.setDataVigenciaFim(request.getParameter("txtDataCadastroFim"));

@@ -118,7 +118,7 @@ public class HibernateSugestaoAtividadeDAO implements ISugestaoAtividadeDAO {
 				EntityManager em = factory.createEntityManager();
 				em.getTransaction().begin();
 				//metodo find, somente aceita objeto como parametro
-				sugestaoAtividade = em.find(SugestaoAtividade.class, sugestaoAtividade);
+				sugestaoAtividade = em.find(SugestaoAtividade.class, codigo);
 				em.getTransaction().commit();
 				logger.info("Termino de Procedimento: Consultar Sugestão Atividade");	
 			} catch (HibernateException exception) {
