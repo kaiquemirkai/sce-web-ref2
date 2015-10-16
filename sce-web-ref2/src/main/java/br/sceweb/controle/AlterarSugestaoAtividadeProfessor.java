@@ -33,7 +33,7 @@ public class AlterarSugestaoAtividadeProfessor implements IComando{
 		sugestaoAtividade.setDataVigenciaInicio(request.getParameter("txtDataCadastroInicio"));
 		sugestaoAtividade.setDataVigenciaFim(request.getParameter("txtDataCadastroFim"));
 		sugestaoAtividade.setDescricao(request.getParameter("txtDescricaoAtividade"));
-		System.out.println("////////PEGOU TODOS OS NAMES DA JSP");
+		
 				
 		// Redirecionamento da URL  de sucesso x falha
 		if (fachadaSugestaoAtividade.alterarSugestaoAtividade(sugestaoAtividade) ){//metodo CADASTRA

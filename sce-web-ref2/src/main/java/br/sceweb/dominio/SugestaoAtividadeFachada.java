@@ -32,7 +32,6 @@ public class SugestaoAtividadeFachada {
 		boolean retorno;
 		try {
 			sugestaoAtividadeRepositorio.Cadastrar(sa);
-			System.out.println("////////PASSOU 2");
 		} catch (Exception e) {
 
 			retorno =  false;

@@ -37,7 +37,7 @@
           <!-- Alteração deve ser feita A partir daqui -->
 	 
 	 			
-    						<h3 align="center">Alteração de Sugestão - PROFESSOR</h3>
+    						<h3 align="center">Alteração de Sugestão</h3>
   						
 	 <br> <br>
 
@@ -165,7 +165,7 @@
 	<!-- BOTÃO PARA ALTERAR -->
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
-					<button name="btnConsultar" type="submit" class="btn btn-primary">ALTERAR</button>
+					<button name="btnConsultar" type="submit" class="btn btn-primary">Alterar</button>
 				</div>
 			</div>
 

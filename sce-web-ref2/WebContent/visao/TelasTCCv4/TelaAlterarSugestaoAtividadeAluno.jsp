@@ -1,58 +1,48 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+
 <style type="text/css">  
   @import url("/sce-web-ref2/visao/TelasTCCv4/CSS/Background.css");  
 </style>
-
 
 <!-- %@ PARA PUXAR O IMPORT DE .JAVA -->
  <%@page import="br.sceweb.dominio.*"%>
  <%@page import="java.util.*"%>
 
-
-
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>UATComp - Consultar Sugestão</title>
+<title>UATComp - Alterar Sugestão</title>
 </head>
 
 <body id="fundo">
 
-	<!-- Import do Cabecalho -->
-	<div id="cabecalho" style="background-color: #0058a5">
-		<jsp:include page="Cabecalho.jsp" />
-	</div>
+<!-- Import do Cabecalho -->
+<div id="cabecalho" style="background-color:#0058a5"> <jsp:include page="Cabecalho.jsp" /> </div>
 
-	<!-- Div do Menu -->
-	<div id="menu" style="background-color: #0058a5; margin-top: -10px">
-		<jsp:include page="MenuAluno.jsp" />
-	</div>
+<!-- Div do Menu -->
+<div id="menu" style="background-color:#0058a5; margin-top:-10px"> <jsp:include page="MenuAluno.jsp" /> </div>
 
-	<!-- Div da Linha colorida -->
+<!-- Div da Linha colorida -->
 <div id="linhaColorida" style="height:16px;"> </div>
 
-	<!-- Div do Conteudo  -->
-	<div class="container">
+<!-- Div do Conteudo  -->
+<div class="container">
+<!-- <jsp:include page="ValidarTelas.jsp" /> -->
+<form class= "form-horizontal" role = "form" name="frmAlterarSugestaoAluno" id ="frmAlterarSugestaoAluno" action="/sce-web-ref2/ServletControle" method="post">   
+    	
+		<input type="hidden" name="acao" value="AlterarSugestaoAtividadeAluno">
+    	
+          <!-- Alteração deve ser feita A partir daqui -->
+	 
+	 			
+    						<h3 align="center">Alteração de Sugestão</h3>
+  						
+	 <br> <br>
 
 
-<!-- INICIO DO FORMULÁRIO -->
 
-		<form class="form-horizontal"  role="form"  name="frmListar" action="/sce-web-ref2/ServletControle" method="post">
-		
-	
-			<input type="hidden" name="acao" value="ListarSugestaoAtividadeAluno">
-
-			<!-- Alteração deve ser feita A partir daqui -->
-
-
-			<h3 align="center">Consulta de Sugestão - Detalhes</h3>
-
-			<br> <br>
-			
-	<!-- disabled USADO PARA BLOQUEAR A ALTERAÇÃO DOS CAMPOS -->			
-			<fieldset disabled>
 
 <% 
 				//LOCAL ONDE ATRAVÉS DO request.getAttribute SERÁ PEGO TODOS OS ELEMENTOS DO ARRAYLIST >>sugestaoAtividade
@@ -66,36 +56,34 @@
 				
 				%>
 
+<!--CÓDIGO -->
+<input type="hidden" name="txtCodigo"  value="<%=sa.getCodigo()%>">
 
-		
-      <!--CÓDIGO -->
 				<div class="form-group">
 					<label name="lblCodigo" for="lblCodigo"
 						class="col-sm-2 control-label">Código</label>
 					<div class="col-sm-10">
 						<input type="text" name="txtCodigo" id="txtCodigo"
-							class="form-control" style="width: 25em" value="<%=sa.getCodigo()%>" />
+							class="form-control" style="width: 25em" value="<%=sa.getCodigo()%>" disabled/>
 					</div>
 				</div>
 				
    <!-- QUEM CADASTROU -->
 				<div class="form-group">
-					<label name="lblCadastrou" for="lblQuemCadstrou" class="col-sm-2 control-label">Quem cadastrou foi:</label>
+					<label name="lblQuemCadastrou" for="lblQuemCadastrou" class="col-sm-2 control-label">Cadastrado por:</label>
 					<div class="col-sm-10">
-						<br><%=sa.getQuemCadastrou()%>
+						<input type="text" name="txtQuemCadastrou" id="txtQuemCadastrou" class="form-control" style="width: 25em" value="<%=sa.getQuemCadastrou()%>" disabled/>
 					</div>
 				</div>				
 
      <!--ÁREA DA ATIVIDADE -->
 				<div class="form-group">
-					<label name="lblAreaAtividade" for="lblAreaAtividade"
-						class="col-sm-2 control-label">Área da Atividade</label>
+					<label name="lblAreaAtividade" for="lblAreaAtividade" class="col-sm-2 control-label">Área da Atividade</label>
+					
 					<div class="col-sm-10">
-						<select id="sltAreaAtividade" name="sltAreaAtividade"
-							style="width: 25em" class="form-control">
-							<option ><%=sa.getArea()%></option>
-						</select>
+					<input type="text" name="txtQuemCadastrou" id="txtQuemCadastrou" class="form-control" style="width: 25em" value="<%=sa.getArea()%>"/>
 					</div>
+					
 				</div>
 
      <!-- TEMA OU NOME -->
@@ -119,14 +107,16 @@
 					</div>
 				</div>
 
-   <!--DATA EM QUE FOI CADASTRADO A ATIVIDADE SUGESTÃO -->
+     <!--DATA EM QUE FOI CADASTRADO A ATIVIDADE SUGESTÃO -->
+     <input type="hidden" name="txtDataCadastro"  value="<%=sa.getDataCadastro()%>">
+          
 			<div class="form-group">
 				<label name="lblDataCadastro" for="lblDataCadastro"
 					class="col-sm-2 control-label">Data do Cadastro</label>
 				<div class="col-sm-10">
-					<input type="date" name="txtDataCadastro"
+					<input type="date" name="#"
 						id="txtDataCadastro" class="form-control"
-						style="width: 25em"  value="<%=sa.getDataCadastro()%>" />
+						style="width: 25em"  value="<%=sa.getDataCadastro()%>" disabled/>
 				</div>
 			</div>
 
@@ -161,29 +151,29 @@
 						class="form-control" style="width: 25em"><%=sa.getDescricao()%></textarea>
 				</div>
 			</div>
-
+				
 
 
 <%
 				} //fim do IF 
 %>
 
-			</fieldset>
 			
-	<!-- BOTÃO PARA IR NA TELA LISTAR -->
+			
+	<!-- BOTÃO PARA ALTERAR -->
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
-					<button name="btnListar" type="submit" class="btn btn-primary">Voltar</button>
+					<button name="btnConsultar" type="submit" class="btn btn-primary">Alterar</button>
 				</div>
-			</div>			
-			
-		
+			</div>
 
-		</form>
-		<!-- Fim do Form -->
 
-	</div>
-	<!-- Fim da Div Conteudo -->
+
+<!--  Termino Das Alterações -->
+
+</form><!-- Fim do Form -->
+
+</div><!-- Fim da Div Conteudo -->
 
 
 

@@ -1,7 +1,8 @@
 package br.sceweb.controle;
 
 
-//import java.io.*;//para importar o System.out.println();
+
+import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,7 +11,7 @@ import br.sceweb.dominio.SugestaoAtividade;
 import br.sceweb.dominio.SugestaoAtividadeFachada;
 
 
-//ESTÁ CLASSE SERVLET SERÁ CHAMADA PELA CLASSE ServletContrle.java
+
 
 public class AlterarSugestaoAtividadeAluno implements IComando{
 	
@@ -24,8 +25,12 @@ public class AlterarSugestaoAtividadeAluno implements IComando{
 	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse res) throws Exception {
 		String url = "";
-		sugestaoAtividade.setCodigo(Integer.parseInt(request.getParameter("txtCodigo")));
-		sugestaoAtividade.setQuemCadastrou("Pedro");
+		
+		ArrayList<SugestaoAtividade> lista;
+		
+		sugestaoAtividade.setCodigo(Integer.parseInt(request.getParameter("txtCodigo")));		
+		lista = fachadaSugestaoAtividade.consultaCodigo(sugestaoAtividade.getCodigo()+"");
+		sugestaoAtividade = lista.get(0);
 		sugestaoAtividade.setNomeSugestaoAtividade(request.getParameter("txtTema"));
 		sugestaoAtividade.setCategoria(request.getParameter("txtCategoria"));
 		sugestaoAtividade.setArea(request.getParameter("sltAreaAtividade"));
@@ -33,13 +38,15 @@ public class AlterarSugestaoAtividadeAluno implements IComando{
 		sugestaoAtividade.setDataVigenciaInicio(request.getParameter("txtDataCadastroInicio"));
 		sugestaoAtividade.setDataVigenciaFim(request.getParameter("txtDataCadastroFim"));
 		sugestaoAtividade.setDescricao(request.getParameter("txtDescricaoAtividade"));
-		System.out.println("////////PEGOU TODOS OS NAMES DA JSP");
+		
 				
 		// Redirecionamento da URL  de sucesso x falha
 		if (fachadaSugestaoAtividade.alterarSugestaoAtividade(sugestaoAtividade) ){//metodo CADASTRA
 			url = "/visao/TelasTCCv4/TelaListarSugestaoAtividadeAluno.jsp";			
 			request.setAttribute("erro", null);
-		} else {
+		} 
+		
+		else {
 			url = "/visao/TelasTCCv4/TelaListarSugestaoAtividadeAluno.jsp";	
 			request.setAttribute("erro", "Erro: Dados inválidos!");
 		}
