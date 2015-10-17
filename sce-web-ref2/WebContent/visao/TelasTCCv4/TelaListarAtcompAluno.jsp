@@ -117,9 +117,16 @@ if ((lista!=null)&& (lista.size()>0)){
 	for (int i = 0; i < lista.size(); i++) {
 		    
 		    a = (Atcomp) lista.get(i);
+		    
+		    String selected = "";
+     	   if(i== 0)
+     	   {
+     		   selected = "checked";
+     	   }
+		    
 			
 		    %><tr> 
-		    <td><input type="radio" name="codigoRadio" value="<%=a.getCodigo()%>"> </td>
+		    <td><input <%=selected%> type="radio" name="codigoRadio" value="<%=a.getCodigo()%>"> </td>
 		    
 		    <td> <label><%=a.getAreaAtividade()%><label></td>
 

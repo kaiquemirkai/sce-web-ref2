@@ -5,6 +5,8 @@ package br.sceweb.controle;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.sceweb.dominio.Login;
+import br.sceweb.dominio.LoginRepositorio;
 import br.sceweb.dominio.SugestaoAtividade;
 import br.sceweb.dominio.SugestaoAtividadeRepositorio;
 
@@ -24,10 +26,23 @@ public class ConsultarAlterarSugestaoAtividadeAluno implements IComando {
 		sa.setCodigo(Integer.parseInt(request.getParameter("codigoRadio")));
 		//instância irá retorna a Sugestão Atividade conforme o código do radio Button selecionado
 		SugestaoAtividade sugestaoAtividade = sugestaoAtividadeRepositorio.Consultar(sa);
+		
+		LoginRepositorio loginRepositorio = new LoginRepositorio(1);
+		Login login = new Login();
+		login = loginRepositorio.RetornaUsuarioLogado();
+		request.setAttribute("erro",null);
+		String url ="/visao/TelasTCCv4/TelaAlterarSugestaoAtividadeAluno.jsp";
+		if(sugestaoAtividade.getCodigoCadastro() != login.getCodigo())
+        {
+        	url = "/visao/TelasTCCv4/TelaListarSugestaoAtividadeAluno.jsp";
+        	request.setAttribute("erro","Esta sugestão não pode ser alterada");
+        }
+		
+		
 		request.setAttribute("sugestaoAtividade", sugestaoAtividade);	
 		
 		//PODERIA HAVER UM IF para ALUNO e PROFESSOR ?
-		return "/visao/TelasTCCv4/TelaAlterarSugestaoAtividadeAluno.jsp";
+		return url; 
 	}
 
 

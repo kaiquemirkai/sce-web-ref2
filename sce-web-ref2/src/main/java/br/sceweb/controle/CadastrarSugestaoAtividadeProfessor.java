@@ -3,6 +3,9 @@ package br.sceweb.controle;
 
 //import java.io.*;//para importar o System.out.println();
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -40,12 +43,14 @@ public class CadastrarSugestaoAtividadeProfessor implements IComando{
 		professor.setCodigoLogin(login.getCodigo());
 		professor = professorRepositorio.Consultar(professor);
 		
-		
+		sugestaoAtividade.setCodigoCadastro(professor.getCodigoLogin());
 		sugestaoAtividade.setCodigo(0);
 		sugestaoAtividade.setQuemCadastrou(professor.getNome());
 		sugestaoAtividade.setNomeSugestaoAtividade(request.getParameter("txtTema"));
 		sugestaoAtividade.setArea(request.getParameter("sltAreaAtividade"));
-		sugestaoAtividade.setDataCadastro("26/07/2015");//será usado o DATE TIME NOW
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		String data = sdf.format(new Date());
+		sugestaoAtividade.setDataCadastro(data);//será usado o DATE TIME NOW
 		sugestaoAtividade.setCategoria(request.getParameter("txtCategoria"));
 		sugestaoAtividade.setDataVigenciaInicio(request.getParameter("txtDataCadastroInicio"));
 		sugestaoAtividade.setDataVigenciaFim(request.getParameter("txtDataCadastroFim"));

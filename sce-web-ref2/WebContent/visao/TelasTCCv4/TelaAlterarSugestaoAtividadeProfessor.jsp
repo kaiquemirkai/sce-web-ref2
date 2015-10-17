@@ -52,7 +52,20 @@
     
 				if (sa!=null){
                 
-	          		
+					String area = "";
+					if(sa.getArea().equals("01"))
+					{
+						area = "Tecnológica";
+					}
+					if(sa.getArea().equals("02"))
+					{
+						area = "Sóciocultural";
+					}
+					if(sa.getArea().equals("03"))
+					{
+						area = "Cidadã";
+					}
+				
 				
 				%>
 
@@ -81,7 +94,7 @@
 					<label name="lblAreaAtividade" for="lblAreaAtividade"
 						class="col-sm-2 control-label">Área da Atividade</label>
 					<div class="col-sm-10">
-						<input type="text" name="txtAreaAtividade" id="txtAreaAtividade" class="form-control" style="width: 25em" value="<%=sa.getArea()%>"/>
+						<input type="text" name="txtAreaAtividade" id="txtAreaAtividade" class="form-control" style="width: 25em" value="<%=area%>"/>
 					</div>
 				</div>
 

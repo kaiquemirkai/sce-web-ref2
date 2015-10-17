@@ -21,6 +21,18 @@ public class SugestaoAtividade {
 	String dataVigenciaInicio;//Não tem no DC
 	String dataVigenciaFim;//Não tem no DC
 	String descricao;//Não tem no DC
+	long codigoCadastro;
+	
+	
+	
+
+	public long getCodigoCadastro() {
+		return codigoCadastro;
+	}
+	public void setCodigoCadastro(long codigoCadastro) {
+		this.codigoCadastro = codigoCadastro;
+	}
+	
 	
 	public long getCodigo() {
 		return codigo;

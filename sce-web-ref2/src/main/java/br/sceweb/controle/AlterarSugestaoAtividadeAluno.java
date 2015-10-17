@@ -35,6 +35,20 @@ public class AlterarSugestaoAtividadeAluno implements IComando{
 		sugestaoAtividade.setNomeSugestaoAtividade(request.getParameter("txtTema"));
 		sugestaoAtividade.setCategoria(request.getParameter("txtCategoria"));
 		sugestaoAtividade.setArea(request.getParameter("txtAreaAtividade"));
+		if(request.getParameter("txtAreaAtividade").equals("Tecnológica"))
+		{
+			sugestaoAtividade.setArea("01");
+		}
+		if(request.getParameter("txtAreaAtividade").equals("Sóciocultural"))
+		{
+			sugestaoAtividade.setArea("02");
+		}
+		if(request.getParameter("txtAreaAtividade").equals("Cidadã"))
+		{
+			sugestaoAtividade.setArea("03");
+		}
+		
+		
 		sugestaoAtividade.setDataCadastro(request.getParameter("txtDataCadastro"));//será usado o DATE TIME NOW
 		sugestaoAtividade.setDataVigenciaInicio(request.getParameter("txtDataCadastroInicio"));
 		sugestaoAtividade.setDataVigenciaFim(request.getParameter("txtDataCadastroFim"));

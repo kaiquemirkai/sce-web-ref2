@@ -9,6 +9,36 @@
 <script
 	src="http://cdnjs.cloudflare.com/ajax/libs/jquery.mask/0.9.0/jquery.mask.min.js"></script>
 
+<script language="JavaScript" src="jquery/jquery.js" type="text/javascript"></script>
+<script language="JavaScript" src="jquery/jquery.validate.js" type="text/javascript"></script>
+<style type="text/css">
+* {
+    font-family: Arial;
+    font-size: 96%;
+}
+label {
+    display: block;
+    margin-top: 10px;
+}
+label.error {
+    float: none;
+    color: red;
+    margin: 0 .5em 0 0;
+    vertical-align: top;
+    font-size: 15px
+}
+p {
+    clear: both;
+}
+.submit {
+    margin-top: 1em;
+}
+em {
+    font-weight: bold;
+    padding-right: 1em;
+    vertical-align: top;
+}
+</style>
 
 <script type="text/javascript">
 	//Tela Cadastrar Atcomp Aluno
@@ -32,7 +62,8 @@
 
 				txtDataInicioAtividade : {
 
-					required : true
+					required : true,
+					number: true
 				},
 				txtDataTerminoAtividade : {
 
@@ -66,7 +97,8 @@
 				},
 
 				txtDataInicioAtividade : {
-					required : "Digite a data do ínicio da atividade"
+					required : "Digite a data do ínicio da atividade",
+					number: "apenas numeros, rapaz"
 				},
 
 				txtHoraInicioAtividade : {
@@ -398,7 +430,7 @@
 
 	});
 
-	//Tela Cadastrar Sugestao Professor
+	//Tela Cadastrar Categoria Professor
 
 
 
@@ -456,7 +488,7 @@
 
 	});
 
-	//Tela Cadastrar Sugestao Aluno
+	//Tela Cadastrar Categoria Aluno
 
 
 
@@ -514,7 +546,7 @@
 
 	});
 
-	//Tela Alterar Sugestao Professor
+	//Tela Alterar Categoria Professor
 
 
 	$(document).ready(function() {
@@ -571,7 +603,7 @@
 
 	});
 
-	//Tela Alterar Sugestao Aluno
+	//Tela Alterar Categoria Aluno
 
 
 	$(document).ready(function() {
@@ -621,6 +653,213 @@
 					required : "Digite uma breve descrição"
 
 				}
+
+			}
+
+		});
+
+	});
+	
+	
+	
+	//Tela Login
+
+	$(document).ready(function() {
+		$("#frmLogin").validate({
+			// Define as regras
+
+			rules : {
+				txtLogin : {
+
+					required : true
+				},
+
+				txtSenha : {
+
+					required : true
+				},
+
+			},
+
+			// Define as mensagens de erro para cada regra
+
+			messages : {
+
+				txtLogin : {
+					required : "Digite o seu Login!"
+
+				},
+
+				txtSenha : {
+					required : "Digite a senha!"
+				}
+
+
+
+				}
+
+			});
+
+		});
+
+	//Tela Listar AtcompAluno
+
+	$(document).ready(function() {
+		$("#frmListarAtcompAluno").validate({
+			// Define as regras
+
+			rules : {
+				txtBusca : {
+
+					required : true
+				},
+
+
+			},
+
+			// Define as mensagens de erro para cada regra
+
+			messages : {
+
+				txtBusca : {
+					required : "Digite a sua busca!"
+
+				},
+
+				}
+
+			});
+
+		});
+
+
+	
+	//Tela Cadastrar Atcomp Professor
+
+	$(document).ready(function() {
+		$('#txtDataInicioAtividade').mask('00/00/0000');
+		$('#txtHoraInicioAtividade').mask('99:99');
+		$('#txtDataTerminoAtividade').mask('00/00/0000');
+		$('#txtHoraTerminoAtividade').mask('99:99');
+	});
+
+	$(document).ready(function() {
+		$("#frmCadastrarAtcompProfessor" ).validate({
+			// Define as regras
+
+			rules : {
+				sltAreaAtividade : {
+
+					required : true
+				},
+				
+				inputfile : {
+
+					required : true
+				},
+				
+				sltCurso : {
+
+					required : true
+				},
+				
+				sltTurma : {
+
+					required : true
+				},
+				
+				sltAluno : {
+
+					required : true
+				},
+				sltAreaCurso : {
+
+					required : true
+				},
+				txtDataInicioAtividade : {
+
+					required : true,
+					number: true
+				},
+				txtDataTerminoAtividade : {
+
+					required : true
+				},
+
+				txtHoraInicioAtividade : {
+
+					required : true
+				},
+
+				txtHoraTerminoAtividade : {
+
+					required : true
+				},
+
+				txtDescricaoAtividade : {
+
+					required : true,
+
+				},
+			},
+
+			// Define as mensagens de erro para cada regra
+
+			messages : {
+
+				sltAreaAtividade : {
+					required : "Selecione a área"
+
+				},
+				
+				sltCurso : {
+					required : "Selecione o curso"
+
+				},
+				
+				sltTurma : {
+					required : "Selecione a turma"
+
+				},
+				
+				sltAluno : {
+					required : "Selecione o aluno"
+
+				},
+				
+				sltAreaCurso : {
+					required : "Selecione a area do curso"
+
+				},
+
+
+				txtDataInicioAtividade : {
+					required : "Digite a data do ínicio da atividade",
+					number: "apenas numeros, rapaz"
+				},
+
+				txtHoraInicioAtividade : {
+					required : "Digite a hora do ínicio da atividade"
+				},
+
+				txtDataTerminoAtividade : {
+					required : "Digite a data do termino da atividade"
+				},
+
+				txtHoraTerminoAtividade : {
+					required : "Digite a hora do termino da atividade"
+				},
+				
+				inputfile : {
+					required : "Selecione o arquivo"
+				},
+
+				txtDescricaoAtividade : {
+					required : "Digite uma breve descrição"
+
+				}
+				
+				
 
 			}
 

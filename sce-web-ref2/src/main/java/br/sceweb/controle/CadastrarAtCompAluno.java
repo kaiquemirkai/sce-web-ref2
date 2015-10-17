@@ -1,5 +1,7 @@
 package br.sceweb.controle;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -47,6 +49,11 @@ public class CadastrarAtCompAluno implements IComando{
 		atcomp.setDataFim(request.getParameter("txtDataTerminoAtividade"));
 		atcomp.setHoraFim(request.getParameter("txtHoraTerminoAtividade"));
 		atcomp.setDescricao(request.getParameter("txtDescricaoAtividade"));
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		String data = sdf.format(new Date());
+		atcomp.setDataEntrega(data);
+		
 		atcomp.setStatus("Pendente");
 		atcomp.setCodigo(0);	
 		atcomp.setCodigoAluno(login.getCodigo());

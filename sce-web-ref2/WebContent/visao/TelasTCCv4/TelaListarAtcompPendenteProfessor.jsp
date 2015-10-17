@@ -98,6 +98,12 @@ ArrayList<Atcomp> lista = (ArrayList<Atcomp>) request.getAttribute("atcomps");
 if ((lista!=null)&& (lista.size()>0)){
     Atcomp a = null;
 	for (int i = 0; i < lista.size(); i++) {
+		
+		  String selected = "";
+   	   if(i== 0)
+   	   {
+   		   selected = "checked";
+   	   }
 		    
 		    a = (Atcomp) lista.get(i);
 			
@@ -106,15 +112,15 @@ if ((lista!=null)&& (lista.size()>0)){
 
 <tr> 
 
-<td> <input type="radio" name="codigoRadio" value="<%=a.getCodigo()%>"> </td> <!-- Campo que receberá codigo radio -->
+<td> <input <%=selected%> type="radio" name="codigoRadio" value="<%=a.getCodigo()%>"> </td> <!-- Campo que receberá codigo radio -->
 
-<td> <label></label> </td>
+<td> <label>ARRUMAR</label> </td>
 
-<td> <label></label> </td>
+<td> <label>ARRUMAR</label> </td>
 
-<td> <label>2ASIN</label> </td>
+<td> <label>ARRUMAR</label> </td>
 
-<td> <label>Sistemas de Informação</label> </td>
+<td> <label>ARRUMAR</label> </td>
 
 <td> <label><%=a.getDescricao()%></label> </td>
 

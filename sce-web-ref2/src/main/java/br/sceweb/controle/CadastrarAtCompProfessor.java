@@ -1,5 +1,7 @@
 package br.sceweb.controle;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -38,7 +40,7 @@ public class CadastrarAtCompProfessor implements IComando{
 	public String executa(HttpServletRequest request, HttpServletResponse res) throws Exception {
 		String url = "";
 		Login login = new Login();
-		System.out.println(request.getParameter("sltCategoriaAtividade"));
+		
 		login = LoginRepositorio.RetornaUsuarioLogado();		
 		atcomp.setCodigoAtividade(request.getParameter("CategoriaAtividade"));
 		atcomp.setAreaAtividade(request.getParameter("sltAreaAtividade"));
@@ -50,7 +52,9 @@ public class CadastrarAtCompProfessor implements IComando{
 		atcomp.setStatus("Pendente");
 		atcomp.setCodigo(0);	
 		atcomp.setCodigoAluno(login.getCodigo());
-	
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		String data = sdf.format(new Date());
+	    atcomp.setDataEntrega(data);
 		Part filePart = request.getPart("inputFile");
         InputStream fileContent = filePart.getInputStream();   
         

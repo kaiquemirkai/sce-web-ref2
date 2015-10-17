@@ -110,15 +110,31 @@ ArrayList<SugestaoAtividade> lista = (ArrayList<SugestaoAtividade>) request.getA
                 SugestaoAtividade sa = null;
                 
 	               for (int i = 0; i < lista.size(); i++) {
-		    
+	            	   String selected = "";
+	            	   if(i== 0)
+	            	   {
+	            		   selected = "checked";
+	            	   }
+	            		   
 		        sa = (SugestaoAtividade) lista.get(i);
-				
-				
+				String area = "";
+				if(sa.getArea().equals("01"))
+				{
+					area = "Tecnológica";
+				}
+				if(sa.getArea().equals("02"))
+				{
+					area = "Sóciocultural";
+				}
+				if(sa.getArea().equals("03"))
+				{
+					area = "Cidadã";
+				}
 				%>
 <!-- SERÁ CARREGADO TODAS AS SUGESTÕES DE ATIVIDADES DO BANCO  -->
 <tr>
 
-<td> <label><input type="radio" name="codigoRadio" value="<%=sa.getCodigo()%>"> </label> </td>
+<td> <label><input <%=selected%> type="radio" name="codigoRadio" value="<%=sa.getCodigo()%>"> </label> </td>
 
 <td> <label><%=sa.getNomeSugestaoAtividade()%> </label> </td>
      
@@ -126,7 +142,7 @@ ArrayList<SugestaoAtividade> lista = (ArrayList<SugestaoAtividade>) request.getA
 
 <td> <label><%=sa.getDataCadastro()%></label> </td>
 
-<td> <label><%=sa.getArea()%></label> </td>
+<td> <label><%=area%></label> </td>
 
 
 
@@ -146,6 +162,8 @@ ArrayList<SugestaoAtividade> lista = (ArrayList<SugestaoAtividade>) request.getA
 
 
 <script>
+
+
    function buscar(){
 	   document.getElementById('frmListarSugestaoAluno').acao.value = "ListarSugestaoAtividadeAluno";
 	      

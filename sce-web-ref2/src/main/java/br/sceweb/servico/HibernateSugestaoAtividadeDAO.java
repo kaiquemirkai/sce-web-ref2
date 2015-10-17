@@ -101,6 +101,7 @@ public class HibernateSugestaoAtividadeDAO implements ISugestaoAtividadeDAO {
 			logger.info("Erro de Procedimento: Consultar Sugestão Atividade. Erro: " + exception.getStackTrace());
 			exception.printStackTrace();
 		}
+		
 		return consulta;
 	}
 	
