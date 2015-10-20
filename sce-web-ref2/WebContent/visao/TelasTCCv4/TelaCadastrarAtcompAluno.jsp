@@ -12,7 +12,7 @@
 </style>
 
 <script type="text/javascript" src="js/jquery-1.11.1.js"></script>
-
+<script src="http://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.js" type="text/javascript"></script>
 
 
 <script type="text/javascript">
@@ -25,13 +25,76 @@ function Mudar()
 	 var select = document.getElementById('sltCategoriaAtividade');
 	 var hidden = document.getElementById('CategoriaAtividade');
 	 hidden.value = select.options[select.selectedIndex].text;
-	 alert(hidden.value);
+	 document.getElementById('form1').acao.value = "CadastrarAtCompAluno";
 	 document.getElementById('form1').submit();
 	 
 }
 
+$(document).ready(function() {
+	$('#sltAreaAtividade').change(function(event) {
+       
+    
+	selectValue = $('#sltAreaAtividade').val();
+	var path = '/sce-web-ref2/ServletControle';
+	var path2 = '/sce-web-ref2/visao/TelasTCCv4/TelaCadastrarAtcompAluno.jsp';
+			
+	$.get(path, {
+		selectValue : selectValue,
+		acao: "ListarCategoriaPorArea"
+	}, function(responseText) {			
+		// Retorno do Servlet
+		var jsonData = responseText;
+		//Objeto Json montado
+		var myJSONObject = jQuery.parseJSON( JSON.stringify( jsonData));
+		//Div da tela que ira receber o Select			
+		var myDiv = document.getElementById("newSelect"); 
+		//Metodo para testar se existe um select e excluir para formar outro		
+		var testaSeExiste;
+		testaSeExiste = document.getElementById("sltCategoriaAtividade");
+		if(testaSeExiste !== null)
+			{				
+		    $('#sltCategoriaAtividade').remove();
+			}
+		// Insere os atributos do select
+		var selectList = document.createElement("select");
+		selectList.id = "sltCategoriaAtividade";
+		selectList.className = "form-control";
+		selectList.style = "width: 25em";
+		myDiv.appendChild(selectList);
+		// contador
+        var count = Object.keys(myJSONObject).length
+		// insere a primeira linha do select
+		var opt = document.createElement("option");
+	    opt.value = "0";
+	    opt.text = "--------- Selecione ---------";
+	    selectList.appendChild(opt);
+	    // insere as demais linhas
+		for (var i=0; i<= count ; i++) {
+		    var option = document.createElement("option");
+		    option.value = myJSONObject.regras[i].id;
+		    option.text = myJSONObject.regras[i].codigoAtividade;
+		    
+		    selectList.appendChild(option);
+		    
+		}
+		
+		
+		
+		
+		});
+
+	});
+});
+
 </script>
-<script type="text/javascript" src="ajax.js"></script>
+
+
+
+<!-- <script type="text/javascript" src="ajax.js"></script> -->
+
+
+
+
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>UATComp - Cadastrar Atcomp</title>
 </head>
@@ -121,6 +184,14 @@ function Mudar()
         <label name = "lblHoraTerminoAtividade" for="lblHoraTerminoAtividade" class="col-sm-2 control-label">Hora de Término da Atividade</label>
         <div class="col-sm-10">
              <input type="text" name="txtHoraTerminoAtividade" id="txtHoraTerminoAtividade" class="form-control" style="width: 25em" placeholder="Data de término" value="" />
+        </div>
+        </div>
+        
+        
+           <div class="form-group">
+        <label name = "lblHoralancadas" for="lblHoraLancadas" class="col-sm-2 control-label">Carga Horária</label>
+        <div class="col-sm-10">
+             <input type="text" name="txtHoraLancadas" id="txtHoraLancadas" class="form-control" style="width: 25em" placeholder="Carga Horária" value="" />
         </div>
         </div>
         

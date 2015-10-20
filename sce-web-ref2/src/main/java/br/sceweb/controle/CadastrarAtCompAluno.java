@@ -49,6 +49,7 @@ public class CadastrarAtCompAluno implements IComando{
 		atcomp.setDataFim(request.getParameter("txtDataTerminoAtividade"));
 		atcomp.setHoraFim(request.getParameter("txtHoraTerminoAtividade"));
 		atcomp.setDescricao(request.getParameter("txtDescricaoAtividade"));
+		atcomp.setHorasLancadas(request.getParameter("txtHoraLancadas"));
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		String data = sdf.format(new Date());
