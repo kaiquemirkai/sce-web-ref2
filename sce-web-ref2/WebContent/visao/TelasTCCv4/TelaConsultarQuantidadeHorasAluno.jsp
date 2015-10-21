@@ -102,7 +102,7 @@ function AreaCidada(){
       <div class="caption">
         <h4 align="center">Área Sócio-Cultural</h4>
         <p> Aqui você encontra maiores informações sobre o andamento de suas atividades complemtentares da área sócio-cultural, clique e obtenha mais detalhes!</p>
-        <p align="center"><a href="#" class="btn btn-info" role="button" onclick="AreaSocioCultural()()">Mais detalhes</a> </p>
+        <p align="center"><a href="#" class="btn btn-info" role="button" onclick="AreaSocioCultural()">Mais detalhes</a> </p>
       </div>
     </div>
   </div>

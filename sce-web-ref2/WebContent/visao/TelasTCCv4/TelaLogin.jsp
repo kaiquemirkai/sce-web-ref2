@@ -31,7 +31,10 @@
     	
     	<input type="hidden" name="acao" value="AcessarLogin">
    			 
-                <!--Login-->
+<!--Login-->
+
+
+    
     <div class="input-group col-sm-offset-4 col-sm-4" style="padding:10px; padding-top:50px; ">
     	<div class="input-group-addon"> <span class="glyphicon glyphicon-user"> </span> </div>
       		<input type="text" class="form-control" id="txtLogin" name="txtLogin" placeholder="Login">
@@ -48,11 +51,36 @@
     </div>
 
 
+
    <div class="input-group col-sm-offset-5 col-sm-5" style="padding:10px; padding-left:5%; padding-bottom:150px; ">
       
      <button class="btn btn-success" type="submit"> Login <span class="glyphicon glyphicon-ok-sign"></span>
      </button>
   </div>
+    	
+    	<% 
+String erro = ""+request.getAttribute("erro");
+
+System.out.println(""+erro);
+
+if (erro.equals("Erro: Dados inválidos!"))
+{
+   String divInicio = "<div class='alert alert-danger' role='alert' align='center'>";
+   String divFim = "</div>";
+   String labelInicio = "<label>";
+   String labelFim = "</label>";
+
+%>
+
+<%=divInicio %>
+<%=labelInicio %> <%=erro%> <%=labelFim %>
+<%=divFim %>
+
+
+    <% 
+}
+    %>    
+      
     	
  </form>  
  </div> <!-- Final do Div formulario -->

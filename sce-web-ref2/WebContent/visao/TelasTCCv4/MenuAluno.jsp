@@ -71,7 +71,6 @@ function ConsultaPrincipal(){
   <ul class="dropdown-menu">
     <li><a onclick="ListarAtComp()">Consultar</a></li>
     <li><a onclick="CadastrarAtComp()">Cadastrar</a></li>
-    <li><a onclick="ListarAtComp()">Excluir	</a></li>
     </ul>
  </div>
  <div class="btn-group">

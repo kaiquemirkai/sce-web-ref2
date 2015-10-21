@@ -124,11 +124,25 @@ if ((lista!=null)&& (lista.size()>0)){
      		   selected = "checked";
      	   }
 		    
+     	   
+     	  String area = "";
+			if(a.getAreaAtividade().equals("01"))
+			{
+				area = "Tecnológica";
+			}
+			if(a.getAreaAtividade().equals("02"))
+			{
+				area = "Sóciocultural";
+			}
+			if(a.getAreaAtividade().equals("03"))
+			{
+				area = "Cidadã";
+			}
 			
 		    %><tr> 
 		    <td><input <%=selected%> type="radio" name="codigoRadio" value="<%=a.getCodigo()%>"> </td>
 		    
-		    <td> <label><%=a.getAreaAtividade()%><label></td>
+		    <td> <label><%=area%><label></td>
 
 		    <td><label> <%=a.getCodigoAtividade()%><label> </td>
 		        

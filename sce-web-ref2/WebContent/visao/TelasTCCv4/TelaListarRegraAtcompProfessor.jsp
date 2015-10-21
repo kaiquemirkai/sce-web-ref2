@@ -117,6 +117,19 @@ if ((lista!=null)&& (lista.size()>0)){
 		    ra = (RegraAtcomp) lista.get(i);
 		    
     
+		    String area = "";
+			if(ra.getArea().equals("01"))
+			{
+				area = "Tecnológica";
+			}
+			if(ra.getArea().equals("02"))
+			{
+				area = "Sóciocultural";
+			}
+			if(ra.getArea().equals("03"))
+			{
+				area = "Cidadã";
+			}
 
 
 %>

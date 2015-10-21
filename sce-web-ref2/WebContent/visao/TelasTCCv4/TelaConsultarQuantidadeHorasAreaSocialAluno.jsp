@@ -52,40 +52,7 @@ String socialDiferenca = "" + request.getAttribute("socialDiferenca");
 
     
     <br> <br>
- 
-  <!--  BUSCA -->
-	<div class="form-group">
-	
-	<div class="col-sm-2" style="width: 35em"  >
-      <input type="text" class="form-control" id="txtBusca" name="txtBusca" placeholder="buscar">
-     </div>
-    
-    <div class="col-sm-10">
       
-      <label class="radio-inline">
-  		<input type="radio" name="rdBusca" id="rdDescricao" value="descricao"> Descrição
-	</label>
-	
-	
-	<label class="radio-inline">
-  		<input type="radio" name="rdBusca" id="rdStatus" value="status"> Status
-	</label>
-	
-	<label class="radio-inline">
-  		<input type="radio" name="rdBusca" id="rdCategoria" value="categoria"> Categoria
-	</label>
-    
-    <label class="radio-inline">
-  		<input type="radio" name="rdBusca" id="rdDataRealizacao" value="dataRealizacao"> Data de Realização
-	</label>
-	<br><br>
-    <button type="submit" class="btn btn-primary">Buscar</button>
-  </div>
-</div> <!--  Termino BUSCA -->
-	
-	       
-    <br> <br>
-     
 <table name="tdListaAtcomp" class="table table-striped">
   
 <tr> 

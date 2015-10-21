@@ -32,7 +32,6 @@
 	<div class="container">
 
 
-
 <!-- INICIO DO FORMULARIO -->
 
 		<form class="form-horizontal" role="form" id = "frmCadastrarSugestaoAluno" name="frmCadastrarSugestaoAluno"	action="/sce-web-ref2/ServletControle" method="post">

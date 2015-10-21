@@ -41,13 +41,11 @@ public class CadastrarSugestaoAtividadeAluno implements IComando{
 		LoginRepositorio loginRepositorio = new LoginRepositorio(1);
 		Login login = new Login();
 		login = loginRepositorio.RetornaUsuarioLogado();
-		System.out.println(login.getCodigo());
 		AlunoRepositorio alunoRepositorio = new AlunoRepositorio(1);
 		Aluno aluno = new Aluno();
 		aluno.setCodigo(login.getCodigo());
 		aluno = alunoRepositorio.Consultar(aluno);
 		System.out.println(aluno.getCodigo());
-		sugestaoAtividade.setCodigoCadastro(aluno.getCodigo());
 		sugestaoAtividade.setCodigoCadastro(aluno.getCodigo());
 		sugestaoAtividade.setCodigo(0);
 		sugestaoAtividade.setQuemCadastrou(aluno.getNome());

@@ -12,16 +12,6 @@
  <%@page import="java.util.*"%>
  <%@page import="java.io.*"%>
  
-<script type="text/javascript">
-$(document).ready(function(){
-$('#btnArquivo').change(function(){
-    $('#txtArquivo').val($(this).val());
-});
-
-});
-
-</script>
-
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>UATComp - Consultar Atcomp</title>
 </head>
@@ -67,7 +57,27 @@ $('#btnArquivo').change(function(){
         </div>
         </div>
         
-         <div class="form-group has-success has-feedback">
+         <% 
+         	String classe = "";
+         
+         	if(a.getStatus().equals("Pendente"))
+         	{
+         		classe = "form-group has-warning has-feedback";
+         	}
+         	
+         	if(a.getStatus().equals("Aprovado"))
+         	{
+         		classe = "form-group has-success has-feedback";
+         	}
+         	
+         	if(a.getStatus().equals("Reprovado"))
+         	{
+         		classe = "form-group has-danger has-feedback";
+         	}
+         	
+         	
+         %>
+         <div class="<%=classe %>">
          <label name="lblStatus" for="lblStatus" class="col-sm-2 control-label">Status</label>
         
           <div class="col-sm-10">
@@ -80,12 +90,7 @@ $('#btnArquivo').change(function(){
       	<label name="lblAreaAtividade" for="lblAreaAtividade" class="col-sm-2 control-label">Área da Atividade</label>
       
         <div class="col-sm-10">
-        	 <select id="sltAreaAtividade" name="sltAreaAtividade" style="width: 25em" class="form-control" >
-                  		<option value="00">-- Selecione a área -- </option>
-                  		<option value="01">Formação Tecnológica </option>
-                  		<option value="02">Formação Sócio-Cultural</option>
-                  		<option value="03">Formação Sócio-Cidadã</option>
-              </select>
+        	<input type="text" name="txtStatus" id="txtStatus" class="form-control"  style="width: 25em" value="<%=a.getAreaAtividade()%>" /> 
       	</div>
     	</div>
 
@@ -93,12 +98,7 @@ $('#btnArquivo').change(function(){
          <label name="lblCodigoAtividade" for="codigoAtividade" class="col-sm-2 control-label">Código da Atividade</label>
       
          <div class="col-sm-10">
-             <select id="sltCodigoAtividade" name="sltCodigoAtividade" style="width: 25em" class="form-control" >
-                  		<option value="100">-- Selecione o código -- </option>
-                  		<option value="101">101 - Cinema</option>
-                  		<option value="102">102 - Teatro</option>
-                  		<option value="103">103 - Museu</option>
-              </select>
+            <input type="text" name="txtStatus" id="txtStatus" class="form-control"  style="width: 25em" value="<%=a.getCodigoAtividade()%>" />
         </div>
         </div>
     
