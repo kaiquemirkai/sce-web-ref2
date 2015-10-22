@@ -31,6 +31,12 @@ private IAtcompDAO daoAtcomp;
 	public List<Atcomp> ListarPendenteProfessor(){
 		return daoAtcomp.ListarPendenteProfessor();
 	}
+	
+	public List<Object> ListarPendenteProfessorCompleto(){
+		return daoAtcomp.ListarPendenteProfessorCompleto();
+	}
+	
+	
 	public List<Atcomp> ListarAreaStatus(String area, String status){
 		return daoAtcomp.ListarAreaStatus(area, status);
 	}
@@ -71,5 +77,11 @@ public boolean Alterar (Atcomp a){
 		
 	}
 	
+public int QuantidadeAtcompsPorStatusProfessor(String status){
+		
+		return daoAtcomp.QuantidadeAtcompsPorStatusProfessor(status);
+		
+		
+	}
 	}
 

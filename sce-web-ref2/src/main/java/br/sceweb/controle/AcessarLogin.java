@@ -95,7 +95,7 @@ public class AcessarLogin implements IComando{
 			{
 				//carrega as atividades pendentes
 				AtcompRepositorio atcompRepositorio = new AtcompRepositorio(1);				
-				int quantidadeAtcompPendente = atcompRepositorio.QuantidadeAtcompsPorStatus("Pendente"); 
+				int quantidadeAtcompPendente = atcompRepositorio.QuantidadeAtcompsPorStatusProfessor("Pendente"); 
 				request.setAttribute("quantidadePendente", quantidadeAtcompPendente);
 				
 				// carrega o nome do professor

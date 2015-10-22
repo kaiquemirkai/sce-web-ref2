@@ -12,8 +12,10 @@ public interface IAtcompDAO {
 	public boolean Alterar(Atcomp a);
 	public List<Atcomp> Listar();
 	public List<Atcomp> ListarPendenteProfessor();
+	public List<Object> ListarPendenteProfessorCompleto();
 	public Double RelatorioHorasPorArea(String areaAtividade) ;
 	public int QuantidadeAtcompsPorStatus(String status);
+	public int QuantidadeAtcompsPorStatusProfessor(String status);
 	public List<Atcomp> ListarAreaStatus(String area, String status);
 	
 	///Verificar que porra eh essa!!!!!!!

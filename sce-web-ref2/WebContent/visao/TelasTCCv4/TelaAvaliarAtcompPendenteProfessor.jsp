@@ -55,11 +55,12 @@
 						  			 <%
 	 
 	 Atcomp a = (Atcomp)request.getAttribute("atcomp");
+     Aluno aluno = (Aluno) request.getAttribute("aluno");						  			 
 	 //Manter sessão Ativa
 	 session.setAttribute("atcomp2", a);
 	 %>
 	 			
- 	 <input type="hidden" name="txtCodigoHidden" id="txtCodigo" class="form-control" style="width: 25em" value="<%=a.getCodigo() %>" />
+ 	 <input type="hidden" name="txtCodigo" id="txtCodigo" class="form-control" style="width: 25em" value="<%=a.getCodigo() %>" />
   				
   			  			
   						
@@ -93,7 +94,7 @@
         <label name="lblCurso" for="lblCurso" class="col-sm-2 control-label">Curso</label>
         
         <div class="col-sm-10">
-             <input type="text" name="txtCurso" id="txtCurso" class="form-control" style="width: 25em"  value="<%=a.getCodigo()%>" />
+             <input type="text" name="txtCurso" id="txtCurso" class="form-control" style="width: 25em"  value="<%=aluno.getCurso()%>" />
         </div>
         </div>
         
@@ -101,7 +102,7 @@
         <label name="lblTurma" for="lblTurma" class="col-sm-2 control-label">Turma</label>
         
         <div class="col-sm-10">
-             <input type="text" name="txtTurma" id="txtTurma" class="form-control" style="width: 25em"  value="<%=a.getCodigo()%>" />
+             <input type="text" name="txtTurma" id="txtTurma" class="form-control" style="width: 25em"  value="<%=aluno.getTurma()%>" />
         </div>
         </div>
         
@@ -109,7 +110,7 @@
         <label name="lblAluno" for="lblTurma" class="col-sm-2 control-label">Aluno</label>
         
         <div class="col-sm-10">
-             <input type="text" name="txtAluno" id="txtAluno" class="form-control" style="width: 25em"  value="<%=a.getCodigo()%>" />
+             <input type="text" name="txtAluno" id="txtAluno" class="form-control" style="width: 25em"  value="<%=aluno.getNome()%>" />
         </div>
         </div>
         

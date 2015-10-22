@@ -23,7 +23,7 @@ public class ConsultarPrincipalProfessor implements IComando {
 		String url = "";
 			AtcompRepositorio atcompRepositorio = new AtcompRepositorio(1);
 			
-			int quantidadeAtcompPendente = atcompRepositorio.QuantidadeAtcompsPorStatus("Pendente"); 
+			int quantidadeAtcompPendente = atcompRepositorio.QuantidadeAtcompsPorStatusProfessor("Pendente"); 
 			request.setAttribute("quantidadePendente", quantidadeAtcompPendente);
 			Login login = LoginRepositorio.RetornaUsuarioLogado();
 			Professor professor = new Professor();

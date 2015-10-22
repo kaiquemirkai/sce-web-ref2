@@ -22,8 +22,10 @@ public class AlterarStatusAtcomp implements IComando{
 	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse res) throws Exception {
 String url = "";
+			
 			atcomp.setCodigo(Integer.parseInt(request.getParameter("txtCodigo")));
 		    atcomp = atcompRepositorio.Consultar(atcomp);
+		    
 			atcomp.setStatus("Aprovado");
 			
 		

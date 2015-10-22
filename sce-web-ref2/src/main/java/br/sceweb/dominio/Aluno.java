@@ -9,7 +9,30 @@ public class Aluno {
 	long codigo;
 	String ra;
 	String nome;
-	String perfilAluno;
+	String curso;
+	String area;
+	String turma;
+	
+	
+	public String getCurso() {
+		return curso;
+	}
+	public void setCurso(String curso) {
+		this.curso = curso;
+	}
+	public String getArea() {
+		return area;
+	}
+	public void setArea(String area) {
+		this.area = area;
+	}
+	public String getTurma() {
+		return turma;
+	}
+	public void setTurma(String turma) {
+		this.turma = turma;
+	}
+	
 	
 	public long getCodigo() {
 		return codigo;
@@ -29,10 +52,5 @@ public class Aluno {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getPerfilAluno() {
-		return perfilAluno;
-	}
-	public void setPerfilAluno(String perfilAluno) {
-		this.perfilAluno = perfilAluno;
-	}
+	
 }

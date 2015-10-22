@@ -94,9 +94,10 @@ function Listar(){
 <%
 
 ArrayList<Atcomp> lista = (ArrayList<Atcomp>) request.getAttribute("atcomps");
-
+ArrayList<Aluno> listaAluno = (ArrayList<Aluno>) request.getAttribute("alunos");
 if ((lista!=null)&& (lista.size()>0)){
     Atcomp a = null;
+    Aluno aluno = null;
 	for (int i = 0; i < lista.size(); i++) {
 		
 		  String selected = "";
@@ -106,7 +107,7 @@ if ((lista!=null)&& (lista.size()>0)){
    	   }
 		    
 		    a = (Atcomp) lista.get(i);
-			
+			aluno = (Aluno) listaAluno.get(i);
 		    if(a.getStatus().equals("Pendente")){
 		    %>
 
@@ -114,13 +115,13 @@ if ((lista!=null)&& (lista.size()>0)){
 
 <td> <input <%=selected%> type="radio" name="codigoRadio" value="<%=a.getCodigo()%>"> </td> <!-- Campo que receberá codigo radio -->
 
-<td> <label>ARRUMAR</label> </td>
+<td> <label><%=aluno.getNome() %></label> </td>
 
-<td> <label>ARRUMAR</label> </td>
+<td> <label><%=aluno.getRa() %></label> </td>
 
-<td> <label>ARRUMAR</label> </td>
+<td> <label><%=aluno.getTurma() %></label> </td>
 
-<td> <label>ARRUMAR</label> </td>
+<td> <label><%=aluno.getCurso() %></label> </td>
 
 <td> <label><%=a.getDescricao()%></label> </td>
 

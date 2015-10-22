@@ -12,8 +12,12 @@ import javax.persistence.Query;
 
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
+import org.hibernate.SQLQuery;
 
+import br.sceweb.dominio.Aluno;
 import br.sceweb.dominio.Atcomp;
+import br.sceweb.dominio.Professor;
+import br.sceweb.dominio.ProfessorRepositorio;
 import br.sceweb.dominio.RegraAtcomp;
 import br.sceweb.dominio.Empresa;
 import br.sceweb.dominio.Login;
@@ -65,18 +69,78 @@ public class HibernateAtcompDAO implements IAtcompDAO {
 		return lista;
 	}
 	
+	
+	@Override
+	public List<Object> ListarPendenteProfessorCompleto() {
+		List<Object> lista = new ArrayList<Object>();
+		try {
+			Login login =LoginRepositorio.RetornaUsuarioLogado();		
+			ProfessorRepositorio professorRepositorio = new ProfessorRepositorio(1);
+			Professor professor = new Professor();
+			professor.setCodigoLogin(login.getCodigo());
+			professor = professorRepositorio.Consultar(professor);
+			
+			
+			EntityManagerFactory factory = Persistence.createEntityManagerFactory("sceweb");
+			EntityManager em = factory.createEntityManager();
+            
+			String hql = "SELECT a , aluno FROM Atcomp a, Aluno aluno where a.status = :status AND a.codigoAluno IN"
+					+ "(SELECT aluno.codigo FROM Aluno aluno WHERE aluno.turma IN" 
+					+ "(SELECT perfilprofessor.turma FROM PerfilProfessor perfilprofessor WHERE perfilprofessor.codigoProfessor = :codigoProfessor ))" ;
+			
+			em.getTransaction().begin();
+			Query query = em.createQuery(hql);
+			
+			
+			query.setParameter("status", "Pendente");
+			query.setParameter("codigoProfessor", professor.getCodigo());
+		
+			
+			lista = query.getResultList();
+		
+			em.getTransaction().commit();
+			
+
+		} catch (Throwable e) {
+			
+
+		}
+		
+
+		
+		return lista;
+	}
+	
+	
+	
 	@Override
 	public List<Atcomp> ListarPendenteProfessor() {
 		List<Atcomp> lista = new ArrayList<Atcomp>();
 		try {
-			Login login =LoginRepositorio.RetornaUsuarioLogado();			
-			System.out.println("Codigo do usuario Logado:  "+ login.getCodigo());
+			Login login =LoginRepositorio.RetornaUsuarioLogado();		
+			ProfessorRepositorio professorRepositorio = new ProfessorRepositorio(1);
+			Professor professor = new Professor();
+			professor.setCodigoLogin(login.getCodigo());
+			professor = professorRepositorio.Consultar(professor);
+			
+			
 			EntityManagerFactory factory = Persistence.createEntityManagerFactory("sceweb");
 			EntityManager em = factory.createEntityManager();
-			String hql = " SELECT a FROM Atcomp a WHERE a.status = :status";
+
+			/*
+			 ( select atc.* from atcomp as atc where atc.status = "Pendente" and atc.codigoAluno in
+			 (select codigo from aluno as alu where alu.turma in
+			 (select turma from perfilprofessor as pp where pp.codigoProfessor = 1 )))
+			 */
+			
+			String hql = "SELECT a from Atcomp a WHERE a.status = :status and a.codigoAluno in "+
+			" (SELECT alu.codigo from Aluno alu WHERE alu.turma in  "+
+			" (SELECT pp.turma from PerfilProfessor pp WHERE pp.codigoProfessor = :codigoProfessor))";
 			em.getTransaction().begin();
 			Query query = em.createQuery(hql);
 			query.setParameter("status", "Pendente");
+			query.setParameter("codigoProfessor", professor.getCodigo());
+			
 			lista = query.getResultList();
 			em.getTransaction().commit();
 
@@ -192,11 +256,50 @@ public class HibernateAtcompDAO implements IAtcompDAO {
 			Login login =LoginRepositorio.RetornaUsuarioLogado();
 			EntityManagerFactory factory = Persistence.createEntityManagerFactory("sceweb");
 			EntityManager em = factory.createEntityManager();
-			String hql = " SELECT COUNT(a.codigo) FROM Atcomp a WHERE  a.status = :status";
+			String hql = " SELECT COUNT(a.codigo) FROM Atcomp a WHERE  a.status = :status AND a.codigoAluno = :codigoAluno";
 			em.getTransaction().begin();
 			Query query = em.createQuery(hql);
 			
 			query.setParameter("status", status);
+			query.setParameter("codigoAluno", login.getCodigo());
+			resultado = Integer.parseInt(query.getSingleResult() + "");
+			
+			em.getTransaction().commit();
+
+		} catch (Throwable e) {
+		}
+		return resultado;
+	}
+	
+	@Override
+	public int QuantidadeAtcompsPorStatusProfessor(String status) {
+		int resultado = 0;
+		try {
+			
+			Login login =LoginRepositorio.RetornaUsuarioLogado();
+			ProfessorRepositorio professorRepositorio = new ProfessorRepositorio(1);
+			Professor professor = new Professor();
+			professor.setCodigoLogin(login.getCodigo());
+			professor = professorRepositorio.Consultar(professor);
+			/*
+			  
+			 select * from atcomp as atc where atc.status = "Pendente" and atc.codigoAluno in 
+			 (select codigo from aluno as alu where alu.turma in 
+			 (select turma from perfilprofessor as pp where pp.codigoProfessor = 1 ))
+			 */
+			
+			EntityManagerFactory factory = Persistence.createEntityManagerFactory("sceweb");
+			EntityManager em = factory.createEntityManager();
+			
+			String hql = "SELECT COUNT(a.codigo) FROM Atcomp a where a.status = :status AND a.codigoAluno IN"
+					+ "(SELECT aluno.codigo FROM Aluno aluno WHERE aluno.turma IN" 
+					+ "(SELECT perfilprofessor.turma FROM PerfilProfessor perfilprofessor WHERE perfilprofessor.codigoProfessor = :codigoProfessor ))" ;
+			
+			em.getTransaction().begin();
+			Query query = em.createQuery(hql);
+			
+			query.setParameter("status", status);
+			query.setParameter("codigoProfessor", professor.getCodigo());
 			resultado = Integer.parseInt(query.getSingleResult() + "");
 			
 			em.getTransaction().commit();

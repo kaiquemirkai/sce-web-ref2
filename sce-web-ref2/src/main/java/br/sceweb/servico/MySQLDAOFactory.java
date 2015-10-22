@@ -13,7 +13,7 @@ public class MySQLDAOFactory extends DAOFactory{
 	private static String JDBC_DRIVER  = "com.mysql.jdbc.Driver";  
     private static String DATABASE_URL = "jdbc:mysql://localhost/sceweb";  
     private static String LOGIN = "root";  
-    private static String PASSWORD  = "";
+    private static String PASSWORD  = "usjt";
 
   // There will be a method for each DAO that can be 
   // created. The concrete factories will have to 
