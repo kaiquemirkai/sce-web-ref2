@@ -50,6 +50,22 @@ $('#btnArquivo').change(function(){
 	
 	  <%
 	  RegraAtcomp a = (RegraAtcomp)request.getAttribute("atcomp");
+	  
+	  	String area = "";
+		if(a.getArea().equals("01"))
+		{
+			area = "Tecnológica";
+		}
+		if(a.getArea().equals("02"))
+		{
+			area = "Sóciocultural";
+		}
+		if(a.getArea().equals("03"))
+		{
+			area = "Cidadã";
+		}
+	  
+	  
 	  %>	
 	  	<fieldset disabled>               
         <div class="form-group">
@@ -64,7 +80,7 @@ $('#btnArquivo').change(function(){
         <label name="lblArea" for="lblArea" class="col-sm-2 control-label">Área</label>
         
          <div class="col-sm-10">
-				<input type="text" name="txtArea" id="txtArea" class="form-control" style="width: 25em" value="<%=a.getArea() %>" />
+				<input type="text" name="txtArea" id="txtArea" class="form-control" style="width: 25em" value="<%=area%>" />
         </div>
         </div>
         
