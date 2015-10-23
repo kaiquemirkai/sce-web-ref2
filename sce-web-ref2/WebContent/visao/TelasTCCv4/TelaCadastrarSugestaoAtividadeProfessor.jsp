@@ -26,10 +26,10 @@
 <!-- Div do Conteudo  -->
 <div class="container">
 
-
+<jsp:include page="ValidarTelas.jsp" />
 <!-- INICIO DO FORMULARIO -->
 
-<form class= "form-horizontal" role = "form" name="frmCadastrarSugestaoProfessor" action="/sce-web-ref2/ServletControle" method="post">   
+<form class= "form-horizontal" role = "form" id = "frmCadastrarSugestaoProfessor" name="frmCadastrarSugestaoProfessor" action="/sce-web-ref2/ServletControle" method="post">   
     	
 		<input type="hidden" name="acao" value="CadastrarSugestaoAtividadeProfessor">
     	
@@ -58,16 +58,14 @@
 
     <!-- TÍTULO PARA O NOME DA SUGESTÃO ATIVIDADE -->
 			<div class="form-group">
-				<label name="lblTema" for="lblTema" class="col-sm-2 control-label">Tema
-					ou Nome:</label>
+				<label name="lblTema" for="lblTema" class="col-sm-2 control-label">Nome da Sugestão</label>
 				<div class="col-sm-10">
 					<input type="text" name="txtTema" id="txtTema" class="form-control"
 						style="width: 25em" placeholder="Digite o nome da Sugestão" value="" />
 				</div>
 			</div>
 
-   <!-- CATEGORIA PARA O TIPO DE ATCOMP QUE PODERÁ SER USADO (EX:101, 105) -->
-        
+          
         <div class="form-group">
         <label name="lblCategoria" for="lblCategoria" class="col-sm-2 control-label">Categoria</label>
         <div class="col-sm-10">
@@ -79,21 +77,21 @@
   <!--DATA INÍCIO DA ATIVIDADE SUGESTÃO -->
 			<div class="form-group">
 				<label name="lblDataCadastroInicio" for="lblDataCadastroInicio"
-					class="col-sm-2 control-label">Data do início:</label>
+					class="col-sm-2 control-label">Data Início</label>
 				<div class="col-sm-10">
 					<input type="date" name="txtDataCadastroInicio"
 						id="txtDataCadastroInicio" class="form-control"
-						style="width: 25em" placeholder="Data de inÍcio" value="" />
+						style="width: 25em" placeholder="Data de início" value="" />
 				</div>
 			</div>
 			
     <!-- DATA FIM - DATA EM QUE TERMINARÁ A SUGESTÃO ATIVIDADE-->
 			<div class="form-group">
 				<label name="lblDataCadastroFim" for="lblDataCadastroFim"
-					class="col-sm-2 control-label">Data Fim:</label>
+					class="col-sm-2 control-label">Data Fim</label>
 				<div class="col-sm-10">
 					<input type="date" name="txtDataCadastroFim"
-						id="txtDataCadastroInicio" class="form-control"
+						id="txtDataCadastroFim" class="form-control"
 						style="width: 25em" placeholder="Data Fim" value="" />
 				</div>
 			</div>

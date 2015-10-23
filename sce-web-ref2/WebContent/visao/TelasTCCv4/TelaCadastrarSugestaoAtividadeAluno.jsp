@@ -31,8 +31,6 @@
 	<!-- Div do Conteudo  -->
 	<div class="container">
 
-
-<!-- INICIO DO FORMULARIO -->
 <jsp:include page="ValidarTelas.jsp" />
 		<form class="form-horizontal" role="form" id = "frmCadastrarSugestaoAluno" name="frmCadastrarSugestaoAluno"	action="/sce-web-ref2/ServletControle" method="post">
 
@@ -61,8 +59,7 @@
 
     <!-- TÍTULO PARA O NOME DA SUGESTÃO ATIVIDADE -->
 			<div class="form-group">
-				<label name="lblTema" for="lblTema" class="col-sm-2 control-label">Tema
-					ou Nome:</label>
+				<label name="lblTema" for="lblTema" class="col-sm-2 control-label">Nome da Sugestão</label>
 				<div class="col-sm-10">
 					<input type="text" name="txtTema" id="txtTema" class="form-control"
 						style="width: 25em" placeholder="Digite o nome da Sugestão" value="" />

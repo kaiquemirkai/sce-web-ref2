@@ -135,7 +135,7 @@
     <!--DATA INÍCIO DA ATIVIDADE SUGESTÃO -->
 			<div class="form-group">
 				<label name="lblDataCadastroInicio" for="lblDataCadastroInicio"
-					class="col-sm-2 control-label">Data do início:</label>
+					class="col-sm-2 control-label">Data Início</label>
 				<div class="col-sm-10">
 					<input type="date" name="txtDataCadastroInicio"
 						id="txtDataCadastroInicio" class="form-control"
@@ -146,10 +146,10 @@
   <!-- DATA FIM - DATA EM QUE TERMINARÁ A SUGESTÃO ATIVIDADE-->
 			<div class="form-group">
 				<label name="lblDataCadastroFim" for="lblDataCadastroFim"
-					class="col-sm-2 control-label">Data Fim:</label>
+					class="col-sm-2 control-label">Data Fim</label>
 				<div class="col-sm-10">
 					<input type="date" name="txtDataCadastroFim"
-						id="txtDataCadastroInicio" class="form-control"
+						id="txtDataCadastroFim" class="form-control"
 						style="width: 25em"  value="<%=sa.getDataVigenciaFim()%>" />
 				</div>
 			</div>
@@ -159,7 +159,7 @@
 				<label name="lblDescricaoAtividade" for="lblDescricaoAtividade"
 				class="col-sm-2 control-label">Descrição</label>
 				<div class="col-sm-10">
-					<textarea name="txtDescricaoAtividade" rows="4" cols="4" 
+					<textarea id="txtDescricaoAtividade" name="txtDescricaoAtividade" rows="4" cols="4" 
 						class="form-control" style="width: 25em"><%=sa.getDescricao()%></textarea>
 				</div>
 			</div>

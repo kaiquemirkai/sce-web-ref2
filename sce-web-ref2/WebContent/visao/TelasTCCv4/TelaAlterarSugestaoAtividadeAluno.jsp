@@ -29,7 +29,7 @@
 
 <!-- Div do Conteudo  -->
 <div class="container">
-<!-- <jsp:include page="ValidarTelas.jsp" /> -->
+<jsp:include page="ValidarTelas.jsp" />
 <form class= "form-horizontal" role = "form" name="frmAlterarSugestaoAluno" id ="frmAlterarSugestaoAluno" action="/sce-web-ref2/ServletControle" method="post">   
     	
 		<input type="hidden" name="acao" value="AlterarSugestaoAtividadeAluno">
@@ -103,8 +103,7 @@
 					<label name="lblTema" for="lblTema" class="col-sm-2 control-label">Nome da Sugestão</label>
 
 					<div class="col-sm-10">
-						<input type="text" name="txtTema" id="txtTema"
-							class="form-control" style="width: 25em" value="<%=sa.getNomeSugestaoAtividade()%>" />
+						<input type="text" name="txtTema" id="txtTema" class="form-control" style="width: 25em" value="<%=sa.getNomeSugestaoAtividade()%>" />
 					</div>
 				</div>
 
@@ -126,7 +125,7 @@
 				<label name="lblDataCadastro" for="lblDataCadastro"
 					class="col-sm-2 control-label">Data do Cadastro</label>
 				<div class="col-sm-10">
-					<input type="date" name="#"
+					<input type="date" name="txtDataCadastro"
 						id="txtDataCadastro" class="form-control"
 						style="width: 25em"  value="<%=sa.getDataCadastro()%>" disabled/>
 				</div>
@@ -135,7 +134,7 @@
     <!--DATA INÍCIO DA ATIVIDADE SUGESTÃO -->
 			<div class="form-group">
 				<label name="lblDataCadastroInicio" for="lblDataCadastroInicio"
-					class="col-sm-2 control-label">Data do início:</label>
+					class="col-sm-2 control-label">Data Início</label>
 				<div class="col-sm-10">
 					<input type="date" name="txtDataCadastroInicio"
 						id="txtDataCadastroInicio" class="form-control"
@@ -146,10 +145,10 @@
   <!-- DATA FIM - DATA EM QUE TERMINARÁ A SUGESTÃO ATIVIDADE-->
 			<div class="form-group">
 				<label name="lblDataCadastroFim" for="lblDataCadastroFim"
-					class="col-sm-2 control-label">Data Fim:</label>
+					class="col-sm-2 control-label">Data Fim</label>
 				<div class="col-sm-10">
 					<input type="date" name="txtDataCadastroFim"
-						id="txtDataCadastroInicio" class="form-control"
+						id="txtDataCadastroFim" class="form-control"
 						style="width: 25em"  value="<%=sa.getDataVigenciaFim()%>" />
 				</div>
 			</div>

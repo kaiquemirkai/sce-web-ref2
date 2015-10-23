@@ -23,7 +23,7 @@ label.error { font-family: Verdana; font-size: 50%; display: block; margin-top: 
 	//Tela Cadastrar Atcomp Aluno
 
 	$(document).ready(function() {
-		$('#txtDataInicioAtividade').mask('00/00/0000');
+		$('#txtDataInicioAtividade').mask('00/00/0000');		
 		$('#txtHoraInicioAtividade').mask('99:99');
 		$('#txtDataTerminoAtividade').mask('00/00/0000');
 		$('#txtHoraTerminoAtividade').mask('99:99');
@@ -427,14 +427,17 @@ label.error { font-family: Verdana; font-size: 50%; display: block; margin-top: 
 
 	});
 
-	//Tela Cadastrar Categoria Professor
-
-
+	
+	//Tela Cadastrar Sugestão Professor
+	$(document).ready(function() {
+		$('#txtDataCadastroInicio').mask('00/00/0000');
+		$('#txtDataCadastroFim').mask('00/00/0000');
+	});
+	
 
 	$(document).ready(function() {
 		$("#frmCadastrarSugestaoProfessor").validate({
 			// Define as regras
-
 			rules : {
 				sltAreaAtividade : {
 
@@ -451,12 +454,14 @@ label.error { font-family: Verdana; font-size: 50%; display: block; margin-top: 
 				},
 				
 				txtDataCadastroInicio : {
-
-					required : true
+					required : true,
+					date: true
 				},
-				txtDataCadastroFim : {
 
-					required : true
+				txtDataCadastroFim : {
+					required : true,
+					date : true 
+					
 				},
 
 				txtDescricaoAtividade : {
@@ -483,15 +488,15 @@ label.error { font-family: Verdana; font-size: 50%; display: block; margin-top: 
 					required : "Digite a categoria"
 				},
 				
-
 				txtDataCadastroInicio : {
-					required : "Digite a data de início"
+					required : "Digite a data de início",
+					date : "Digite uma data válida"
 				},
 
 				txtDataCadastroFim : {
-					required : "Digite a data de fim"
+					required : "Digite a data de fim",
+					date: "Digite uma data válida"
 				},
-				
 
 				txtDescricaoAtividade : {
 					required : "Digite uma descrição da sugestão"
@@ -504,7 +509,7 @@ label.error { font-family: Verdana; font-size: 50%; display: block; margin-top: 
 
 	});
 
-	//Tela Cadastrar Categoria Aluno
+	//Tela Cadastrar Sugestão Aluno
 
 	$(document).ready(function() {
 		$('#txtDataCadastroInicio').mask('00/00/0000');
@@ -570,7 +575,8 @@ label.error { font-family: Verdana; font-size: 50%; display: block; margin-top: 
 				},
 
 				txtDataCadastroFim : {
-					required : "Digite a data de fim"
+					required : "Digite a data de fim",
+					date: "Digite uma data válida"
 				},
 
 				txtDescricaoAtividade : {
@@ -584,64 +590,12 @@ label.error { font-family: Verdana; font-size: 50%; display: block; margin-top: 
 
 	});
 
-	//Tela Alterar Categoria Professor
-
-
+	
+	//Tela Alterar SUGESTÃO Aluno
 	$(document).ready(function() {
-		$("#frmAlterarSugestaoProfessor").validate({
-			// Define as regras
-
-			rules : {
-				sltAreaAtividade : {
-
-					required : true
-				},
-
-				txtTema : {
-
-					required : true
-				},
-				txtCategoria : {
-
-					required : true
-				},
-
-				txtDescricaoAtividade : {
-
-					required : true
-				},
-
-			},
-
-			// Define as mensagens de erro para cada regra
-
-			messages : {
-
-				sltAreaAtividade : {
-					required : "Selecione a área"
-
-				},
-
-				txtTema : {
-					required : "Digite o tema"
-				},
-
-				txtCategoria : {
-					required : "Digite a categoria"
-				},
-
-				txtDescricaoAtividade : {
-					required : "Digite uma breve descrição"
-
-				}
-
-			}
-
-		});
-
+		$('#txtDataCadastroInicio').mask('00/00/0000');
+		$('#txtDataCadastroFim').mask('00/00/0000');
 	});
-
-	//Tela Alterar Categoria Aluno
 
 
 	$(document).ready(function() {
@@ -662,6 +616,16 @@ label.error { font-family: Verdana; font-size: 50%; display: block; margin-top: 
 
 					required : true
 				},
+				
+				txtDataCadastroInicio : {
+					required : true
+				},
+
+				txtDataCadastroFim : {
+					required : true,
+					date : true 
+					
+				},
 
 				txtDescricaoAtividade : {
 
@@ -680,15 +644,25 @@ label.error { font-family: Verdana; font-size: 50%; display: block; margin-top: 
 				},
 
 				txtTema : {
-					required : "Digite o tema"
+					required : "Digite o título da sugestão"
 				},
 
 				txtCategoria : {
 					required : "Digite a categoria"
 				},
+				
+				txtDataCadastroInicio : {
+					required : "Digite a data de início",
+					date : "Digite uma data válida"
+				},
+
+				txtDataCadastroFim : {
+					required : "Digite a data de fim",
+					date: "Digite uma data válida"
+				},
 
 				txtDescricaoAtividade : {
-					required : "Digite uma breve descrição"
+					required : "Digite uma descrição da sugestão"
 
 				}
 
@@ -697,7 +671,102 @@ label.error { font-family: Verdana; font-size: 50%; display: block; margin-top: 
 		});
 
 	});
+
 	
+	//Tela Alterar Sugestão Professor
+
+	$(document).ready(function() {
+		$('#txtDataCadastroInicio').mask('00/00/0000');
+		$('#txtDataCadastroFim').mask('00/00/0000');
+	});
+
+	$(document).ready(function() {
+		$("#frmAlterarSugestaoProfessor").validate({
+			// Define as regras
+
+			rules : {
+				sltAreaAtividade : {
+
+					required : true
+				},
+
+				txtTema : {
+
+					required : true
+				},
+				
+				txtAreaAtividade : {
+
+					required : true
+				},
+				
+				txtCategoria : {
+
+					required : true
+				},
+				
+				txtDataCadastroInicio : {
+					required : true
+				},
+
+				txtDataCadastroFim : {
+					required : true,
+					date : true 
+					
+				},
+
+				txtDescricaoAtividade : {
+
+					required : true
+				},
+
+			},
+
+			// Define as mensagens de erro para cada regra
+
+			messages : {
+
+				sltAreaAtividade : {
+					required : "Selecione a área"
+
+				},
+
+				txtTema : {
+					required : "Digite o título da sugestão"
+				},
+
+				txtCategoria : {
+					required : "Digite a categoria"
+				},
+				
+				txtAreaAtividade: {
+					required : "Digite a área da atividade"
+				},
+				
+				
+				txtDataCadastroInicio : {
+					required : "Digite a data de início",
+					date : "Digite uma data válida"
+				},
+
+				txtDataCadastroFim : {
+					required : "Digite a data de fim",
+					date: "Digite uma data válida"
+				},
+
+				txtDescricaoAtividade : {
+					required : "Digite uma descrição da sugestão"
+
+				}
+
+			}
+
+		});
+
+	});
+
+
+		
 	
 	
 	//Tela Login
@@ -724,12 +793,12 @@ label.error { font-family: Verdana; font-size: 50%; display: block; margin-top: 
 			messages : {
 
 				txtLogin : {
-					required : "Digite o seu Login!"
+					required : "Informe seu login"
 
 				},
 
 				txtSenha : {
-					required : "Digite a senha!"
+					required : "Informe sua senha"
 				}
 
 
