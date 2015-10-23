@@ -55,7 +55,7 @@
   		<input type="radio" name="rdBusca" id="rdDescricao" value="descricao"> Descrição
 	</label>
     <br><br>
- <button type="submit" class="btn btn-primary">Buscar</button>
+ <button type="submit" class="btn btn-primary">Listar</button>
  <button type="submit" id="btnConsultar" class="btn btn-primary" onclick="Consultar()">Consultar</button>
 
 
@@ -136,7 +136,7 @@ if ((lista!=null)&& (lista.size()>0)){
 <tr>
 <td> <label><input <%=selected%> type="radio" name="codigoRadio" value="<%=ra.getCodigo()%>"> </label> </td>
 
-<td> <label><%=ra.getArea()%> </label> </td>
+<td> <label><%=area%> </label> </td>
      
 <td> <label><%=ra.getCodigoAtividade()%></label> </td>
 
