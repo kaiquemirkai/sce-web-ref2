@@ -33,7 +33,7 @@
 
 
 <!-- INICIO DO FORMULARIO -->
-
+<jsp:include page="ValidarTelas.jsp" />
 		<form class="form-horizontal" role="form" id = "frmCadastrarSugestaoAluno" name="frmCadastrarSugestaoAluno"	action="/sce-web-ref2/ServletControle" method="post">
 
 			<input type="hidden" name="acao" value="CadastrarSugestaoAtividadeAluno">
@@ -82,9 +82,9 @@
   <!--DATA INÍCIO DA ATIVIDADE SUGESTÃO -->
 			<div class="form-group">
 				<label name="lblDataCadastroInicio" for="lblDataCadastroInicio"
-					class="col-sm-2 control-label">Data do início:</label>
+					class="col-sm-2 control-label">Data Início</label>
 				<div class="col-sm-10">
-					<input type="date" name="txtDataCadastroInicio"
+					<input type="text" name="txtDataCadastroInicio"
 						id="txtDataCadastroInicio" class="form-control"
 						style="width: 25em" placeholder="Data de inÍcio" value="" />
 				</div>
@@ -93,10 +93,10 @@
     <!-- DATA FIM - DATA EM QUE TERMINARÁ A SUGESTÃO ATIVIDADE-->
 			<div class="form-group">
 				<label name="lblDataCadastroFim" for="lblDataCadastroFim"
-					class="col-sm-2 control-label">Data Fim:</label>
+					class="col-sm-2 control-label">Data Fim</label>
 				<div class="col-sm-10">
-					<input type="date" name="txtDataCadastroFim"
-						id="txtDataCadastroInicio" class="form-control"
+					<input type="text" name="txtDataCadastroFim"
+						id="txtDataCadastroFim" class="form-control"
 						style="width: 25em" placeholder="Data Fim" value="" />
 				</div>
 			</div>

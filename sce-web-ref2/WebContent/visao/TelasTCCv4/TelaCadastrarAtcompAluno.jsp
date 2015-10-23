@@ -25,8 +25,12 @@ function Mudar()
 	 var select = document.getElementById('sltCategoriaAtividade');
 	 var hidden = document.getElementById('CategoriaAtividade');
 	 hidden.value = select.options[select.selectedIndex].text;
-	 document.getElementById('form1').acao.value = "CadastrarAtCompAluno";
+	 document.getElementById('form1').acao.value = "CadastrarAtCompAluno";	 
 	 document.getElementById('form1').submit();
+	 
+	 
+	 
+	 
 	 
 }
 

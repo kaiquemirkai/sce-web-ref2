@@ -72,7 +72,7 @@
          	
          	if(a.getStatus().equals("Reprovado"))
          	{
-         		classe = "form-group has-danger has-feedback";
+         		classe = "form-group has-error has-feedback";
          	}
          	
          	

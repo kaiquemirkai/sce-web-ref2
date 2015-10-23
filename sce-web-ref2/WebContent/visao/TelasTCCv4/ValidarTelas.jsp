@@ -30,7 +30,7 @@ label.error { font-family: Verdana; font-size: 50%; display: block; margin-top: 
 	});
 
 	$(document).ready(function() {
-		$("#frmCadastrarAtcompAluno").validate({
+		$("#form1").validate({
 			// Define as regras
 
 			rules : {
@@ -58,8 +58,20 @@ label.error { font-family: Verdana; font-size: 50%; display: block; margin-top: 
 
 					required : true
 				},
+				
+				txtHoraLancadas : {
+
+					required : true,
+
+				},
 
 				txtDescricaoAtividade : {
+
+					required : true,
+
+				},
+				
+				inputFile : {
 
 					required : true,
 
@@ -76,24 +88,25 @@ label.error { font-family: Verdana; font-size: 50%; display: block; margin-top: 
 				},
 
 				txtDataInicioAtividade : {
-					required : "Digite a data do ínicio da atividade",
-					number: "apenas numeros, rapaz"
+					required : "Digite a data do início da atividade",
+					date: "Digite uma data válida"
 				},
 
 				txtHoraInicioAtividade : {
-					required : "Digite a hora do ínicio da atividade"
+					required : "Digite a hora do início da atividade"
 				},
 
 				txtDataTerminoAtividade : {
-					required : "Digite a data do termino da atividade"
+					required : "Digite a data do término da atividade",
+					date: "Digite uma data válida"
 				},
 
 				txtHoraTerminoAtividade : {
-					required : "Digite a hora do termino da atividade"
+					required : "Digite a hora de término da atividade"
 				},
 
 				txtDescricaoAtividade : {
-					required : "Digite uma breve descrição"
+					required : "Digite uma descrição da atividade"
 
 				}
 
@@ -118,7 +131,12 @@ label.error { font-family: Verdana; font-size: 50%; display: block; margin-top: 
 
 					required : true
 				},
+				sltArea : {
 
+					required : true
+				},
+				
+				
 				txtQuantidadeAtividadePermitida : {
 
 					required : true
@@ -138,7 +156,7 @@ label.error { font-family: Verdana; font-size: 50%; display: block; margin-top: 
 					required : true
 				},
 
-				txtDescricaoAtividade : {
+				txtDescricaoRegra : {
 
 					required : true,
 
@@ -155,22 +173,22 @@ label.error { font-family: Verdana; font-size: 50%; display: block; margin-top: 
 				},
 
 				txtQuantidadeAtividadePermitida : {
-					required : "Digite a quantidade de atividade permitida"
+					required : "Digite a quantidade máxima de horas permitida"
 				},
 
 				txtCargaHorariaAtividade : {
-					required : "Digite a carga horária da atividade"
+					required : "Digite a carga horária por atividade"
 				},
 
 				txtDataInicioAtividade : {
-					required : "Digite a data do inicio da atividade"
+					required : "Digite a data do início da atividade"
 				},
 
 				txtDataTerminoAtividade : {
-					required : "Digite a hora do termino da atividade"
+					required : "Digite a data do término da atividade"
 				},
 
-				txtDescricaoAtividade : {
+				txtDescricaoRegra : {
 					required : "Digite uma breve descrição"
 
 				}
@@ -431,6 +449,15 @@ label.error { font-family: Verdana; font-size: 50%; display: block; margin-top: 
 
 					required : true
 				},
+				
+				txtDataCadastroInicio : {
+
+					required : true
+				},
+				txtDataCadastroFim : {
+
+					required : true
+				},
 
 				txtDescricaoAtividade : {
 
@@ -449,15 +476,25 @@ label.error { font-family: Verdana; font-size: 50%; display: block; margin-top: 
 				},
 
 				txtTema : {
-					required : "Digite o tema"
+					required : "Digite o título da sugestão"
 				},
 
 				txtCategoria : {
 					required : "Digite a categoria"
 				},
+				
+
+				txtDataCadastroInicio : {
+					required : "Digite a data de início"
+				},
+
+				txtDataCadastroFim : {
+					required : "Digite a data de fim"
+				},
+				
 
 				txtDescricaoAtividade : {
-					required : "Digite uma breve descrição"
+					required : "Digite uma descrição da sugestão"
 
 				}
 
@@ -469,7 +506,10 @@ label.error { font-family: Verdana; font-size: 50%; display: block; margin-top: 
 
 	//Tela Cadastrar Categoria Aluno
 
-
+	$(document).ready(function() {
+		$('#txtDataCadastroInicio').mask('00/00/0000');
+		$('#txtDataCadastroFim').mask('00/00/0000');
+	});
 
 	$(document).ready(function() {
 		$("#frmCadastrarSugestaoAluno").validate({
@@ -489,6 +529,16 @@ label.error { font-family: Verdana; font-size: 50%; display: block; margin-top: 
 
 					required : true
 				},
+				
+				txtDataCadastroInicio : {
+					required : true
+				},
+
+				txtDataCadastroFim : {
+					required : true,
+					date : true 
+					
+				},
 
 				txtDescricaoAtividade : {
 
@@ -507,15 +557,24 @@ label.error { font-family: Verdana; font-size: 50%; display: block; margin-top: 
 				},
 
 				txtTema : {
-					required : "Digite o tema"
+					required : "Digite o título da sugestão"
 				},
 
 				txtCategoria : {
 					required : "Digite a categoria"
 				},
+				
+				txtDataCadastroInicio : {
+					required : "Digite a data de início",
+					date : "Digite uma data válida"
+				},
+
+				txtDataCadastroFim : {
+					required : "Digite a data de fim"
+				},
 
 				txtDescricaoAtividade : {
-					required : "Digite uma breve descrição"
+					required : "Digite uma descrição da sugestão"
 
 				}
 
