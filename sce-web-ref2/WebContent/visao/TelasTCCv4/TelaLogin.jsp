@@ -27,6 +27,7 @@
      
 <div id="formulario">
 
+<jsp:include page="ValidarTelas.jsp" />
 <form name="frmLogin" action="/sce-web-ref2/ServletControle" method="post">   
     	
     	<input type="hidden" name="acao" value="AcessarLogin">
