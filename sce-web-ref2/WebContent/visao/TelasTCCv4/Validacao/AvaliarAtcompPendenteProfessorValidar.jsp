@@ -22,16 +22,15 @@ label.error { font-family: Verdana; font-size: 50%; display: block; margin-top: 
 <script type="text/javascript">
 
 $(document).ready(function() {
-	
-	$.validator.addMethod("dateBR",
-		    	
+			    	
 	$("#frmAvaliarAtcompPendenteProfessor").validate({
 		// Define as regras
 
 		rules : {
 			txtJustificativa : {
 
-				required : true
+				required : true,
+				minlength : 2
 			}
 		},
 
@@ -41,7 +40,8 @@ $(document).ready(function() {
 						
 			txtJustificativa : {
 
-				required : "Informe a justificativa de aprovação/reprovação da atividade complementar"
+				required : "Informe a justificativa de aprovação/reprovação da atividade complementar",
+				minlength : "Digite uma justificativa de no mínimo 2 caracteres"
 			}
 		}
 

@@ -36,7 +36,7 @@ $('#btnArquivo').change(function(){
 <!-- Div do Conteudo  -->
 <div class="container">
 
-<jsp:include page="ValidarTelas.jsp" />
+<jsp:include page="Validacao/CadastrarAtcompProfessorValidar.jsp" />
 
 <form  ENCTYPE="multipart/form-data" class= "form-horizontal" role = "form" id="frmCadastrarAtcompProfessor" name="frmCadastrarAtcompProfessor" action="/sce-web-ref2/ServletControle" method="post">   
     	
@@ -159,12 +159,18 @@ $('#btnArquivo').change(function(){
              <input type="text" name="txtHoraTerminoAtividade" id="txtHoraTerminoAtividade" class="form-control" style="width: 25em" placeholder="Hora de término" value="" />
         </div>
         </div>
+                
+           <div class="form-group">
+        <label name = "lblHoralancadas" for="lblHoraLancadas" class="col-sm-2 control-label">Carga Horária</label>
+        <div class="col-sm-10">
+             <input type="text" name="txtHoraLancadas" id="txtHoraLancadas" class="form-control" style="width: 25em" placeholder="Carga Horária" value="" />
+        </div>
         
-        
+        </div>
         <div class="form-group">
         <label name="lblDescricaoAtividade" for="lblDescricaoAtividade" class="col-sm-2 control-label">Descricao da Atividade</label>
         <div class="col-sm-10">
-             <textarea name="txtDescricaoAtividade" rows="4" cols="4" class="form-control" style="width: 25em" placeholder="Descreva sua atividade aqui"></textarea>
+             <textarea id="txtDescricaoAtividade" name="txtDescricaoAtividade" rows="4" cols="4" class="form-control" style="width: 25em" placeholder="Descreva sua atividade aqui"></textarea>
         </div>
         </div>
         

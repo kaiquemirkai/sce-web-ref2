@@ -68,7 +68,8 @@ label.error { font-family: Verdana; font-size: 50%; display: block; margin-top: 
 
 				txtDescricaoAtividade : {
 
-					required : true
+					required : true,
+					minlength : 15
 				},
 
 			},
@@ -101,7 +102,8 @@ label.error { font-family: Verdana; font-size: 50%; display: block; margin-top: 
 				},
 
 				txtDescricaoAtividade : {
-					required : "Digite uma descrição da sugestão"
+					required : "Digite uma descrição da sugestão",
+					minlength : "Digite uma descrição de no mínimo 15 caracteres"
 
 				}
 

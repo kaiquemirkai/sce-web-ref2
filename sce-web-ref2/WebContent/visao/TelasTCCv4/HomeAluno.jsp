@@ -71,8 +71,6 @@
         chart.draw(data, options);
       }
     </script>
-
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>UATComp - Home Aluno</title>
 </head>
 
@@ -110,7 +108,7 @@
     	<h4 class="media-heading">Bem-vindo!</h4>
     		<small><%=nomeAluno %></small>
     		<br>
-    		<small> <a href="#"> Encerrar sessão </a> </small>
+    		<small> <a href="/sce-web-ref2/visao/TelasTCCv4/EncerrarSessao.jsp"> Encerrar sessão </a> </small>
   	</div>
   </div>
 
@@ -171,23 +169,33 @@
   <!-- Tabela: Sugestões -->
   			<table class="table table-hover">
   				 <tr>
-    				<td> Sugestao:</td>
+    				<td> Sugestão:</td>
     				<td> Categoria:</td>
     				<td> Data:</td>
-    				<td> Descrição:</td>
     			</tr>
 				
 				<% 
 				ArrayList<SugestaoAtividade> lista = (ArrayList<SugestaoAtividade>) request.getAttribute("sugestaoAtividadesRecentes");
-    
+    			
 				if ((lista!=null)&&(lista.size()>0)){
                 SugestaoAtividade sa = null;
                 
 	               for (int i = 0; i < lista.size(); i++) {
 		    
 		        sa = (SugestaoAtividade) lista.get(i);
-				
-				
+		        String nomeAtividade = "";
+		        
+		        if (sa.getNomeSugestaoAtividade().length() >= 30)
+		        {
+		        	nomeAtividade = sa.getNomeSugestaoAtividade().substring(0,30)+" ...";	
+		        }
+		        
+		        else
+		        {
+		        	nomeAtividade = sa.getNomeSugestaoAtividade();
+		        }
+		        
+								
 				%>
 				
 				
@@ -195,14 +203,11 @@
 				<tr>
     				
 
-				<td> <label><%=sa.getNomeSugestaoAtividade()%> </label> </td>
+				<td> <label><%=nomeAtividade%> </label> </td>
      
 				<td> <label><%=sa.getCategoria()%></label> </td>
 
-				<td> <label><%=sa.getDataVigenciaInicio()%></label> </td>
-
-				<td> <label><%=sa.getDescricao()%></label> </td>
-    			
+				<td> <label><%=sa.getDataVigenciaInicio()%></label> </td>  			
     			</tr>
     			
     			

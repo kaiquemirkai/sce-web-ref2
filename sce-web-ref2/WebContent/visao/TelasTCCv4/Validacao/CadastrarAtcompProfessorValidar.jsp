@@ -42,9 +42,8 @@ label.error { font-family: Verdana; font-size: 50%; display: block; margin-top: 
 				    "Digite uma data válida"
 				);
 		
-		 $("#form1").validate({
-				// Define as regras
-				rules : {
+		 $("#frmCadastrarAtcompProfessor").validate({
+			 rules : {
 					sltAreaAtividade : {
 
 						required : true
@@ -145,7 +144,6 @@ label.error { font-family: Verdana; font-size: 50%; display: block; margin-top: 
 			});
 
 		});
-	
 	</script>
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">

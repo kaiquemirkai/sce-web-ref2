@@ -72,7 +72,8 @@ $(document).ready(function() {
 
 			txtDescricaoRegra : {
 
-				required : true
+				required : true,
+				minlength : 15
 
 			},
 		},
@@ -108,7 +109,8 @@ $(document).ready(function() {
 			},
 
 			txtDescricaoRegra : {
-				required : "Digite uma breve descrição"
+				required : "Digite uma breve descrição",
+				minlength : "Digite uma descrição de no mínimo 15 caracteres"
 
 			}
 

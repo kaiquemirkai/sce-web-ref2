@@ -62,8 +62,6 @@
 	 %>
 	 			
  	 <input type="hidden" name="txtCodigo" id="txtCodigo" class="form-control" style="width: 25em" value="<%=a.getCodigo() %>" />
-  				
-  			  			
   						
 	 <br> <br>	 
 	 
@@ -209,12 +207,12 @@
 </div>
  
  
- 		<div class="form-group" align="center">
-        <label name = "lblJustificativa" for="lblJustificativa" class="control-label">Justificativa para Reprovação</label>
+ <div class="form-group" align="center">
+      <label name = "lblJustificativa" for="lblJustificativa" class="control-label">Justificativa para Aprovação/Reprovação</label>
         
-             <textarea id="txtJustificativa" name="txtJustificativa" rows="4" cols="4" class="form-control" style="width: 25em" placeholder="Justificativa"></textarea>
+        <textarea id="txtJustificativa" name="txtJustificativa" rows="4" cols="4" class="form-control" style="width: 25em" placeholder="Justificativa"></textarea>
         
-        </div>
+ </div>
  
  </div>
  

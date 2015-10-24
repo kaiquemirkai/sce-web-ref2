@@ -72,7 +72,7 @@
   
   		<ul class="list-group">
   			<li class="list-group-item">
-    			<span class="badge"><%=quantidadePendente %></span> <a href="#">Atividades Complementares para Análise:</a>
+    			<span class="badge"><%=quantidadePendente %></span> Atividades Complementares para Análise:
   			</li>
   			
 		</ul>
