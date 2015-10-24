@@ -31,7 +31,7 @@ public class ListarCategoriaPorArea implements IComando {
 		if ((regraAtcomps!=null)&& (regraAtcomps.size()>0)){
 		    RegraAtcomp ra = null;
 		    
-		  
+		
 			for (int i = 0; i < regraAtcomps.size(); i++) {
 				    
 				    ra = (RegraAtcomp) regraAtcomps.get(i);
