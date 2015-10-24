@@ -66,7 +66,11 @@ $(document).ready(function() {
 		selectList.style = "width: 25em";
 		myDiv.appendChild(selectList);
 		// contador
-        var count = Object.keys(myJSONObject).length
+		
+
+		
+       var count = myJSONObject.regras.length
+    
 		// insere a primeira linha do select
 		var opt = document.createElement("option");
 	    opt.value = "";
