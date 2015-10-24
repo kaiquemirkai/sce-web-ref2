@@ -10,9 +10,49 @@
 <style type="text/css">  
   @import url("/sce-web-ref2/visao/TelasTCCv4/CSS/Background.css");  
 </style>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
+<script type="text/javascript">
+
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+          var data = google.visualization.arrayToDataTable([
+        ['Horas', 'Horas realizadas', 'Horas a cumprir', { role: 'annotation' } ],
+        ['Tecnológica', 15, 25 ,''],
+        ['Cidadã', 15, 25,''],
+        ['Sócio-Cultural', 15, 25, '']
+      ]);
+
+      var options = {
+        
+        title: " Atividade Complementar: Horas por Área ",
+    	width: 500,
+        height: 300,
+        legend: { position: 'bottom', maxLines: 3 },
+        bar: { groupWidth: '50%' },
+        isStacked: true,
+        backgroundColor:{fill:'transparent'}
+      };
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>UATComp - Consulta Área Técnica</title>
+
+
 </head>
 
 <body id="fundo">
@@ -28,6 +68,9 @@
 
 <!-- Div do Conteudo  -->
 <div class="container">
+
+
+
 
 <form class= "form-horizontal" role = "form" name="frmConsultarQuantidadeHorasAreaTecnicaAluno" action="/sce-web-ref2/ServletControle" method="post">   
     	
@@ -52,9 +95,10 @@ String tecnologicaDiferenca = "" + request.getAttribute("tecnologicaDiferenca");
   <h3 align> <span class="span1 label label-info">Total de horas à cumprir:  <%=tecnologicaDiferenca%> </span></h3>
   </div>
 
-    
+     <div id="chart_div"></div>   
     <br> <br>
       
+    
 <table name="tdListaAtcomp" class="table table-striped">
   
 <tr> 
