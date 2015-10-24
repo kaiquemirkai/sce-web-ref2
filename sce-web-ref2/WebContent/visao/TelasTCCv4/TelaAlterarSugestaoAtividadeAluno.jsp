@@ -29,7 +29,8 @@
 
 <!-- Div do Conteudo  -->
 <div class="container">
-<jsp:include page="ValidarTelas.jsp" />
+<jsp:include page="Validacao/AlterarSugestaoAtividadeAlunoValidar.jsp" />
+
 <form class= "form-horizontal" role = "form" name="frmAlterarSugestaoAluno" id ="frmAlterarSugestaoAluno" action="/sce-web-ref2/ServletControle" method="post">   
     	
 		<input type="hidden" name="acao" value="AlterarSugestaoAtividadeAluno">
@@ -44,10 +45,7 @@
 
 
 
-<% 
-				//LOCAL ONDE ATRAVÉS DO request.getAttribute SERÁ PEGO TODOS OS ELEMENTOS DO ARRAYLIST >>sugestaoAtividade
-			    //instância lista  (ARRAY) terá todos os objetos 
-	         
+<% 	         
  SugestaoAtividade sa = (SugestaoAtividade)request.getAttribute("sugestaoAtividade");
     
 				if (sa!=null){

@@ -27,14 +27,13 @@
      
 <div id="formulario">
 
-
-<form name="frmLogin" action="/sce-web-ref2/ServletControle" method="post">   
+<form id="frmLogin" name="frmLogin" action="/sce-web-ref2/ServletControle" method="post">   
+   
+ <jsp:include page="Validacao/LoginValidar.jsp" />
     	
     	<input type="hidden" name="acao" value="AcessarLogin">
    			 
 <!--Login-->
-
-<jsp:include page="ValidarTelas.jsp" />
     
     <div class="input-group col-sm-offset-4 col-sm-4" style="padding:10px; padding-top:50px; ">
     	<div class="input-group-addon"> <span class="glyphicon glyphicon-user"> </span> </div>

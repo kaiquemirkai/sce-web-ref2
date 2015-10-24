@@ -69,7 +69,7 @@ $(document).ready(function() {
         var count = Object.keys(myJSONObject).length
 		// insere a primeira linha do select
 		var opt = document.createElement("option");
-	    opt.value = "0";
+	    opt.value = "";
 	    opt.text = "--------- Selecione ---------";
 	    selectList.appendChild(opt);
 	    // insere as demais linhas
@@ -92,13 +92,6 @@ $(document).ready(function() {
 
 </script>
 
-
-
-<!-- <script type="text/javascript" src="ajax.js"></script> -->
-
-
-
-
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>UATComp - Cadastrar Atcomp</title>
 </head>
@@ -117,7 +110,7 @@ $(document).ready(function() {
 <!-- Div do Conteudo  -->
 <div class="container">
 
-<jsp:include page="ValidarTelas.jsp" />
+<jsp:include page="Validacao/CadastrarAtcompAlunoValidar.jsp" />
 
 <form  ENCTYPE="multipart/form-data" class= "form-horizontal" role = "form" id="form1"  name="frmCadastrarAtcompAluno" action="/sce-web-ref2/ServletControle" method="post" >   
     	
@@ -137,7 +130,7 @@ $(document).ready(function() {
       
         <div class="col-sm-10">
         	 <select id="sltAreaAtividade" name="sltAreaAtividade" style="width: 25em" class="form-control">
-                  		<option value="00">-- Selecione a área -- </option>
+                  		<option value="">-- Selecione a área -- </option>
                   		<option value="01">Formação Tecnológica </option>
                   		<option value="02">Formação Sócio-Cultural</option>
                   		<option value="03">Formação Sócio-Cidadã</option>

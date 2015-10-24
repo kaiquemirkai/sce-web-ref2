@@ -26,7 +26,8 @@
 <!-- Div do Conteudo  -->
 <div class="container">
 
-<jsp:include page="ValidarTelas.jsp" />
+<jsp:include page="Validacao/CadastrarSugestaoAtividadeProfessorValidar.jsp" />
+
 <!-- INICIO DO FORMULARIO -->
 
 <form class= "form-horizontal" role = "form" id = "frmCadastrarSugestaoProfessor" name="frmCadastrarSugestaoProfessor" action="/sce-web-ref2/ServletControle" method="post">   

@@ -36,7 +36,9 @@ $('#btnArquivo').change(function(){
 <!-- Div do Conteudo  -->
 <div class="container">
 
-<form  ENCTYPE="multipart/form-data" class= "form-horizontal" role = "form" name="frmCadastrarAtcompProfessor" action="/sce-web-ref2/ServletControle" method="post">   
+<jsp:include page="ValidarTelas.jsp" />
+
+<form  ENCTYPE="multipart/form-data" class= "form-horizontal" role = "form" id="frmCadastrarAtcompProfessor" name="frmCadastrarAtcompProfessor" action="/sce-web-ref2/ServletControle" method="post">   
     	
 		<input type="hidden" name="acao" value="CadastrarAtCompProfessor">
     	
@@ -52,6 +54,7 @@ $('#btnArquivo').change(function(){
       
          <div class="col-sm-10">
              <select id="sltAreaCurso" name="sltAreaCurso" style="width: 25em" class="form-control" >
+                  		<option value="">--- Selecione ---</option>
                   		<option value="biologicas">Biológicas</option>
                   		<option value="exatas">Exatas</option>
                   		<option value="humanas">Humanas</option>
@@ -76,7 +79,7 @@ $('#btnArquivo').change(function(){
         <label name="lblTurma" for="lblTurma" class="col-sm-2 control-label">Turma</label>
         
         <div class="col-sm-10">
-             <select id="sltTurma" name="sltCurso" style="width: 25em" class="form-control" >
+             <select id="sltTurma" name="sltTurma" style="width: 25em" class="form-control" >
                   		<option value="1ASIN">1ASIN</option>
                   		<option value="2ASIN">2ASIN</option>
                   		<option value="3ASIN">3ASIN</option>
@@ -85,10 +88,10 @@ $('#btnArquivo').change(function(){
         </div>
         
         <div class="form-group">
-        <label name="lblAluno" for="lblTurma" class="col-sm-2 control-label">Aluno</label>
+        <label name="lblAluno" for="lblAluno" class="col-sm-2 control-label">Aluno</label>
         
         <div class="col-sm-10">
-             <select id="sltAluno" name="sltCurso" style="width: 25em" class="form-control" >
+             <select id="sltAluno" name="sltAluno" style="width: 25em" class="form-control" >
                   		<option value="aluno1">Aluno1</option>
                   		<option value="aluno1">Aluno2</option>
                   		<option value="aluno1">Aluno3</option>
@@ -103,7 +106,7 @@ $('#btnArquivo').change(function(){
       
         <div class="col-sm-10">
         	 <select id="sltAreaAtividade" name="sltAreaAtividade" style="width: 25em" class="form-control" >
-                  		<option value="00">-- Selecione a área -- </option>
+                  		<option value="">-- Selecione a área -- </option>
                   		<option value="01">Formação Tecnológica </option>
                   		<option value="02">Formação Sócio-Cultural</option>
                   		<option value="03">Formação Sócio-Cidadã</option>
@@ -116,7 +119,7 @@ $('#btnArquivo').change(function(){
       
          <div class="col-sm-10">
              <select id="sltCodigoAtividade" name="sltCodigoAtividade" style="width: 25em" class="form-control" >
-                  		<option value="100">-- Selecione o código -- </option>
+                  		<option value="">-- Selecione o código -- </option>
                   		<option value="101">101 - Cinema</option>
                   		<option value="102">102 - Teatro</option>
                   		<option value="103">103 - Museu</option>
@@ -153,7 +156,7 @@ $('#btnArquivo').change(function(){
        <div class="form-group">
         <label name = "lblHoraTerminoAtividade" for="lblHoraTerminoAtividade" class="col-sm-2 control-label">Hora de Término da Atividade</label>
         <div class="col-sm-10">
-             <input type="text" name="txtHoraTerminoAtividade" id="txtHoraTerminoAtividade" class="form-control" style="width: 25em" placeholder="Data de término" value="" />
+             <input type="text" name="txtHoraTerminoAtividade" id="txtHoraTerminoAtividade" class="form-control" style="width: 25em" placeholder="Hora de término" value="" />
         </div>
         </div>
         

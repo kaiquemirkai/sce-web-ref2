@@ -37,7 +37,7 @@ $('#btnArquivo').change(function(){
 <!-- Div do Conteudo  -->
 <div class="container">
 
-<jsp:include page="ValidarTelas.jsp" />
+<jsp:include page="Validacao/AlterarRegraAtcompProfessorValidar.jsp" />
 
 <form class= "form-horizontal" role = "form" id="frmAlterarRegraAtcompProfessor" name="frmAlterarRegraAtcompProfessor" action="/sce-web-ref2/ServletControle" method="post">   
     	
@@ -122,7 +122,7 @@ $('#btnArquivo').change(function(){
         </div>
         
           <div class="form-group">
-        <label name="lblDescricaoRegra" for="lblDescricaoRegra" class="col-sm-2 control-label">Descricao da Atividade</label>
+        <label name="lblDescricaoRegra" for="lblDescricaoRegra" class="col-sm-2 control-label">Descricao da Regra</label>
         <div class="col-sm-10">
              <textarea name="txtDescricaoRegra" rows="4" cols="4" class="form-control" style="width: 25em" ><%=a.getDescricaoRegra() %></textarea>
         </div>

@@ -35,7 +35,7 @@ $('#btnArquivo').change(function(){
 
 <!-- Div do Conteudo  -->
 <div class="container">
-<jsp:include page="ValidarTelas.jsp" />
+<jsp:include page="Validacao/CadastrarRegraAtcompProfessorValidar.jsp" />
 
 <form class= "form-horizontal" role = "form" id="frmCadastrarRegraAtcompProfessor" name="frmCadastrarRegraAtcompProfessor" action="/sce-web-ref2/ServletControle" method="post">   
     	
@@ -56,7 +56,7 @@ $('#btnArquivo').change(function(){
         
         <div class="col-sm-10">
              <select id="sltArea" name="sltArea" style="width: 25em" class="form-control" >
-                  		<option value="00">-- Selecione a área -- </option>
+                  		<option value="">--- Selecione a área --- </option>
                   		<option value="01">Formação Tecnológica </option>
                   		<option value="02">Formação Sócio-Cultural</option>
                   		<option value="03">Formação Sócio-Cidadã</option>
@@ -104,7 +104,7 @@ $('#btnArquivo').change(function(){
         </div>
         
       <div class="form-group">
-        <label name="lblDescricaoRegra" for="lblDescricaoRegra" class="col-sm-2 control-label">Descricao da Atividade</label>
+        <label name="lblDescricaoRegra" for="lblDescricaoRegra" class="col-sm-2 control-label">Descricao da Regra</label>
         <div class="col-sm-10">
              <textarea name="txtDescricaoRegra" rows="4" cols="4" class="form-control" style="width: 25em" placeholder="Descreva sua regra aqui"></textarea>
         </div>

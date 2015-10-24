@@ -45,6 +45,7 @@
 
 <!-- Div do Conteudo  -->
 <div class="container">
+<jsp:include page="Validacao/AvaliarAtcompPendenteProfessorValidar.jsp" />
 
 <form class= "form-horizontal" role = "form" id="frmAvaliarAtcompPendenteProfessor" name="frmAvaliarAtcompPendenteProfessor" action="/sce-web-ref2/ServletControle" method="post">   
     	
@@ -211,7 +212,7 @@
  		<div class="form-group" align="center">
         <label name = "lblJustificativa" for="lblJustificativa" class="control-label">Justificativa para Reprovação</label>
         
-             <textarea name="txtJustificativa" rows="4" cols="4" class="form-control" style="width: 25em" placeholder="Justificativa"></textarea>
+             <textarea id="txtJustificativa" name="txtJustificativa" rows="4" cols="4" class="form-control" style="width: 25em" placeholder="Justificativa"></textarea>
         
         </div>
  

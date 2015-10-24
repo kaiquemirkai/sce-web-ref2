@@ -31,7 +31,8 @@
 	<!-- Div do Conteudo  -->
 	<div class="container">
 
-<jsp:include page="ValidarTelas.jsp" />
+<jsp:include page="Validacao/CadastrarSugestaoAtividadeAlunoValidar.jsp" />
+
 		<form class="form-horizontal" role="form" id = "frmCadastrarSugestaoAluno" name="frmCadastrarSugestaoAluno"	action="/sce-web-ref2/ServletControle" method="post">
 
 			<input type="hidden" name="acao" value="CadastrarSugestaoAtividadeAluno">
@@ -49,7 +50,7 @@
 			<div class="col-sm-10">
 					<select id="sltAreaAtividade" name="sltAreaAtividade"
 						style="width: 25em" class="form-control">
-						<option value="00">-- Selecione a área --</option>
+						<option value="">--- Selecione a área ---</option>
 						<option value="01">Tecnológica</option>
 						<option value="02">Sócio-Cultural</option>
 						<option value="03">Sócio-Cidadã</option>
@@ -83,7 +84,7 @@
 				<div class="col-sm-10">
 					<input type="text" name="txtDataCadastroInicio"
 						id="txtDataCadastroInicio" class="form-control"
-						style="width: 25em" placeholder="Data de inÍcio" value="" />
+						style="width: 25em" placeholder="Data de início" value="" />
 				</div>
 			</div>
 			
