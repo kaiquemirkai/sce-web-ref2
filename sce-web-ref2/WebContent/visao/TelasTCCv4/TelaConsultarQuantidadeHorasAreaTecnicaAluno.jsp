@@ -13,6 +13,10 @@
 
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
+<%
+String grafico = "" + request.getAttribute("grafico");
+%>
+
 <script type="text/javascript">
 
       // Load the Visualization API and the piechart package.
@@ -27,17 +31,12 @@
       function drawChart() {
 
         // Create the data table.
-          var data = google.visualization.arrayToDataTable([
-        ['Horas', 'Horas realizadas', 'Horas a cumprir', { role: 'annotation' } ],
-        ['Tecnológica', 15, 25 ,''],
-        ['Cidadã', 15, 25,''],
-        ['Sócio-Cultural', 15, 25, '']
-      ]);
+          var data = google.visualization.arrayToDataTable([<%=grafico %>  ]);
 
       var options = {
         
-        title: " Atividade Complementar: Horas por Área ",
-    	width: 500,
+        title: " Área Técnica: Horas por Categoria ",
+    	width: 800,
         height: 350,
         legend: { position: 'bottom', maxLines: 3 },
         bar: { groupWidth: '50%' },

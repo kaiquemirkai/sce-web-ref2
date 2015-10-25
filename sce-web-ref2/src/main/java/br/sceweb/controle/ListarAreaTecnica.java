@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.sceweb.dominio.Atcomp;
 import br.sceweb.dominio.AtcompRepositorio;
+import br.sceweb.dominio.HorasPorAreaTO;
 import br.sceweb.dominio.RegraAtcomp;
 import br.sceweb.dominio.RegraAtcompRepositorio;
 
@@ -33,10 +34,32 @@ String url = "";
 		}
 		request.setAttribute("tecnologica", tecnologica);
 		request.setAttribute("tecnologicaDiferenca", tecnologicaDiferenca);
-        
+        AtcompRepositorio atcompHorasRepositorio = new AtcompRepositorio(2);
+		List<HorasPorAreaTO> horas = atcompHorasRepositorio.ListarHorasCategoria("01");
+		
+		String grafico = "['Categorias', 'Horas Cadastradas', 'Horas Disponíveis', { role: 'annotation' } ], ";
+		if ((horas!=null)&& (horas.size()>0)){
+		    HorasPorAreaTO horaPorAreaTO = null;
+			for (int i = 0; i < horas.size() - 1 ; i++) {
+				    
+				    horaPorAreaTO = (HorasPorAreaTO) horas.get(i);
+				    grafico += "['" + horaPorAreaTO.getCodigoAtividade() + "', " +
+				    horaPorAreaTO.getHorasTotais() + " , " + horaPorAreaTO.getQuantidadeFaltante() +
+				    " , '' ],";
+			}
+			 horaPorAreaTO = (HorasPorAreaTO) horas.get(horas.size()-1);
+					grafico += "['" + horaPorAreaTO.getCodigoAtividade() + "', " +
+				    horaPorAreaTO.getHorasTotais() + " , " + horaPorAreaTO.getQuantidadeFaltante() +
+				    " , '' ]";
+		}
+		
+		
+		
+		
         
 	    url = "/visao/TelasTCCv4/TelaConsultarQuantidadeHorasAreaTecnicaAluno.jsp";		
 	    request.setAttribute("atcomps", atcomps);
+	    request.setAttribute("grafico", grafico);
 	    request.setAttribute("erro", null);
 		
 	    

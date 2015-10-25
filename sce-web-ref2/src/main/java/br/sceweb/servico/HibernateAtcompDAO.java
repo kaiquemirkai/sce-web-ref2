@@ -16,6 +16,7 @@ import org.hibernate.SQLQuery;
 
 import br.sceweb.dominio.Aluno;
 import br.sceweb.dominio.Atcomp;
+import br.sceweb.dominio.HorasPorAreaTO;
 import br.sceweb.dominio.Professor;
 import br.sceweb.dominio.ProfessorRepositorio;
 import br.sceweb.dominio.RegraAtcomp;
@@ -374,6 +375,9 @@ public class HibernateAtcompDAO implements IAtcompDAO {
 		return retorno;
 	}
 	
-	
+	public List<HorasPorAreaTO> ListarHorasCategoria(String area)
+	{
+		return null;
+	}
 	
 }

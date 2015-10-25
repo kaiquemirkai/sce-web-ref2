@@ -83,5 +83,12 @@ public int QuantidadeAtcompsPorStatusProfessor(String status){
 		
 		
 	}
+
+public List<HorasPorAreaTO> ListarHorasCategoria(String area)
+{
+  return daoAtcomp.ListarHorasCategoria(area);	
+}
+
+
 	}
 

@@ -3,6 +3,7 @@ package br.sceweb.servico;
 import java.util.List;
 
 import br.sceweb.dominio.Atcomp;
+import br.sceweb.dominio.HorasPorAreaTO;
 import br.sceweb.dominio.RegraAtcomp;
 import br.sceweb.dominio.Empresa;
 
@@ -17,6 +18,7 @@ public interface IAtcompDAO {
 	public int QuantidadeAtcompsPorStatus(String status);
 	public int QuantidadeAtcompsPorStatusProfessor(String status);
 	public List<Atcomp> ListarAreaStatus(String area, String status);
+	public List<HorasPorAreaTO> ListarHorasCategoria(String area);
 	
 	///Verificar que porra eh essa!!!!!!!
 	//public List<RegraAtcomp> Listar2();
