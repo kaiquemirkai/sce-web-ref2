@@ -7,6 +7,47 @@
 <style type="text/css">  
   @import url("/sce-web-ref2/visao/TelasTCCv4/CSS/Background.css");  
 </style>
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+<%
+String grafico = "" + request.getAttribute("grafico");
+%>
+
+<script type="text/javascript">
+
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+          var data = google.visualization.arrayToDataTable([<%=grafico %>  ]);
+
+      var options = {
+        
+        title: " Área Técnica: Horas por Categoria ",
+    	width: 800,
+        height: 350,
+        legend: { position: 'bottom', maxLines: 3 },
+        bar: { groupWidth: '50%' },
+        isStacked: true,
+        backgroundColor:{fill:'transparent'}
+      };
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+
+
 <%@page import="br.sceweb.dominio.*"%>
     <%@page import="java.util.*"%>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -35,19 +76,24 @@
     	<div class="page-header" align="center"><h3>Consulta de Quantidade de Horas - Área Cidadã<br> 
     	<small>(Detalhes)</small></h3>
 		</div>
-  						
-	 <br> <br>
 <%
 
 String cidada = "" + request.getAttribute("cidada");
 String cidadaDiferenca = "" + request.getAttribute("cidadaDiferenca");
 
 %>
-<div class="controls controls-row">
-  <h3 align> <span class="span4 label label-primary">Total de horas realizadas: <%=cidada%> </span></h3>
-  <h3 align> <span class="span1 label label-info">Total de horas à cumprir:  <%=cidadaDiferenca%> </span></h3>
+<div class="row">
+  
+  <div class="col-md-2" align="left">
+  <br><br>
+  <h4 align> <span class="span4 label label-primary">Total de horas realizadas: <%=cidada%> </span></h3>
+  <br>
+  <h4 align> <span class="span1 label label-info">Total de horas à cumprir:  <%=cidadaDiferenca%> </span></h3>
   </div>
-
+  
+  <div class="col-md-10" align="center">  <div id="chart_div"></div>  </div>
+  
+</div>
     
     <br> <br>
      
