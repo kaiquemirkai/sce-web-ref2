@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.sceweb.dominio.Atcomp;
 import br.sceweb.dominio.AtcompRepositorio;
+import br.sceweb.dominio.HorasPorAreaTO;
 import br.sceweb.dominio.RegraAtcomp;
 import br.sceweb.dominio.RegraAtcompRepositorio;
 
@@ -35,8 +36,15 @@ String url = "";
 		request.setAttribute("cidadaDiferenca", cidadaDiferenca);
         
         
+		AtcompRepositorio atcompHorasRepositorio = new AtcompRepositorio(2);
+		List<HorasPorAreaTO> horas = atcompHorasRepositorio.ListarHorasCategoria("03");
+		
+		String grafico = atcompHorasRepositorio.GraficoDasCategorias(horas);
+		
+		
 	    url = "/visao/TelasTCCv4/TelaConsultarQuantidadeHorasAreaCidadaAluno.jsp";		
 	    request.setAttribute("atcomps", atcomps);
+	    request.setAttribute("grafico", grafico);
 	    request.setAttribute("erro", null);
 		
 	    
