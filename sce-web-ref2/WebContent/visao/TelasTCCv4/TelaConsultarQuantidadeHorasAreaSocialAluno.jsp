@@ -32,7 +32,7 @@ String grafico = "" + request.getAttribute("grafico");
 
       var options = {
         
-        title: " Área Técnica: Horas por Categoria ",
+        title: " Área Sóciocultural: Horas por Categoria ",
     	width: 800,
         height: 350,
         legend: { position: 'bottom', maxLines: 3 },
