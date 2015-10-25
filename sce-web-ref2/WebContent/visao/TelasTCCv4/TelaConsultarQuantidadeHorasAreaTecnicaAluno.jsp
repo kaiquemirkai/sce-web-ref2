@@ -10,6 +10,7 @@
 <style type="text/css">  
   @import url("/sce-web-ref2/visao/TelasTCCv4/CSS/Background.css");  
 </style>
+
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
 <script type="text/javascript">
@@ -37,7 +38,7 @@
         
         title: " Atividade Complementar: Horas por Área ",
     	width: 500,
-        height: 300,
+        height: 350,
         legend: { position: 'bottom', maxLines: 3 },
         bar: { groupWidth: '50%' },
         isStacked: true,
@@ -80,26 +81,30 @@
     	<div class="page-header" align="center"><h3>Consulta de Quantidade de Horas - Área Técnica<br> 
     	<small>(Detalhes)</small></h3>
 		</div>
-  						
-	 <br> <br>
-
-
 <%
 
 String tecnologica = "" + request.getAttribute("tecnologica");
 String tecnologicaDiferenca = "" + request.getAttribute("tecnologicaDiferenca");
 
 %>
-<div class="controls controls-row">
-  <h3 align> <span class="span4 label label-primary">Total de horas realizadas: <%=tecnologica%> </span></h3>
-  <h3 align> <span class="span1 label label-info">Total de horas à cumprir:  <%=tecnologicaDiferenca%> </span></h3>
+<div class="row">
+  
+  <div class="col-md-2" align="left">
+  <br><br>
+  <h4 align> <span class="span4 label label-primary">Total de horas realizadas: <%=tecnologica%> </span></h3>
+  <br>
+  <h4 align> <span class="span1 label label-info">Total de horas à cumprir:  <%=tecnologicaDiferenca%> </span></h3>
   </div>
+  
+  <div class="col-md-10" align="center">  <div id="chart_div"></div>  </div>
+  
+</div>
 
-     <div id="chart_div"></div>   
+        
     <br> <br>
       
     
-<table name="tdListaAtcomp" class="table table-striped">
+<table name="tdListaAtcomp" class="table table-condensed table-hover">
   
 <tr> 
 
@@ -107,7 +112,7 @@ String tecnologicaDiferenca = "" + request.getAttribute("tecnologicaDiferenca");
     
 <td> <label>Data de Realização da Atividade</label> </td>
     
-<td> <label>Descrição da Atividade</label> </td>
+<td> <label>Categoria da Atividade</label> </td>
 
 <td> <label>Carga Horária</label> </td>
 
@@ -132,7 +137,7 @@ if ((lista!=null)&& (lista.size()>0)){
 
 		    <td><label> <%=a.getDataInicio()%><label> </td>
 		        
-		    <td> <label><%=a.getDescricao()%></label> </td>
+		    <td> <label><%=a.getCodigoAtividade()%></label> </td>
 		        
 		    <td> <label><%=a.getHorasLancadas()%></label> </td>
 

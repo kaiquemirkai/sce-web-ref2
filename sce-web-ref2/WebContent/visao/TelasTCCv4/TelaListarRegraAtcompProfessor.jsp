@@ -3,16 +3,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-
 <style type="text/css">  
   @import url("/sce-web-ref2/visao/TelasTCCv4/CSS/Background.css");  
 </style>
 
   <%@page import="br.sceweb.dominio.*"%>
    <%@page import="java.util.*"%>
-   
-   
-   
+ 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>UATComp - Consultar Regra</title>
 </head>
@@ -30,9 +27,7 @@
 <div class="container">
 
 <form class= "form-horizontal" role = "form" id="frmListarRegraAtcompProfessor" name="frmListarRegraAtcompProfessor" action="/sce-web-ref2/ServletControle" method="post">   
-    	
-   
-    <input type="hidden" id="acao" name="acao" value="ListarRegraAtcompProfessor">
+<input type="hidden" id="acao" name="acao" value="ListarRegraAtcompProfessor">
     
         						<h3 align="center">Consulta de Regras de Atividade Complementar</h3>
   						
@@ -66,42 +61,30 @@
      <button type="submit" id="btnAlterar" class="btn btn-primary" onclick="Alterar()">Alterar</button>
   </div>
 </div> <!--  Termino BUSCA -->
-
+<br> <br>
      
+<table id="tdListaRegraAtcomp" name="tdListaRegraAtcomp" class="table table-condensed table-hover">
+<thead>
+<tr>     
+<th> <label>Código</label> </th>
 
-   
-	
-	       
-    <br> <br>
+<th> <label>Área </label> </th>
      
-<table name="tdListaRegraAtcomp" class="table table-striped">
-  
-<tr> 
-    
-<td> <label>Código</label> </td>
+<th> <label>Código da Atividade</label> </th>
 
-<td> <label>Área </label> </td>
-     
-<td> <label>Código da Atividade</label> </td>
+<th> <label>Qntde de Horas Permitidas</label> </th>
 
-<td> <label>Qntde de Horas Permitidas</label> </td>
+<th> <label>Carga Horária por Atividade</label> </th>
 
-<td> <label>Carga horária por Atividade</label> </td>
+<th> <label>Data Início</label> </th>
 
+<th> <label>Data Fim</label> </th>
 
-
-<td> <label>Data Início</label> </td>
-
-<td> <label>Data Fim</label> </td>
-
-<td> <label>Descrição</label> </td>
-
+<th> <label>Descrição</label> </th>
 
 </tr>
-
+</thead>
 <%
-
-
 ArrayList<RegraAtcomp> lista = (ArrayList<RegraAtcomp>) request.getAttribute("regraAtcomps");
 if ((lista!=null)&& (lista.size()>0)){
     RegraAtcomp ra = null;
@@ -115,6 +98,18 @@ if ((lista!=null)&& (lista.size()>0)){
  	   }
 		
 		    ra = (RegraAtcomp) lista.get(i);
+		    
+		    String descricao = "";
+	        
+	        if (ra.getDescricaoRegra().length() >= 100)
+	        {
+	        	descricao = ra.getDescricaoRegra().substring(0,99)+" ...";	
+	        }
+	        
+	        else
+	        {
+	        	descricao = ra.getDescricaoRegra();
+	        }
 		    
     
 		    String area = "";
@@ -130,27 +125,18 @@ if ((lista!=null)&& (lista.size()>0)){
 			{
 				area = "Cidadã";
 			}
-
-
 %>
+<tbody>
 <tr>
 <td> <label><input <%=selected%> type="radio" name="codigoRadio" value="<%=ra.getCodigo()%>"> </label> </td>
 
 <td> <label><%=area%> </label> </td>
-     
 <td> <label><%=ra.getCodigoAtividade()%></label> </td>
-
 <td> <label><%=ra.getQuantidadeDeAtividadePermitida()%></label> </td>
-
 <td> <label><%=ra.getCargaHoraria()%></label> </td>
-
-
 <td> <label><%=ra.getDataInicioAtividade()%></label> </td>
-
 <td> <label><%=ra.getDataTerminoAtividade()%></label> </td>
-
-<td> <label><%=ra.getDescricaoRegra()%></label> </td>
-<tr>
+<td> <label><%=descricao%></label> </td>
 
 <%    
 	
@@ -158,13 +144,15 @@ if ((lista!=null)&& (lista.size()>0)){
 	
 	}
 %>
-</table>
-
+</tr>
+</tbody>
+</table> 
 <!--  Termino Das Alterações -->
 
 </form><!-- Fim do Form -->
 
 </div><!-- Fim da Div Conteudo -->
+
 <script type="text/javascript">
      function Consultar()
      {
