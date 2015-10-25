@@ -101,11 +101,12 @@ String socialDiferenca = "" + request.getAttribute("socialDiferenca");
     
     <br> <br>
       
-<table name="tdListaAtcomp" class="table table-striped">
+<table name="tdListaAtcomp" class="table table-condensed table-hover">
   
 <tr> 
 
-<td> <label>Código da Atividade</label> </td>
+
+<td> <label>Categoria da Atividade</label> </td>
     
 <td> <label>Data de Realização da Atividade</label> </td>
     

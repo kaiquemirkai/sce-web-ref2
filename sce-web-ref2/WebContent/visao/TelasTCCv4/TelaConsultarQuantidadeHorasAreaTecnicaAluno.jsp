@@ -107,11 +107,11 @@ String tecnologicaDiferenca = "" + request.getAttribute("tecnologicaDiferenca");
   
 <tr> 
 
-<td> <label>Código da Atividade</label> </td>
+<td> <label>Categoria da Atividade</label> </td>
     
 <td> <label>Data de Realização da Atividade</label> </td>
     
-<td> <label>Categoria da Atividade</label> </td>
+<td> <label>Descrição da Atividade</label> </td>
 
 <td> <label>Carga Horária</label> </td>
 
@@ -136,7 +136,7 @@ if ((lista!=null)&& (lista.size()>0)){
 
 		    <td><label> <%=a.getDataInicio()%><label> </td>
 		        
-		    <td> <label><%=a.getCodigoAtividade()%></label> </td>
+		    <td> <label><%=a.getDescricao()%></label> </td>
 		        
 		    <td> <label><%=a.getHorasLancadas()%></label> </td>
 

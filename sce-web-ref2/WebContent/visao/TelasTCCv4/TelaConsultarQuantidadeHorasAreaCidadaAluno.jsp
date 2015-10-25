@@ -97,18 +97,18 @@ String cidadaDiferenca = "" + request.getAttribute("cidadaDiferenca");
     
     <br> <br>
      
-<table name="tdListaAtcomp" class="table table-hover">
+<table name="tdListaAtcomp" class="table table-condensed table-hover">
   
 <tr> 
 
-<td> <label>Código da Atividade</label> </td>
+
+<td> <label>Categoria da Atividade</label> </td>
     
 <td> <label>Data de Realização da Atividade</label> </td>
     
 <td> <label>Descrição da Atividade</label> </td>
 
 <td> <label>Carga Horária</label> </td>
-
 
 </tr>
 

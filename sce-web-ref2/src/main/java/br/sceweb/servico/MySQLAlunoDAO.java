@@ -40,7 +40,7 @@ public class MySQLAlunoDAO implements IAlunoDAO{
             String query = "SELECT alun.* FROM aluno alun inner join atcomp atc on alun.codigo = atc.codigoAluno " + 
  			" WHERE atc.codigoAluno IN (SELECT alu.codigo FROM aluno AS alu WHERE alu.turma IN " + 
  			" (SELECT ppf.turma FROM perfilprofessor AS ppf WHERE ppf.codigoProfessor = ?)) " +
- 			" AND atc.status = ?" ;
+ 			" AND atc.status = ? order by atc.codigo asc" ;
 			stmt = MySQLDAOFactory.criaConexao().prepareStatement(query);
 			stmt.setLong(1, professor.getCodigo());
 			stmt.setString(2, "Pendente");

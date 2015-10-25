@@ -14,7 +14,7 @@ public interface ISugestaoAtividadeDAO {
 	
 	public List<SugestaoAtividade> Listar();
 	
-	public List<SugestaoAtividade> ListarSugestoesRecentes();
+	public List<SugestaoAtividade> ListarSugestoesRecentes(String area);
 	
 	
 

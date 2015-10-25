@@ -35,7 +35,28 @@ public class SugestaoAtividadeRepositorio {
 	
 	
 	public List<SugestaoAtividade> ListarSugestoesRecentes(){
-		return IdaoSugestaoAtividade.ListarSugestoesRecentes();
+		String area ="";
+		AtcompRepositorio atcompRepositorio = new AtcompRepositorio(1);
+		double tecnologica = atcompRepositorio.RelatorioHorasPorArea("01");
+		double social = atcompRepositorio.RelatorioHorasPorArea("02");
+		double cidada = atcompRepositorio.RelatorioHorasPorArea("03");
+		
+		
+		if(tecnologica <= social && tecnologica <= cidada)
+		{
+			area="01";
+		}
+		if(social <= tecnologica && social <= cidada)
+		{
+			area="02";
+		}
+		if(cidada <= social && cidada <= tecnologica)
+		{
+			area="03";
+		}
+		
+		
+		return IdaoSugestaoAtividade.ListarSugestoesRecentes(area);
 	}
 	
 

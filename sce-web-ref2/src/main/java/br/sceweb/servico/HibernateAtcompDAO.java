@@ -136,7 +136,7 @@ public class HibernateAtcompDAO implements IAtcompDAO {
 			
 			String hql = "SELECT a from Atcomp a WHERE a.status = :status and a.codigoAluno in "+
 			" (SELECT alu.codigo from Aluno alu WHERE alu.turma in  "+
-			" (SELECT pp.turma from PerfilProfessor pp WHERE pp.codigoProfessor = :codigoProfessor))";
+			" (SELECT pp.turma from PerfilProfessor pp WHERE pp.codigoProfessor = :codigoProfessor)) order by a.codigo asc";
 			em.getTransaction().begin();
 			Query query = em.createQuery(hql);
 			query.setParameter("status", "Pendente");

@@ -65,15 +65,16 @@ public class HibernateSugestaoAtividadeDAO implements ISugestaoAtividadeDAO {
 	
 	
 	@Override
-	public List<SugestaoAtividade> ListarSugestoesRecentes() {
+	public List<SugestaoAtividade> ListarSugestoesRecentes(String area) {
 		
 		List<SugestaoAtividade> lista = new ArrayList<SugestaoAtividade>();
 		try {
 			EntityManagerFactory factory = Persistence.createEntityManagerFactory("sceweb");
 			EntityManager em = factory.createEntityManager();
 			em.getTransaction().begin();
-			Query query = em.createQuery("SELECT sa from SugestaoAtividade sa order by sa.codigo desc");
+			Query query = em.createQuery("SELECT sa from SugestaoAtividade sa where sa.area = :area order by sa.codigo desc");
 			query.setMaxResults(5);
+			query.setParameter("area", area);
 			lista = query.getResultList();
 
 		} catch (Throwable e) {
