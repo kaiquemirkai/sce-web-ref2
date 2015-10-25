@@ -23,6 +23,8 @@ import java.sql.SQLException;
 
 import org.apache.commons.io.*;//Transportar o arquivo
 
+import com.mysql.jdbc.EscapeTokenizer;
+
 import br.sceweb.dominio.*;
 
 public class CadastrarAtCompAluno implements IComando{
@@ -40,7 +42,6 @@ public class CadastrarAtCompAluno implements IComando{
 	public String executa(HttpServletRequest request, HttpServletResponse res) throws Exception {
 		String url = "";
 		Login login = new Login();
-		System.out.println(request.getParameter("sltCategoriaAtividade"));
 		login = LoginRepositorio.RetornaUsuarioLogado();		
 		atcomp.setCodigoAtividade(request.getParameter("CategoriaAtividade"));
 		atcomp.setAreaAtividade(request.getParameter("sltAreaAtividade"));
@@ -58,25 +59,48 @@ public class CadastrarAtCompAluno implements IComando{
 		atcomp.setStatus("Pendente");
 		atcomp.setCodigo(0);	
 		atcomp.setCodigoAluno(login.getCodigo());
+		
+		AlunoRepositorio alunoRepositorio = new AlunoRepositorio(1);
+		Aluno aluno = new Aluno();
+		aluno.setCodigo(login.getCodigo());
+		aluno = alunoRepositorio.Consultar(aluno);
+		atcomp.setQuemCadastrou(aluno.getNome());
 	
 		Part filePart = request.getPart("inputFile");
+		
+		
         InputStream fileContent = filePart.getInputStream();   
         
         byte[] pdf = IOUtils.toByteArray(fileContent);
 		
         atcomp.setAnexo(pdf);
     
-        
+        String caminho =  request.getParameter("Caminho");
+		System.out.println(caminho);
+             
+		int tamanho = caminho.length();
+		int inicio = tamanho - 3;
+		String extensao = caminho.substring(inicio,tamanho);
+		if(extensao.equals("pdf"))
+		{
+			if (fachadaAtcomp.Cadastrar(atcomp) ){
+				url = "/visao/TelasTCCv4/TelaListarAtcompAluno.jsp";			
+				request.setAttribute("erro", null);
+			} else {
+				url = "/visao/TelasTCCv4/TelaCadastrarAtcompAluno.jsp";	
+				request.setAttribute("erro", "Erro: Dados inválidos!");
+			}
+		}
+		else
+		{
+			// implementar caso erro
+			
+		}
+		
         
         
 
-		if (fachadaAtcomp.Cadastrar(atcomp) ){
-			url = "/visao/TelasTCCv4/TelaListarAtcompAluno.jsp";			
-			request.setAttribute("erro", null);
-		} else {
-			url = "/visao/TelasTCCv4/TelaCadastrarAtcompAluno.jsp";	
-			request.setAttribute("erro", "Erro: Dados inválidos!");
-		}
+		
 
 		return url;
 	}

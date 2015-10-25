@@ -43,14 +43,11 @@ public class ExcluirSugestaoAtividadeAluno implements IComando {
 	    if(sa.getCodigoCadastro() == login.getCodigo())
 	    {
 	    	resultado = sugestaoAtividadeFachada.excluirSugestaoAtividade(sa);
-	    	msg = "Você não é o criador desta sugestão por este motivo ela não pode ser excluída!";
+	    	
 	    }
-	    
-		 
-		                                            
-
-		if (resultado == 1){	
-			msg = "Registro excluído com sucesso!";
+		else
+		{
+			msg = "Você não é o criador desta sugestão por este motivo ela não pode ser excluída!";
 		}
 		
 		

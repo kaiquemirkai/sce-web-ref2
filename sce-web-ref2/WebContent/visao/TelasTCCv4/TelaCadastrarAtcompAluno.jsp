@@ -26,9 +26,12 @@ function Mudar()
 	 var hidden = document.getElementById('CategoriaAtividade');
 	 hidden.value = select.options[select.selectedIndex].text;
 	 document.getElementById('form1').acao.value = "CadastrarAtCompAluno";	 
+	
+	 var caminho = document.getElementById('Caminho')
+	 caminho.value =document.getElementById('inputFile').value;
+	 
 	 document.getElementById('form1').submit();
-	 
-	 
+	
 	 
 	 
 	 
@@ -120,6 +123,7 @@ $(document).ready(function() {
     	
 		<input type="hidden" id="acao"  name="acao" value="ListarCategoriaPorArea">
     	<input type="hidden" id="CategoriaAtividade"  name="CategoriaAtividade" value="">
+    	<input type="hidden" id="Caminho"  name="Caminho" value="">
           <!-- Alteração deve ser feita A partir daqui -->
 	 
 	 			

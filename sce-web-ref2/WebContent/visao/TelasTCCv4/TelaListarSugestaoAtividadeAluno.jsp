@@ -88,14 +88,14 @@ if(erro == null)
 {
 	erro = "";	
 }
-
-if (erro.equals("Você não é o criador desta sugestão por este motivo ela não pode ser excluída!"))
+else{
+if (erro.equals("Você não é o criador desta sugestão por este motivo ela não pode ser excluída!"));
 {
 		%>
 	<script type="text/javascript"> 
 	
 	$(document).ready(function() {
-		alert(<%=erro%>);
+		alert('<%=erro%>');
 	});
 	
 	
@@ -113,7 +113,7 @@ if (erro.equals("Você não é o criador desta sugestão por este motivo ela não pod
 	<script type="text/javascript"> 
 	
 	$(document).ready(function() {
-		alert(<%=erro%>);
+		alert('<%=erro%>');
 	});
 	
 	
@@ -122,7 +122,7 @@ if (erro.equals("Você não é o criador desta sugestão por este motivo ela não pod
 	
 <% 
 }
-
+}
 %>
 
 
