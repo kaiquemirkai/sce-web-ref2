@@ -31,7 +31,36 @@
    
  <jsp:include page="Validacao/LoginValidar.jsp" />
     	
-    	<input type="hidden" name="acao" value="AcessarLogin">
+<input type="hidden" name="acao" value="AcessarLogin">
+
+<% 
+String erro = (String)request.getAttribute("erro");
+
+if (erro == null)
+{
+	erro = "";	
+}
+
+else
+{
+   String divInicio = "<div class='alert alert-default' role='alert' align='center' style ='color: red'>";
+   String icone = "<span class='glyphicon glyphicon-exclamation-sign' aria-hidden='true'></span>";
+   String divFim = "</div>";
+   String labelInicio = "<label>";
+   String labelFim = "</label>";
+
+%>
+
+<%=divInicio %>
+<%=icone %>
+<%=labelInicio %> <%=erro%> <%=labelFim %>
+<%=divFim %>
+
+
+    <% 
+}
+    %>
+
    			 
 <!--Login-->
     
@@ -57,30 +86,8 @@
      <button class="btn btn-success" type="submit"> Login <span class="glyphicon glyphicon-ok-sign"></span>
      </button>
   </div>
-    	
-    	<% 
-String erro = ""+request.getAttribute("erro");
-
-System.out.println(""+erro);
-
-if (erro.equals("Erro: Dados inválidos!"))
-{
-   String divInicio = "<div class='alert alert-danger' role='alert' align='center'>";
-   String divFim = "</div>";
-   String labelInicio = "<label>";
-   String labelFim = "</label>";
-
-%>
-
-<%=divInicio %>
-<%=labelInicio %> <%=erro%> <%=labelFim %>
-<%=divFim %>
-
-
-    <% 
-}
-    %>    
-      
+  
+  	
     	
  </form>  
  </div> <!-- Final do Div formulario -->

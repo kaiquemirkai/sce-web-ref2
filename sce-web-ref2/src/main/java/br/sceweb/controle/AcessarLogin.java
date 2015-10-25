@@ -27,9 +27,10 @@ public class AcessarLogin implements IComando{
 		
 		
 		login = fachada.login(request.getParameter("txtLogin"), request.getParameter("txtSenha"));
-
+		
+		
 		// Se existe um login verifica o perfil e chama a tela ideal
-		if (login != null ){
+		if (login.getUsuario() != null ){
 			// Carrega os dados do perfil aluno
 			if (login.getPerfil().equals("aluno"))
 			{
@@ -85,7 +86,7 @@ public class AcessarLogin implements IComando{
 			
 			
 			url = "/visao/TelasTCCv4/HomeAluno.jsp";			
-			request.setAttribute("erro", "OK");
+			request.setAttribute("erro", null);
 			
 			
 			}
@@ -107,7 +108,7 @@ public class AcessarLogin implements IComando{
 				
 				
 				url = "/visao/TelasTCCv4/HomeProfessor.jsp";			
-				request.setAttribute("erro", "OK");
+				request.setAttribute("erro", null);
 				
 			}
 			
@@ -117,7 +118,6 @@ public class AcessarLogin implements IComando{
 			url = "/visao/TelasTCCv4/TelaLogin.jsp";
 			request.setAttribute("erro", "Erro: Dados inválidos!");
 			
-			System.out.println("DEU ERRO");
 		}
 		
 		return url;

@@ -74,7 +74,7 @@ function AreaCidada(){
      
      
      %>
-  		<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<%=resultadoTecnologica %>" aria-valuemin="0" aria-valuemax="100" style="width: <%=resultadoTecnologica %>%">
+  		<div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="<%=resultadoTecnologica %>" aria-valuemin="0" aria-valuemax="100" style="width: <%=resultadoTecnologica %>%">
   		<%=resultadoTecnologica %>%
   		</div>
 	  </div>
@@ -94,7 +94,7 @@ function AreaCidada(){
       <br>	
       <!-- barra progresso-->
       <div class="progress">
-  		<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="<%=resultadoCultural %>" aria-valuemin="0" aria-valuemax="100" style="width: <%=resultadoCultural %>%">
+  		<div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="<%=resultadoCultural %>" aria-valuemin="0" aria-valuemax="100" style="width: <%=resultadoCultural %>%">
   	    <%=resultadoCultural %>%
   	    </div>
 	  </div>
@@ -114,7 +114,7 @@ function AreaCidada(){
       <br>	
       <!-- barra progresso-->
       <div class="progress">
-  		<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<%=resultadoCidada %>" aria-valuemin="0" aria-valuemax="100" style="width: <%=resultadoCidada %>%"> 		
+  		<div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="<%=resultadoCidada %>" aria-valuemin="0" aria-valuemax="100" style="width: <%=resultadoCidada %>%"> 		
   	    <%=resultadoCidada %>%
   	    </div>
 	   </div>

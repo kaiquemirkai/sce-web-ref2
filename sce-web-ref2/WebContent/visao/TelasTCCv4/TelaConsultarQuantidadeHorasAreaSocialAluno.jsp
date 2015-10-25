@@ -90,9 +90,9 @@ String socialDiferenca = "" + request.getAttribute("socialDiferenca");
   
   <div class="col-md-2" align="left">
   <br><br>
-  <h4 align> <span class="span4 label label-primary">Total de horas realizadas: <%=social%> </span></h3>
+  <h4> <span class="span label label-primary">Total de horas realizadas: <%=social%> </span></h3>
   <br>
-  <h4 align> <span class="span1 label label-info">Total de horas à cumprir:  <%=socialDiferenca%> </span></h3>
+  <h4> <span class="span label label-info">Total de horas à cumprir:  <%=socialDiferenca%> </span></h3>
   </div>
   
   <div class="col-md-10" align="center">  <div id="chart_div"></div>  </div>

@@ -124,7 +124,8 @@ label.error { font-family: Verdana; font-size: 50%; display: block; margin-top: 
 					},
 					
 					txtHoraLancadas : {
-						required : "Digite a quantidade de horas a lançar"
+						required : "Digite a quantidade de horas a lançar",
+						number: "Digite apenas números"
 					},
 
 					txtDescricaoAtividade : {

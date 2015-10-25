@@ -81,6 +81,51 @@
 
 			<br> <br>
 
+<% 
+String erro = (String)request.getAttribute("erro");
+
+if(erro == null)
+{
+	erro = "";	
+}
+
+if (erro.equals("Você não é o criador desta sugestão por este motivo ela não pode ser excluída!"))
+{
+		%>
+	<script type="text/javascript"> 
+	
+	$(document).ready(function() {
+		alert(<%=erro%>);
+	});
+	
+	
+	
+	</script>
+		
+<% }%>
+
+
+<% if (erro.equals("Registro excluído com sucesso!"))
+{
+	
+	%>
+	
+	<script type="text/javascript"> 
+	
+	$(document).ready(function() {
+		alert(<%=erro%>);
+	});
+	
+	
+	
+	</script>
+	
+<% 
+}
+
+%>
+
+
 			<table name="tdListaSugestaoAtividade" class="table table-striped">
 
 				<tr>
@@ -100,9 +145,7 @@
 				</tr>
 
 
-				<% 
-				//LOCAL ONDE ATRAVÉS DO request.getAttribute SERÁ PEGO TODOS OS ELEMENTOS DO ARRAYLIST >>sugestaoAtividade
-			    //instância lista  (ARRAY) terá todos os objetos 
+<% 
 	         
 ArrayList<SugestaoAtividade> lista = (ArrayList<SugestaoAtividade>) request.getAttribute("sugestaoAtividades");
     

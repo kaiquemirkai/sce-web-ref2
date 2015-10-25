@@ -43,21 +43,18 @@ public class ExcluirSugestaoAtividadeAluno implements IComando {
 	    if(sa.getCodigoCadastro() == login.getCodigo())
 	    {
 	    	resultado = sugestaoAtividadeFachada.excluirSugestaoAtividade(sa);
-	    	msg = "Você não é o criador dessa sugestão por este motivo não pode ser excluida";
+	    	msg = "Você não é o criador desta sugestão por este motivo ela não pode ser excluída!";
 	    }
 	    
-	    
-	    
 		 
-		                                            //STRING.trim() - retira os espaços em branco
+		                                            
 
-		if (resultado == 1)
-			msg = "Registro excluido com sucesso";
+		if (resultado == 1){	
+			msg = "Registro excluído com sucesso!";
+		}
 		
-		else
-			msg = "Registro não excluido";
 		
-		request.setAttribute("msg", msg);
+		request.setAttribute("erro", msg);
 		
 		return "/visao/TelasTCCv4/TelaListarSugestaoAtividadeAluno.jsp";
 	}
