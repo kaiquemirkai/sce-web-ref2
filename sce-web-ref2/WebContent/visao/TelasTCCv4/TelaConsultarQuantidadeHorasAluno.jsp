@@ -47,15 +47,32 @@ function AreaCidada(){
 <form class= "form-horizontal" role = "form" id="frmConsultarQuantidadeHorasAluno" name="frmConsultarQuantidadeHorasAluno" action="/sce-web-ref2/ServletControle" method="post">   
     	
 		<input type="hidden" id="acao" name="acao" value="RelatorioQuantidadeHorasAlunos">
-    	
-       			
-    						<h3 align="center">Consulta de Horas</h3>
-  						
-	 <br> <br>
-
-<div class="alert alert-success" role="alert" align="center"> 
-<label> Você está na média de horas para atingir o total! Parabéns! </label> 
+ <br>
+<div class="row" align="center">
+ 	<div class="col-md-12">
+    	    	
+    	<div class="thumbnail">
+      		<img src="/sce-web-ref2/visao/TelasTCCv4/Imagens/grafico.png" width="130" height="130">
+      		<br>
+      		<div class="progress">
+  				<div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+    				40%
+  				</div>
+			</div>
+      		
+      			<div class="caption"> <h4>Total de Horas </h4>
+        		<!--	<p>  				
+						Consulte sua média anual e veja se conseguirá atingir a meta! 
+						OBS: Arrumar os textos.
+        			</p>!-->
+        			<p align="center">
+        			<input type="submit" class="btn btn-danger" value="Prospecção" role="button"> 
+        			</p>
+      			</div>
+    	</div>
+  	</div>
 </div>
+
 
    <!-- Divisão das áreas-->
 
