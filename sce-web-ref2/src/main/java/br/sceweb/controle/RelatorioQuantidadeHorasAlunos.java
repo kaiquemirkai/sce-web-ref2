@@ -12,8 +12,10 @@ import br.sceweb.dominio.RegraAtcompRepositorio;
 public class RelatorioQuantidadeHorasAlunos implements IComando{
 	
 	AtcompRepositorio atcompRepositorio;
+	AtcompRepositorio atcompRepositorioMysql;
 	public RelatorioQuantidadeHorasAlunos(){
-		atcompRepositorio  = new AtcompRepositorio(1);;
+		atcompRepositorio  = new AtcompRepositorio(1);
+		atcompRepositorioMysql  = new AtcompRepositorio(2);
 	}
 	
 	@Override
@@ -31,7 +33,9 @@ public class RelatorioQuantidadeHorasAlunos implements IComando{
 		    String resultadoCidada =  RetornaFormatado(cidada);
 		    String resultadoCultural = RetornaFormatado(cultural);
 		    
-		
+		    Double quantidadeTotal = atcompRepositorioMysql.QuantidadeTotaldeHoras();		    
+		    String quantidadeTotalEmPorcentagem = RetornaFormatadoTotal(quantidadeTotal);		  
+		    request.setAttribute("total",quantidadeTotalEmPorcentagem);
 		    request.setAttribute("tecnologica",resultadoTecnologica);
 		    request.setAttribute("cidada",resultadoCidada);
 		    request.setAttribute("cultural",resultadoCultural);
@@ -50,4 +54,12 @@ public class RelatorioQuantidadeHorasAlunos implements IComando{
 	    return resultado;
 	}
 	
+	
+	public String RetornaFormatadoTotal(Double valor){
+		valor = (valor *100) / 240;
+	    DecimalFormat df = new DecimalFormat("#.##");
+	    String resultado = df.format(valor);
+	    resultado = resultado.replace(",", ".");
+	    return resultado;
+	}
 }

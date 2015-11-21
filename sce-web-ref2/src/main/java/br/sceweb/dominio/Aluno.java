@@ -12,8 +12,22 @@ public class Aluno {
 	String curso;
 	String area;
 	String turma;
+	String AnoInicio;
+	String AnoFim;
 	
 	
+	public String getAnoInicio() {
+		return AnoInicio;
+	}
+	public void setAnoInicio(String anoInicio) {
+		AnoInicio = anoInicio;
+	}
+	public String getAnoFim() {
+		return AnoFim;
+	}
+	public void setAnoFim(String anoFim) {
+		AnoFim = anoFim;
+	}
 	public String getCurso() {
 		return curso;
 	}

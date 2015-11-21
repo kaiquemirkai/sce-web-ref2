@@ -33,7 +33,12 @@
 </style>
 
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-
+<script>
+function EncerrarSessao(){
+	   document.getElementById('frmHomeAluno').acao.value = "EncerrarSessao";
+	   document.getElementById('frmHomeAluno').submit();
+}
+</script>
 <script type="text/javascript">
 
       // Load the Visualization API and the piechart package.
@@ -88,7 +93,7 @@
 <!-- Div do Conteudo  -->
 <div class="container">
 
-<form class= "form-horizontal" role = "form" name="frmHomeAluno" action="/sce-web-ref2/ServletControle" method="post">   
+<form class= "form-horizontal" role = "form" id="frmHomeAluno" name="frmHomeAluno" action="/sce-web-ref2/ServletControle" method="post">   
     	
 		<input type="hidden" name="acao" value="HomeAluno">
 
@@ -97,7 +102,7 @@
   <div class="row"  style="margin-top: 20px;">
   
    <!-- Divisão da tela: Parte Principal -->
-  <div class="col-md-2">
+  <div class="col-md-3">
   	
   	<!--Bem vindo-->
   <div class="media">
@@ -107,15 +112,16 @@
   	<div class="media-body">
     	<h4 class="media-heading">Bem-vindo!</h4>
     		<small><%=nomeAluno %></small>
-    		<br>
-    		<small> <a href="/sce-web-ref2/visao/TelasTCCv4/EncerrarSessao.jsp"> Encerrar sessão </a> </small>
+    		<br> 
+    		<button type="button" name="btnEncerrarSessao" type="submit" onclick="EncerrarSessao()" class="btn btn-primary btn-xs">Encerrar Sessão</button>
+    		
   	</div>
   </div>
 
   
   </div>
   
-  <div class="col-md-6">
+  <div class="col-md-5">
   
   
   

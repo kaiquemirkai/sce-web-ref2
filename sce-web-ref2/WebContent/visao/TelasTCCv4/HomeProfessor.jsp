@@ -3,7 +3,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<script>
+function EncerrarSessao(){
+	   document.getElementById('frmHomeProfessor').acao.value = "EncerrarSessao";
+	   document.getElementById('frmHomeProfessor').submit();
+}
 
+</script>
 <style type="text/css">  
   @import url("/sce-web-ref2/visao/TelasTCCv4/CSS/Background.css");  
 </style>
@@ -30,7 +36,7 @@
  String nomeProfessor = "" + request.getAttribute("nomeProfessor");
 %>
 
-<form class= "form-horizontal" role = "form" name="frmHomeProfessor" action="/sce-web-ref2/ServletControle" method="post">   
+<form class= "form-horizontal" role = "form" id="frmHomeProfessor" name="frmHomeProfessor" action="/sce-web-ref2/ServletControle" method="post">   
     	
 		<input id="acao" type="hidden" name="acao" value="HomeProfessor">
 
@@ -50,7 +56,7 @@
     	<h4 class="media-heading">Bem-vindo!</h4>
     		<%=nomeProfessor %>
     		<br>
-    		<small> <a href="#"> Encerrar sessão </a> </small>
+    		<button type="button" name="btnEncerrarSessao" type="submit" onclick="EncerrarSessao()" class="btn btn-primary btn-xs">Encerrar Sessão</button>
   	</div>
   </div>
   

@@ -1,6 +1,9 @@
 package br.sceweb.servico;
 
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,6 +19,7 @@ import org.hibernate.SQLQuery;
 
 import br.sceweb.dominio.Aluno;
 import br.sceweb.dominio.Atcomp;
+import br.sceweb.dominio.HorasPorAnoTO;
 import br.sceweb.dominio.HorasPorAreaTO;
 import br.sceweb.dominio.Professor;
 import br.sceweb.dominio.ProfessorRepositorio;
@@ -379,5 +383,19 @@ public class HibernateAtcompDAO implements IAtcompDAO {
 	{
 		return null;
 	}
+	
+	public Double QuantidadeTotaldeHoras()
+	{
+	
+		return null;
+	}
+	
+
+	public List<HorasPorAnoTO> ListarHorasPorAreaAno(String ano)
+	{	
+		return null;
+	}
+	
+	
 	
 }

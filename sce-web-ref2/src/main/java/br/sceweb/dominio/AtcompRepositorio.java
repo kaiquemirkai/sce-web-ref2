@@ -44,24 +44,17 @@ private IAtcompDAO daoAtcomp;
 	public Double RelatorioHorasPorArea(String areaAtividade){
 		return daoAtcomp.RelatorioHorasPorArea(areaAtividade);
 	}
-	/*
-	 * Verificar que porra eh essa!
-	public List<RegraAtcomp> Listar2(){
-		return daoAtcomp.Listar2();
+	
+	
+	public Double QuantidadeTotaldeHoras(){
+		return daoAtcomp.QuantidadeTotaldeHoras();
 	}
-	*/
+	
+	
 	public Atcomp Consultar(Atcomp a){		
 		return daoAtcomp.Consultar(a);
 	}
-	/*
-	 
-	public ArrayList<Atcomp> consulta(String cnpj){
-		return (ArrayList<Atcomp>) daoAtcomp.consulta(cnpj);
-	}
-	public int exclui(String cnpj){
-		return daoAtcomp.exclui(cnpj);
-		
-		*/
+	
 	
 public boolean Alterar (Atcomp a){
 		
@@ -89,6 +82,10 @@ public List<HorasPorAreaTO> ListarHorasCategoria(String area)
   return daoAtcomp.ListarHorasCategoria(area);	
 }
 
+public List<HorasPorAnoTO> ListarHorasPorAreaAno(String ano)
+{
+  return daoAtcomp.ListarHorasPorAreaAno(ano);	
+}
 
 
 public String GraficoDasCategorias(List<HorasPorAreaTO> horas)

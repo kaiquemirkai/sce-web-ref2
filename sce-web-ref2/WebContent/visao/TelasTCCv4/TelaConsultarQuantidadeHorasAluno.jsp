@@ -24,6 +24,11 @@ function AreaCidada(){
 	   document.getElementById('frmConsultarQuantidadeHorasAluno').acao.value = "ListarAreaCidada";
 	   document.getElementById('frmConsultarQuantidadeHorasAluno').submit();
 }
+
+function Prospeccao(){
+	   document.getElementById('frmConsultarQuantidadeHorasAluno').acao.value = "Prospeccao";
+	   document.getElementById('frmConsultarQuantidadeHorasAluno').submit();
+}
 </script>
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -48,6 +53,10 @@ function AreaCidada(){
     	
 		<input type="hidden" id="acao" name="acao" value="RelatorioQuantidadeHorasAlunos">
  <br>
+ 
+   <% String total = "" + request.getAttribute("total");
+   
+   %>
 <div class="row" align="center">
  	<div class="col-md-12">
     	    	
@@ -55,8 +64,8 @@ function AreaCidada(){
       		<img src="/sce-web-ref2/visao/TelasTCCv4/Imagens/grafico.png" width="130" height="130">
       		<br>
       		<div class="progress">
-  				<div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-    				40%
+  				<div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="<%=total%>" aria-valuemin="0" aria-valuemax="100" style="width: <%=total%>%">
+    				<%=total%>%
   				</div>
 			</div>
       		
@@ -66,7 +75,7 @@ function AreaCidada(){
 						OBS: Arrumar os textos.
         			</p>!-->
         			<p align="center">
-        			<input type="submit" class="btn btn-danger" value="Prospecção" role="button"> 
+        			<input type="submit" class="btn btn-danger" onclick="Prospeccao()" value="Prospecção" role="button"> 
         			</p>
       			</div>
     	</div>
