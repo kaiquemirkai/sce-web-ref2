@@ -64,7 +64,7 @@ function Listar(){
 	</label>
 	
 
- 	<button type="submit" class="btn btn-primary" onclick="Listar()">Listar</button>
+ 	<button type="submit" class="btn btn-primary" onclick="Listar()">Buscar</button>
      </div>
           
     <br> <br>

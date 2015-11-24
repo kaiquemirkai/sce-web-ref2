@@ -13,6 +13,7 @@ import javax.persistence.PersistenceException;
 
 import br.sceweb.dominio.Aluno;
 import br.sceweb.dominio.Atcomp;
+import br.sceweb.dominio.AtcompPendenteAprovacaoTO;
 import br.sceweb.dominio.HorasPorAnoTO;
 import br.sceweb.dominio.HorasPorAreaTO;
 import br.sceweb.dominio.Login;
@@ -230,6 +231,117 @@ public Double QuantidadeTotaldeHoras()
 	}
 	
 	return resultado;
+}
+
+
+@Override
+public List<AtcompPendenteAprovacaoTO> ListarAtcompProfessor(String campoBusca,String valorBusca) {
+	ResultSet rs = null;
+	PreparedStatement stmt;
+	String erro = "";
+	List<AtcompPendenteAprovacaoTO> lista = new ArrayList<AtcompPendenteAprovacaoTO>();
+	
+	try {
+		
+		Login login =LoginRepositorio.RetornaUsuarioLogado();		
+		ProfessorRepositorio professorRepositorio = new ProfessorRepositorio(1);
+		Professor professor = new Professor();
+		professor.setCodigoLogin(login.getCodigo());
+		professor = professorRepositorio.Consultar(professor);
+		
+		
+		String clausulaBusca = "";
+		
+		
+		if(campoBusca.equals("nomeAluno"))
+		{
+			clausulaBusca = " and alun.nome like ?";
+			
+		}
+		if(campoBusca.equals("turma"))
+		{
+			clausulaBusca = " and alun.turma like ?";
+			
+		}
+		if(campoBusca.equals("curso"))
+		{
+			clausulaBusca = " and alun.curso like ?";
+			
+		}
+		if(campoBusca.equals("status"))
+		{
+			clausulaBusca = " and atc.status like ?";
+			
+		}
+		
+		
+		
+		
+        String query = "SELECT alun.*, atc.*, atc.codigo codigoatc FROM aluno alun inner join atcomp atc on alun.codigo = atc.codigoAluno " + 
+			" WHERE atc.codigoAluno IN (SELECT alu.codigo FROM aluno AS alu WHERE alu.turma IN " + 
+			" (SELECT ppf.turma FROM perfilprofessor AS ppf WHERE ppf.codigoProfessor = ?)) ";
+        String order = " order by atc.codigo asc";
+        
+        
+		stmt = MySQLDAOFactory.criaConexao().prepareStatement(query + clausulaBusca  + order );
+		
+		
+		stmt.setLong(1, professor.getCodigo());
+		
+		
+	
+		if(campoBusca.equals("nomeAluno"))
+		{
+			
+			stmt.setString(2, "%" + valorBusca + "%");
+		}
+		if(campoBusca.equals("turma"))
+		{
+			
+			stmt.setString(2, "%" + valorBusca + "%");
+		}
+		if(campoBusca.equals("curso"))
+		{
+			
+			stmt.setString(2, "%" + valorBusca + "%");
+		}
+		
+		if(campoBusca.equals("status"))
+		{
+			
+			stmt.setString(2, "%" + valorBusca + "%");
+		}
+		
+		
+		rs = stmt.executeQuery();
+		
+		while(rs.next()){		
+			AtcompPendenteAprovacaoTO atcompPendenteAprovacaoTO = new AtcompPendenteAprovacaoTO();
+			atcompPendenteAprovacaoTO.setCodigoAtcomp(rs.getLong("codigoatc"));
+			atcompPendenteAprovacaoTO.setAreaAtividade(rs.getString("AreaAtividade"));
+			atcompPendenteAprovacaoTO.setDataInicio(rs.getString("dataInicio"));
+			atcompPendenteAprovacaoTO.setCargaHoraria(rs.getString("horasLancadas"));
+			atcompPendenteAprovacaoTO.setNomeAluno(rs.getString("nome"));
+			atcompPendenteAprovacaoTO.setRa(rs.getString("ra"));
+			atcompPendenteAprovacaoTO.setTurma(rs.getString("turma"));
+			atcompPendenteAprovacaoTO.setCurso(rs.getString("curso"));
+			atcompPendenteAprovacaoTO.setDescricao(rs.getString("descricao"));
+			atcompPendenteAprovacaoTO.setStatus(rs.getString("status"));
+			lista.add(atcompPendenteAprovacaoTO);			 
+
+		}
+		
+		stmt.close();
+	
+		
+		
+		// stmt.close();
+	} catch (SQLException e) {
+		
+		erro = e.getMessage();
+		System.out.println(erro);
+	}
+	return lista;
 }
 
 

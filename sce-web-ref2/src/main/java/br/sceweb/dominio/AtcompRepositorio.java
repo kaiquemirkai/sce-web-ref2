@@ -111,5 +111,10 @@ public String GraficoDasCategorias(List<HorasPorAreaTO> horas)
 
 
 
+public List<AtcompPendenteAprovacaoTO> ListarAtcompProfessor(String campoBusca,String valorBusca)
+{
+	return daoAtcomp.ListarAtcompProfessor(campoBusca, valorBusca);
+}
+
 	}
 

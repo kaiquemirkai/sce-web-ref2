@@ -9,6 +9,27 @@ String turma;
 String curso;
 String descricao;
 String status;
+String dataInicio;
+String cargaHoraria;
+public String getDataInicio() {
+	return dataInicio;
+}
+public void setDataInicio(String dataInicio) {
+	this.dataInicio = dataInicio;
+}
+public String getCargaHoraria() {
+	return cargaHoraria;
+}
+public void setCargaHoraria(String cargaHoraria) {
+	this.cargaHoraria = cargaHoraria;
+}
+public String getAreaAtividade() {
+	return areaAtividade;
+}
+public void setAreaAtividade(String areaAtividade) {
+	this.areaAtividade = areaAtividade;
+}
+String areaAtividade;
 
 public String getStatus() {
 	return status;

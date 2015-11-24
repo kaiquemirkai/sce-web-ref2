@@ -47,7 +47,7 @@
     
     <div class="col-sm-10">
       <label class="radio-inline">
-  		<input type="radio" name="rdBusca" id="rdDescricao" value="descricao"> Descrição
+  		<input type="radio" name="rdBusca" id="rdNomeAluno" value="nomeAluno"> Nome do Aluno
 	</label>
 	
 	
@@ -56,34 +56,15 @@
 	</label>
 	
 	<label class="radio-inline">
-  		<input type="radio" name="rdBusca" id="rdCategoria" value="categoria"> Categoria
-	</label>
-    
-    <label class="radio-inline">
-  		<input type="radio" name="rdBusca" id="rdArea" value="area"> Área
-	</label>
-    
-    <label class="radio-inline">
-  		<input type="radio" name="rdBusca" id="rdDataRealizacao" value="dataRealizacao"> Data de Realização
-	</label>
-
-	<label class="radio-inline">
-  		<input type="radio" name="rdBusca" id="rdRa" value="ra"> RA Aluno
-	</label>
-	
-	<label class="radio-inline">
-  		<input type="radio" name="rdBusca" id="rdTurma" value="turma"> Turma
-	</label>
-	
-	<label class="radio-inline">
   		<input type="radio" name="rdBusca" id="rdCurso" value="curso"> Curso
 	</label>
-	
-	<label class="radio-inline">
-  		<input type="radio" name="rdBusca" id="rdAno" value="ano"> Ano
+    
+    <label class="radio-inline">
+  		<input type="radio" name="rdBusca" id="rdTurma" value="turma"> Turma
 	</label>
+    
 
- 	<button type="#" class="btn btn-primary" onclick="listar()">Listar</button>
+ 	<button type="#" class="btn btn-primary" onclick="listar()">Buscar</button>
     <button type="#" class="btn btn-primary" onclick="consultar()">Consultar</button>
 					
           
@@ -93,9 +74,9 @@
   
 <tr> 
     
-<td> <label>Área da Atividade</label> </td>
+<td> <label>Código</label> </td>
 
-<td> <label>Código da Atividade</label> </td>
+<td> <label>Área da Atividade</label> </td>
     
 <td> <label>Data de Realização da Atividade</label> </td>
     
@@ -118,10 +99,10 @@
 
 <%
 
-ArrayList<Atcomp> lista = (ArrayList<Atcomp>) request.getAttribute("atcomps");
+ArrayList<AtcompPendenteAprovacaoTO> lista = (ArrayList<AtcompPendenteAprovacaoTO>) request.getAttribute("atcomps");
 
 if ((lista!=null)&& (lista.size()>0)){
-    Atcomp a = null;
+    AtcompPendenteAprovacaoTO atcompPendenteAprovacaoTO = null;
 	for (int i = 0; i < lista.size(); i++) {
 		
 		String selected = "";
@@ -130,34 +111,42 @@ if ((lista!=null)&& (lista.size()>0)){
  		   selected = "checked";
  	   }
 		    
-		    a = (Atcomp) lista.get(i);
+		    atcompPendenteAprovacaoTO = (AtcompPendenteAprovacaoTO) lista.get(i);
 		    
 		    String area = "";
-			if(a.getAreaAtividade().equals("01"))
+			if(atcompPendenteAprovacaoTO.getAreaAtividade().equals("01"))
 			{
 				area = "Tecnológica";
 			}
-			if(a.getAreaAtividade().equals("02"))
+			if(atcompPendenteAprovacaoTO.getAreaAtividade().equals("02"))
 			{
 				area = "Sóciocultural";
 			}
-			if(a.getAreaAtividade().equals("03"))
+			if(atcompPendenteAprovacaoTO.getAreaAtividade().equals("03"))
 			{
 				area = "Cidadã";
 			}
 			
 		    %><tr> 
-		    <td><input <%=selected%> type="radio" name="codigoRadio" value="<%=a.getCodigo()%>"> </td>
+		    <td><input <%=selected%> type="radio" name="codigoRadio" value="<%=atcompPendenteAprovacaoTO.getCodigoAtcomp()%>"> </td>
 		    
 		    <td> <label><%=area%><label></td>
 
-		    <td><label> <%=a.getCodigoAtividade()%><label> </td>
+		    <td><label> <%=atcompPendenteAprovacaoTO.getDataInicio()%><label> </td>
 		        
-		    <td> <label><%=a.getDescricao()%></label> </td>
+		    <td> <label><%=atcompPendenteAprovacaoTO.getDescricao()%></label> </td>
 
-		    <td> <label><%=a.getHorasLancadas()%></label> </td>
+		    <td> <label><%=atcompPendenteAprovacaoTO.getCargaHoraria()%></label> </td>
 
-		    <td> <label><%=a.getStatus()%></label> </td>
+  			<td> <label><%=atcompPendenteAprovacaoTO.getNomeAluno()%></label> </td>
+
+			<td> <label><%=atcompPendenteAprovacaoTO.getRa()%></label> </td>
+			
+			<td> <label><%=atcompPendenteAprovacaoTO.getTurma()%></label> </td>
+			
+			<td> <label><%=atcompPendenteAprovacaoTO.getCurso()%></label> </td>
+			
+		    <td> <label><%=atcompPendenteAprovacaoTO.getStatus()%></label> </td>
 
 		    </tr>
 <%    

@@ -19,6 +19,7 @@ import org.hibernate.SQLQuery;
 
 import br.sceweb.dominio.Aluno;
 import br.sceweb.dominio.Atcomp;
+import br.sceweb.dominio.AtcompPendenteAprovacaoTO;
 import br.sceweb.dominio.HorasPorAnoTO;
 import br.sceweb.dominio.HorasPorAreaTO;
 import br.sceweb.dominio.Professor;
@@ -474,6 +475,15 @@ public class HibernateAtcompDAO implements IAtcompDAO {
 	{	
 		return null;
 	}
+	
+	
+	
+
+@Override
+public List<AtcompPendenteAprovacaoTO> ListarAtcompProfessor(String campoBusca,String valorBusca) {
+	
+	return null;
+}
 	
 	
 	
