@@ -23,7 +23,7 @@ public class MySQLSugestaoAtividadeDAO implements ISugestaoAtividadeDAO{
 		return false;
 	}
 
-	public List<SugestaoAtividade> Listar(){
+	public List<SugestaoAtividade> Listar(String campoBusca, String valorBusca){
 		return null;
 	}
 	

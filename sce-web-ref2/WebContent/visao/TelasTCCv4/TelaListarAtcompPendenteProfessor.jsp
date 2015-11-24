@@ -52,13 +52,9 @@ function Listar(){
      </div>
 	
     <label class="radio-inline">
-  		<input type="radio" name="rdBusca" id="rdDataRealizacao" value="dataRealizacao"> Data de Realização
+  		<input type="radio" name="rdBusca" id="rdNomeAluno" value="nomeAluno"> Nome do Aluno
 	</label>
 
-	<label class="radio-inline">
-  		<input type="radio" name="rdBusca" id="rdRa" value="ra"> RA Aluno
-	</label>
-	
 	<label class="radio-inline">
   		<input type="radio" name="rdBusca" id="rdTurma" value="turma"> Turma
 	</label>
@@ -93,11 +89,11 @@ function Listar(){
 
 <%
 
-ArrayList<Atcomp> lista = (ArrayList<Atcomp>) request.getAttribute("atcomps");
-ArrayList<Aluno> listaAluno = (ArrayList<Aluno>) request.getAttribute("alunos");
+ArrayList<AtcompPendenteAprovacaoTO> lista = (ArrayList<AtcompPendenteAprovacaoTO>) request.getAttribute("atcomps");
+
 if ((lista!=null)&& (lista.size()>0)){
-    Atcomp a = null;
-    Aluno aluno = null;
+    AtcompPendenteAprovacaoTO atcompPendenteAprovacaoTO = null;
+    
 	for (int i = 0; i < lista.size(); i++) {
 		
 		  String selected = "";
@@ -106,24 +102,24 @@ if ((lista!=null)&& (lista.size()>0)){
    		   selected = "checked";
    	   }
 		    
-		    a = (Atcomp) lista.get(i);
-			aluno = (Aluno) listaAluno.get(i);
-		    if(a.getStatus().equals("Pendente")){
+		    atcompPendenteAprovacaoTO = (AtcompPendenteAprovacaoTO) lista.get(i);
+			
+		    if(atcompPendenteAprovacaoTO.getStatus().equals("Pendente")){
 		    %>
 
 <tr> 
 
-<td> <input <%=selected%> type="radio" name="codigoRadio" value="<%=a.getCodigo()%>"> </td> <!-- Campo que receberá codigo radio -->
+<td> <input <%=selected%> type="radio" name="codigoRadio" value="<%=atcompPendenteAprovacaoTO.getCodigoAtcomp()%>"> </td> <!-- Campo que receberá codigo radio -->
 
-<td> <label><%=aluno.getNome() %></label> </td>
+<td> <label><%=atcompPendenteAprovacaoTO.getNomeAluno()%></label> </td>
 
-<td> <label><%=aluno.getRa() %></label> </td>
+<td> <label><%=atcompPendenteAprovacaoTO.getRa() %></label> </td>
 
-<td> <label><%=aluno.getTurma() %></label> </td>
+<td> <label><%=atcompPendenteAprovacaoTO.getTurma() %></label> </td>
 
-<td> <label><%=aluno.getCurso() %></label> </td>
+<td> <label><%=atcompPendenteAprovacaoTO.getCurso() %></label> </td>
 
-<td> <label><%=a.getDescricao()%></label> </td>
+<td> <label><%=atcompPendenteAprovacaoTO.getDescricao()%></label> </td>
 
 
 </tr>

@@ -20,7 +20,25 @@ public class ListarSugestaoAtividadeProfessor implements IComando {
 	public String executa(HttpServletRequest request, HttpServletResponse res) 	throws Exception {
 		
 		sugestaoAtividadeRepositorio = new SugestaoAtividadeRepositorio(1);
-		List<SugestaoAtividade> sugestaoAtividades = sugestaoAtividadeRepositorio.Listar();
+		String radio = request.getParameter("rdBusca");
+		String busca = request.getParameter("txtBusca");
+		List<SugestaoAtividade> sugestaoAtividades = null;
+		
+		if( busca != null)
+		{
+			if(!busca.equals("") )
+			{			
+				if(radio != null)
+				{
+					sugestaoAtividades = sugestaoAtividadeRepositorio.Listar(radio,busca);
+				}
+			}
+		}
+		if( busca == null || busca.equals(""))
+		{
+			sugestaoAtividades = sugestaoAtividadeRepositorio.Listar("","");
+		}
+		
 		request.setAttribute("sugestaoAtividades", sugestaoAtividades);
 		return "/visao/TelasTCCv4/TelaListarSugestaoAtividadeProfessor.jsp";
 	}

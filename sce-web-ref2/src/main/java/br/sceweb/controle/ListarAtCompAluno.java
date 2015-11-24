@@ -17,8 +17,30 @@ public class ListarAtCompAluno implements IComando {
  */
 	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse res) 	throws Exception {
+		String radio = request.getParameter("rdBusca");
+		String busca = request.getParameter("txtBusca");
+		
 		atcompRepositorio = new AtcompRepositorio(1);
-		List<Atcomp> atcomps = atcompRepositorio.Listar();
+		List<Atcomp> atcomps = null;
+		
+		if( busca != null)
+		{
+			if(!busca.equals("") )
+			{			
+				if(radio != null)
+				{
+					atcomps = atcompRepositorio.Listar(radio,busca);
+				}
+			}
+		}
+		if(busca == null || busca.equals(""))
+		{
+			atcomps = atcompRepositorio.Listar("","");
+		}
+		
+		
+		
+		
 		request.setAttribute("atcomps", atcomps);
 		return "/visao/TelasTCCv4/TelaListarAtcompAluno.jsp";
 	}

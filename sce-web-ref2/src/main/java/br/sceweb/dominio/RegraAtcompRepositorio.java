@@ -31,8 +31,8 @@ public boolean Excluir (RegraAtcomp regraAtcomp){
 	}
 	
 	
-	public List<RegraAtcomp> Listar(){
-		return daoRegraAtcomp.Listar();
+	public List<RegraAtcomp> Listar(String campoBusca, String valorBusca){
+		return daoRegraAtcomp.Listar(campoBusca,valorBusca);
 	}
 	
 	public List<RegraAtcomp> ListarCategoriaPorArea(String area){

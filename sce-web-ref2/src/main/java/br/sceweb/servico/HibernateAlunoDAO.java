@@ -18,6 +18,7 @@ import org.hibernate.HibernateException;
 
 import br.sceweb.dominio.Aluno;
 import br.sceweb.dominio.Atcomp;
+import br.sceweb.dominio.AtcompPendenteAprovacaoTO;
 import br.sceweb.dominio.Login;
 import br.sceweb.dominio.LoginRepositorio;
 import br.sceweb.dominio.Professor;
@@ -48,8 +49,8 @@ public class HibernateAlunoDAO implements IAlunoDAO{
 	}
 
 	@Override
-	public List<Aluno> ListarAlunosPendentesProfessor() {
-		List<Aluno> lista = new ArrayList<Aluno>();
+	public List<AtcompPendenteAprovacaoTO> ListarAlunosPendentesProfessor(String campoBusca,String valorBusca) {
+		List<AtcompPendenteAprovacaoTO> lista = new ArrayList<AtcompPendenteAprovacaoTO>();
 		try {
 			Login login =LoginRepositorio.RetornaUsuarioLogado();		
 			ProfessorRepositorio professorRepositorio = new ProfessorRepositorio(1);

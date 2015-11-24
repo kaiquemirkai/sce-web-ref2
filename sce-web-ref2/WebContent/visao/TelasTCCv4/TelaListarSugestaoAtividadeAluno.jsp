@@ -59,11 +59,8 @@
 						name="rdBusca" id="rdTema" value="tema"> Tema
 					</label> <label class="radio-inline"> <input type="radio"
 						name="rdBusca" id="rdArea" value="area"> Área
-					</label> <label class="radio-inline"> <input type="radio"
-						name="rdBusca" id="rdCategoria" value="categoria">
-						Categoria
-					</label>
-					<button type="#" class="btn btn-primary" onclick="buscar()">Listar</button>
+					</label> 
+					<button type="#" class="btn btn-primary" onclick="buscar()">Buscar</button>
 					<!-- <button type="#" class="btn btn-primary" onclick="cadastrar()">Cadastrar</button>  -->
 					<button type="#" class="btn btn-primary" onclick="consultar()">Consultar</button>
 					<button type="#" class="btn btn-primary" onclick="alterar()">Alterar</button>

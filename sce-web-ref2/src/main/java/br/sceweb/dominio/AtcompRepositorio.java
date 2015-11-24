@@ -24,8 +24,8 @@ private IAtcompDAO daoAtcomp;
 	}
 	
 	
-	public List<Atcomp> Listar(){
-		return daoAtcomp.Listar();
+	public List<Atcomp> Listar(String campoBusca, String valorBusca){
+		return daoAtcomp.Listar(campoBusca,valorBusca);
 	}
 	
 	public List<Atcomp> ListarPendenteProfessor(){

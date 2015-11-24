@@ -20,7 +20,27 @@ public class ListarRegraAtcompProfessor implements IComando {
 	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse res) 	throws Exception {
 		regraAtcompRepositorio = new RegraAtcompRepositorio(1);
-		List<RegraAtcomp> regraAtcomps = regraAtcompRepositorio.Listar();
+		String radio = request.getParameter("rdBusca");
+		String busca = request.getParameter("txtBusca");
+		List<RegraAtcomp> regraAtcomps = null;
+		
+	
+		
+		if( busca != null)
+		{
+			if(!busca.equals("") )
+			{			
+				if(radio != null)
+				{
+					regraAtcomps = regraAtcompRepositorio.Listar(radio,busca);
+				}
+			}
+		}
+		if( busca == null || busca.equals(""))
+		{
+			regraAtcomps = regraAtcompRepositorio.Listar("","");
+		}
+		
 		request.setAttribute("regraAtcomps", regraAtcomps);
 		
 		return "/visao/TelasTCCv4/TelaListarRegraAtcompProfessor.jsp";

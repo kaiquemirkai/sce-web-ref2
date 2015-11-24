@@ -44,13 +44,61 @@ public class HibernateRegraAtcompDAO implements IRegraAtcompDAO {
 	}
 	
 	@Override
-	public List<RegraAtcomp> Listar() {
+	public List<RegraAtcomp> Listar(String campoBusca, String valorBusca) {
 		List<RegraAtcomp> lista = new ArrayList<RegraAtcomp>();
 		try {
 			EntityManagerFactory factory = Persistence.createEntityManagerFactory("sceweb");
 			EntityManager em = factory.createEntityManager();
 			em.getTransaction().begin();
-			Query query = em.createQuery("SELECT a from RegraAtcomp a");
+			
+			
+			String clausulaBusca = "";
+			String area = "";
+			if(campoBusca.equals("codigoAtividade"))
+			{
+				clausulaBusca = " where a.codigoAtividade like :codigoAtividade";
+				
+			}
+			if(campoBusca.equals("area"))
+			{
+				
+				if(valorBusca.equals("Tecnológica"))
+				{
+					area = "01";
+				}
+				if(valorBusca.equals("Sociocultural"))
+				{
+					area = "02";
+				}
+				if(valorBusca.equals("Cidadã"))
+				{
+					area = "03";
+				}
+				
+				clausulaBusca = " where a.area = :area";
+				
+			}
+			
+			
+			
+			String hql = "SELECT a from RegraAtcomp a";
+			hql += clausulaBusca;
+			Query query = em.createQuery(hql);
+			
+			
+			if(campoBusca.equals("codigoAtividade"))
+			{
+				
+				query.setParameter("codigoAtividade", "%" +valorBusca  +"%");
+			}
+		
+			if(campoBusca.equals("area"))
+			{
+				
+				query.setParameter("area", area);
+			}
+			
+			
 			lista = query.getResultList();
 
 		} catch (Throwable e) {

@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import br.sceweb.dominio.Aluno;
 import br.sceweb.dominio.AlunoRepositorio;
 import br.sceweb.dominio.Atcomp;
+import br.sceweb.dominio.AtcompPendenteAprovacaoTO;
 import br.sceweb.dominio.AtcompRepositorio;
 
 public class ListarAtCompPendenteProfessor implements IComando {
@@ -19,15 +20,30 @@ public class ListarAtCompPendenteProfessor implements IComando {
  */
 	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse res) 	throws Exception {
-		atcompRepositorio = new AtcompRepositorio(1);
-		AlunoRepositorio alunoRepositorio = new AlunoRepositorio(2);
-		List<Atcomp> atcomps = atcompRepositorio.ListarPendenteProfessor();
-		List<Aluno> alunos = alunoRepositorio.ListarPendenteProfessor();
 		
+		AlunoRepositorio alunoRepositorio = new AlunoRepositorio(2);
+		String radio = request.getParameter("rdBusca");
+		String busca = request.getParameter("txtBusca");
+		List<AtcompPendenteAprovacaoTO> atcomps  = null;
+				
+				
+		if( busca != null)
+		{
+			if(!busca.equals("") )
+			{			
+				if(radio != null)
+				{
+					atcomps = alunoRepositorio.ListarPendenteProfessor(radio,busca);
+				}
+			}
+		}
+		if( busca == null || busca.equals(""))
+		{
+			atcomps = alunoRepositorio.ListarPendenteProfessor("","");
+		}
 		
 			
 		request.setAttribute("atcomps", atcomps);
-		request.setAttribute("alunos", alunos);
 		return "/visao/TelasTCCv4/TelaListarAtcompPendenteProfessor.jsp";
 	}
 

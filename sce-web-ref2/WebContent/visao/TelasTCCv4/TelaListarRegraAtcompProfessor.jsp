@@ -47,10 +47,10 @@
 	</label>
 	
 	<label class="radio-inline">
-  		<input type="radio" name="rdBusca" id="rdDescricao" value="descricao"> Descrição
+  		<input type="radio" name="rdBusca" id="rdCodigoAtividade" value="codigoAtividade"> Código da Atividade
 	</label>
     <br><br>
- <button type="submit" class="btn btn-primary">Listar</button>
+ <button type="submit" class="btn btn-primary" onclick="Listar()">Buscar</button>
  <button type="submit" id="btnConsultar" class="btn btn-primary" onclick="Consultar()">Consultar</button>
 
 

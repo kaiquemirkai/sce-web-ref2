@@ -12,7 +12,7 @@ public class MySQLRegraAtcompDAO implements IRegraAtcompDAO{
 		return false;
 	}
 
-	public List<RegraAtcomp> Listar(){
+	public List<RegraAtcomp> Listar(String campoBusca,String valorBusca){
 		return null;
 	}
 	public List<RegraAtcomp> ListarCategoriaPorArea(String area){

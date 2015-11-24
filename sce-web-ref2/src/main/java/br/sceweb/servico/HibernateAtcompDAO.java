@@ -55,7 +55,7 @@ public class HibernateAtcompDAO implements IAtcompDAO {
 	}
 	
 	@Override
-	public List<Atcomp> Listar() {
+	public List<Atcomp> Listar(String campoBusca,String valorBusca) {
 		List<Atcomp> lista = new ArrayList<Atcomp>();
 		try {
 			Login login =LoginRepositorio.RetornaUsuarioLogado();
@@ -63,10 +63,89 @@ public class HibernateAtcompDAO implements IAtcompDAO {
 			EntityManagerFactory factory = Persistence.createEntityManagerFactory("sceweb");
 			EntityManager em = factory.createEntityManager();
 			String hql = " SELECT a FROM Atcomp a WHERE a.codigoAluno = :codigoAluno";
+
+			
+			
+			
+			String clausulaBusca = "";
+			String area = "";
+			if(campoBusca.equals("descricao"))
+			{
+				clausulaBusca = " and a.descricao like :descricao";
+				
+			}
+			if(campoBusca.equals("status"))
+			{
+				clausulaBusca = " and a.status like :status";
+				
+			}
+			if(campoBusca.equals("categoria"))
+			{
+				clausulaBusca = " and a.codigoAtividade like :codigoAtividade";
+				
+			}
+			if(campoBusca.equals("dataRealizacao"))
+			{
+				clausulaBusca = " and a.dataInicio like :dataInicio";
+				
+			}
+			if(campoBusca.equals("area"))
+			{
+				
+				if(valorBusca.equals("Tecnológica"))
+				{
+					area = "01";
+				}
+				if(valorBusca.equals("Sociocultural"))
+				{
+					area = "02";
+				}
+				if(valorBusca.equals("Cidadã"))
+				{
+					area = "03";
+				}
+				
+				clausulaBusca = " and a.areaAtividade = :areaAtividade";
+				
+			}
+						
+			hql += clausulaBusca;
 			em.getTransaction().begin();
 			Query query = em.createQuery(hql);
+	        		
+			//Trecho de validacao da busca
+			
+			if(campoBusca.equals("descricao"))
+			{
+				
+				query.setParameter("descricao", "%" +valorBusca  +"%");
+			}
+			if(campoBusca.equals("status"))
+			{
+				
+				query.setParameter("status", "%" +valorBusca  +"%");
+			}
+			if(campoBusca.equals("categoria"))
+			{
+				
+				query.setParameter("codigoAtividade", "%" +valorBusca  +"%");
+			}
+			if(campoBusca.equals("dataRealizacao"))
+			{
+				
+				query.setParameter("dataInicio", "%" +valorBusca  +"%");
+			}
+			if(campoBusca.equals("area"))
+			{
+				
+				query.setParameter("areaAtividade", area);
+			}
+			
+			
 			query.setParameter("codigoAluno", login.getCodigo());
 			lista = query.getResultList();
+			
+			
 			em.getTransaction().commit();
 
 		} catch (Throwable e) {

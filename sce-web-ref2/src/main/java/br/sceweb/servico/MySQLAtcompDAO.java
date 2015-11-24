@@ -25,7 +25,7 @@ public class MySQLAtcompDAO implements IAtcompDAO{
 	public boolean Cadastrar(Atcomp atcomp) {
 				return false;
 	}
-	public List<Atcomp> Listar(){
+	public List<Atcomp> Listar(String campoBusca, String valorBusca){
 		return null;
 	}
 	

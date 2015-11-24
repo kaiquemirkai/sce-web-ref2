@@ -19,9 +19,9 @@ private IAlunoDAO daoAluno;
 		return daoAluno.Consultar(aluno);
 	}
 
-	public List<Aluno> ListarPendenteProfessor()
+	public List<AtcompPendenteAprovacaoTO> ListarPendenteProfessor(String campoBusca,String valorBusca)
 	{
-		return daoAluno.ListarAlunosPendentesProfessor();
+		return daoAluno.ListarAlunosPendentesProfessor(campoBusca,valorBusca);
 	}
 	
 

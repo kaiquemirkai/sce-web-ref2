@@ -12,7 +12,7 @@ public interface IAtcompDAO {
 
 	public boolean Cadastrar(Atcomp a);
 	public boolean Alterar(Atcomp a);
-	public List<Atcomp> Listar();
+	public List<Atcomp> Listar(String campoBusca, String valorBusca);
 	public List<Atcomp> ListarPendenteProfessor();
 	public List<Object> ListarPendenteProfessorCompleto();
 	public Double RelatorioHorasPorArea(String areaAtividade) ;

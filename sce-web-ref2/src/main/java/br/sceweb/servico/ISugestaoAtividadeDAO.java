@@ -12,7 +12,7 @@ public interface ISugestaoAtividadeDAO {
 
 	public boolean Cadastrar(SugestaoAtividade sa);
 	
-	public List<SugestaoAtividade> Listar();
+	public List<SugestaoAtividade> Listar(String campoBusca, String valorBusca);
 	
 	public List<SugestaoAtividade> ListarSugestoesRecentes(String area);
 	

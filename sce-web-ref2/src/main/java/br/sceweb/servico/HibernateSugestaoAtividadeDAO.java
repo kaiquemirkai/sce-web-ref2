@@ -47,14 +47,58 @@ public class HibernateSugestaoAtividadeDAO implements ISugestaoAtividadeDAO {
 	}
 	
 	@Override
-	public List<SugestaoAtividade> Listar() {
+	public List<SugestaoAtividade> Listar(String campoBusca, String valorBusca) {
 		
 		List<SugestaoAtividade> lista = new ArrayList<SugestaoAtividade>();
 		try {
 			EntityManagerFactory factory = Persistence.createEntityManagerFactory("sceweb");
 			EntityManager em = factory.createEntityManager();
 			em.getTransaction().begin();
-			Query query = em.createQuery("SELECT sa from SugestaoAtividade sa");
+			
+
+			String clausulaBusca = "";
+			String area = "";
+			if(campoBusca.equals("tema"))
+			{
+				clausulaBusca = " where sa.nomeSugestaoAtividade like :tema";
+				
+			}
+			if(campoBusca.equals("area"))
+			{
+				
+				if(valorBusca.equals("Tecnológica"))
+				{
+					area = "01";
+				}
+				if(valorBusca.equals("Sociocultural"))
+				{
+					area = "02";
+				}
+				if(valorBusca.equals("Cidadã"))
+				{
+					area = "03";
+				}
+				
+				clausulaBusca = " where sa.area = :area";
+				
+			}
+						
+			String hql = "SELECT sa from SugestaoAtividade sa";
+			hql += clausulaBusca;
+			Query query = em.createQuery(hql);
+			if(campoBusca.equals("tema"))
+			{
+				
+				query.setParameter("tema", "%" +valorBusca  +"%");
+			}
+		
+			if(campoBusca.equals("area"))
+			{
+				
+				query.setParameter("area", area);
+			}
+			
+			
 			lista = query.getResultList();
 
 		} catch (Throwable e) {

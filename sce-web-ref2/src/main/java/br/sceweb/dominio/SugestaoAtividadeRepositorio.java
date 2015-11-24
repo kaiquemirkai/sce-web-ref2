@@ -29,8 +29,8 @@ public class SugestaoAtividadeRepositorio {
 	}
 
 
-	public List<SugestaoAtividade> Listar(){
-		return IdaoSugestaoAtividade.Listar();
+	public List<SugestaoAtividade> Listar(String campoBusca, String valorBusca){
+		return IdaoSugestaoAtividade.Listar(campoBusca,valorBusca);
 	}
 	
 	
