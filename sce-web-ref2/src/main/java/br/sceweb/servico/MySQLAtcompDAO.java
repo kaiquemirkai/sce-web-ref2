@@ -234,6 +234,58 @@ public Double QuantidadeTotaldeHoras()
 }
 
 
+
+
+public Double QuantidadeTotaldeHorasPorCodigoDeAtividade(String codigoAtividade)
+{
+	ResultSet rs = null;
+	PreparedStatement stmt;
+	String erro = "";
+	double resultado = 0.0;
+	
+	try {
+		
+		Login login =LoginRepositorio.RetornaUsuarioLogado();		
+		
+		/*
+		 select sum(atc.horasLancadas) from atcomp as atc where atc.codigoAluno = 1 
+		 and (atc.status = "Aprovado" or atc.status ="Pendente") 
+		 and atc.codigoatividade like "%301- Eventos por Convocacao Publica%"
+		 */
+		
+        String query = "Select sum(atc.horasLancadas)'horasTotais' from atcomp as atc where atc.codigoAluno = ?" +
+        " and (atc.status = 'Aprovado' or atc.status='Pendente') and atc.codigoatividade like ?" ;
+		 
+		stmt = MySQLDAOFactory.criaConexao().prepareStatement(query);
+		stmt.setLong(1, login.getCodigo());
+		stmt.setString(2, "%"+ codigoAtividade+"%");
+		rs = stmt.executeQuery();		
+		while(rs.next()){		
+			
+			resultado = rs.getDouble("horasTotais");
+			
+		}
+		
+		stmt.close();
+	
+		
+		
+		// stmt.close();
+	} catch (SQLException e) {
+		
+		erro = e.getMessage();
+		System.out.println(erro);
+	}
+	
+	return resultado;
+}
+
+
+
+
+
+
+
 @Override
 public List<AtcompPendenteAprovacaoTO> ListarAtcompProfessor(String campoBusca,String valorBusca) {
 	ResultSet rs = null;

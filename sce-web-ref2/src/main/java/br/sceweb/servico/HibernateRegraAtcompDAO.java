@@ -143,6 +143,30 @@ public class HibernateRegraAtcompDAO implements IRegraAtcompDAO {
 		return consulta;
 	}
 
+	public RegraAtcomp ConsultarPorCodigoAtividade(RegraAtcomp a) {
+		Logger logger = Logger.getLogger("br.sceweb.dominio.empresa");
+		logger.info("Inicio de Procedimento: Consultar Regra da Atcomp");
+		RegraAtcomp consulta = null;
+
+		try {
+			EntityManagerFactory factory = Persistence.createEntityManagerFactory("sceweb");
+			EntityManager em = factory.createEntityManager();
+			em.getTransaction().begin();
+			consulta = em.find(RegraAtcomp.class, a.getCodigoAtividade());
+			em.getTransaction().commit();
+			logger.info("Termino de Procedimento: Consultar Regra da Atcomp");	
+		} catch (HibernateException exception) {
+			logger.info("Erro de Procedimento: Consultar Regra da Atcomp. Erro: " + exception.getStackTrace());
+			exception.printStackTrace();
+		}
+		return consulta;
+	}
+
+	
+	
+	
+	
+	
 	@Override
 	public boolean Excluir(RegraAtcomp a) {
 		logger.info("Inicio do Processo de Exclusão da Regra da Atividade Complementar: ");

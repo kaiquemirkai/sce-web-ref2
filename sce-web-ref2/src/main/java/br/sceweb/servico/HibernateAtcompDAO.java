@@ -484,7 +484,10 @@ public List<AtcompPendenteAprovacaoTO> ListarAtcompProfessor(String campoBusca,S
 	
 	return null;
 }
-	
-	
+@Override	
+public Double QuantidadeTotaldeHorasPorCodigoDeAtividade(String codigoAtividade)
+{
+	return null;
+}
 	
 }

@@ -81,25 +81,76 @@ public class CadastrarAtCompAluno implements IComando{
 		int tamanho = caminho.length();
 		int inicio = tamanho - 3;
 		String extensao = caminho.substring(inicio,tamanho);
+		
+		
+		
+		AtcompRepositorio atcompRepositorio = new AtcompRepositorio(2);
+		
+		double horastotais = atcompRepositorio.QuantidadeTotaldeHorasPorCodigoDeAtividade(atcomp.getCodigoAtividade());
+		System.out.println("chegou aqui " + horastotais);
+		RegraAtcompRepositorio regraAtcompRepositorio = new RegraAtcompRepositorio(2);
+		RegraAtcomp regraAtcomp = new RegraAtcomp();
+		regraAtcomp.setCodigoAtividade(atcomp.getCodigoAtividade());
+		
+		regraAtcomp = regraAtcompRepositorio.ConsultarPorCodigoAtividade(regraAtcomp);
+		System.out.println("Passou aquixxx " + regraAtcomp.getArea());
+		
+		
+		String listaErros = "";
+		
+		boolean aprovadoCarga = false;
+		double horaslancadas = Double.valueOf(atcomp.getHorasLancadas());
+		System.out.println("horas lancadas " + horaslancadas + " carga horaria "  +Double.valueOf(regraAtcomp.getCargaHoraria()) );
+		
+		if(horaslancadas <= Double.valueOf(regraAtcomp.getCargaHoraria()))
+		{
+			aprovadoCarga = true;
+		}
+		else
+		{
+			listaErros += " Carga Horaria Superior a Permitida! \n";
+		}
+		boolean aprovadoTotal = false;
+		System.out. println(horastotais + Double.valueOf(atcomp.getHorasLancadas()) + " xxx" + Double.valueOf(regraAtcomp.getQuantidadeDeAtividadePermitida()));
+		if(horastotais + Double.valueOf(atcomp.getHorasLancadas()) <= Double.valueOf(regraAtcomp.getQuantidadeDeAtividadePermitida()))
+		{
+			aprovadoTotal = true;
+			
+		}
+		else
+		{
+			listaErros += " Carga horaria dessa Atividade já foi alcançada! \n ";
+		}
+		boolean aprovadoExtensao = false;
+		
 		if(extensao.equals("pdf"))
 		{
-			if (fachadaAtcomp.Cadastrar(atcomp) ){
+		  aprovadoExtensao = true;	
+		}
+		else
+		{
+			listaErros += " Favor selecione apenas arquivos no formato PDF!\n";
+		}
+		
+		
+		url = "/visao/TelasTCCv4/TelaListarAtcompAluno.jsp";	
+		
+		System.out.println("Chegou aqui");
+		if(aprovadoCarga && aprovadoTotal && aprovadoTotal)
+		{
+			if (fachadaAtcomp.Cadastrar(atcomp) )
+			{
 				url = "/visao/TelasTCCv4/TelaListarAtcompAluno.jsp";			
 				request.setAttribute("erro", null);
-			} else {
+			} 
+			else 
+			{
 				url = "/visao/TelasTCCv4/TelaCadastrarAtcompAluno.jsp";	
 				request.setAttribute("erro", "Erro: Dados inválidos!");
 			}
 		}
-		else
-		{
-			// implementar caso erro
-			
-		}
 		
-        
-        
-
+		System.out.println("ERROS : " + listaErros);
 		
 
 		return url;

@@ -12,6 +12,7 @@ public interface IRegraAtcompDAO {
 	public List<RegraAtcomp> Listar(String campoBusca,String valorBusca);
 	public List<RegraAtcomp> ListarCategoriaPorArea(String area);
 	public RegraAtcomp Consultar(RegraAtcomp a);
+	public RegraAtcomp ConsultarPorCodigoAtividade(RegraAtcomp a);
 	public boolean Excluir(RegraAtcomp a);
 	
 }

@@ -116,5 +116,11 @@ public List<AtcompPendenteAprovacaoTO> ListarAtcompProfessor(String campoBusca,S
 	return daoAtcomp.ListarAtcompProfessor(campoBusca, valorBusca);
 }
 
+
+public Double QuantidadeTotaldeHorasPorCodigoDeAtividade(String codigoAtividade)
+{
+	return daoAtcomp.QuantidadeTotaldeHorasPorCodigoDeAtividade(codigoAtividade);
+}
+
 	}
 

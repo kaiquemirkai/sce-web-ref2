@@ -24,6 +24,7 @@ public interface IAtcompDAO {
 	public Double QuantidadeTotaldeHoras() ;
 	public List<AtcompPendenteAprovacaoTO> ListarAtcompProfessor(String campoBusca,String valorBusca);
 	public List<HorasPorAnoTO> ListarHorasPorAreaAno(String ano);
+	public Double QuantidadeTotaldeHorasPorCodigoDeAtividade(String codigoAtividade);
 	
 	///Verificar que porra eh essa!!!!!!!
 	//public List<RegraAtcomp> Listar2();
