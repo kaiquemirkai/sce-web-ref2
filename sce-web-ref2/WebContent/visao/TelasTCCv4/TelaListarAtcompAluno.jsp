@@ -47,6 +47,34 @@
     <input type="hidden" id="acao" name="acao" value="ListarAtCompAluno">
     
         						<h3 align="center">Consulta de Atividade Complementar</h3>
+ 
+ 
+ 
+<% 
+String erro = (String)request.getAttribute("erro");
+
+if(erro == null)
+{
+	erro = "";	
+}
+else{
+if (!erro.equals(""));
+{
+		%>
+	<script type="text/javascript"> 
+	
+	$(document).ready(function() {
+		alert('<%=erro%>');
+	});
+	
+	
+	
+	</script>
+		
+<% }
+}%>
+ 
+ 
   						
 	 <br> <br>
 	<!--  BUSCA -->

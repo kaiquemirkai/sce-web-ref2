@@ -87,20 +87,19 @@ public class CadastrarAtCompAluno implements IComando{
 		AtcompRepositorio atcompRepositorio = new AtcompRepositorio(2);
 		
 		double horastotais = atcompRepositorio.QuantidadeTotaldeHorasPorCodigoDeAtividade(atcomp.getCodigoAtividade());
-		System.out.println("chegou aqui " + horastotais);
 		RegraAtcompRepositorio regraAtcompRepositorio = new RegraAtcompRepositorio(2);
 		RegraAtcomp regraAtcomp = new RegraAtcomp();
 		regraAtcomp.setCodigoAtividade(atcomp.getCodigoAtividade());
 		
 		regraAtcomp = regraAtcompRepositorio.ConsultarPorCodigoAtividade(regraAtcomp);
-		System.out.println("Passou aquixxx " + regraAtcomp.getArea());
+		
 		
 		
 		String listaErros = "";
 		
 		boolean aprovadoCarga = false;
 		double horaslancadas = Double.valueOf(atcomp.getHorasLancadas());
-		System.out.println("horas lancadas " + horaslancadas + " carga horaria "  +Double.valueOf(regraAtcomp.getCargaHoraria()) );
+		
 		
 		if(horaslancadas <= Double.valueOf(regraAtcomp.getCargaHoraria()))
 		{
@@ -108,7 +107,7 @@ public class CadastrarAtCompAluno implements IComando{
 		}
 		else
 		{
-			listaErros += " Carga Horaria Superior a Permitida! \n";
+			listaErros += "Carga Horaria Superior a Permitida! A carga horária máxima é de: " +regraAtcomp.getCargaHoraria() + " horas.";
 		}
 		boolean aprovadoTotal = false;
 		System.out. println(horastotais + Double.valueOf(atcomp.getHorasLancadas()) + " xxx" + Double.valueOf(regraAtcomp.getQuantidadeDeAtividadePermitida()));
@@ -119,7 +118,15 @@ public class CadastrarAtCompAluno implements IComando{
 		}
 		else
 		{
-			listaErros += " Carga horaria dessa Atividade já foi alcançada! \n ";
+			double cargaMaxima = Double.valueOf(regraAtcomp.getQuantidadeDeAtividadePermitida() - horastotais);
+			if(cargaMaxima < 0 )
+			{
+				cargaMaxima  = 0 ;
+			}
+			listaErros += "Carga horaria dessa Atividade já foi alcançada! Voce possui: " +horastotais +
+						" horas cadastradas. O limite dessa atividade é de: "+ 
+						regraAtcomp.getQuantidadeDeAtividadePermitida()+
+						" horas. Por favor cadastre no máximo mais  "+ cargaMaxima+" horas ";
 		}
 		boolean aprovadoExtensao = false;
 		
@@ -129,7 +136,7 @@ public class CadastrarAtCompAluno implements IComando{
 		}
 		else
 		{
-			listaErros += " Favor selecione apenas arquivos no formato PDF!\n";
+			listaErros += "Favor selecione apenas arquivos no formato PDF!";
 		}
 		
 		
@@ -141,13 +148,17 @@ public class CadastrarAtCompAluno implements IComando{
 			if (fachadaAtcomp.Cadastrar(atcomp) )
 			{
 				url = "/visao/TelasTCCv4/TelaListarAtcompAluno.jsp";			
-				request.setAttribute("erro", null);
+				request.setAttribute("erro", "");
 			} 
 			else 
 			{
 				url = "/visao/TelasTCCv4/TelaCadastrarAtcompAluno.jsp";	
 				request.setAttribute("erro", "Erro: Dados inválidos!");
 			}
+		}
+		else
+		{
+			request.setAttribute("erro", "A atividade complementar não pode ser cadastrada pelos seguintes erros : " + listaErros);
 		}
 		
 		System.out.println("ERROS : " + listaErros);
