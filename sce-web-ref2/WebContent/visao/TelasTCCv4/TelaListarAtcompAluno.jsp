@@ -52,7 +52,6 @@
  
 <% 
 String erro = (String)request.getAttribute("erro");
-
 if(erro == null)
 {
 	erro = "";	
@@ -60,11 +59,88 @@ if(erro == null)
 else{
 if (!erro.equals(""));
 {
+	String anexo = ""+request.getAttribute("anexo");
+	String areaAtividade = ""+request.getAttribute("areaAtividade");
+	String codigoAtividade = ""+request.getAttribute("codigoAtivdade");
+	String horaInicio = ""+request.getAttribute("horaInicio");
+	String horaFim = ""+request.getAttribute("horaFim");
+	String dataInicio =""+ request.getAttribute("dataInicio");
+	String dataFim =""+ request.getAttribute("dataFim");
+	String descricao = ""+request.getAttribute("descricao");
+	String cargaHorariaPermitida =""+ request.getAttribute("cargaHorariaPermitida");
+	String cargaMaximaPermitida = ""+request.getAttribute("cargaMaximaPermitida");
+	String dataMaior = "" +request.getAttribute("dataMaior" );
+	
+	erro+= "";
+	if(!anexo.equals(""))
+	{
+		erro += anexo + "\n"; 
+	}
+	if(!areaAtividade.equals(""))
+	{
+		erro += areaAtividade + "\n"; 
+	}
+	if(!codigoAtividade.equals(""))
+	{
+		erro += codigoAtividade + "\n"; 
+	}
+	if(!horaInicio.equals(""))
+	{
+		erro += horaInicio + "\n"; 
+	}
+	if(!horaFim.equals(""))
+	{
+		erro += horaFim + "\n"; 
+	}
+	if(!dataInicio.equals(""))
+	{
+		erro += dataInicio + "\n"; 
+	}
+	if(!dataFim.equals(""))
+	{
+		erro += dataFim + "\n"; 
+	}
+	if(!descricao.equals(""))
+	{
+		erro += descricao + "\n"; 
+	}
+	if(!cargaHorariaPermitida.equals(""))
+	{
+		erro += cargaHorariaPermitida + "\n"; 
+	}
+	if(!cargaMaximaPermitida.equals(""))
+	{
+		erro += cargaMaximaPermitida + "\n"; 
+	}
+	if(!dataMaior.equals(""))
+	{
+		erro += dataMaior + "\n"; 
+	}
+	
+	erro = "ERROS:";
 		%>
 	<script type="text/javascript"> 
 	
 	$(document).ready(function() {
-		alert('<%=erro%>');
+		var erro = '<%=erro%>' ;
+		var anexo = '<%=anexo%>';
+		var areaAtividade = '<%=areaAtividade%>';
+		var codigoAtividade = '<%=codigoAtividade%>';
+		var horaInicio = '<%=horaInicio%>';
+		var horaFim = '<%=horaFim%>';
+		var dataInicio = '<%=dataInicio%>';
+		var dataFim = '<%=dataFim%>';
+		var descricao = '<%=descricao%>';
+		var cargaHorariaPermitida = '<%=cargaHorariaPermitida%>';
+		var cargaMaximaPermitida = '<%=cargaMaximaPermitida%>';
+		var dataMaior = '<%=dataMaior%>';
+			
+		alert(erro + '\n' + anexo + '\n' + areaAtividade + '\n'
+				+ codigoAtividade + '\n' + horaInicio + '\n' + horaFim + '\n'
+				+ dataInicio + '\n' + dataFim + '\n' + descricao + '\n'
+				+ cargaHorariaPermitida + '\n' + cargaMaximaPermitida + '\n'
+				+ dataMaior+ '\n'
+				);
 	});
 	
 	
