@@ -52,9 +52,12 @@
  
 <% 
 String erro = (String)request.getAttribute("erro");
-if(erro == null)
+boolean invalido = false;
+
+if(erro == null || erro.equals(""))
 {
-	erro = "";	
+	erro = "";
+	invalido = true;
 }
 else{
 if (!erro.equals(""));
@@ -116,8 +119,8 @@ if (!erro.equals(""));
 	{
 		erro += dataMaior + "\n"; 
 	}
-	
-	erro = "ERROS:";
+	erro = "DEU RUIM";
+
 		%>
 	<script type="text/javascript"> 
 	
@@ -134,13 +137,20 @@ if (!erro.equals(""));
 		var cargaHorariaPermitida = '<%=cargaHorariaPermitida%>';
 		var cargaMaximaPermitida = '<%=cargaMaximaPermitida%>';
 		var dataMaior = '<%=dataMaior%>';
-			
-		alert(erro + '\n' + anexo + '\n' + areaAtividade + '\n'
+		
+		
+			if(<%=invalido%> == false)
+				{
+				
+				alert(erro + '\n' + anexo + '\n' + areaAtividade + '\n'
 				+ codigoAtividade + '\n' + horaInicio + '\n' + horaFim + '\n'
 				+ dataInicio + '\n' + dataFim + '\n' + descricao + '\n'
 				+ cargaHorariaPermitida + '\n' + cargaMaximaPermitida + '\n'
 				+ dataMaior+ '\n'
-				);
+				);		
+			
+				}
+		
 	});
 	
 	
