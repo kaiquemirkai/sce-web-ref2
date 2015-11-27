@@ -122,5 +122,11 @@ public Double QuantidadeTotaldeHorasPorCodigoDeAtividade(String codigoAtividade)
 	return daoAtcomp.QuantidadeTotaldeHorasPorCodigoDeAtividade(codigoAtividade);
 }
 
+
+public List<HoraMediaTurmaTO> ListarMediaHorasPorTurma(long codigo)
+{
+	return daoAtcomp.ListarMediaHorasPorTurma(codigo);
+}
+
 	}
 

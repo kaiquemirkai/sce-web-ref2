@@ -9,6 +9,8 @@ import br.sceweb.dominio.Aluno;
 import br.sceweb.dominio.AlunoRepositorio;
 import br.sceweb.dominio.AtcompRepositorio;
 import br.sceweb.dominio.Fachada;
+import br.sceweb.dominio.HoraMediaTurmaTO;
+import br.sceweb.dominio.HorasPorAreaTO;
 import br.sceweb.dominio.Login;
 import br.sceweb.dominio.Professor;
 import br.sceweb.dominio.ProfessorRepositorio;
@@ -105,7 +107,29 @@ public class AcessarLogin implements IComando{
 				ProfessorRepositorio professorRepositorio = new ProfessorRepositorio(1);
 				professor = professorRepositorio.Consultar(professor);
 				request.setAttribute("nomeProfessor", professor.getNome());
+				 
+				//carregar o grafico do professor
+				AtcompRepositorio atcompRepositorioMysql = new AtcompRepositorio(2);
+				List<HoraMediaTurmaTO> lista = atcompRepositorioMysql.ListarMediaHorasPorTurma(professor.getCodigo());
 				
+				String grafico = "[['Relatório Horas Médias Por Turma', 'Horas Média',  { role: 'annotation' } ], ";
+					if ((lista!=null)&& (lista.size()>0))
+					{
+						HoraMediaTurmaTO horaMediaTurmaTO = null;
+						for (int i = 0; i < lista.size() - 1 ; i++)
+						{
+						    
+							horaMediaTurmaTO = (HoraMediaTurmaTO) lista.get(i);
+						    grafico += "['" + horaMediaTurmaTO.getTurma() + "', " +
+						    horaMediaTurmaTO.getMediaHorasTurma() + " , '' ],";
+						}
+						horaMediaTurmaTO = (HoraMediaTurmaTO) lista.get(lista.size()-1);
+					    grafico += "['" + horaMediaTurmaTO.getTurma() + "', " +
+					    horaMediaTurmaTO.getMediaHorasTurma() + " , '' ]]";
+					}
+
+				
+				request.setAttribute("grafico", grafico);
 				
 				url = "/visao/TelasTCCv4/HomeProfessor.jsp";			
 				request.setAttribute("erro", null);

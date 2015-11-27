@@ -3,6 +3,45 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<%
+String grafico = "" + request.getAttribute("grafico");
+%>
+<script type="text/javascript">
+
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+          var data = google.visualization.arrayToDataTable(<%=grafico%>);
+
+      var options = {
+        
+        title: "Relatório Horas Médias Por Turma",
+    	width: 500,
+        height: 300,
+        legend: { position: 'bottom', maxLines: 3 },
+        bar: { groupWidth: '50%' },
+        isStacked: true,
+        backgroundColor:{fill:'transparent'}
+      };
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+
+
+
 <script>
 function EncerrarSessao(){
 	   document.getElementById('frmHomeProfessor').acao.value = "EncerrarSessao";
@@ -45,23 +84,33 @@ function EncerrarSessao(){
   <div class="row" style="margin-top: 20px;">
   
    <!-- Divisão da tela: Parte Principal -->
-  <div class="col-md-8">
-  
-  <!--Bem vindo-->
+  <div class="col-md-3">
+  	
+  	<!--Bem vindo-->
   <div class="media">
   	<div class="media-left media-middle">
  		<img class="media-object" src="/sce-web-ref2/visao/TelasTCCv4/Imagens/aluno.jpg" width="60" height="60">
   	</div>
   	<div class="media-body">
     	<h4 class="media-heading">Bem-vindo!</h4>
-    		<%=nomeProfessor %>
-    		<br>
+    		<small><%=nomeProfessor %></small>
+    		<br> 
     		<button type="button" name="btnEncerrarSessao" type="submit" onclick="EncerrarSessao()" class="btn btn-primary btn-xs">Encerrar Sessão</button>
+    		
   	</div>
   </div>
+
   
+  </div>
+  
+  <div class="col-md-5">
+  
+  
+  
+  <!-- Gráfico -->
+  <div id="chart_div"></div>
+
   </div> <!-- Final Divisão tela: Parte Principal -->
-  
   
    <!-- Divisão da tela: Bloco de Info/Sugestao -->
    
@@ -86,28 +135,14 @@ function EncerrarSessao(){
    
   </div>
   
-   <!-- Verificar se há necessidade de colocar mais algo para o prof-->
-  <div class="row"> 
+</div>
   
   
+
   
-  </div>  <!-- Final Bloco Sugestao -->
-  
-  </div> <!-- Final Divisão Tela: Bloco Info/Sugestao -->
-  
-</div> <!-- Final Row Container -->
-				
-    
-
-
-
-
-
-</form><!-- Fim do Form -->
-
-</div><!-- Fim da Div Conteudo -->
-
-
+  </div> <!-- Final ROW -->
+ </form><!-- Fim do Form --> 
+</div> <!-- Final Container -->
 
 </body>
 </html>

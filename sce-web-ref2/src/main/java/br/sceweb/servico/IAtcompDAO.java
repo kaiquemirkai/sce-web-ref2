@@ -4,6 +4,7 @@ import java.util.List;
 
 import br.sceweb.dominio.Atcomp;
 import br.sceweb.dominio.AtcompPendenteAprovacaoTO;
+import br.sceweb.dominio.HoraMediaTurmaTO;
 import br.sceweb.dominio.HorasPorAnoTO;
 import br.sceweb.dominio.HorasPorAreaTO;
 import br.sceweb.dominio.RegraAtcomp;
@@ -25,6 +26,7 @@ public interface IAtcompDAO {
 	public List<AtcompPendenteAprovacaoTO> ListarAtcompProfessor(String campoBusca,String valorBusca);
 	public List<HorasPorAnoTO> ListarHorasPorAreaAno(String ano);
 	public Double QuantidadeTotaldeHorasPorCodigoDeAtividade(String codigoAtividade);
+	public List<HoraMediaTurmaTO> ListarMediaHorasPorTurma(long codigo);
 	
 	///Verificar que porra eh essa!!!!!!!
 	//public List<RegraAtcomp> Listar2();

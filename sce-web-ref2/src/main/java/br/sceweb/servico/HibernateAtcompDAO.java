@@ -20,6 +20,7 @@ import org.hibernate.SQLQuery;
 import br.sceweb.dominio.Aluno;
 import br.sceweb.dominio.Atcomp;
 import br.sceweb.dominio.AtcompPendenteAprovacaoTO;
+import br.sceweb.dominio.HoraMediaTurmaTO;
 import br.sceweb.dominio.HorasPorAnoTO;
 import br.sceweb.dominio.HorasPorAreaTO;
 import br.sceweb.dominio.Professor;
@@ -489,5 +490,9 @@ public Double QuantidadeTotaldeHorasPorCodigoDeAtividade(String codigoAtividade)
 {
 	return null;
 }
-	
+@Override	
+public List<HoraMediaTurmaTO> ListarMediaHorasPorTurma(long codigo)
+{
+	return null;
+}
 }

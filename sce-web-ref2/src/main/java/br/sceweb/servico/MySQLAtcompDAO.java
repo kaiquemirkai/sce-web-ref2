@@ -14,6 +14,7 @@ import javax.persistence.PersistenceException;
 import br.sceweb.dominio.Aluno;
 import br.sceweb.dominio.Atcomp;
 import br.sceweb.dominio.AtcompPendenteAprovacaoTO;
+import br.sceweb.dominio.HoraMediaTurmaTO;
 import br.sceweb.dominio.HorasPorAnoTO;
 import br.sceweb.dominio.HorasPorAreaTO;
 import br.sceweb.dominio.Login;
@@ -184,6 +185,58 @@ public List<HorasPorAnoTO> ListarHorasPorAreaAno(String ano)
 
 
 
+public List<HoraMediaTurmaTO> ListarMediaHorasPorTurma(long codigo)
+{
+	ResultSet rs = null;
+	PreparedStatement stmt;
+	String erro = "";
+	List<HoraMediaTurmaTO> lista = new ArrayList<HoraMediaTurmaTO>();
+	
+	try {
+		
+		Login login =LoginRepositorio.RetornaUsuarioLogado();		
+		
+		/*
+		select (sum(atc.horaslancadas)/(select count(aluno.codigo) from aluno where  aluno.turma = pp.turma )) as MediaHorasPorTurma 
+		,pp.turma from atcomp as atc, aluno as alun , perfilprofessor as pp
+		 where atc.codigoAluno = alun.codigo
+		  and alun.turma = pp.turma 
+		  and pp.codigoProfessor =1 
+		  and atc.status = "Aprovado" group by alun.turma
+		 */
+		
+        String query = "select (sum(atc.horaslancadas)/(select count(aluno.codigo) from aluno" +
+        " where aluno.turma = pp.turma )) as MediaHorasPorTurma , pp.turma from atcomp as atc" +
+        " , aluno as alun , perfilprofessor as pp where atc.codigoAluno = alun.codigo" + 
+        " and alun.turma = pp.turma and pp.codigoProfessor = ? and atc.status = 'Aprovado'" +
+        " group by alun.turma"; 
+		 
+		stmt = MySQLDAOFactory.criaConexao().prepareStatement(query);
+		stmt.setLong(1, codigo);
+		rs = stmt.executeQuery();
+		
+		while(rs.next()){		
+			HoraMediaTurmaTO  horaMediaTurmaTO = new HoraMediaTurmaTO();
+			horaMediaTurmaTO.setMediaHorasTurma(rs.getString("MediaHorasPorTurma"));
+			horaMediaTurmaTO.setTurma(rs.getString("turma"));
+			
+			lista.add(horaMediaTurmaTO);			 
+
+		}
+		
+		stmt.close();
+	
+		
+		
+		// stmt.close();
+	} catch (SQLException e) {
+		
+		erro = e.getMessage();
+		System.out.println(erro);
+	}
+	
+	return lista;
+}
 
 
 
