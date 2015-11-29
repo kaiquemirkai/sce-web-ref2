@@ -246,7 +246,7 @@ if ((lista!=null)&& (lista.size()>0)){
 			}
 			if(a.getAreaAtividade().equals("02"))
 			{
-				area = "Sóciocultural";
+				area = "Sociocultural";
 			}
 			if(a.getAreaAtividade().equals("03"))
 			{
