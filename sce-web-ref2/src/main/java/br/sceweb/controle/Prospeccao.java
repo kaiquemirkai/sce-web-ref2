@@ -39,8 +39,8 @@ public class Prospeccao implements IComando {
 		
 		String grafico = "";
 		grafico = "[['Ano', 'Tecnologica', 'Social', 'Cidada' ],";
-		System.out.println(grafico);
-		System.out.println("Gechou nas dorgas");
+		
+	
 		for(int i=anoInicio; i <=anoFim; i++)
 		{
 			List<HorasPorAnoTO> lista = atcompRepositorio.ListarHorasPorAreaAno( i+"");
@@ -49,13 +49,15 @@ public class Prospeccao implements IComando {
 			{
 				grafico += " ['"+i+"', "+lista.get(0).getHorasTotais() +" , " + lista.get(1).getHorasTotais() + " , " +
 						"" + lista.get(2).getHorasTotais()+ " ]";
+				
 			}
 			else
 			{
 				grafico += " ['"+i+"', "+lista.get(0).getHorasTotais() +" , " + lista.get(1).getHorasTotais() + " , " +
 						"" + lista.get(2).getHorasTotais()+ " ],";
+				;
 			}
-			System.out.println(i + " SELIGA");
+			
 		}
 		
 		grafico += " ]";

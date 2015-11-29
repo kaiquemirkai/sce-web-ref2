@@ -26,13 +26,13 @@ import br.sceweb.dominio.HorasPorAreaTO;
 import br.sceweb.dominio.Professor;
 import br.sceweb.dominio.ProfessorRepositorio;
 import br.sceweb.dominio.RegraAtcomp;
-import br.sceweb.dominio.Empresa;
+
 import br.sceweb.dominio.Login;
 import br.sceweb.dominio.LoginRepositorio;
 
 public class HibernateAtcompDAO implements IAtcompDAO {
 
-	Logger logger = Logger.getLogger(HibernateEmpresaDAO.class);
+	Logger logger = Logger.getLogger(HibernateAtcompDAO.class);
 
 	public boolean Cadastrar(Atcomp a) {
         

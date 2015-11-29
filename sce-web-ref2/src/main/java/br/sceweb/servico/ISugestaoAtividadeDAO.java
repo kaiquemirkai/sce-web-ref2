@@ -4,7 +4,7 @@ import java.util.List;
 
 
 import br.sceweb.dominio.Atcomp;
-import br.sceweb.dominio.Empresa;
+
 import br.sceweb.dominio.SugestaoAtividade;
 
 //Está interface

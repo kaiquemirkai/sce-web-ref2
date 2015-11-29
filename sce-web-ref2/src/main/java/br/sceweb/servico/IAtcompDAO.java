@@ -8,7 +8,7 @@ import br.sceweb.dominio.HoraMediaTurmaTO;
 import br.sceweb.dominio.HorasPorAnoTO;
 import br.sceweb.dominio.HorasPorAreaTO;
 import br.sceweb.dominio.RegraAtcomp;
-import br.sceweb.dominio.Empresa;
+
 
 public interface IAtcompDAO {
 

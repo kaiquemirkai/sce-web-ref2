@@ -44,11 +44,7 @@ public class MySQLDAOFactory extends DAOFactory{
 		return conexao;
     }
 
-	@Override
-	public IEmpresaDAO getEmpresaDAO() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 	@Override
 	public ILoginDAO getLoginDAO() {

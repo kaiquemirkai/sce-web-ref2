@@ -14,13 +14,13 @@ import org.apache.log4j.Logger; // auditoria dos registros
 import org.hibernate.HibernateException;
 
 import br.sceweb.dominio.Atcomp;
-import br.sceweb.dominio.Empresa;
+
 import br.sceweb.dominio.SugestaoAtividade; //Classe SugestaoAtividade
 
 
 public class HibernateSugestaoAtividadeDAO implements ISugestaoAtividadeDAO {
 
-	Logger logger = Logger.getLogger(HibernateEmpresaDAO.class);
+	Logger logger = Logger.getLogger(HibernateSugestaoAtividadeDAO.class);
 
 	//Método para CADASTRAR Sugestão de Atividade
 	public boolean Cadastrar(SugestaoAtividade sa) {

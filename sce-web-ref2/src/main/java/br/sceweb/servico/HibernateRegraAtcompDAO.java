@@ -14,12 +14,12 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-import br.sceweb.dominio.Empresa;
+
 import br.sceweb.dominio.RegraAtcomp;
 
 public class HibernateRegraAtcompDAO implements IRegraAtcompDAO {
 
-	Logger logger = Logger.getLogger(HibernateEmpresaDAO.class);
+	Logger logger = Logger.getLogger(HibernateRegraAtcompDAO.class);
 
 	public boolean Cadastrar(RegraAtcomp a) {
       

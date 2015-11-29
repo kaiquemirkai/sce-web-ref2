@@ -8,7 +8,7 @@ import java.util.List;
 
 import br.sceweb.dominio.Aluno;
 import br.sceweb.dominio.AtcompPendenteAprovacaoTO;
-import br.sceweb.dominio.Empresa;
+
 import br.sceweb.dominio.Login;
 import br.sceweb.dominio.LoginRepositorio;
 import br.sceweb.dominio.Professor;

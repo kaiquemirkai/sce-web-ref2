@@ -24,7 +24,7 @@ public class ServletControle extends HttpServlet {
 	Logger logger = Logger.getLogger(ServletControle.class);
 	String mensagem = "";
 	Fachada fachada;
-	String cnpjParaExclusao = "" ;//seta o cnpj para exclusao
+	
 
 	/**
 	 * Default constructor.
@@ -55,7 +55,7 @@ public class ServletControle extends HttpServlet {
 	protected void executaComando(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String parametro = request.getParameter("acao");
 		
-	    System.out.println("chegou no servlet");
+	 
 		logger.info(">>>>>>>>>>>>>>>>>>>>>>>>>acao do servletcontrole = " + parametro);
 		String nomeDaClasse = "br.sceweb.controle." + parametro;
 		String url ="";
