@@ -119,7 +119,7 @@ if (!erro.equals(""));
 	{
 		erro += dataMaior + "\n"; 
 	}
-	erro = "DEU RUIM";
+	erro = "A atividade complementar não pode ser cadastrada pelos seguintes erros :";
 
 		%>
 	<script type="text/javascript"> 
