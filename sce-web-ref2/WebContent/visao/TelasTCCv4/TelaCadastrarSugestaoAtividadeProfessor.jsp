@@ -51,8 +51,8 @@
 						style="width: 25em" class="form-control">
 						<option value="00">-- Selecione a área --</option>
 						<option value="01">Tecnológica</option>
-						<option value="02">Sócio-Cultural</option>
-						<option value="03">Sócio-Cidadã</option>
+						<option value="02">Sociocultural</option>
+						<option value="03">Cidadã</option>
 					</select>
 			</div>
 			</div>

@@ -71,8 +71,8 @@ $('#btnArquivo').change(function(){
              <select id="sltArea" name="sltArea" style="width: 25em" class="form-control"  style="width: 25em"  value="<%=a.getArea() %>">
                   		<option value="00">-- Selecione a área -- </option>
                   		<option value="01">Formação Tecnológica </option>
-                  		<option value="02">Formação Sócio-Cultural</option>
-                  		<option value="03">Formação Sócio-Cidadã</option>
+                  		<option value="02">Formação Sociocultural</option>
+                  		<option value="03">Formação Cidadã</option>
               </select>
         </div>
         </div>

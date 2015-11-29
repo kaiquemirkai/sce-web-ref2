@@ -48,20 +48,7 @@ function ConsultaAtcompPendente(){
 			<h3 align="center">Consultas</h3>
 	
 <br><br>
-    	
- <div class="media">
-  <div class="media-left media-middle">
-    <a href="#">
-      <img class="media-object" src="/sce-web-ref2/visao/TelasTCCv4/Imagens/aluno_turma.png" width="80" height="70">
-    </a>
-  </div>
-  <div class="media-body">
-    <h4 class="media-heading">Atividade Complementar por Aluno/Turma</h4>
-    Aqui você encontra análise,média e prospecção das Atividades Complementares por Aluno/Turma. 
-  </div>
-</div>
- 
- <br><br>
+
  
   <div class="media">
   <div class="media-left media-middle">
@@ -77,21 +64,6 @@ function ConsultaAtcompPendente(){
   </div>
 </div>
 
-<br><br>
-
- <div class="media">
-  <div class="media-left media-middle">
-    <a href="#">
-      <img class="media-object" src="/sce-web-ref2/visao/TelasTCCv4/Imagens/status.png" width="80" height="70">
-    </a>
-  </div>
-  <div class="media-body">
-    <h4 class="media-heading" align="left">Atividade Complementar por Status</h4>
-     Aqui você pode visualizar as atividades por status.
-  </div>
-</div>
-
-<br><br>
 
 </form><!-- Fim do Form -->
 

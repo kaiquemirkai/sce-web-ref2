@@ -53,8 +53,29 @@ $('#btnArquivo').change(function(){
   						  			 <%
 	 
 	 Atcomp a = (Atcomp)request.getAttribute("atcomp");
+  	 Aluno aluno = (Aluno)request.getAttribute("aluno");
      //Manter a Sessão Ativa
      session.setAttribute("atcomp2", a);
+     
+     String area = "";
+		if(a.getAreaAtividade().equals("01"))
+		{
+			area = "Tecnológica";
+		}
+		if(a.getAreaAtividade().equals("02"))
+		{
+			area = "Sociocultural";
+		}
+		if(a.getAreaAtividade().equals("03"))
+		{
+			area = "Cidadã";
+		}
+		
+	    
+     
+     
+     
+     
 	 %>
 	 			
  	 <input type="hidden" name="txtCodigoHidden" id="txtCodigo" class="form-control" style="width: 25em" value="<%=a.getCodigo() %>" />
@@ -72,11 +93,31 @@ $('#btnArquivo').change(function(){
         </div>
         </div>
         
-        <div class="form-group has-success has-feedback">
+        <% 
+         	String classe = "";
+         
+         	if(a.getStatus().equals("Pendente"))
+         	{
+         		classe = "form-group has-warning has-feedback";
+         	}
+         	
+         	if(a.getStatus().equals("Aprovado"))
+         	{
+         		classe = "form-group has-success has-feedback";
+         	}
+         	
+         	if(a.getStatus().equals("Reprovado"))
+         	{
+         		classe = "form-group has-error has-feedback";
+         	}
+         	
+         	
+         %>
+         <div class="<%=classe %>">
          <label name="lblStatus" for="lblStatus" class="col-sm-2 control-label">Status</label>
         
           <div class="col-sm-10">
-             <input type="text" name="txtStatus" id="txtStatus" class="form-control"  style="width: 25em" value="Aprovado" />
+             <input type="text" name="txtStatus" id="txtStatus" class="form-control"  style="width: 25em" value= "<%=a.getStatus() %>" />
   	     </div>
         </div>
         
@@ -84,11 +125,7 @@ $('#btnArquivo').change(function(){
          <label name="lblAreaCurso" for="lblAreaCurso" class="col-sm-2 control-label">Área do Curso</label>
       
          <div class="col-sm-10">
-             <select id="sltAreaCurso" name="sltAreaCurso" style="width: 25em" class="form-control" >
-                  		<option value="biologicas">Biológicas</option>
-                  		<option value="exatas">Exatas</option>
-                  		<option value="humanas">Humanas</option>
-              </select>
+            <input type="text" name="txtAreaCurso" id="txtAreaCurso" class="form-control"  style="width: 25em" value= "<%=aluno.getArea()%>" /> 
         </div>
         </div>
         
@@ -97,11 +134,7 @@ $('#btnArquivo').change(function(){
         <label name="lblCurso" for="lblCurso" class="col-sm-2 control-label">Curso</label>
         
         <div class="col-sm-10">
-             <select id="sltCurso" name="sltCurso" style="width: 25em" class="form-control" >
-                  		<option value="SI">Sistemas de Informação</option>
-                  		<option value="CC">Ciências da Computação</option>
-                  		<option value="EC">Engenharia da Computação</option>
-              </select>
+             <input type="text" name="txtCurso" id="txtCurso" class="form-control"  style="width: 25em" value= "<%=aluno.getCurso()%>" />
         </div>
         </div>
         
@@ -109,23 +142,15 @@ $('#btnArquivo').change(function(){
         <label name="lblTurma" for="lblTurma" class="col-sm-2 control-label">Turma</label>
         
         <div class="col-sm-10">
-             <select id="sltTurma" name="sltCurso" style="width: 25em" class="form-control" >
-                  		<option value="1ASIN">1ASIN</option>
-                  		<option value="2ASIN">2ASIN</option>
-                  		<option value="3ASIN">3ASIN</option>
-              </select>
+             <input type="text" name="txtTurma" id="txtTurma" class="form-control"  style="width: 25em" value= "<%=aluno.getTurma()%>" />
         </div>
         </div>
         
         <div class="form-group">
-        <label name="lblAluno" for="lblTurma" class="col-sm-2 control-label">Aluno</label>
+        <label name="lblAluno" for="lblAluno" class="col-sm-2 control-label">Aluno</label>
         
         <div class="col-sm-10">
-             <select id="sltAluno" name="sltCurso" style="width: 25em" class="form-control" >
-                  		<option value="aluno1">Aluno1</option>
-                  		<option value="aluno1">Aluno2</option>
-                  		<option value="aluno1">Aluno3</option>
-              </select>
+             <input type="text" name="txtAluno" id="txtAluno" class="form-control"  style="width: 25em" value= "<%=aluno.getNome()%>" />
         </div>
         </div>
         
@@ -135,12 +160,7 @@ $('#btnArquivo').change(function(){
       	<label name="lblAreaAtividade" for="lblAreaAtividade" class="col-sm-2 control-label">Área da Atividade</label>
       
         <div class="col-sm-10">
-        	 <select id="sltAreaAtividade" name="sltAreaAtividade" style="width: 25em" class="form-control" >
-                  		<option value="00">-- Selecione a área -- </option>
-                  		<option value="01">Formação Tecnológica </option>
-                  		<option value="02">Formação Sócio-Cultural</option>
-                  		<option value="03">Formação Sócio-Cidadã</option>
-              </select>
+        	 <input type="text" name="txtAreaAtividade" id="txtAreaAtividade" class="form-control"  style="width: 25em" value= "<%=area %>" />
       	</div>
     	</div>
 
@@ -148,12 +168,7 @@ $('#btnArquivo').change(function(){
          <label name="lblCodigoAtividade" for="codigoAtividade" class="col-sm-2 control-label">Código da Atividade</label>
       
          <div class="col-sm-10">
-             <select id="sltCodigoAtividade" name="sltCodigoAtividade" style="width: 25em" class="form-control" >
-                  		<option value="100">-- Selecione o código -- </option>
-                  		<option value="101">101 - Cinema</option>
-                  		<option value="102">102 - Teatro</option>
-                  		<option value="103">103 - Museu</option>
-              </select>
+            <input type="text" name="txtCodigoAtividade" id="txtCodigoAtividade" class="form-control"  style="width: 25em" value= "<%=a.getCodigoAtividade()%>" />
         </div>
         </div>
     

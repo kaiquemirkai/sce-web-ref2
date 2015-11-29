@@ -120,7 +120,7 @@ if ((lista!=null)&& (lista.size()>0)){
 			}
 			if(atcompPendenteAprovacaoTO.getAreaAtividade().equals("02"))
 			{
-				area = "Sóciocultural";
+				area = "Sociocultural";
 			}
 			if(atcompPendenteAprovacaoTO.getAreaAtividade().equals("03"))
 			{

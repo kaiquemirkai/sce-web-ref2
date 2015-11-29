@@ -17,7 +17,7 @@ $('#btnArquivo').change(function(){
 });
 
 </script>
-<jsp:include page="ValidarTelas.jsp" />
+
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>UATComp - Cadastrar Atcomp</title>
 </head>

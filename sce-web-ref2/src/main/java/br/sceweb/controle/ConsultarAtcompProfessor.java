@@ -13,6 +13,8 @@ import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.sceweb.dominio.Aluno;
+import br.sceweb.dominio.AlunoRepositorio;
 import br.sceweb.dominio.Atcomp;
 import br.sceweb.dominio.AtcompRepositorio;
 
@@ -31,7 +33,13 @@ public class ConsultarAtcompProfessor implements IComando {
 		Atcomp a = new Atcomp();
 		a.setCodigo(Integer.parseInt(request.getParameter("codigoRadio")));
 		Atcomp atcomp = atcompRepositorio.Consultar(a);	
+		AlunoRepositorio alunoRepositorio = new AlunoRepositorio(1);
+		Aluno aluno = new Aluno();
+		aluno.setCodigo(atcomp.getCodigoAluno());
+		aluno = alunoRepositorio.Consultar(aluno);
 		
+		
+		request.setAttribute("aluno", aluno);	
 	
 		request.setAttribute("atcomp", atcomp);	
 		return "/visao/TelasTCCv4/TelaConsultarAtcompProfessor.jsp";

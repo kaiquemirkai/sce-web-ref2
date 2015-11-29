@@ -58,7 +58,7 @@ $('#btnArquivo').change(function(){
 		}
 		if(a.getArea().equals("02"))
 		{
-			area = "Sóciocultural";
+			area = "Sociocultural";
 		}
 		if(a.getArea().equals("03"))
 		{

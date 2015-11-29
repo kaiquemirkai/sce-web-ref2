@@ -171,7 +171,7 @@ function Prospeccao(){
                       <div class="alert alert-danger text-center style-box-two">
                             <img src="/sce-web-ref2/visao/TelasTCCv4/Imagens/total.png" width="60" height="60">
                             <h3>Total Área</h3>
-                            Aqui você encontra mais detalhes ....
+                       
                             <p align="center"><input type="submit" class="btn btn-danger" value="Situação" role="button" onclick="Prospeccao()"> </p>
                         </div>
                     </div>
@@ -179,7 +179,7 @@ function Prospeccao(){
                       <div class="alert alert-info text-center style-box-two">
                             <img src="/sce-web-ref2/visao/TelasTCCv4/Imagens/tecnica.png" width="60" height="60">
                             <h3>Área Técnica</h3>
-                            Aqui você encontra mais detalhes ....
+                            
                             <p align="center"><input type="submit" class="btn btn-info" value="Mais detalhes" role="button" onclick="AreaTecnica()"> </p>
                         </div>
                     </div>
@@ -187,7 +187,7 @@ function Prospeccao(){
                       <div class="alert alert-warning text-center style-box-two">
                             <img src="/sce-web-ref2/visao/TelasTCCv4/Imagens/socioCultural.png" width="60" height="60">
                             <h3>Área Sociocultural</h3>
-                            Aqui você encontra mais detalhes ....
+                            
                             <p align="center"><a href="#" class="btn btn-warning" role="button" onclick="AreaSocioCultural()">Mais detalhes</a> </p>
                         </div>
                     </div>
@@ -195,7 +195,7 @@ function Prospeccao(){
                       <div class="alert alert-success text-center style-box-two">
                             <img src="/sce-web-ref2/visao/TelasTCCv4/Imagens/cidada.png" width="60" height="60">
                             <h3>Área Cidadã </h3>
-                            Aqui você encontra mais detalhes ....
+                            
                             <p align="center"><a href="#" class="btn btn-success" role="button" onclick="AreaCidada()">Mais detalhes</a> </p>
                         </div>
                     </div>

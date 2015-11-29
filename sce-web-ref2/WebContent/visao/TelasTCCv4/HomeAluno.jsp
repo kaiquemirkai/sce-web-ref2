@@ -57,7 +57,7 @@ function EncerrarSessao(){
         ['Horas', 'Horas realizadas', 'Horas a cumprir', { role: 'annotation' } ],
         ['Tecnológica', <%=tecnologica %>, <%=tecnologicadif %>,''],
         ['Cidadã', <%=cidada %>, <%=cidadadif %>,''],
-        ['Sócio-Cultural', <%=cultural %>, <%=culturaldif %>, '']
+        ['Sociocultural', <%=cultural %>, <%=culturaldif %>, '']
       ]);
 
       var options = {

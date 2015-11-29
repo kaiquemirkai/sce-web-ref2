@@ -69,7 +69,7 @@
 					}
 					if(sa.getArea().equals("02"))
 					{
-						area = "Sóciocultural";
+						area = "Sociocultural";
 					}
 					if(sa.getArea().equals("03"))
 					{
