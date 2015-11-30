@@ -52,6 +52,20 @@ $('#btnArquivo').change(function(){
 	 
 	  <%
 	  RegraAtcomp a = (RegraAtcomp)request.getAttribute("atcomp");
+	  String area ="";
+	  if(a.getArea().equals("01"))
+	  {
+		  area = "Tecnológica";
+	  }
+	  if(a.getArea().equals("02"))
+	  {
+		  area = "Sociocultural";
+	  }
+	  if(a.getArea().equals("03"))
+	  {
+		  area = "Cidadã";
+	  }
+	  
 	  %>
 	  <input  type="hidden" name="codigoRadio" value="<%=a.getCodigo()%>">    
 	  <fieldset disabled>	       
@@ -68,12 +82,7 @@ $('#btnArquivo').change(function(){
         <label name="lblArea" for="lblArea" class="col-sm-2 control-label">Área</label>
         
          <div class="col-sm-10">
-             <select id="sltArea" name="sltArea" style="width: 25em" class="form-control"  style="width: 25em"  value="<%=a.getArea() %>">
-                  		<option value="00">-- Selecione a área -- </option>
-                  		<option value="01">Formação Tecnológica </option>
-                  		<option value="02">Formação Sociocultural</option>
-                  		<option value="03">Formação Cidadã</option>
-              </select>
+              <input type="text" name="txtArea" id="txtArea" class="form-control" style="width: 25em" value="<%=area%>" />
         </div>
         </div>
         
@@ -81,12 +90,7 @@ $('#btnArquivo').change(function(){
         <label name="lblCodigoAtividade" for="lblCodigoAtividade" class="col-sm-2 control-label">Código da Atividade</label>
         
         <div class="col-sm-10">
-             <select id="sltCodigoAtividade" name="sltCodigoAtividade" style="width: 25em" class="form-control" style="width: 25em"  value="<%=a.getCodigoAtividade()%>">
-                  		<option value="100">-- Selecione o código -- </option>
-                  		<option value="101">101 - Cinema</option>
-                  		<option value="102">102 - Teatro</option>
-                  		<option value="103">103 - Museu</option>
-              </select>
+             <input type="text" name="txtCodigoAtividade" id="txtCodigoAtividade" class="form-control" style="width: 25em" value="<%=a.getCodigoAtividade()%>" />
         </div>
         </div>
         

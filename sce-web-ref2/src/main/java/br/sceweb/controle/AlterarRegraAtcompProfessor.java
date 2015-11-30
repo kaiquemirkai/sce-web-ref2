@@ -22,8 +22,22 @@ public class AlterarRegraAtcompProfessor implements IComando{
 	public String executa(HttpServletRequest request, HttpServletResponse res) throws Exception {
 String url = "";
 		
-		regraAtcomp.setArea(request.getParameter("sltArea"));	
-		regraAtcomp.setCodigoAtividade(request.getParameter("sltCodigoAtividade"));	
+		regraAtcomp.setArea(request.getParameter("txtArea"));	
+		if(regraAtcomp.getArea().equals("Tecnológica"))
+		{
+			regraAtcomp.setArea("01");
+		}
+		if(regraAtcomp.getArea().equals("Sociocultural"))
+		{
+			regraAtcomp.setArea("02");
+		}
+		if(regraAtcomp.getArea().equals("Cidadã"))
+		{
+			regraAtcomp.setArea("03");
+		}
+		
+		
+		regraAtcomp.setCodigoAtividade(request.getParameter("txtCodigoAtividade"));	
 		regraAtcomp.setQuantidadeDeAtividadePermitida(Integer.parseInt(request.getParameter("txtQuantidadeAtividadePermitida")));		
 		regraAtcomp.setCargaHoraria(Integer.parseInt(request.getParameter("txtCargaHorariaAtividade")));		
 		regraAtcomp.setDataInicioAtividade(request.getParameter("txtDataInicioAtividade"));		
