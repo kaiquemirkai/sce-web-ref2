@@ -30,12 +30,12 @@ String grafico = "" + request.getAttribute("grafico");
         height: 300,
         legend: { position: 'bottom', maxLines: 3 },
         bar: { groupWidth: '50%' },
-        isStacked: true,
+       
         backgroundColor:{fill:'transparent'}
       };
 
         // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
         chart.draw(data, options);
       }
     </script>

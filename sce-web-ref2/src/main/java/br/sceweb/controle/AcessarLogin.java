@@ -112,7 +112,7 @@ public class AcessarLogin implements IComando{
 				AtcompRepositorio atcompRepositorioMysql = new AtcompRepositorio(2);
 				List<HoraMediaTurmaTO> lista = atcompRepositorioMysql.ListarMediaHorasPorTurma(professor.getCodigo());
 				
-				String grafico = "[['Relatório Horas Médias Por Turma', 'Horas Média',  { role: 'annotation' } ], ";
+				String grafico = "[['Relatório Horas Médias Por Turma', 'Horas Média', 'Desvio Padrão', { role: 'annotation' } ], ";
 					if ((lista!=null)&& (lista.size()>0))
 					{
 						HoraMediaTurmaTO horaMediaTurmaTO = null;
@@ -121,11 +121,11 @@ public class AcessarLogin implements IComando{
 						    
 							horaMediaTurmaTO = (HoraMediaTurmaTO) lista.get(i);
 						    grafico += "['" + horaMediaTurmaTO.getTurma() + "', " +
-						    horaMediaTurmaTO.getMediaHorasTurma() + " , '' ],";
+						    horaMediaTurmaTO.getMediaHorasTurma() + " ," + horaMediaTurmaTO.getDesvioPadrao() + " ,'' ],";
 						}
 						horaMediaTurmaTO = (HoraMediaTurmaTO) lista.get(lista.size()-1);
 					    grafico += "['" + horaMediaTurmaTO.getTurma() + "', " +
-					    horaMediaTurmaTO.getMediaHorasTurma() + " , '' ]]";
+					    horaMediaTurmaTO.getMediaHorasTurma() + " ," +horaMediaTurmaTO.getDesvioPadrao() + " ,'' ]]";
 					}
 
 				

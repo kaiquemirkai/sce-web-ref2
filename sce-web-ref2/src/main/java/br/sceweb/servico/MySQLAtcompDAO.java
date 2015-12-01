@@ -206,7 +206,7 @@ public List<HoraMediaTurmaTO> ListarMediaHorasPorTurma(long codigo)
 		 */
 		
         String query = "select (sum(atc.horaslancadas)/(select count(aluno.codigo) from aluno" +
-        " where aluno.turma = pp.turma )) as MediaHorasPorTurma , pp.turma from atcomp as atc" +
+        " where aluno.turma = pp.turma )) as MediaHorasPorTurma , Round(STDDEV(atc.horaslancadas),2) as desvioPadrao , pp.turma from atcomp as atc" +
         " , aluno as alun , perfilprofessor as pp where atc.codigoAluno = alun.codigo" + 
         " and alun.turma = pp.turma and pp.codigoProfessor = ? and atc.status = 'Aprovado'" +
         " group by alun.turma"; 
@@ -219,6 +219,7 @@ public List<HoraMediaTurmaTO> ListarMediaHorasPorTurma(long codigo)
 			HoraMediaTurmaTO  horaMediaTurmaTO = new HoraMediaTurmaTO();
 			horaMediaTurmaTO.setMediaHorasTurma(rs.getString("MediaHorasPorTurma"));
 			horaMediaTurmaTO.setTurma(rs.getString("turma"));
+			horaMediaTurmaTO.setDesvioPadrao(rs.getString("desvioPadrao"));
 			
 			lista.add(horaMediaTurmaTO);			 
 
